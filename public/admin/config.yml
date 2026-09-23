@@ -1,0 +1,37 @@
+# Sveltia CMS の設定。フィールドは src/content.config.ts のスキーマと揃える
+backend:
+  name: github
+  repo: tadokorokantoku/blog
+  branch: main
+
+# 全体共通の画像置き場（必須）。記事の画像は collection 側の設定で記事フォルダに置く
+media_folder: public/images
+public_folder: /images
+
+site_url: https://blog.katsuki104.workers.dev
+locale: ja
+
+collections:
+  - name: posts
+    label: 記事
+    label_singular: 記事
+    folder: src/content/posts
+    path: '{{slug}}/index'
+    slug: '{{fields._slug}}'
+    media_folder: ''
+    public_folder: ''
+    create: true
+    extension: md
+    format: frontmatter
+    sortable_fields: [date, title]
+    summary: '{{title}}{{draft | ternary(" (draft)", "")}}'
+    preview_path: posts/{{slug}}/
+    fields:
+      - { name: title, label: タイトル, widget: string }
+      - { name: date, label: 公開日, widget: datetime, type: date, format: YYYY-MM-DD, default: '{{now}}' }
+      - { name: description, label: 説明文, widget: text, hint: 一覧と RSS に出る抜粋 }
+      - { name: tags, label: タグ, widget: list, required: false, default: [] }
+      - { name: updated, label: 更新日, widget: datetime, type: date, format: YYYY-MM-DD, required: false }
+      - { name: draft, label: 下書き, widget: boolean, default: true }
+      - { name: cover, label: カバー画像, widget: image, required: false }
+      - { name: body, label: 本文, widget: markdown, modes: [raw, rich_text] }
