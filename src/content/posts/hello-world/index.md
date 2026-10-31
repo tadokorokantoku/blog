@@ -3,7 +3,7 @@ title: ダウンタイム
 date: 2026-09-24
 description: ブログはじめました。
 tags:
-  - diary
+  - life
 updated: 2026-09-24
 draft: false
 cover: ''
