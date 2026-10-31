@@ -63,23 +63,26 @@ draft: false             # 任意。既定は公開
 
 Sveltia CMS を置いていて、**記事とひとことの両方をここから書ける**。左の一覧が「記事」「ひとこと」に分かれる。
 
-使い方は2通り。
-
-**手元で書く（おすすめ）**
+**普段はこっち（サーバー不要）**
 
 ```
-pnpm editor
+pnpm editor            # 公開中の /admin を単独ウィンドウで開く
+pnpm editor --install  # Dock から開ける .app を ~/Applications に作る（最初の1回だけ）
 ```
 
-dev サーバーを立てて、エディタを**単独ウィンドウ**で開く（Chrome のアプリモードなのでタブもアドレスバーも付かない）。開いたら「ローカルリポジトリで作業」を選んで blog フォルダを指定する。
+Chrome のアプリモードで開くのでタブもアドレスバーも付かない。`--install` で作った `blog エディタ.app` を Dock に入れておけば、ターミナルも dev サーバーも無しで1クリックで開く。中身は Chrome をアプリモードで起動するだけのシェルスクリプトなので、消すときは `~/Applications/blog エディタ.app` をフォルダごと削除する。
 
-トークンが要らず、保存すると `src/content/` のファイルが直接書き換わる。commit と push は自分でやる。閉じるときは起動したターミナルで Ctrl+C。
+ログインは「アクセストークンを使用してログイン」。トークンは GitHub の fine-grained PAT で、対象リポは `tadokorokantoku/blog` だけ、権限は Contents の Read and write。**保存するとそのまま main に commit され、Workers Builds が公開する。**「GitHub にログイン」ボタンは OAuth 用の認証サーバーを立てるまで使えない。
 
-File System Access API を使うので Chrome か Edge が必要。Chrome が無ければ既定のブラウザで普通に開く。`pnpm dev` から手で開く場合は <http://localhost:4321/admin/index.html>（dev はディレクトリの index を解決しないので `/admin/` ではなく `index.html` まで。本番は `/admin/` でよい）。
+**手元のファイルを直接いじりたいとき**
 
-**公開中のサイトから書く**
+```
+pnpm editor --local
+```
 
-<https://blog.katsuki104.workers.dev/admin/> を開いて「アクセストークンを使用してログイン」。トークンは GitHub の fine-grained PAT で、対象リポは `tadokorokantoku/blog` だけ、権限は Contents の Read and write。保存するとそのまま main に commit され、Workers Builds が公開する。「GitHub にログイン」ボタンは OAuth 用の認証サーバーを立てるまで使えない。
+dev サーバーを立てて localhost の `/admin` を開く。「ローカルリポジトリで作業」を選んで blog フォルダを指定すると、トークン無しで `src/content/` のファイルを直接書き換えられる。commit と push は自分でやる。閉じるときは起動したターミナルで Ctrl+C。
+
+ローカルリポジトリのモードは File System Access API を使うので Chrome か Edge でしか出ない。公開中のサイトの `/admin/` には出ない（localhost 限定）。
 
 #### 挙動のメモ
 
@@ -94,7 +97,8 @@ File System Access API を使うので Chrome か Edge が必要。Chrome が無
 | コマンド | 内容 |
 | --- | --- |
 | `pnpm dev` | 開発サーバー（draft も表示） |
-| `pnpm editor` | エディタを単独ウィンドウで開く（dev サーバーごと起動） |
+| `pnpm editor` | エディタ（公開中の /admin）を単独ウィンドウで開く |
+| `pnpm editor --local` | dev サーバーを立てて手元のリポジトリを直接編集する |
 | `pnpm build` | `dist/` に静的ビルド |
 | `pnpm preview` | ビルド結果を wrangler でローカル配信 |
 | `pnpm check` | 型チェック |
