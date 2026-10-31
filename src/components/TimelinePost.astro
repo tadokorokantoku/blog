@@ -1,0 +1,25 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { fade } from 'astro:transitions';
+import { formatMonthDay } from '../lib/posts';
+import TagList from './TagList.astro';
+
+interface Props {
+  post: CollectionEntry<'posts'>;
+}
+
+const { post } = Astro.props;
+const { title, description, date, tags, draft } = post.data;
+---
+
+<article transition:name={`post-${post.id}`} transition:animate={fade({ duration: '0.5s' })}>
+  <header class="timeline-meta">
+    <time datetime={date.toISOString()}>{formatMonthDay(date)}</time>
+    <TagList tags={tags} />
+    {draft && <span class="draft">draft</span>}
+  </header>
+  <a class="post-card" href={`/posts/${post.id}/`}>
+    <h3>{title}</h3>
+    <p>{description}</p>
+  </a>
+</article>

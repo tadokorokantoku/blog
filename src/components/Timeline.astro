@@ -1,0 +1,64 @@
+---
+import '../styles/timeline.css';
+import { entryTags, groupByYear, type TimelineEntry, type TimelineYear } from '../lib/timeline';
+import TimelineNote from './TimelineNote.astro';
+import TimelinePost from './TimelinePost.astro';
+
+interface Props {
+  entries: TimelineEntry[];
+}
+
+type Row = { kind: 'year'; year: TimelineYear } | { kind: 'entry'; entry: TimelineEntry; year: number };
+
+const { entries } = Astro.props;
+
+// daisyUI の timeline は li を1本に並べるので、年ラベルも行として混ぜる
+const rows: Row[] = [];
+for (const year of groupByYear(entries)) {
+  rows.push({ kind: 'year', year });
+  for (const entry of year.entries) rows.push({ kind: 'entry', entry, year: year.year });
+}
+
+// 左右の振り分けは絞り込みで変わるので、初期状態だけ付けておく（以降は JS が付け替える）
+let side = 0;
+---
+
+{rows.length === 0 && <p class="timeline-empty">まだ何も書いていない。</p>}
+{
+  rows.length > 0 && (
+    <div class="timeline-wrap">
+      <ul class="timeline timeline-vertical max-md:timeline-compact" data-timeline>
+        {rows.map((row, index) =>
+          row.kind === 'year' ? (
+            <li data-year-row={row.year.year} data-first={index === 0 ? '' : undefined}>
+              <hr />
+              <div class="timeline-middle timeline-year">
+                <span class="timeline-year-label">{row.year.year}</span>
+              </div>
+              <hr />
+            </li>
+          ) : (
+            <li
+              data-year={row.year}
+              data-tags={entryTags(row.entry).join(' ')}
+              data-last={index === rows.length - 1 ? '' : undefined}
+            >
+              <hr />
+              <div class="timeline-middle">
+                <span class={`timeline-dot timeline-dot--${row.entry.kind}`} aria-hidden="true" />
+              </div>
+              <div class={`${side++ % 2 === 0 ? 'timeline-start' : 'timeline-end'} timeline-box`}>
+                {row.entry.kind === 'post' ? (
+                  <TimelinePost post={row.entry.post} />
+                ) : (
+                  <TimelineNote note={row.entry.note} />
+                )}
+              </div>
+              <hr />
+            </li>
+          ),
+        )}
+      </ul>
+    </div>
+  )
+}

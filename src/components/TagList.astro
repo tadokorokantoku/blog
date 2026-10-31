@@ -11,7 +11,9 @@ const { tags } = Astro.props;
     <ul class="tag-list">
       {tags.map((tag) => (
         <li>
-          <a href={`/tags/${tag}/`}>#{tag}</a>
+          <a href={`/?tags=${tag}`} data-tag={tag}>
+            #{tag}
+          </a>
         </li>
       ))}
     </ul>

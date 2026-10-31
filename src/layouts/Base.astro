@@ -1,4 +1,5 @@
 ---
+import { ClientRouter } from 'astro:transitions';
 import '../styles/global.css';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
@@ -24,12 +25,19 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
+    <ClientRouter />
+    <script is:inline>
+      // ?tags= 付きで開いたときに、絞り込み前の全件が一瞬見えるのを防ぐ
+      if (location.search.includes('tags=')) {
+        document.documentElement.classList.add('is-filtering');
+        setTimeout(() => document.documentElement.classList.remove('is-filtering'), 1000);
+      }
+    </script>
   </head>
   <body>
     <header class="site-header">
       <a class="site-title" href="/">{SITE_TITLE}</a>
       <nav>
-        <a href="/tags/">Tags</a>
         <a href="/rss.xml">RSS</a>
       </nav>
     </header>

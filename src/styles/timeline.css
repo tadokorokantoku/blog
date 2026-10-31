@@ -1,0 +1,213 @@
+/* daisyUI の timeline に、このブログの配色とカードの中身を合わせるための上書き。
+   レイアウト（縦線・左右振り分け・ドットの位置）は daisyUI 側が持っている */
+
+/* 絞り込みの切り替えアニメーション。長さはここで決める */
+::view-transition-group(*),
+::view-transition-old(*),
+::view-transition-new(*) {
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.33, 0, 0.1, 1);
+}
+
+/* タグのチップ */
+.tag-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0 0;
+}
+
+.tag-chip {
+  padding: 0.125rem 0.625rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.tag-chip:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.tag-chip[data-active] {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.tag-chip[data-active] .count {
+  color: inherit;
+}
+
+.tag-chip .count {
+  color: var(--muted);
+}
+
+.tag-chip--clear {
+  border-style: dashed;
+  background: none;
+  font-family: inherit;
+}
+
+/* 絞り込み済みの URL で開いたとき、適用前の全件を見せない */
+.is-filtering .timeline-wrap {
+  visibility: hidden;
+}
+
+/* 絞り込みで外れた行 */
+.timeline > li[hidden] {
+  display: none;
+}
+
+/* 見えている最初と最後の行では、線が上下にはみ出さないようにする */
+.timeline > li[data-first] > hr:first-child,
+.timeline > li[data-last] > hr:last-child {
+  visibility: hidden;
+}
+
+/* 本文の読み幅（42rem）より広く取って、線の左右にカードを置けるようにする */
+.timeline-wrap {
+  width: min(58rem, calc(100vw - 2rem));
+  margin-left: 50%;
+  transform: translateX(-50%);
+  padding: 1rem 0;
+}
+
+.timeline-wrap .timeline {
+  gap: 0.5rem;
+}
+
+/* 線はサイトの境界線の色、太さは控えめに */
+.timeline :where(hr) {
+  background-color: var(--border);
+}
+
+.timeline-vertical > li > hr {
+  width: 2px;
+}
+
+/* 線の上に乗る年のラベル */
+.timeline-year {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.75rem;
+  margin: 0.75rem 0;
+  padding: 0.25rem 0.875rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg);
+  font-size: 0.8125rem;
+}
+
+.timeline-year-label {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+
+/* 線の上のノード。記事は塗り、ひとことは白抜き */
+.timeline-dot {
+  display: block;
+  width: 0.75rem;
+  height: 0.75rem;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  background: var(--bg);
+}
+
+.timeline-dot--post {
+  width: 1rem;
+  height: 1rem;
+  background: var(--accent);
+}
+
+/* カード。枠と背景は daisyUI の timeline-box が持つので中身だけ整える */
+.timeline-box {
+  min-width: 0;
+  max-width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.9375rem;
+  line-height: 1.8;
+}
+
+.timeline-box:hover {
+  border-color: var(--accent);
+}
+
+.timeline-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.75rem;
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+.timeline-permalink {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.timeline-permalink:hover {
+  text-decoration: underline;
+}
+
+.timeline-meta .tag-list {
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+}
+
+.timeline-empty {
+  color: var(--muted);
+}
+
+.post-card {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.post-card h3 {
+  margin: 0.25rem 0 0;
+  color: var(--accent);
+  font-size: 1.0625rem;
+  line-height: 1.5;
+}
+
+.post-card p {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+.note-title {
+  margin: 0.25rem 0 0;
+  font-size: 1rem;
+}
+
+.note-body > :first-child {
+  margin-top: 0.25rem;
+}
+
+.note-body > :last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 48rem) {
+  .timeline-wrap {
+    width: 100%;
+    margin-left: 0;
+    transform: none;
+  }
+
+  /* 片側に積む幅ではカードを列いっぱいに広げる（内容幅のままだとはみ出す） */
+  .timeline-wrap .timeline-start,
+  .timeline-wrap .timeline-end {
+    place-self: center stretch;
+    margin-inline: 0.5rem 0;
+  }
+}

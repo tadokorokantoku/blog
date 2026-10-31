@@ -1,3 +1,10 @@
+/* Tailwind は daisyUI（タイムライン）のために入れている。
+   preflight（base）は読まない。既存の素の CSS とマークダウン本文の見た目を壊さないため */
+@layer theme, base, components, utilities;
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/utilities.css' layer(utilities);
+@plugin "daisyui";
+
 :root {
   --bg: #fdfdfc;
   --fg: #1f2328;
@@ -6,6 +13,13 @@
   --accent: #2563eb;
   --code-bg: #f6f8fa;
   color-scheme: light dark;
+
+  /* daisyUI のコンポーネントがこの配色を使うようにする */
+  --color-base-100: var(--bg);
+  --color-base-200: var(--code-bg);
+  --color-base-300: var(--border);
+  --color-base-content: var(--fg);
+  --color-primary: var(--accent);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -45,8 +59,10 @@ a {
 
 .site-header {
   display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
   justify-content: space-between;
+  gap: 0.5rem 1rem;
   padding: 2rem 0;
 }
 
@@ -70,31 +86,10 @@ a {
   font-size: 0.875rem;
 }
 
-.post-list {
-  list-style: none;
-  padding: 0;
-}
-
-.post-list li {
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.post-list time,
 .post-meta {
   display: block;
   color: var(--muted);
   font-size: 0.875rem;
-}
-
-.post-list a {
-  font-size: 1.125rem;
-  font-weight: 600;
-}
-
-.post-list p {
-  margin: 0.25rem 0 0;
-  color: var(--muted);
 }
 
 .draft {
@@ -112,7 +107,12 @@ a {
   flex-wrap: wrap;
   gap: 0.5rem 1rem;
   list-style: none;
+  margin: 0;
   padding: 0;
+}
+
+.timeline-meta .tag-list {
+  font-size: 0.8125rem;
 }
 
 .post-header h1 {

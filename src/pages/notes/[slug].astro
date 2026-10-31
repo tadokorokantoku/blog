@@ -1,0 +1,30 @@
+---
+import { render } from 'astro:content';
+import TagList from '../../components/TagList.astro';
+import Base from '../../layouts/Base.astro';
+import { excerpt, formatDate, getNotes, noteTitle } from '../../lib/posts';
+
+export async function getStaticPaths() {
+  const notes = await getNotes();
+  return notes.map((note) => ({ params: { slug: note.id }, props: { note } }));
+}
+
+const { note } = Astro.props;
+const { Content } = await render(note);
+const { title, date, tags } = note.data;
+---
+
+<Base title={noteTitle(note)} description={excerpt(note.body)}>
+  <article>
+    <header class="post-header">
+      <p class="post-meta">
+        <time datetime={date.toISOString()}>{formatDate(date)}</time>
+      </p>
+      {title && <h1>{title}</h1>}
+      <TagList tags={tags} />
+    </header>
+    <div class="prose">
+      <Content />
+    </div>
+  </article>
+</Base>

@@ -1,11 +1,14 @@
 ---
-import PostList from '../components/PostList.astro';
+import TagFilter from '../components/TagFilter.astro';
+import Timeline from '../components/Timeline.astro';
 import Base from '../layouts/Base.astro';
-import { getPosts } from '../lib/posts';
+import { countTags, getTimeline } from '../lib/timeline';
 
-const posts = await getPosts();
+const entries = await getTimeline();
+const tags = countTags(entries);
 ---
 
 <Base>
-  <PostList posts={posts} />
+  <TagFilter tags={tags} />
+  <Timeline entries={entries} />
 </Base>

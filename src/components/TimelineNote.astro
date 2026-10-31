@@ -1,0 +1,28 @@
+---
+import { render, type CollectionEntry } from 'astro:content';
+import { fade } from 'astro:transitions';
+import { formatMonthDay } from '../lib/posts';
+import TagList from './TagList.astro';
+
+interface Props {
+  note: CollectionEntry<'notes'>;
+}
+
+const { note } = Astro.props;
+const { date, title, tags, draft } = note.data;
+const { Content } = await render(note);
+---
+
+<article transition:name={`note-${note.id}`} transition:animate={fade({ duration: '0.5s' })}>
+  <header class="timeline-meta">
+    <a class="timeline-permalink" href={`/notes/${note.id}/`}>
+      <time datetime={date.toISOString()}>{formatMonthDay(date)}</time>
+    </a>
+    <TagList tags={tags} />
+    {draft && <span class="draft">draft</span>}
+  </header>
+  {title && <h3 class="note-title">{title}</h3>}
+  <div class="prose note-body">
+    <Content />
+  </div>
+</article>

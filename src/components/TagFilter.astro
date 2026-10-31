@@ -1,0 +1,122 @@
+---
+interface Props {
+  tags: { tag: string; count: number }[];
+}
+
+const { tags } = Astro.props;
+---
+
+<nav class="tag-filter" aria-label="タグで絞り込む">
+  {
+    tags.map(({ tag, count }) => (
+      <a class="tag-chip" href={`/?tags=${tag}`} data-tag={tag}>
+        #{tag} <span class="count">{count}</span>
+      </a>
+    ))
+  }
+  <button class="tag-chip tag-chip--clear" type="button" data-clear-tags hidden>絞り込みを外す</button>
+</nav>
+<p class="timeline-empty" data-timeline-empty hidden>このタグの記事はまだない。</p>
+
+<script>
+  // タグの絞り込み。複数選択（選んだタグのどれかを持つものを出す）で、
+  // 絞り込みの状態は ?tags=a,b として URL に持つ。切り替えは View Transition で動かす
+  const PARAM = 'tags';
+
+  function readSelected() {
+    const raw = new URL(location.href).searchParams.get(PARAM) ?? '';
+    return new Set(
+      raw
+        .split(',')
+        .map((tag) => tag.trim())
+        .filter(Boolean),
+    );
+  }
+
+  function writeUrl(selected: Set<string>) {
+    const url = new URL(location.href);
+    if (selected.size > 0) url.searchParams.set(PARAM, [...selected].join(','));
+    else url.searchParams.delete(PARAM);
+    history.pushState({}, '', url.pathname + url.search);
+  }
+
+  function apply() {
+    const timeline = document.querySelector<HTMLElement>('[data-timeline]');
+    if (!timeline) return;
+    const selected = readSelected();
+
+    for (const chip of document.querySelectorAll<HTMLElement>('[data-tag]')) {
+      chip.toggleAttribute('data-active', selected.has(chip.dataset.tag ?? ''));
+    }
+    document.querySelector<HTMLElement>('[data-clear-tags]')?.toggleAttribute('hidden', selected.size === 0);
+
+    // 見えている行だけで左右の振り分けを決め直し、中身が無くなった年は畳む
+    const visibleYears = new Set<string>();
+    let index = 0;
+    for (const row of timeline.querySelectorAll<HTMLElement>('li[data-tags]')) {
+      const tags = (row.dataset.tags ?? '').split(' ').filter(Boolean);
+      const visible = selected.size === 0 || tags.some((tag) => selected.has(tag));
+      row.hidden = !visible;
+      if (!visible) continue;
+
+      const box = row.querySelector('.timeline-box');
+      box?.classList.toggle('timeline-start', index % 2 === 0);
+      box?.classList.toggle('timeline-end', index % 2 === 1);
+      index += 1;
+
+      visibleYears.add(row.dataset.year ?? '');
+    }
+
+    for (const row of timeline.querySelectorAll<HTMLElement>('li[data-year-row]')) {
+      row.hidden = !visibleYears.has(row.dataset.yearRow ?? '');
+    }
+
+    // 線が上下にはみ出さないように、見えている最初と最後の行に印を付ける
+    const visibleRows = timeline.querySelectorAll<HTMLElement>('li:not([hidden])');
+    for (const row of timeline.querySelectorAll<HTMLElement>('li')) {
+      row.removeAttribute('data-first');
+      row.removeAttribute('data-last');
+    }
+    visibleRows[0]?.setAttribute('data-first', '');
+    visibleRows[visibleRows.length - 1]?.setAttribute('data-last', '');
+
+    document
+      .querySelector<HTMLElement>('[data-timeline-empty]')
+      ?.toggleAttribute('hidden', visibleRows.length > 0);
+    document.documentElement.classList.remove('is-filtering');
+  }
+
+  function update() {
+    if (document.startViewTransition) document.startViewTransition(() => apply());
+    else apply();
+  }
+
+  function onClick(event: MouseEvent) {
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey) return;
+    const target = event.target as HTMLElement | null;
+    const chip = target?.closest<HTMLElement>('[data-tag]');
+    const clear = target?.closest<HTMLElement>('[data-clear-tags]');
+    if (!chip && !clear) return;
+    // タイムラインが無いページ（記事の個別ページなど）では普通にトップへ遷移させる
+    if (!document.querySelector('[data-timeline]')) return;
+
+    event.preventDefault();
+    const selected = readSelected();
+    if (clear) selected.clear();
+    else {
+      const tag = chip?.dataset.tag ?? '';
+      if (selected.has(tag)) selected.delete(tag);
+      else selected.add(tag);
+    }
+    writeUrl(selected);
+    update();
+  }
+
+  if (!(window as any).__tagFilterBound) {
+    (window as any).__tagFilterBound = true;
+    document.addEventListener('click', onClick, true);
+    window.addEventListener('popstate', () => update());
+  }
+
+  document.addEventListener('astro:page-load', apply);
+</script>

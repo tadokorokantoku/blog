@@ -35,3 +35,25 @@ collections:
       - { name: draft, label: 下書き, widget: boolean, default: true }
       - { name: cover, label: カバー画像, widget: image, required: false }
       - { name: body, label: 本文, widget: markdown, modes: [raw, rich_text] }
+
+  - name: notes
+    label: ひとこと
+    label_singular: ひとこと
+    folder: src/content/notes
+    path: '{{slug}}/index'
+    # 日時から slug を作るので同じ日に何本でも書ける（同じ分に2本書くと衝突する）
+    slug: '{{year}}-{{month}}-{{day}}-{{hour}}{{minute}}'
+    media_folder: ''
+    public_folder: ''
+    create: true
+    extension: md
+    format: frontmatter
+    sortable_fields: [date]
+    summary: '{{date}} {{title}}'
+    preview_path: notes/{{slug}}/
+    fields:
+      - { name: date, label: 日時, widget: datetime, format: YYYY-MM-DDTHH:mm, default: '{{now}}' }
+      - { name: title, label: タイトル, widget: string, required: false, hint: 無くてもいい }
+      - { name: tags, label: タグ, widget: list, required: false, default: [] }
+      - { name: draft, label: 下書き, widget: boolean, default: false }
+      - { name: body, label: 本文, widget: markdown, modes: [raw, rich_text] }
