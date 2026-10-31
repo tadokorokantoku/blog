@@ -1,5 +1,5 @@
 ---
-date: 2026-10-31T19:49
+date: 2026-10-08T19:49
 title: ''
 tags:
   - gadget
