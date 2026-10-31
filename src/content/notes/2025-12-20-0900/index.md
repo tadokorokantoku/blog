@@ -2,7 +2,7 @@
 date: 2026-10-30T20:00
 title: ''
 tags:
-  - teck
+  - tech
 draft: false
 ---
 
