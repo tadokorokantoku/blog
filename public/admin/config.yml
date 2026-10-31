@@ -4,6 +4,11 @@ backend:
   repo: tadokorokantoku/blog
   branch: main
 
+# slug の {{year}} などは date フィールドの値から作られるが、既定だと UTC で読まれる。
+# 日本時間の朝に書いたひとことの slug が前日になってしまうので local にする
+slug:
+  timezone: local
+
 # 全体共通の画像置き場（必須）。記事の画像は collection 側の設定で記事フォルダに置く
 media_folder: public/images
 public_folder: /images
@@ -12,9 +17,11 @@ site_url: https://blog.katsuki104.workers.dev
 locale: ja
 
 collections:
+  # 長文。タイトルと説明文が必須で、slug は自分で決める
   - name: posts
     label: 記事
     label_singular: 記事
+    icon: article
     folder: src/content/posts
     path: '{{slug}}/index'
     slug: '{{fields._slug}}'
@@ -28,20 +35,38 @@ collections:
     preview_path: posts/{{slug}}/
     fields:
       - { name: title, label: タイトル, widget: string }
-      - { name: date, label: 公開日, widget: datetime, type: date, format: YYYY-MM-DD, default: '{{now}}' }
+      - {
+          name: date,
+          label: 公開日,
+          widget: datetime,
+          date_format: YYYY-MM-DD,
+          time_format: false,
+          format: YYYY-MM-DD,
+          default: '{{now}}',
+        }
       - { name: description, label: 説明文, widget: text, hint: 一覧と RSS に出る抜粋 }
       - { name: tags, label: タグ, widget: list, required: false, default: [] }
-      - { name: updated, label: 更新日, widget: datetime, type: date, format: YYYY-MM-DD, required: false }
+      - {
+          name: updated,
+          label: 更新日,
+          widget: datetime,
+          date_format: YYYY-MM-DD,
+          time_format: false,
+          format: YYYY-MM-DD,
+          required: false,
+        }
       - { name: draft, label: 下書き, widget: boolean, default: true }
       - { name: cover, label: カバー画像, widget: image, required: false }
       - { name: body, label: 本文, widget: markdown, modes: [raw, rich_text] }
 
+  # 短文。タイトルは任意で、slug は日時から自動で決まる
+  # （同じ分に2本書いても Sveltia が末尾に連番を付けるので衝突しない）
   - name: notes
     label: ひとこと
     label_singular: ひとこと
+    icon: chat
     folder: src/content/notes
     path: '{{slug}}/index'
-    # 日時から slug を作るので同じ日に何本でも書ける（同じ分に2本書くと衝突する）
     slug: '{{year}}-{{month}}-{{day}}-{{hour}}{{minute}}'
     media_folder: ''
     public_folder: ''
@@ -49,10 +74,18 @@ collections:
     extension: md
     format: frontmatter
     sortable_fields: [date]
-    summary: '{{date}} {{title}}'
+    summary: "{{date | date('MM/DD HH:mm')}} {{title | default('(タイトルなし)')}}"
     preview_path: notes/{{slug}}/
     fields:
-      - { name: date, label: 日時, widget: datetime, format: YYYY-MM-DDTHH:mm, default: '{{now}}' }
+      - {
+          name: date,
+          label: 日時,
+          widget: datetime,
+          date_format: YYYY-MM-DD,
+          time_format: HH:mm,
+          format: YYYY-MM-DDTHH:mm,
+          default: '{{now}}',
+        }
       - { name: title, label: タイトル, widget: string, required: false, hint: 無くてもいい }
       - { name: tags, label: タグ, widget: list, required: false, default: [] }
       - { name: draft, label: 下書き, widget: boolean, default: false }

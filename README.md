@@ -57,21 +57,44 @@ draft: false             # 任意。既定は公開
 ---
 ```
 
-`date` に時刻を持たせているので、同じ日に何本書いても slug が衝突せず、同日内の並び順も時刻で決まる（同じ分に2本書くと衝突する）。画像は記事と同じくフォルダに置いてファイル名で参照する。
+`date` に時刻を持たせているので、同じ日に何本書いても slug が衝突せず、同日内の並び順も時刻で決まる。画像は記事と同じくフォルダに置いてファイル名で参照する。
 
-### ブラウザのエディタで書く
+### エディタ画面（/admin）で書く
 
-`/admin/` に Sveltia CMS を置いている。保存すると main に commit される。「記事」は `draft: true`、「ひとこと」は `draft: false` で始まる（ひとことは書いたら公開、が既定）。
+Sveltia CMS を置いていて、**記事とひとことの両方をここから書ける**。左の一覧が「記事」「ひとこと」に分かれる。
 
-ログインは「アクセストークンを使用してログイン」を使う。トークンは GitHub の fine-grained PAT で、対象リポは `tadokorokantoku/blog` だけ、権限は Contents の Read and write。「GitHub にログイン」ボタンは OAuth 用の認証サーバーを立てるまで使えない。
+使い方は2通り。
 
-Sveltia のバージョンは `public/admin/index.html` の URL で固定している。
+**手元で書く（おすすめ）**
+
+```
+pnpm editor
+```
+
+dev サーバーを立てて、エディタを**単独ウィンドウ**で開く（Chrome のアプリモードなのでタブもアドレスバーも付かない）。開いたら「ローカルリポジトリで作業」を選んで blog フォルダを指定する。
+
+トークンが要らず、保存すると `src/content/` のファイルが直接書き換わる。commit と push は自分でやる。閉じるときは起動したターミナルで Ctrl+C。
+
+File System Access API を使うので Chrome か Edge が必要。Chrome が無ければ既定のブラウザで普通に開く。`pnpm dev` から手で開く場合は <http://localhost:4321/admin/index.html>（dev はディレクトリの index を解決しないので `/admin/` ではなく `index.html` まで。本番は `/admin/` でよい）。
+
+**公開中のサイトから書く**
+
+<https://blog.katsuki104.workers.dev/admin/> を開いて「アクセストークンを使用してログイン」。トークンは GitHub の fine-grained PAT で、対象リポは `tadokorokantoku/blog` だけ、権限は Contents の Read and write。保存するとそのまま main に commit され、Workers Builds が公開する。「GitHub にログイン」ボタンは OAuth 用の認証サーバーを立てるまで使えない。
+
+#### 挙動のメモ
+
+- 新規は「記事」が `draft: true`、「ひとこと」が `draft: false` で始まる（ひとことは書いたら公開、が既定）
+- 記事の slug は右の slug 欄に自分で入れる（`{{fields._slug}}`）。ひとことの slug は `date` から自動で作られる
+- slug の日付は `date` フィールドの値から作られる。Sveltia は既定でこれを UTC で読むので、`config.yml` で `slug.timezone: local` にしてある（しないと朝に書いたひとことの slug が前日になる）
+- slug が既存のものとぶつかると Sveltia が末尾に連番を付ける。同じ分に2本書いても壊れない
+- Sveltia のバージョンは `public/admin/index.html` の URL で固定している
 
 ## コマンド
 
 | コマンド | 内容 |
 | --- | --- |
 | `pnpm dev` | 開発サーバー（draft も表示） |
+| `pnpm editor` | エディタを単独ウィンドウで開く（dev サーバーごと起動） |
 | `pnpm build` | `dist/` に静的ビルド |
 | `pnpm preview` | ビルド結果を wrangler でローカル配信 |
 | `pnpm check` | 型チェック |
