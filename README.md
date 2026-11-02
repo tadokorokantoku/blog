@@ -105,7 +105,11 @@ dev サーバーを立てて localhost の `/admin` を開く。「ローカル�
 
 ## デプロイ
 
-Workers Builds（Cloudflare ダッシュボードの Git 連携）で `main` への push ごとに自動デプロイする。
+公開先は <https://inok.dev>。Workers Builds（Cloudflare ダッシュボードの Git 連携）で `main` への push ごとに自動デプロイする。
 
 - Build command: `pnpm run build`
 - Deploy command: `npx wrangler deploy`
+
+ドメインは Cloudflare Registrar で取っている。`wrangler.jsonc` の `routes` に `custom_domain: true` で書いてあるので、deploy のたびに Workers のカスタムドメインとして登録される。DNS と証明書は Cloudflare 側が勝手にやるのでダッシュボードを触る必要はない。
+
+`.dev` は TLD ごと HSTS preload なので `http://` は存在しない。サイトの URL は `astro.config.mjs` の `site` が持っていて、RSS と各ページの canonical がそこから作られる。

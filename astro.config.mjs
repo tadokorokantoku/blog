@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: 'https://blog.katsuki104.workers.dev',
+  site: 'https://inok.dev',
   trailingSlash: 'always',
   markdown: {
     shikiConfig: {

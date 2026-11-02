@@ -13,7 +13,7 @@ slug:
 media_folder: public/images
 public_folder: /images
 
-site_url: https://blog.katsuki104.workers.dev
+site_url: https://inok.dev
 locale: ja
 
 collections:
