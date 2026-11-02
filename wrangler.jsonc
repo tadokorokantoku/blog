@@ -4,6 +4,8 @@
   "compatibility_date": "2026-09-01",
   // 独自ドメイン。deploy のたびに Workers のカスタムドメインとして登録される
   "routes": [{ "pattern": "inok.dev", "custom_domain": true }],
+  // *.workers.dev は使わない。独自ドメインと同じ内容が2つの URL で見える状態を避ける
+  "workers_dev": false,
   "assets": {
     "directory": "./dist",
     "not_found_handling": "404-page"
