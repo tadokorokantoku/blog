@@ -72,7 +72,11 @@ pnpm editor --install  # Dock から開ける .app を ~/Applications に作る�
 
 Chrome のアプリモードで開くのでタブもアドレスバーも付かない。`--install` で作った `blog エディタ.app` を Dock に入れておけば、ターミナルも dev サーバーも無しで1クリックで開く。中身は Chrome をアプリモードで起動するだけのシェルスクリプトなので、消すときは `~/Applications/blog エディタ.app` をフォルダごと削除する。
 
-ログインは「アクセストークンを使用してログイン」。トークンは GitHub の fine-grained PAT で、対象リポは `tadokorokantoku/blog` だけ、権限は Contents の Read and write。**保存するとそのまま main に commit され、Workers Builds が公開する。**「GitHub にログイン」ボタンは OAuth 用の認証サーバーを立てるまで使えない。
+ログインは「アクセストークンを使用してログイン」。トークンは GitHub の fine-grained PAT で、対象リポは `tadokorokantoku/blog` だけ、権限は Contents の Read and write。**保存するとそのまま main に commit され、Workers Builds が公開する。**
+
+**「GitHub にログイン」ボタンは押しても 404 になる。** Sveltia は `backend.base_url` が無いと OAuth の仲介を Netlify のサービスに投げるが、あれは廃止済みなので 404 が返る。使いたいなら `sveltia-cms-auth` のような認証サーバーを別に立てて `base_url` を設定する。立てていないので、ログインは必ずアクセストークンの方を使う。
+
+トークンはブラウザに保存されるので毎回は要らないが、**サイトのオリジンが変わると消える**（保存先がオリジンごとに分かれるため）。ドメインを変えた直後は入れ直しになる。
 
 **手元のファイルを直接いじりたいとき**
 
