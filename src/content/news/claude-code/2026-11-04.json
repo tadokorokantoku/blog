@@ -1,0 +1,14 @@
+{
+  "category": "claude-code",
+  "collectedAt": "2026-11-04T01:20",
+  "items": [
+    {
+      "title": "Claude Code v2.1.317: クラウド定期タスクの警告とフック失敗時のブロック",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.317",
+      "source": "GitHub Releases",
+      "summary": "/schedule で、依頼していないコネクタがクラウド定期タスクに付いた場合に警告が出るようになった。Web やシェルのツール呼び出しでアカウントのメールアドレスをネットワークに送る前に確認も入る。Agent SDK のフックコールバックには onFailure: \"block\" が加わり、claude -p はディスク満杯でトランスクリプトを失ったときに 0 でなく 1 で終了する。",
+      "image": "https://opengraph.githubassets.com/1/anthropics/claude-code",
+      "publishedAt": "2026-11-03"
+    }
+  ]
+}

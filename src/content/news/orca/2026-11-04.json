@@ -1,0 +1,22 @@
+{
+  "category": "orca",
+  "collectedAt": "2026-11-04T01:20",
+  "items": [
+    {
+      "title": "v1.4.247: Chat UI が正式機能になり、Orchestration パネルは一時無効に",
+      "url": "https://github.com/stablyai/orca/releases/tag/v1.4.247",
+      "source": "GitHub Releases",
+      "summary": "Chat UI は実験扱いを外れ、エージェントごとに Chat か CLI を選べる。Orchestration パネルは遅延の修正中のため無効化された（コマンドは使える）。スマホの Send はペアのデスクトップ側の設定に従うので、Orca Mobile も同時に更新する必要がある。",
+      "image": "https://opengraph.githubassets.com/1/stablyai/orca",
+      "publishedAt": "2026-11-03"
+    },
+    {
+      "title": "v1.4.247: プラグインと使用上限リセット後の自動再開、テーマ追加",
+      "url": "https://github.com/stablyai/orca/releases/tag/v1.4.247",
+      "source": "GitHub Releases",
+      "summary": "カスタムエディタやステータスバー項目、パネルを足せるプラグインが入り、エージェント起動やプロンプトにフックできる。使用上限がリセットされたらチャットを自動で再開する設定も追加された。GitHub と VS Code のテーマが加わり、Ghostty と Kitty の設定を取り込める。",
+      "image": "https://opengraph.githubassets.com/1/stablyai/orca",
+      "publishedAt": "2026-11-03"
+    }
+  ]
+}
