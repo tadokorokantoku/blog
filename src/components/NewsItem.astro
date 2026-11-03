@@ -1,0 +1,25 @@
+---
+import { formatDate } from '../lib/posts';
+import type { NewsArticle } from '../lib/news';
+
+interface Props {
+  article: NewsArticle;
+}
+
+const { article } = Astro.props;
+const { title, url, source, summary, image, categoryLabel, date } = article;
+---
+
+<li class="news-item">
+  {image && <img class="news-thumb" src={image} alt="" loading="lazy" decoding="async" />}
+  <div class="news-body">
+    <h2 class="news-title">
+      <a href={url} target="_blank" rel="noopener noreferrer">{title}</a>
+    </h2>
+    <p class="news-from">
+      <span>from: {source}, {categoryLabel}</span>
+      <time datetime={date.toISOString()}>{formatDate(date)}</time>
+    </p>
+    {summary && <p class="news-summary">{summary}</p>}
+  </div>
+</li>

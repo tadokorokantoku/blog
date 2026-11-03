@@ -1,0 +1,35 @@
+{
+  "category": "githubtrend",
+  "collectedAt": "2026-11-03T09:00",
+  "items": [
+    {
+      "title": "withastro/astro",
+      "url": "https://github.com/withastro/astro",
+      "source": "GitHub",
+      "summary": "コンテンツ中心のサイト向けのウェブフレームワーク。既定で JavaScript を送らず、必要な島だけハイドレートする。",
+      "image": "https://opengraph.githubassets.com/1/withastro/astro",
+      "publishedAt": "2026-11-02"
+    },
+    {
+      "title": "tailwindlabs/tailwindcss",
+      "url": "https://github.com/tailwindlabs/tailwindcss",
+      "source": "GitHub",
+      "summary": "ユーティリティクラスで組み立てる CSS フレームワーク。v4 から Rust 製のエンジンに載せ替わっている。",
+      "publishedAt": "2026-11-02"
+    },
+    {
+      "title": "cloudflare/workers-sdk",
+      "url": "https://github.com/cloudflare/workers-sdk",
+      "source": "GitHub",
+      "summary": "Wrangler を含む Cloudflare Workers の開発ツール一式。ローカル実行と型生成がここに入っている。",
+      "image": "https://opengraph.githubassets.com/1/cloudflare/workers-sdk"
+    },
+    {
+      "title": "saadeghi/daisyui",
+      "url": "https://github.com/saadeghi/daisyui",
+      "source": "GitHub",
+      "summary": "Tailwind のコンポーネントプラグイン。クラス名だけでカードやタイムラインが組める。",
+      "publishedAt": "2026-11-01"
+    }
+  ]
+}

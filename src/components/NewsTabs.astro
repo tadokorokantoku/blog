@@ -1,0 +1,23 @@
+---
+import { newsCategoryList, type NewsCategory } from '../lib/news';
+
+interface Props {
+  active?: NewsCategory;
+}
+
+const { active } = Astro.props;
+const tabs = [
+  { id: undefined as NewsCategory | undefined, label: 'すべて', href: '/news/' },
+  ...newsCategoryList().map(({ id, label }) => ({ id, label, href: `/news/${id}/` })),
+];
+---
+
+<nav class="news-tabs" aria-label="ニュースのカテゴリ">
+  {
+    tabs.map((tab) => (
+      <a class="news-tab" href={tab.href} aria-current={tab.id === active ? 'page' : undefined}>
+        {tab.label}
+      </a>
+    ))
+  }
+</nav>

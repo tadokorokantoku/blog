@@ -1,0 +1,34 @@
+---
+import '../../styles/news.css';
+import NewsItem from '../../components/NewsItem.astro';
+import NewsTabs from '../../components/NewsTabs.astro';
+import Base from '../../layouts/Base.astro';
+import { getNewsArticlesByCategory, newsCategoryList, type NewsCategory } from '../../lib/news';
+
+export function getStaticPaths() {
+  return newsCategoryList().map(({ id, label }) => ({ params: { category: id }, props: { label } }));
+}
+
+interface Props {
+  label: string;
+}
+
+const category = Astro.params.category as NewsCategory;
+const { label } = Astro.props;
+const articles = await getNewsArticlesByCategory(category);
+---
+
+<Base title={`news / ${label}`} description={`AI が集めた${label}のニュース`}>
+  <h1 class="news-heading">news</h1>
+  <NewsTabs active={category} />
+  {articles.length === 0 && <p class="news-empty">まだ何も集まっていない。</p>}
+  {
+    articles.length > 0 && (
+      <ul class="news-list">
+        {articles.map((article) => (
+          <NewsItem article={article} />
+        ))}
+      </ul>
+    )
+  }
+</Base>

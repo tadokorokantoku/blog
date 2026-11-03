@@ -1,6 +1,7 @@
 import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
+import { NEWS_CATEGORY_IDS } from './consts';
 
 // 長文記事。URL は /posts/<slug>/
 const posts = defineCollection({
@@ -30,4 +31,25 @@ const notes = defineCollection({
   }),
 });
 
-export const collections = { posts, notes };
+// AI が収集したニュース。1ファイルが <category>/<YYYY-MM-DD>.json で1日分の束
+const news = defineCollection({
+  loader: glob({ base: './src/content/news', pattern: '**/*.json' }),
+  schema: z.object({
+    category: z.enum(NEWS_CATEGORY_IDS),
+    collectedAt: z.coerce.date(),
+    items: z
+      .array(
+        z.object({
+          title: z.string(),
+          url: z.url(),
+          source: z.string(),
+          summary: z.string().optional(),
+          image: z.url().optional(),
+          publishedAt: z.coerce.date().optional(),
+        }),
+      )
+      .default([]),
+  }),
+});
+
+export const collections = { posts, notes, news };

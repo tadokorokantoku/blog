@@ -90,3 +90,65 @@ collections:
       - { name: tags, label: タグ, widget: list, required: false, default: [] }
       - { name: draft, label: 下書き, widget: boolean, default: false }
       - { name: body, label: 本文, widget: markdown, modes: [raw, rich_text] }
+
+  # ニュース。1エントリが1カテゴリの1日分で、記事は items に並べる
+  # Xtrend は Grokbot の出力をここに手で貼る想定
+  # カテゴリの選択肢は src/consts.ts の NEWS_CATEGORIES と同じものを並べる
+  - name: news
+    label: ニュース
+    label_singular: ニュース
+    icon: newspaper
+    folder: src/content/news
+    path: '{{category}}/{{slug}}'
+    slug: '{{year}}-{{month}}-{{day}}'
+    media_folder: ''
+    public_folder: ''
+    create: true
+    extension: json
+    format: json
+    sortable_fields: [collectedAt, category]
+    summary: "{{collectedAt | date('YYYY-MM-DD')}} {{category}}"
+    preview_path: news/{{category}}/
+    fields:
+      - {
+          name: category,
+          label: カテゴリ,
+          widget: select,
+          options:
+            [
+              { label: X トレンド, value: xtrend },
+              { label: GitHub トレンド, value: githubtrend },
+              { label: Claude Code, value: claude-code },
+              { label: Orca, value: orca },
+            ],
+        }
+      - {
+          name: collectedAt,
+          label: 収集日時,
+          widget: datetime,
+          date_format: YYYY-MM-DD,
+          time_format: HH:mm,
+          format: YYYY-MM-DDTHH:mm,
+          default: '{{now}}',
+        }
+      - name: items
+        label: 記事
+        widget: list
+        default: []
+        summary: '{{fields.title}}'
+        fields:
+          - { name: title, label: タイトル, widget: string }
+          - { name: url, label: URL, widget: string }
+          - { name: source, label: 出典, widget: string, hint: 'from: のあとに出る名前' }
+          - { name: summary, label: 要約, widget: text, required: false }
+          - { name: image, label: サムネ画像 URL, widget: string, required: false }
+          - {
+              name: publishedAt,
+              label: 公開日,
+              widget: datetime,
+              date_format: YYYY-MM-DD,
+              time_format: false,
+              format: YYYY-MM-DD,
+              required: false,
+              hint: 空なら収集日時で並ぶ,
+            }
