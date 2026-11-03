@@ -1,0 +1,69 @@
+{
+  "category": "xtrend",
+  "collectedAt": "2026-11-04T01:40",
+  "items": [
+    {
+      "title": "Hono CLIのRC版が公開、AIエージェント向けの初期化コマンドも",
+      "url": "https://x.com/yusukebe/status/2117591296638595232",
+      "source": "X（TL）, @yusukebe",
+      "summary": "Hono CLIのRC版が公開された。プロジェクトで `npx @hono/cli@next agent-init` を実行すると、AIエージェントがHonoアプリを効率よく書けるようになるという。",
+      "publishedAt": "2026-11-03T12:14:42Z"
+    },
+    {
+      "title": "Emil Kowalski氏がUIインタラクション集「interaction lab」を公開",
+      "url": "https://x.com/emilkowalski/status/2117651655680463347",
+      "source": "X（TL）, @emilkowalski",
+      "summary": "本人が気に入っているインタラクションを集めたもので、実際に触って参考にできる。今後も追加していくとしている。",
+      "publishedAt": "2026-11-03T16:14:33Z"
+    },
+    {
+      "title": "TSKaigi公式が次回「TSKaigi 2027」を予告",
+      "url": "https://x.com/tskaigi/status/2117586187988902306",
+      "source": "X（TL）, @tskaigi",
+      "summary": "TSKaigi公式アカウントが「Next : TSKaigi 2027」と投稿した。日程や会場などの詳細は、投稿本文には書かれていない。",
+      "publishedAt": "2026-11-03T11:54:24Z"
+    },
+    {
+      "title": "Playwright 1.64.1同梱のChromiumに未修正のCVEがあると指摘",
+      "url": "https://x.com/i/trending/2117377176194699724",
+      "source": "X（全体）, Xニュース",
+      "summary": "Playwright 1.64.1は初期のChromium 156ビルドを同梱しており、未修正のCVEが4件あるとされる。その中には、サンドボックス外でのコード実行につながりうるメモリ破損も含まれるという。信頼できないWebコンテンツを扱うAIエージェントでは、最新のシステムChromeを使いサンドボックスを有効にすることや、VMやコンテナで分離することが勧められている。"
+    },
+    {
+      "title": "WebMCP（Webサイトがエージェント向けツールを登録できるブラウザ標準案）に注目が集まる",
+      "url": "https://x.com/i/trending/2117483422029431148",
+      "source": "X（全体）, Xニュース",
+      "summary": "WebMCPは、Webサイトが名前・説明・JSONスキーマ付きのツールを登録し、AIエージェントがDOMをスクレイピングせずに直接呼び出せるようにするブラウザ標準案。VercelのGuillermo Rauch氏が評価しているほか、ShopifyがストアフロントにWebMCPのツールを入れたとも報じられている。"
+    },
+    {
+      "title": "Electron擁護論が再燃、Tauriとの比較も",
+      "url": "https://x.com/i/trending/2117472937200562499",
+      "source": "X（全体）, Xニュース",
+      "summary": "Theo氏やDax氏が、小さなチームがMac・Windows・Linux向けにアプリを出すうえでのElectronの価値を主張した。一方で性能面のコストや、バンドルが小さいTauriを挙げる声もあり、「アプリに合う道具を選ぶべき」という意見が多いとされる。"
+    },
+    {
+      "title": "OpenAIの「GPT-6.2 Astra」がテスト中との見方が広がる",
+      "url": "https://x.com/i/trending/2117624048247357836",
+      "source": "X（全体）, Xニュース",
+      "summary": "一部ユーザーのCodexのログやAPIの応答に「GPT-6.2 Astra」が出てきたと報告されている。SVG生成のデモが話題になる一方、懐疑的な声もある。OpenAIからの正式な発表はまだないとされる。"
+    },
+    {
+      "title": "Gemini 4 CarbonがArtificial Analysis Intelligence Index v5.0で首位",
+      "url": "https://x.com/i/trending/2117583275786977399",
+      "source": "X（全体）, Xニュース",
+      "summary": "Gemini 4 Carbonのスコアは59で、Claude Opus 5.5（58）、GPT-6 Astra（57）、GPT-6.1 Sol（55）を上回ったとされる。今のところ、提供は一部のサイバー防御担当者に限られているという。"
+    },
+    {
+      "title": "Stanford研究：LLMについての定説の44%はすでに通用しない",
+      "url": "https://x.com/i/trending/2117491418067574993",
+      "source": "X（全体）, Xニュース",
+      "summary": "よく引用される50の主張を、最近の20モデルで検証し直した研究。44%がもう成り立たず、34%は弱まり、16%は今も成り立ち、6%はむしろ強まったとされる。引用の捏造などは減った一方、迎合（sycophancy）は残っているという。"
+    },
+    {
+      "title": "AIコーディングへの過信が招く「認知的降伏」にAddy Osmani氏が警鐘",
+      "url": "https://x.com/i/trending/2117549097854865896",
+      "source": "X（全体）, Xニュース",
+      "summary": "Osmani氏は、AIの流暢な出力をそのまま受け入れてしまう「cognitive surrender」の危険を指摘した。対策として、質問する前に仮説を立てる、生の出力を読む、テストが実際に何を確かめているかを検証する、といった実践を挙げている。"
+    }
+  ]
+}
