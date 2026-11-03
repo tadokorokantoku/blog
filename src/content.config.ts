@@ -23,7 +23,8 @@ const notes = defineCollection({
   loader: glob({ base: './src/content/notes', pattern: '*/index.md' }),
   schema: z.object({
     date: z.coerce.date(),
-    title: z.string().optional(),
+    // Sveltia はタイトル欄を空のまま保存すると '' を書くので、無しと同じ扱いに寄せる
+    title: z.string().optional().transform((v) => (v?.trim() ? v : undefined)),
     tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
   }),
