@@ -6,10 +6,7 @@ interface Props {
 }
 
 const { active } = Astro.props;
-const tabs = [
-  { id: undefined as NewsCategory | undefined, label: 'すべて', href: '/news/' },
-  ...newsCategoryList().map(({ id, label }) => ({ id, label, href: `/news/${id}/` })),
-];
+const tabs = newsCategoryList().map(({ id, label }) => ({ id, label, href: `/news/${id}/` }));
 ---
 
 <nav class="news-tabs" aria-label="ニュースのカテゴリ">
