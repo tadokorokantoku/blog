@@ -1,0 +1,67 @@
+---
+import '../styles/news-ranking.css';
+import { formatDate } from '../lib/posts';
+import type { NewsRanking, RankDelta } from '../lib/news';
+
+interface Props {
+  ranking: NewsRanking;
+}
+
+const { ranking } = Astro.props;
+
+// 矢印だけだと読み上げで意味が通らないので、記号と文章を分けて持つ
+function deltaView(delta: RankDelta) {
+  switch (delta.kind) {
+    case 'new':
+      return { mark: 'NEW', text: '新しくランク入り', className: 'is-new' };
+    case 'up':
+      return { mark: `↑${delta.by}`, text: `前回より${delta.by}位上昇`, className: 'is-up' };
+    case 'down':
+      return { mark: `↓${delta.by}`, text: `前回より${delta.by}位下降`, className: 'is-down' };
+    case 'same':
+      return { mark: '−', text: '前回から変化なし', className: 'is-same' };
+  }
+}
+
+const rows = ranking.items.map((item) => ({
+  ...item,
+  stars: item.stars?.toLocaleString('ja-JP'),
+  delta: deltaView(item.delta),
+}));
+---
+
+<table class="news-ranking">
+  <caption class="news-ranking-caption">
+    {formatDate(ranking.collectedAt)}時点の上位{rows.length}件。変動は前回の収集日との比較。
+  </caption>
+  <thead>
+    <tr>
+      <th scope="col">順位</th>
+      <th scope="col">変動</th>
+      <th scope="col">リポジトリ</th>
+      <th scope="col" class="news-stars-col">獲得スター</th>
+    </tr>
+  </thead>
+  <tbody>
+    {
+      rows.map((row) => (
+        <tr>
+          <td class="news-rank-cell">{row.rank}</td>
+          <td>
+            <span class:list={['news-delta', row.delta.className]} aria-hidden="true">
+              {row.delta.mark}
+            </span>
+            <span class="news-delta-text">{row.delta.text}</span>
+          </td>
+          <th scope="row" class="news-repo-cell">
+            <a href={row.url} target="_blank" rel="noopener noreferrer">
+              {row.title}
+            </a>
+            {row.summary && <span class="news-repo-desc">{row.summary}</span>}
+          </th>
+          <td class="news-stars-col">{row.stars ?? '—'}</td>
+        </tr>
+      ))
+    }
+  </tbody>
+</table>

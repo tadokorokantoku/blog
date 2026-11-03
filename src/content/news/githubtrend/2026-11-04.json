@@ -1,0 +1,92 @@
+{
+  "category": "githubtrend",
+  "collectedAt": "2026-11-04T09:00",
+  "items": [
+    {
+      "title": "oven-sh/bun",
+      "url": "https://github.com/oven-sh/bun",
+      "source": "GitHub",
+      "summary": "ランタイムとパッケージマネージャとテストランナーを1つのバイナリにまとめたツール。",
+      "image": "https://opengraph.githubassets.com/1/oven-sh/bun",
+      "rank": 1,
+      "stars": 2143
+    },
+    {
+      "title": "withastro/astro",
+      "url": "https://github.com/withastro/astro",
+      "source": "GitHub",
+      "summary": "コンテンツ中心のサイト向けのウェブフレームワーク。既定で JavaScript を送らず、必要な島だけハイドレートする。",
+      "image": "https://opengraph.githubassets.com/1/withastro/astro",
+      "rank": 2,
+      "stars": 1176
+    },
+    {
+      "title": "cloudflare/workers-sdk",
+      "url": "https://github.com/cloudflare/workers-sdk",
+      "source": "GitHub",
+      "summary": "Wrangler を含む Cloudflare Workers の開発ツール一式。ローカル実行と型生成がここに入っている。",
+      "image": "https://opengraph.githubassets.com/1/cloudflare/workers-sdk",
+      "rank": 3,
+      "stars": 905
+    },
+    {
+      "title": "anthropics/claude-code",
+      "url": "https://github.com/anthropics/claude-code",
+      "source": "GitHub",
+      "summary": "ターミナルで動くコーディングエージェント。フックやサブエージェントの設定がリポジトリに入る。",
+      "image": "https://opengraph.githubassets.com/1/anthropics/claude-code",
+      "rank": 4,
+      "stars": 884
+    },
+    {
+      "title": "tailwindlabs/tailwindcss",
+      "url": "https://github.com/tailwindlabs/tailwindcss",
+      "source": "GitHub",
+      "summary": "ユーティリティクラスで組み立てる CSS フレームワーク。v4 から Rust 製のエンジンに載せ替わっている。",
+      "rank": 5,
+      "stars": 702
+    },
+    {
+      "title": "microsoft/TypeScript",
+      "url": "https://github.com/microsoft/TypeScript",
+      "source": "GitHub",
+      "summary": "JavaScript に静的型を足す言語とコンパイラ。",
+      "rank": 6,
+      "stars": 611
+    },
+    {
+      "title": "vitejs/vite",
+      "url": "https://github.com/vitejs/vite",
+      "source": "GitHub",
+      "summary": "ネイティブ ESM を前提にしたビルドツール。Astro も内部で使っている。",
+      "image": "https://opengraph.githubassets.com/1/vitejs/vite",
+      "rank": 7,
+      "stars": 538
+    },
+    {
+      "title": "denoland/deno",
+      "url": "https://github.com/denoland/deno",
+      "source": "GitHub",
+      "summary": "TypeScript をそのまま動かせるランタイム。権限を明示しないとファイルやネットワークに触れない。",
+      "rank": 8,
+      "stars": 431
+    },
+    {
+      "title": "saadeghi/daisyui",
+      "url": "https://github.com/saadeghi/daisyui",
+      "source": "GitHub",
+      "summary": "Tailwind のコンポーネントプラグイン。クラス名だけでカードやタイムラインが組める。",
+      "rank": 9,
+      "stars": 384
+    },
+    {
+      "title": "pnpm/pnpm",
+      "url": "https://github.com/pnpm/pnpm",
+      "source": "GitHub",
+      "summary": "ハードリンクで node_modules を共有するパッケージマネージャ。ワークスペースの扱いが速い。",
+      "image": "https://opengraph.githubassets.com/1/pnpm/pnpm",
+      "rank": 10,
+      "stars": 276
+    }
+  ]
+}

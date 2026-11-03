@@ -7,13 +7,14 @@ interface Props {
 }
 
 const { article } = Astro.props;
-const { title, url, source, summary, image, categoryLabel, date } = article;
+const { title, url, source, summary, image, categoryLabel, rank, date } = article;
 ---
 
 <li class="news-item">
   {image && <img class="news-thumb" src={image} alt="" loading="lazy" decoding="async" />}
   <div class="news-body">
     <h2 class="news-title">
+      {rank && <span class="news-rank">#{rank}</span>}
       <a href={url} target="_blank" rel="noopener noreferrer">{title}</a>
     </h2>
     <p class="news-from">

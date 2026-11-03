@@ -46,6 +46,20 @@ const news = defineCollection({
           summary: z.string().optional(),
           image: z.url().optional(),
           publishedAt: z.coerce.date().optional(),
+          // rank と stars は githubtrend だけが使う。
+          // Sveltia は数値欄を空のまま保存すると null を書くので、無しと同じ扱いに寄せる
+          rank: z
+            .number()
+            .int()
+            .positive()
+            .nullish()
+            .transform((v) => v ?? undefined),
+          stars: z
+            .number()
+            .int()
+            .nonnegative()
+            .nullish()
+            .transform((v) => v ?? undefined),
         }),
       )
       .default([]),

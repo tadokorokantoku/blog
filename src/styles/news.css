@@ -71,6 +71,13 @@
   line-height: 1.5;
 }
 
+/* 混在一覧で、順位を持つ記事（githubtrend）だけタイトルの前に出る */
+.news-rank {
+  margin-right: 0.375rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
 .news-title a {
   text-decoration: none;
 }

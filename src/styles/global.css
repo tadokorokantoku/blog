@@ -12,6 +12,9 @@
   --border: #e5e7eb;
   --accent: #2563eb;
   --code-bg: #f6f8fa;
+  --rank-up: #15803d;
+  --rank-down: #b91c1c;
+  --rank-new: #b45309;
   color-scheme: light dark;
 
   /* daisyUI のコンポーネントがこの配色を使うようにする */
@@ -30,6 +33,9 @@
     --border: #2a2f36;
     --accent: #7aa2ff;
     --code-bg: #1a1f26;
+    --rank-up: #4ade80;
+    --rank-down: #f87171;
+    --rank-new: #fbbf24;
   }
 
   .astro-code,

@@ -152,3 +152,21 @@ collections:
               required: false,
               hint: 空なら収集日時で並ぶ,
             }
+          - {
+              name: rank,
+              label: 順位,
+              widget: number,
+              value_type: int,
+              min: 1,
+              required: false,
+              hint: 'GitHub トレンドだけ。1位から。前日比はビルド時に計算するので書かない',
+            }
+          - {
+              name: stars,
+              label: 獲得スター,
+              widget: number,
+              value_type: int,
+              min: 0,
+              required: false,
+              hint: 'GitHub トレンドだけ。その日に獲得した star 数',
+            }
