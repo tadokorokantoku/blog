@@ -1,92 +1,95 @@
 {
   "category": "githubtrend",
-  "collectedAt": "2026-11-04T09:00",
+  "collectedAt": "2026-11-04T00:01",
   "items": [
     {
-      "title": "oven-sh/bun",
-      "url": "https://github.com/oven-sh/bun",
-      "source": "GitHub",
-      "summary": "ランタイムとパッケージマネージャとテストランナーを1つのバイナリにまとめたツール。",
-      "image": "https://opengraph.githubassets.com/1/oven-sh/bun",
+      "title": "thedotmack/claude-mem",
+      "url": "https://github.com/thedotmack/claude-mem",
+      "source": "GitHub, TypeScript",
+      "summary": "セッションをまたいで文脈を持ち越すツール。エージェントの作業を AI で圧縮して保存し、次のセッションに関連する分だけ差し戻す。Claude Code や Codex、Copilot など複数のエージェントに対応する。",
+      "image": "https://opengraph.githubassets.com/1/thedotmack/claude-mem",
       "rank": 1,
-      "stars": 2143
+      "stars": 1138
     },
     {
-      "title": "withastro/astro",
-      "url": "https://github.com/withastro/astro",
-      "source": "GitHub",
-      "summary": "コンテンツ中心のサイト向けのウェブフレームワーク。既定で JavaScript を送らず、必要な島だけハイドレートする。",
-      "image": "https://opengraph.githubassets.com/1/withastro/astro",
+      "title": "vercel-labs/agent-desktop",
+      "url": "https://github.com/vercel-labs/agent-desktop",
+      "source": "GitHub, Rust",
+      "summary": "AI エージェントにコンピュータを操作させるための CLI。",
+      "image": "https://opengraph.githubassets.com/1/vercel-labs/agent-desktop",
       "rank": 2,
-      "stars": 1176
+      "stars": 3792
     },
     {
-      "title": "cloudflare/workers-sdk",
-      "url": "https://github.com/cloudflare/workers-sdk",
-      "source": "GitHub",
-      "summary": "Wrangler を含む Cloudflare Workers の開発ツール一式。ローカル実行と型生成がここに入っている。",
-      "image": "https://opengraph.githubassets.com/1/cloudflare/workers-sdk",
+      "title": "max-sixty/worktrunk",
+      "url": "https://github.com/max-sixty/worktrunk",
+      "source": "GitHub, Rust",
+      "summary": "Git の worktree を管理する CLI。AI エージェントを並行して走らせる使い方を前提に設計されている。",
+      "image": "https://opengraph.githubassets.com/1/max-sixty/worktrunk",
       "rank": 3,
-      "stars": 905
+      "stars": 437
     },
     {
-      "title": "anthropics/claude-code",
-      "url": "https://github.com/anthropics/claude-code",
-      "source": "GitHub",
-      "summary": "ターミナルで動くコーディングエージェント。フックやサブエージェントの設定がリポジトリに入る。",
-      "image": "https://opengraph.githubassets.com/1/anthropics/claude-code",
+      "title": "JustVugg/colibri",
+      "url": "https://github.com/JustVugg/colibri",
+      "source": "GitHub, C",
+      "summary": "巨大な MoE モデルを階層的に推論させるエンジン。よく使うエキスパートを GPU に、次点を RAM に、残りを NVMe から流し込む。C で書かれていて手持ちのハードで動く。",
+      "image": "https://opengraph.githubassets.com/1/JustVugg/colibri",
       "rank": 4,
-      "stars": 884
+      "stars": 803
     },
     {
-      "title": "tailwindlabs/tailwindcss",
-      "url": "https://github.com/tailwindlabs/tailwindcss",
-      "source": "GitHub",
-      "summary": "ユーティリティクラスで組み立てる CSS フレームワーク。v4 から Rust 製のエンジンに載せ替わっている。",
+      "title": "mattpocock/skills",
+      "url": "https://github.com/mattpocock/skills",
+      "source": "GitHub, Shell",
+      "summary": "実務のエンジニア向けのスキル集。作者の .agents ディレクトリをそのまま公開したもの。",
+      "image": "https://opengraph.githubassets.com/1/mattpocock/skills",
       "rank": 5,
-      "stars": 702
+      "stars": 1164
     },
     {
-      "title": "microsoft/TypeScript",
-      "url": "https://github.com/microsoft/TypeScript",
-      "source": "GitHub",
-      "summary": "JavaScript に静的型を足す言語とコンパイラ。",
+      "title": "p-e-w/heretic",
+      "url": "https://github.com/p-e-w/heretic",
+      "source": "GitHub, Python",
+      "summary": "学習なしで言語モデルを書き換える手法。検閲の除去、冗長な出力の抑制、過剰な同調の低減などを扱う。",
+      "image": "https://opengraph.githubassets.com/1/p-e-w/heretic",
       "rank": 6,
-      "stars": 611
+      "stars": 699
     },
     {
-      "title": "vitejs/vite",
-      "url": "https://github.com/vitejs/vite",
-      "source": "GitHub",
-      "summary": "ネイティブ ESM を前提にしたビルドツール。Astro も内部で使っている。",
-      "image": "https://opengraph.githubassets.com/1/vitejs/vite",
+      "title": "spotify/portal-ai-plugins",
+      "url": "https://github.com/spotify/portal-ai-plugins",
+      "source": "GitHub, TypeScript",
+      "image": "https://opengraph.githubassets.com/1/spotify/portal-ai-plugins",
       "rank": 7,
-      "stars": 538
+      "stars": 94
     },
     {
-      "title": "denoland/deno",
-      "url": "https://github.com/denoland/deno",
-      "source": "GitHub",
-      "summary": "TypeScript をそのまま動かせるランタイム。権限を明示しないとファイルやネットワークに触れない。",
+      "title": "floci-io/floci",
+      "url": "https://github.com/floci-io/floci",
+      "source": "GitHub, Java",
+      "summary": "軽くて無料の AWS ローカルエミュレータ。",
+      "image": "https://opengraph.githubassets.com/1/floci-io/floci",
       "rank": 8,
-      "stars": 431
+      "stars": 219
     },
     {
-      "title": "saadeghi/daisyui",
-      "url": "https://github.com/saadeghi/daisyui",
-      "source": "GitHub",
-      "summary": "Tailwind のコンポーネントプラグイン。クラス名だけでカードやタイムラインが組める。",
+      "title": "Usagi-org/ai-goofish-monitor",
+      "url": "https://github.com/Usagi-org/ai-goofish-monitor",
+      "source": "GitHub, Python",
+      "summary": "Playwright と AI で作った、中国のフリマ「閑魚」を複数条件でリアルタイム監視して自動分析するシステム。管理画面つきで、大量の出品から目当ての品を探せる。",
+      "image": "https://opengraph.githubassets.com/1/Usagi-org/ai-goofish-monitor",
       "rank": 9,
-      "stars": 384
+      "stars": 204
     },
     {
-      "title": "pnpm/pnpm",
-      "url": "https://github.com/pnpm/pnpm",
-      "source": "GitHub",
-      "summary": "ハードリンクで node_modules を共有するパッケージマネージャ。ワークスペースの扱いが速い。",
-      "image": "https://opengraph.githubassets.com/1/pnpm/pnpm",
+      "title": "anomalyco/hex",
+      "url": "https://github.com/anomalyco/hex",
+      "source": "GitHub, Rust",
+      "summary": "Mac と Windows と Linux で動くローカルの音声入力ツール。",
+      "image": "https://opengraph.githubassets.com/1/anomalyco/hex",
       "rank": 10,
-      "stars": 276
+      "stars": 1134
     }
   ]
 }
