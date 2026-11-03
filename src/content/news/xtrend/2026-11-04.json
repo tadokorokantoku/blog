@@ -1,6 +1,6 @@
 {
   "category": "xtrend",
-  "collectedAt": "2026-11-04T01:40",
+  "collectedAt": "2026-11-04T07:01",
   "items": [
     {
       "title": "Hono CLIのRC版が公開、AIエージェント向けの初期化コマンドも",
@@ -64,6 +64,73 @@
       "url": "https://x.com/i/trending/2117549097854865896",
       "source": "Xニュース",
       "summary": "Osmani氏は、AIの流暢な出力をそのまま受け入れてしまう「cognitive surrender」の危険を指摘した。対策として、質問する前に仮説を立てる、生の出力を読む、テストが実際に何を確かめているかを検証する、といった実践を挙げている。"
+    },
+    {
+      "title": "Claudeでログイン時にプラグインが自動接続されるように",
+      "url": "https://x.com/ClaudeDevs/status/2117680635561312732",
+      "source": "X, @ClaudeDevs",
+      "summary": "Claudeを信頼できる発行元として受け入れるMCPサーバーなら、ログインするだけでプラグインが自動接続される。@bchernyによるとTeam・Enterpriseの管理者が設定すると、メンバーは初回利用時に自動で接続される。",
+      "publishedAt": "2026-11-03T18:09:42Z"
+    },
+    {
+      "title": "Vercel Security Reviewがパブリックベータに",
+      "url": "https://x.com/rauchg/status/2117734833824948373",
+      "source": "X, @rauchg",
+      "summary": "pushごとに脆弱性レビューを走らせ、Vercel Agentでワンクリック修正できる。Guillermo Rauch氏は社内のセキュリティエージェントを製品化したもので、Vercelでホストしていないリポジトリでも使えると説明している。",
+      "publishedAt": "2026-11-03T21:45:04Z"
+    },
+    {
+      "title": "TanStack Redact 0.3.0がリリース、WebpackとRspackに対応",
+      "url": "https://x.com/tan_stack/status/2117693920733991386",
+      "source": "X, @tan_stack",
+      "summary": "WebpackやRspackのブラウザアプリでも使えるようになり、Rsbuildのセットアップガイドも追加された。React 18・19のアプリのまま導入できるとしている。",
+      "publishedAt": "2026-11-03T19:02:30Z"
+    },
+    {
+      "title": "OpenCodeでステルスモデル「Crouton Alpha」が1週間無料",
+      "url": "https://x.com/opencode/status/2117717721458843711",
+      "source": "X, @opencode",
+      "summary": "100万トークンのコンテキスト、マルチモーダル対応で、データは学習に使わないとしている。提供は一部地域に限られる。",
+      "publishedAt": "2026-11-03T20:37:04Z"
+    },
+    {
+      "title": "Cloudflareが脆弱性情報フィード「Zero Wire」を公開",
+      "url": "https://x.com/Cloudflare/status/2117619065514512463",
+      "source": "X, @Cloudflare",
+      "summary": "Cloudflare Radar上で、重要なセキュリティの動きをニュース配信のように追える公開フィードとして提供される。",
+      "publishedAt": "2026-11-03T14:05:03Z"
+    },
+    {
+      "title": "OpenAI、ChatGPTとCodexでハードウェア設計を支援する取り組みを公開",
+      "url": "https://x.com/OpenAI/status/2117692475775258785",
+      "source": "X, @OpenAI",
+      "summary": "機械設計、電気設計、シミュレーションでの活用状況を紹介した。国内の投稿では、マツダとの共同研究も発表されたと伝えられている。",
+      "publishedAt": "2026-11-03T18:56:45Z"
+    },
+    {
+      "title": "Microsoft Defender、端末上のAIエージェントとMCPサーバーを把握する機能を一般提供",
+      "url": "https://x.com/MalwareBibleJP/status/2117571498299031713",
+      "source": "X, @MalwareBibleJP",
+      "summary": "Claude CodeやCursorなど50を超えるエージェントとMCPサーバーを検出し、端末や利用者と紐づけて一覧化する。不正な指示を止める実行時保護はWindows向けプレビューのままとされる。",
+      "publishedAt": "2026-11-03T10:56:02Z"
+    },
+    {
+      "title": "Anthropicの少人数チームがClaudeでカスタムAIチップ設計を加速",
+      "url": "https://x.com/i/trending/2117728513834856914",
+      "source": "Xニュース",
+      "summary": "約15人のチームがClaudeを使ってチップの設計期間を短縮しているとされる。一方で、検証済みのベンチマークはまだないという。"
+    },
+    {
+      "title": "Karpathy氏がAIエージェントの構成要素を解説する2時間の講義を公開",
+      "url": "https://x.com/i/trending/2117603924928758218",
+      "source": "Xニュース",
+      "summary": "エージェントループ、ツール連携、メモリ管理、安全機能、オーケストレーションを解説している。エージェントを動かす実行基盤（ハーネス）がプラットフォーム化しているという指摘も出ている。"
+    },
+    {
+      "title": "AIコーディングで「書く楽しさ」は失われるのか、開発者の議論が広がる",
+      "url": "https://x.com/i/trending/2117594020151284160",
+      "source": "Xニュース",
+      "summary": "Todd Motto氏がAI支援のコーディングを「退屈」と評したことをきっかけに議論が広がった。本当に面白いのは何を作るかの設計で、構文を書く部分ではないという意見も多い。"
     }
   ]
 }
