@@ -1,0 +1,71 @@
+{
+  "category": "xtrend",
+  "collectedAt": "2026-11-05T07:02",
+  "items": [
+    {
+      "title": "Claude Codeのバックグラウンドサブエージェントが使用量を節約するように",
+      "url": "https://x.com/ClaudeDevs/status/2118063143167693011",
+      "source": "X, @ClaudeDevs",
+      "summary": "30秒ごとのステータス行の更新で会話全体を読み直していたのをやめ、Haiku 5.5が短いメモから書く方式に変更。1回の更新コストは約99%減とされている。",
+      "publishedAt": "2026-11-04T19:29:39Z"
+    },
+    {
+      "title": "Claudeデスクトップアプリに/storageコマンドが追加",
+      "url": "https://x.com/lydiahallie/status/2118045439803195567",
+      "source": "X, @lydiahallie",
+      "summary": "Claudeが使っているディスク容量を確認し、使っていないタスクやワークツリーを片付けられる。",
+      "publishedAt": "2026-11-04T18:19:18Z"
+    },
+    {
+      "title": "Expo SDK 58がリリース",
+      "url": "https://x.com/expo/status/2118040761698598914",
+      "source": "X, @expo",
+      "summary": "iOS 27、iPhone Duo、App Intentsへの対応に加え、@expo/agent-cliが入った。",
+      "publishedAt": "2026-11-04T18:00:43Z"
+    },
+    {
+      "title": "Biome 2.6.5で新しいlintルールが84個追加",
+      "url": "https://x.com/biomejs/status/2117999824754680275",
+      "source": "X, @biomejs",
+      "summary": "ルールは合計755個になり、eslint-plugin-vueのルールの75%をカバー。JavaScriptプラグイン向けの高速化APIや性能改善も入った。",
+      "publishedAt": "2026-11-04T15:18:03Z"
+    },
+    {
+      "title": "Cloudflare、ユーザーの代わりにサイトへアクセスするAIエージェントの分析機能を公開",
+      "url": "https://x.com/Cloudflare/status/2117983857773310086",
+      "source": "X, @Cloudflare",
+      "summary": "人の代わりに動くパーソナルエージェントがどうサイトにアクセスしているかを把握できる分析と、より細かいアクセスポリシーを追加した。",
+      "publishedAt": "2026-11-04T14:14:36Z"
+    },
+    {
+      "title": "OpenAIが今週金曜にも新モデルを出す可能性",
+      "url": "https://x.com/i/trending/2118018894543860181",
+      "source": "Xニュース",
+      "summary": "The InformationのStephanie Palazzolo氏が、AstraやSolなどの新モデルが金曜にも出る可能性があると報じたとされている。安全性レビュー次第で時期はずれる可能性がある。"
+    },
+    {
+      "title": "Cognitionが高速なコーディングモデル「SWE-2 Flash」を公開",
+      "url": "https://x.com/i/trending/2118083605750505937",
+      "source": "Xニュース",
+      "summary": "毎秒200トークンで動き、SWE-2よりコストは5分の1、速度は3倍とされている。11月中はDevin DesktopとCLIでPro、Max、Teams向けに無料。"
+    },
+    {
+      "title": "webAIが8.8Bの推論モデル「TwIL-8B」をオープンソース化",
+      "url": "https://x.com/i/trending/2118065127274811435",
+      "source": "Xニュース",
+      "summary": "手元のPCで動く規模ながら、コーディングでフロンティアモデルの93%の性能に届くとされている。重みはHugging Faceで公開。"
+    },
+    {
+      "title": "Tencentが画像理解とエージェント機能を持つ「Hy4」を公開",
+      "url": "https://x.com/i/trending/2117648658032120079",
+      "source": "Xニュース",
+      "summary": "スクリーンショットやグラフを読み、コマンドラインやGUIを操作できる。OpenRouterなどで使え、オープンウェイトも予定されているとされている。"
+    },
+    {
+      "title": "「読みやすいコード」より「検証できるコード」か、Matt Pocock氏の問題提起が議論に",
+      "url": "https://x.com/i/trending/2118011723802362130",
+      "source": "Xニュース",
+      "summary": "エージェントがコードを読む時代には人間向けの読みやすさより、テストで検証しやすいことや一貫したドメイン用語が大事だという主張に、Kent C. Dodds氏らも反応している。"
+    }
+  ]
+}
