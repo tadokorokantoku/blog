@@ -1,0 +1,13 @@
+{
+  "category": "orca",
+  "collectedAt": "2026-11-05T08:40",
+  "items": [
+    {
+      "title": "v1.4.248: 更新の遅延設定とコミット文などのモデル選択、Orchestration パネルが実験機能として復帰",
+      "url": "https://github.com/stablyai/orca/releases/tag/v1.4.248",
+      "source": "GitHub Releases",
+      "summary": "設定から更新の適用を1〜30日遅らせられるようになり、コミットメッセージや PR 説明、ブランチ名、チャット名の生成にモデルと effort を選べる。無効化されていた Orchestration パネルは実験的なオプトインとして戻った。スマホ側の変更には Orca Mobile の更新が必要で、チャット履歴の圧縮は一時停止中のため保存容量が増えることがある。",
+      "publishedAt": "2026-11-04"
+    }
+  ]
+}

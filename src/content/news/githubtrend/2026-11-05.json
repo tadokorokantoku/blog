@@ -1,0 +1,96 @@
+{
+  "category": "githubtrend",
+  "collectedAt": "2026-11-05T08:40",
+  "items": [
+    {
+      "title": "NVIDIA/auto-ontology",
+      "url": "https://github.com/NVIDIA/auto-ontology",
+      "source": "GitHub, Python",
+      "summary": "LLM やエージェントの処理で、決定的なクエリ生成を支えるグラフベースの推論レイヤーを作るためのフレームワーク。",
+      "image": "https://opengraph.githubassets.com/1/NVIDIA/auto-ontology",
+      "rank": 1,
+      "stars": 2053
+    },
+    {
+      "title": "max-sixty/worktrunk",
+      "url": "https://github.com/max-sixty/worktrunk",
+      "source": "GitHub, Rust",
+      "summary": "Git の worktree を管理する CLI。AI エージェントを並行して走らせる使い方を前提に設計されている。",
+      "image": "https://opengraph.githubassets.com/1/max-sixty/worktrunk",
+      "rank": 2,
+      "stars": 524
+    },
+    {
+      "title": "mattpocock/skills",
+      "url": "https://github.com/mattpocock/skills",
+      "source": "GitHub, Shell",
+      "summary": "作者が普段使っているエージェント設定から取り出した、エンジニアリング向けスキル集。",
+      "image": "https://opengraph.githubassets.com/1/mattpocock/skills",
+      "rank": 3,
+      "stars": 1376
+    },
+    {
+      "title": "floci-io/floci",
+      "url": "https://github.com/floci-io/floci",
+      "source": "GitHub, Java",
+      "summary": "AWS の代わりにローカルで使える、無料で軽量な開発用の実装。",
+      "image": "https://opengraph.githubassets.com/1/floci-io/floci",
+      "rank": 4,
+      "stars": 1082
+    },
+    {
+      "title": "thedotmack/claude-mem",
+      "url": "https://github.com/thedotmack/claude-mem",
+      "source": "GitHub, TypeScript",
+      "summary": "セッションの作業内容を圧縮して保存し、次のセッションで必要な分だけ差し戻して文脈を持ち越すツール。",
+      "image": "https://opengraph.githubassets.com/1/thedotmack/claude-mem",
+      "rank": 5,
+      "stars": 1165
+    },
+    {
+      "title": "vercel-labs/agent-desktop",
+      "url": "https://github.com/vercel-labs/agent-desktop",
+      "source": "GitHub, Rust",
+      "summary": "AI エージェントにコンピュータを操作させるための CLI。",
+      "image": "https://opengraph.githubassets.com/1/vercel-labs/agent-desktop",
+      "rank": 6,
+      "stars": 2463
+    },
+    {
+      "title": "github/spec-kit",
+      "url": "https://github.com/github/spec-kit",
+      "source": "GitHub, Python",
+      "summary": "仕様駆動開発など、仕様を起点にした開発プロセスを始めるためのツールキット。",
+      "image": "https://opengraph.githubassets.com/1/github/spec-kit",
+      "rank": 7,
+      "stars": 810
+    },
+    {
+      "title": "The-PR-Agent/pr-agent",
+      "url": "https://github.com/The-PR-Agent/pr-agent",
+      "source": "GitHub, Python",
+      "summary": "オープンソースの AI プルリクエストレビュアー。",
+      "image": "https://opengraph.githubassets.com/1/The-PR-Agent/pr-agent",
+      "rank": 8,
+      "stars": 279
+    },
+    {
+      "title": "harry0703/MoneyPrinterTurbo",
+      "url": "https://github.com/harry0703/MoneyPrinterTurbo",
+      "source": "GitHub, Python",
+      "summary": "テーマやキーワードから、自動化した AI ワークフローで高画質の短い動画を生成するツール。",
+      "image": "https://opengraph.githubassets.com/1/harry0703/MoneyPrinterTurbo",
+      "rank": 9,
+      "stars": 615
+    },
+    {
+      "title": "garrytan/gstack",
+      "url": "https://github.com/garrytan/gstack",
+      "source": "GitHub, TypeScript",
+      "summary": "CEO・デザイナー・QA などの役割を演じる23のツールを備えた Claude Code の設定一式。",
+      "image": "https://opengraph.githubassets.com/1/garrytan/gstack",
+      "rank": 10,
+      "stars": 285
+    }
+  ]
+}

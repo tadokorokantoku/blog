@@ -1,0 +1,13 @@
+{
+  "category": "claude-code",
+  "collectedAt": "2026-11-05T08:40",
+  "items": [
+    {
+      "title": "Claude Marketplace に、セキュリティや生産性向けの新しいエージェントとプロダクトが追加",
+      "url": "https://claude.com/resources/articles/new-agents-and-products-claude-marketplace",
+      "source": "Claude Blog",
+      "summary": "セキュリティ（Chainguard、Checkmarx、Cyera など）、開発基盤（Datadog、Netlify）、クリエイティブ（Runway、Webflow など）、生産性（Asana、Glean、Zoom など）のパートナー製品が Claude Marketplace に加わった。対象の企業顧客は、Anthropic への利用コミットの一部をこれらの製品に充てられる。",
+      "publishedAt": "2026-11-04"
+    }
+  ]
+}
