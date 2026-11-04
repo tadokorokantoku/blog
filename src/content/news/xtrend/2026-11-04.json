@@ -1,6 +1,6 @@
 {
   "category": "xtrend",
-  "collectedAt": "2026-11-04T07:01",
+  "collectedAt": "2026-11-04T18:10",
   "items": [
     {
       "title": "Hono CLIのRC版が公開、AIエージェント向けの初期化コマンドも",
@@ -131,6 +131,76 @@
       "url": "https://x.com/i/trending/2117594020151284160",
       "source": "Xニュース",
       "summary": "Todd Motto氏がAI支援のコーディングを「退屈」と評したことをきっかけに議論が広がった。本当に面白いのは何を作るかの設計で、構文を書く部分ではないという意見も多い。"
+    },
+    {
+      "title": "Claude Code 2.1.317でゲーム制作時の過剰な拒否を修正",
+      "url": "https://x.com/addyosmani/status/2117848568535106001",
+      "source": "X, @addyosmani",
+      "summary": "Opus 5.5のプロンプトに入れた既存ゲームの再現を避けるルールが、仕組みの説明のためにゲーム名を出しただけでも働いていたため調整した。ゲーム名を挙げると同じジャンルのオリジナル作品を作り、丸ごとのコピーを頼むと似たものを提案するという。",
+      "publishedAt": "2026-11-04T05:17:01Z"
+    },
+    {
+      "title": "Safari 27.3ベータにAdaptive Dark Mode",
+      "url": "https://x.com/gihyojp/status/2117901470192332983",
+      "source": "X, @gihyojp",
+      "summary": "ダークモードに対応していないサイトもSafari側で暗く表示できるようになる、と技術評論社のニュースが伝えている。",
+      "publishedAt": "2026-11-04T08:47:13Z"
+    },
+    {
+      "title": "Chrome 156の新しいCSS sticky、横スクロールと見出し固定をCSSだけで両立",
+      "url": "https://x.com/clockmaker/status/2117835756467323387",
+      "source": "X, @clockmaker",
+      "summary": "ICS MEDIAが、Chrome 156で使えるようになった単一軸スクロールコンテナーの解説記事を公開した。",
+      "publishedAt": "2026-11-04T04:26:06Z"
+    },
+    {
+      "title": "Cloudflare AI Gateway、新規作成分は認証が必須に",
+      "url": "https://x.com/R0u9h/status/2117842576330178728",
+      "source": "X, @R0u9h",
+      "summary": "新しく作るGatewayは認証が必須になっているので注意、という指摘。Workersのbinding経由ならそのまま通るため、特に理由がなければbindingを使うよう勧めている。",
+      "publishedAt": "2026-11-04T04:53:12Z"
+    },
+    {
+      "title": "「ハーネス設計入門」のスライドに注目集まる",
+      "url": "https://x.com/kinopee_ai/status/2117818740125602288",
+      "source": "X, @kinopee_ai",
+      "summary": "AIエージェントの周りの仕組みを作るハーネス設計への関心が高まり、スライドの再掲投稿に500件以上のいいねが付いている。Xのニュースでも、ハーネスエンジニアリングへの移行が話題になっている。",
+      "publishedAt": "2026-11-04T03:18:29Z"
+    },
+    {
+      "title": "OpenAI、Rust製のGitバックエンド「Pando」を紹介",
+      "url": "https://x.com/i/trending/2117416317305131207",
+      "source": "Xニュース",
+      "summary": "1日に1ペタバイト近いデータを扱い、OpenAIの開発をすべて支えているとされる。packfileをblobストレージに置き、ブランチ参照を別管理することで、Gitとの互換性を保ったままpush時間を80%減らしたと伝えられている。",
+      "publishedAt": "2026-11-04T06:57:52Z"
+    },
+    {
+      "title": "SemiAnalysisの新ベンチマーク「GDPx」、最上位でも12%",
+      "url": "https://x.com/bebuu_ai/status/2117854371119788049",
+      "source": "X, @bebuu_ai",
+      "summary": "11業種206件、1件あたり人間の専門家で約8時間かかる実務タスクで構成される。首位はClaude Opus 5.5の12.0%で、Gemini 4 Carbonが10.9%と僅差ながらタスク単価は3分の1以下とされている。",
+      "publishedAt": "2026-11-04T05:40:04Z"
+    },
+    {
+      "title": "Ai2が長文での状態追跡ベンチマーク「StateBench」を公開",
+      "url": "https://x.com/shaoxiao_si/status/2117762845115142179",
+      "source": "X, @shaoxiao_si",
+      "summary": "値の更新のされ方で4段階に分けた評価で、データセットとコードも公開された。最も難しい段階では最先端モデルでも13%以下に落ちるとされている。",
+      "publishedAt": "2026-11-03T23:36:23Z"
+    },
+    {
+      "title": "ChatGPTの週間利用者が12億人に、インドが最大市場",
+      "url": "https://x.com/i/trending/2117586682820346284",
+      "source": "Xニュース",
+      "summary": "2か月で2億人増え、インドが週間アクティブ利用者で最大の市場になったとされる。音声モードは週2億5,000万人が使い、広告は年換算10億ドル規模と伝えられている。",
+      "publishedAt": "2026-11-04T07:29:12Z"
+    },
+    {
+      "title": "Goldman Sachs、AIコーディングツールの利用をエンジニアに限定",
+      "url": "https://x.com/i/trending/2117291067926097949",
+      "source": "Xニュース",
+      "summary": "10月の社内レビューを受け、Claude Codeなどの高度なツールをトレーダーやバンカーには使わせない方針にしたとされる。社内AIアシスタントは全社員4万6,000人が引き続き使える。",
+      "publishedAt": "2026-11-03T22:37:12Z"
     }
   ]
 }
