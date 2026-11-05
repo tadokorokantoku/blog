@@ -1,6 +1,6 @@
 {
   "category": "xtrend",
-  "collectedAt": "2026-11-05T07:02",
+  "collectedAt": "2026-11-05T18:10",
   "items": [
     {
       "title": "Claude Codeのバックグラウンドサブエージェントが使用量を節約するように",
@@ -66,6 +66,76 @@
       "url": "https://x.com/i/trending/2118011723802362130",
       "source": "Xニュース",
       "summary": "エージェントがコードを読む時代には人間向けの読みやすさより、テストで検証しやすいことや一貫したドメイン用語が大事だという主張に、Kent C. Dodds氏らも反応している。"
+    },
+    {
+      "title": "Chrome 157の安定版で縦タブが使えるように",
+      "url": "https://x.com/colisscom/status/2118140446182642089",
+      "source": "X, @colisscom",
+      "summary": "11/4公開のChrome 157で待望の縦方向タブが安定版に入った。グループ化・アイコン化・分割表示と併用できるほか、CSSやUIまわりの新機能もあわせて紹介されている。",
+      "publishedAt": "2026-11-05T00:36:50.000Z"
+    },
+    {
+      "title": "DependabotがAgent Package Managerに正式対応",
+      "url": "https://x.com/gihyojp/status/2118250276595409228",
+      "source": "X, @gihyojp",
+      "summary": "GitHubのDependabotがAPMで管理するAIエージェント用スキルやプロンプトのバージョン更新をPRで提案できるようになった。セキュリティ更新は対象外とされている。",
+      "publishedAt": "2026-11-05T07:53:15.000Z"
+    },
+    {
+      "title": "ユーザー画像処理をアプリサーバーから分離する議論",
+      "url": "https://x.com/catnose99/status/2118254021215740207",
+      "source": "X, @catnose99",
+      "summary": "ImageMagickやsharpをアプリサーバー上で動かすのは脆弱性リスクが大きい、という指摘。面倒でもユーザー入力の画像処理は別サーバーに寄せる運用が語られている。",
+      "publishedAt": "2026-11-05T08:08:08.000Z"
+    },
+    {
+      "title": "PLaMo 3 Translate 8BをローカルMacで試した報告",
+      "url": "https://x.com/_nogu66/status/2118252016782987577",
+      "source": "X, @_nogu66",
+      "summary": "24GBのMacBook Proで、500文字程度の英文が約20秒で翻訳できたという。精度は悪くなく、ローカル完結できる点に注目している。",
+      "publishedAt": "2026-11-05T08:00:10.000Z"
+    },
+    {
+      "title": "WebMCP付きWebUIが人とAIの両立に有望、という議論",
+      "url": "https://x.com/AM09_21/status/2118269190494949471",
+      "source": "X, @AM09_21",
+      "summary": "アプリやサイトがWebMCP付きのWebUIになるのが理想、という意見。人間の操作とAIエージェントの利用を両立する手段として有望だとされている。",
+      "publishedAt": "2026-11-05T09:08:25.000Z"
+    },
+    {
+      "title": "Claude Codeのプロダクト責任者Cat Wu氏がOpenAIへ",
+      "url": "https://x.com/_catwu/status/2118137612577968402",
+      "source": "X, @_catwu",
+      "summary": "AnthropicでClaude Codeなどのプロダクトを担当していたCat Wu氏が、OpenAIのCore Products向けプロダクトマネジメントを率いると発表した。",
+      "publishedAt": "2026-11-05T00:25:34.000Z"
+    },
+    {
+      "title": "OpenAIがChatGPT Images 2.6を公開、GIF生成に対応",
+      "url": "https://x.com/OpenAI/status/2118124944928432327",
+      "source": "X, @OpenAI",
+      "summary": "GIF生成と参照画像に対応したImages 2.6がChatGPTなどで利用可能に。APIにはGPT-Image-2.6 FlareとSunburstが追加され、画像生成は従来より約50%速いとされている。",
+      "publishedAt": "2026-11-04T23:35:14.000Z"
+    },
+    {
+      "title": "DiscordデスクトップをRust＋GPUIへ書き換えへ",
+      "url": "https://x.com/i/trending/2117985848616456619",
+      "source": "Xニュース",
+      "summary": "CTOのStanislav Vishnevskiy氏が、Electronを捨てRustとGPUIでクライアント全体を書き直す方針を示した。試作では約290MB程度のメモリ使用が話題になり、ユーザーテストは近日予定とされている。",
+      "publishedAt": "2026-11-05T07:28:51.000Z"
+    },
+    {
+      "title": "AIコーディング時代にReactを選ぶ理由があるか、という議論",
+      "url": "https://x.com/i/trending/2118177229989446060",
+      "source": "Xニュース",
+      "summary": "新規プロジェクトでReactやJSXがまだ必要かという投稿に開発者の反応が集まった。AIツールが素のHTML/JS/CSSやhtmx向きだという声と、複雑なアプリや採用面ではReactが強いという声が並んでいる。",
+      "publishedAt": "2026-11-05T03:11:28.000Z"
+    },
+    {
+      "title": "主要モデルのAIエージェントが仮想社会で全く違う振る舞い",
+      "url": "https://x.com/i/trending/2118116396986978482",
+      "source": "Xニュース",
+      "summary": "Emergence AIの研究で、同じ仮想町に置いたGrok・OpenAI・Gemini・Claude系エージェントの社会が15日のシミュレーションで大きく分かれた。単体ベンチだけでは見えない相互作用の影響が示されている。",
+      "publishedAt": "2026-11-04T23:07:55.000Z"
     }
   ]
 }
