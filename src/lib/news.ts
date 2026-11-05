@@ -13,7 +13,15 @@ export interface NewsArticle {
   summary?: string;
   image?: string;
   rank?: number;
+  // 個別ポストの URL のときだけ入る。トレンドの話題ページは埋め込めない
+  xPost?: string;
   date: Date;
+}
+
+const X_POST = /^https:\/\/(?:x|twitter)\.com\/[^/]+\/status\/\d+/;
+
+export function xPostUrl(url: string) {
+  return X_POST.test(url) ? url : undefined;
 }
 
 // 前回の収集日と比べた順位の動き
@@ -42,7 +50,8 @@ export type NewsCategoryView =
   | { layout: 'list'; articles: NewsArticle[] }
   | { layout: 'ranking'; ranking: NewsRanking | null };
 
-const RANKING_LIMIT = 10;
+// どのカテゴリも新しい順にこの件数まで
+const NEWS_LIMIT = 15;
 
 type NewsDay = CollectionEntry<'news'>;
 type NewsDayItem = NewsDay['data']['items'][number];
@@ -65,6 +74,7 @@ export async function getNewsArticles(): Promise<NewsArticle[]> {
           summary: item.summary,
           image: item.image,
           rank: item.rank,
+          xPost: xPostUrl(item.url),
           // 収集元が公開日を取れないことがあるので、そのときは収集時刻で並べる
           date: item.publishedAt ?? data.collectedAt,
         }),
@@ -74,7 +84,9 @@ export async function getNewsArticles(): Promise<NewsArticle[]> {
 }
 
 export async function getNewsArticlesByCategory(category: NewsCategory): Promise<NewsArticle[]> {
-  return (await getNewsArticles()).filter((article) => article.category === category);
+  return (await getNewsArticles())
+    .filter((article) => article.category === category)
+    .slice(0, NEWS_LIMIT);
 }
 
 export async function getNewsCategoryView(category: NewsCategory): Promise<NewsCategoryView> {
@@ -91,7 +103,7 @@ async function getNewsRanking(category: NewsCategory): Promise<NewsRanking | nul
   const [latest, previous] = days;
   if (!latest) return null;
 
-  const items = rankedItems(latest.data.items).slice(0, RANKING_LIMIT);
+  const items = rankedItems(latest.data.items).slice(0, NEWS_LIMIT);
   if (items.length === 0) return null;
 
   const before = new Map(rankedItems(previous?.data.items ?? []).map(({ url, rank }) => [url, rank]));

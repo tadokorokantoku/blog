@@ -118,3 +118,19 @@
     height: 3.5rem;
   }
 }
+
+.news-embed {
+  margin: 0.75rem 0 0;
+}
+
+/* widgets.js が差し替えるまでの引用と、差し替え後の iframe の両方に効かせる */
+.news-embed blockquote,
+.news-embed iframe {
+  margin: 0 !important;
+}
+
+.news-embed.is-unavailable::after {
+  color: var(--muted);
+  content: 'ポストを読み込めなかった';
+  font-size: 0.8125rem;
+}

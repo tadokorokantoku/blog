@@ -7,7 +7,7 @@ interface Props {
 }
 
 const { article } = Astro.props;
-const { title, url, source, summary, image, categoryLabel, rank, date } = article;
+const { title, url, source, summary, image, categoryLabel, rank, xPost, date } = article;
 ---
 
 <li class="news-item">
@@ -22,5 +22,37 @@ const { title, url, source, summary, image, categoryLabel, rank, date } = articl
       <time datetime={date.toISOString()}>{formatDate(date)}</time>
     </p>
     {summary && <p class="news-summary">{summary}</p>}
+    {
+      xPost && (
+        <div class="news-embed">
+          <blockquote class="twitter-tweet" data-dnt="true">
+            <a href={xPost} />
+          </blockquote>
+        </div>
+      )
+    }
   </div>
 </li>
+
+<script>
+  // widgets.js は blockquote を iframe に差し替える。埋め込みが1つも無いページでは読まない
+  const WIDGETS = 'https://platform.twitter.com/widgets.js';
+
+  function mount() {
+    const quotes = document.querySelectorAll<HTMLElement>('.news-embed .twitter-tweet');
+    if (quotes.length === 0) return;
+
+    const dark = matchMedia('(prefers-color-scheme: dark)').matches;
+    for (const quote of quotes) quote.dataset.theme = dark ? 'dark' : 'light';
+
+    const script = document.createElement('script');
+    script.src = WIDGETS;
+    script.async = true;
+    script.onerror = () => {
+      for (const quote of quotes) quote.closest('.news-embed')?.classList.add('is-unavailable');
+    };
+    document.head.append(script);
+  }
+
+  mount();
+</script>
