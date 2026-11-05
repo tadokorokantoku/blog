@@ -1,0 +1,76 @@
+{
+  "category": "xtrend",
+  "collectedAt": "2026-11-06T07:02",
+  "items": [
+    {
+      "title": "OpenAIがセキュリティ研究向け「GPT-6 Cyber」を発表",
+      "url": "https://x.com/OpenAI/status/2118390190246879554",
+      "source": "X, @OpenAI",
+      "summary": "OpenAIがGPT-6 Cyberを発表。Linuxカーネル研究にも使われ、MozillaやPalo Alto Networks、Ciscoなどのセキュリティチームが利用中とされる。Select Daybreak Red顧客向けで、アクセスは段階的に拡大すると説明している。",
+      "publishedAt": "2026-11-05T17:09:13.000Z"
+    },
+    {
+      "title": "ClaudeにPersonal Finance（米国ベータ）が追加",
+      "url": "https://x.com/claudeai/status/2118403114890137895",
+      "source": "X, @claudeai",
+      "summary": "AnthropicがClaudeのPersonal Finance機能を米国でベータ公開。選択した口座を接続し、残高や取引について日常語で質問できる。読み取り専用で、資金移動や投資操作はできないとしている。",
+      "publishedAt": "2026-11-05T18:00:35.000Z"
+    },
+    {
+      "title": "Cursorでライブアプリを作りリンク共有できるように",
+      "url": "https://x.com/cursor_ai/status/2118458629091426304",
+      "source": "X, @cursor_ai",
+      "summary": "Cursorが、説明したツールをビルドしDB設定やセキュリティチェック後にデプロイし、リンクで共有できる機能を発表。エージェントで書いたアプリがlocalhost止まりになりやすい問題への対応としている。",
+      "publishedAt": "2026-11-05T21:41:10.000Z"
+    },
+    {
+      "title": "形式手法への期待を抑え、意図確認用のstatechartスキルを紹介",
+      "url": "https://x.com/poteto/status/2118416074601545968",
+      "source": "X, @poteto",
+      "summary": "@potetoが、形式手法は仕様との一致を仮定付きで示すだけで仕様の正しさ自体は証明できないと指摘。pstackの/statechartスキルで状態機械を可視化し、意図とのずれをレビューしやすくする使い方を紹介した。",
+      "publishedAt": "2026-11-05T18:52:05.000Z"
+    },
+    {
+      "title": "ZedがDiscordのGPUI実装デモを紹介",
+      "url": "https://x.com/zeddotdev/status/2118422198893637707",
+      "source": "X, @zeddotdev",
+      "summary": "Zed公式が、DiscordクライアントのRust再実装デモを引用し「Discord in GPUI」と紹介。Discord側は日常利用版とRust再構築版の比較を投稿している。",
+      "publishedAt": "2026-11-05T19:16:25.000Z"
+    },
+    {
+      "title": "Alpineなどmusl環境のOpenSSHで長いパスワードが通る問題が拡散",
+      "url": "https://x.com/astuyve/status/2118344982134128837",
+      "source": "X, @astuyve",
+      "summary": "@astuyveが、256文字超の任意テキストがrootパスワードとして通る問題を指摘し広く議論に。Rauch氏もalpine:3.24で再現し、Alpine側がopenssh-serverの修正apkを出したと報告している。",
+      "publishedAt": "2026-11-05T14:09:35.000Z"
+    },
+    {
+      "title": "PostmanがClaude CodeやCodexへ無断でプラグインを入れたと報じられる",
+      "url": "https://x.com/Pirat_Nation/status/2118342578383057220",
+      "source": "X, @Pirat_Nation",
+      "summary": "Postmanデスクトップの更新が、ユーザー確認なしにClaude CodeやOpenAI Codexへプラグインを入れ、起動時に動く権限まで付けたと指摘する投稿が拡散。設定確認やオプトイン見直しを求める声が出ている。",
+      "publishedAt": "2026-11-05T14:00:02.000Z"
+    },
+    {
+      "title": "CognitionがDevin Review 2.0を発表、最大約5倍安・1.5倍速と説明",
+      "url": "https://x.com/cognition/status/2118390707228745948",
+      "source": "X, @cognition",
+      "summary": "CognitionがDevin Review 2.0を発表。PRレビューを最大約5倍安く、約1.5倍速くし、新機能と統合も追加したとしている。数値は同社発表。",
+      "publishedAt": "2026-11-05T17:11:17.000Z"
+    },
+    {
+      "title": "DiscordがクライアントのRust再構築を公開",
+      "url": "https://x.com/discord/status/2118401057571369252",
+      "source": "X, @discord",
+      "summary": "Discordが、日常利用中のクライアントとRustで再構築中の新版を並べたデモを投稿。メモリ削減や起動・操作の体感改善が話題になっている。",
+      "publishedAt": "2026-11-05T17:52:24.000Z"
+    },
+    {
+      "title": "Vercel Schedulesがパブリックベータに",
+      "url": "https://x.com/vercel/status/2118438184594149784",
+      "source": "X, @vercel",
+      "summary": "VercelがSchedulesのパブリックベータを発表。コード上の静的ジョブ定義に加え、実行時に動的ジョブを作り、プレビュー含む任意環境で動かせると説明している。",
+      "publishedAt": "2026-11-05T20:19:56.000Z"
+    }
+  ]
+}
