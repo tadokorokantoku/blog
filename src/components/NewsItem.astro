@@ -38,6 +38,10 @@ const { title, url, source, summary, image, categoryLabel, rank, xPost, date } =
   // widgets.js は blockquote を iframe に差し替える。埋め込みが1つも無いページでは読まない
   const WIDGETS = 'https://platform.twitter.com/widgets.js';
 
+  function widgets() {
+    return (window as unknown as { twttr?: { widgets?: { load(): void } } }).twttr?.widgets;
+  }
+
   function mount() {
     const quotes = document.querySelectorAll<HTMLElement>('.news-embed .twitter-tweet');
     if (quotes.length === 0) return;
@@ -45,14 +49,24 @@ const { title, url, source, summary, image, categoryLabel, rank, xPost, date } =
     const dark = matchMedia('(prefers-color-scheme: dark)').matches;
     for (const quote of quotes) quote.dataset.theme = dark ? 'dark' : 'light';
 
+    // View Transitions で戻ってきたときは blockquote だけが新しくなる。
+    // script は再実行されないので、読み込み済みなら自分で走査させる
+    const loaded = widgets();
+    if (loaded) {
+      loaded.load();
+      return;
+    }
+    if (document.querySelector(`script[src="${WIDGETS}"]`)) return;
+
     const script = document.createElement('script');
     script.src = WIDGETS;
     script.async = true;
+    script.onload = () => widgets()?.load();
     script.onerror = () => {
       for (const quote of quotes) quote.closest('.news-embed')?.classList.add('is-unavailable');
     };
     document.head.append(script);
   }
 
-  mount();
+  document.addEventListener('astro:page-load', mount);
 </script>
