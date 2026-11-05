@@ -1,0 +1,21 @@
+{
+  "category": "claude-code",
+  "collectedAt": "2026-11-06T08:40",
+  "items": [
+    {
+      "title": "Claude Enterprise にセキュリティ向けの可視化と管理機能が追加",
+      "url": "https://claude.com/resources/articles/claude-enterprise-security-updates",
+      "source": "Claude Blog",
+      "summary": "組織の Claude 設定を推奨構成と照らし合わせるセキュリティセンターや、プロンプトとツール呼び出しを既存のデータ保護ツールへ送る inference hooks が加わった。Admin API でのメンバーのサインアウト、IP 許可リストの自己管理、管理対象の Claude Desktop での個人アカウント遮断もできる。",
+      "image": "https://assets.claude.com/893acaa9f8b564cda630ed280d69e5c7d2bca5f7.png",
+      "publishedAt": "2026-11-05"
+    },
+    {
+      "title": "Claude に Personal Finance（ベータ）が登場",
+      "url": "https://claude.com/resources/articles/introducing-personal-finance-in-claude",
+      "source": "Claude Blog",
+      "summary": "米国の Pro、Max、Ultra 向けに、Plaid 経由でつないだ銀行やカードの口座について質問できる機能が今週から順次提供される。読み取り専用で資金の移動や運用はできず、広告や金融商品の推薦もない。支出の集計や重複請求の指摘、グラフの作成ができるが、回答には誤りがありうる。",
+      "publishedAt": "2026-11-05"
+    }
+  ]
+}

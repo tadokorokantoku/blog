@@ -1,0 +1,96 @@
+{
+  "category": "githubtrend",
+  "collectedAt": "2026-11-06T08:40",
+  "items": [
+    {
+      "title": "NVIDIA/auto-ontology",
+      "url": "https://github.com/NVIDIA/auto-ontology",
+      "source": "GitHub, Python",
+      "summary": "LLM やエージェントの文脈検索と説明可能性を高める、グラフベースの推論レイヤーを作るためのフレームワーク。",
+      "image": "https://opengraph.githubassets.com/1/NVIDIA/auto-ontology",
+      "rank": 1,
+      "stars": 2707
+    },
+    {
+      "title": "mattpocock/skills",
+      "url": "https://github.com/mattpocock/skills",
+      "source": "GitHub, Shell",
+      "summary": "作者が普段使っているエージェント設定から取り出した、エンジニアリング向けスキル集。",
+      "image": "https://opengraph.githubassets.com/1/mattpocock/skills",
+      "rank": 2,
+      "stars": 2053
+    },
+    {
+      "title": "garrytan/gstack",
+      "url": "https://github.com/garrytan/gstack",
+      "source": "GitHub, TypeScript",
+      "summary": "CEO、デザイナー、QA など23の役割別ツールを備えた Claude Code 向けの設定集。",
+      "image": "https://opengraph.githubassets.com/1/garrytan/gstack",
+      "rank": 3,
+      "stars": 608
+    },
+    {
+      "title": "Usagi-org/ai-goofish-monitor",
+      "url": "https://github.com/Usagi-org/ai-goofish-monitor",
+      "source": "GitHub, Python",
+      "summary": "Playwright と AI で闲鱼（Xianyu）の出品をリアルタイムや定期的に監視する仕組み。管理用 UI も付いている。",
+      "image": "https://opengraph.githubassets.com/1/Usagi-org/ai-goofish-monitor",
+      "rank": 4,
+      "stars": 242
+    },
+    {
+      "title": "D4Vinci/Scrapling",
+      "url": "https://github.com/D4Vinci/Scrapling",
+      "source": "GitHub, Python",
+      "summary": "単発のリクエストから大規模なクロールまで扱えるウェブスクレイピングのフレームワーク。",
+      "image": "https://opengraph.githubassets.com/1/D4Vinci/Scrapling",
+      "rank": 5,
+      "stars": 1661
+    },
+    {
+      "title": "vercel-labs/agent-desktop",
+      "url": "https://github.com/vercel-labs/agent-desktop",
+      "source": "GitHub, Rust",
+      "summary": "AI エージェントがデスクトップを操作するための Computer Use 用 CLI。",
+      "image": "https://opengraph.githubassets.com/1/vercel-labs/agent-desktop",
+      "rank": 6,
+      "stars": 2173
+    },
+    {
+      "title": "max-sixty/worktrunk",
+      "url": "https://github.com/max-sixty/worktrunk",
+      "source": "GitHub, Rust",
+      "summary": "Git の worktree を管理する CLI。AI エージェントを並行して走らせる使い方を前提に設計されている。",
+      "image": "https://opengraph.githubassets.com/1/max-sixty/worktrunk",
+      "rank": 7,
+      "stars": 546
+    },
+    {
+      "title": "lz4/lz4",
+      "url": "https://github.com/lz4/lz4",
+      "source": "GitHub, C",
+      "summary": "速度を重視した圧縮アルゴリズム。",
+      "image": "https://opengraph.githubassets.com/1/lz4/lz4",
+      "rank": 8,
+      "stars": 16
+    },
+    {
+      "title": "google/skills",
+      "url": "https://github.com/google/skills",
+      "source": "GitHub, Python",
+      "summary": "Google の製品や技術を扱うためのエージェント向けスキル集。",
+      "image": "https://opengraph.githubassets.com/1/google/skills",
+      "rank": 9,
+      "stars": 199
+    },
+    {
+      "title": "vercel-labs/agent-browser",
+      "url": "https://github.com/vercel-labs/agent-browser",
+      "source": "GitHub, Rust",
+      "summary": "AI エージェント向けのブラウザ自動化 CLI。",
+      "image": "https://opengraph.githubassets.com/1/vercel-labs/agent-browser",
+      "rank": 10,
+      "stars": 181
+    }
+  ]
+}

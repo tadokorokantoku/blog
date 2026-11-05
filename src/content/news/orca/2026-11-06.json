@@ -1,0 +1,20 @@
+{
+  "category": "orca",
+  "collectedAt": "2026-11-06T08:40",
+  "items": [
+    {
+      "title": "v1.4.250: チャットで変更ファイルと差分を確認でき、パスワードマネージャーを追加",
+      "url": "https://github.com/stablyai/orca/releases/tag/v1.4.250",
+      "source": "GitHub Releases",
+      "summary": "チャットの各ターンに変更ファイルと行数が出て、デスクトップとスマホで差分を見られる。設定の Browser から Chrome 互換のパスワードマネージャーを有効にでき、OS の安全な保管領域で暗号化される。内蔵リスト外のフォントのリガチャは GPU レンダラーで結合されないことがある。",
+      "publishedAt": "2026-11-05"
+    },
+    {
+      "title": "v1.4.249: 初回設定で Chat UI かターミナルを選べ、スマホの Home を刷新",
+      "url": "https://github.com/stablyai/orca/releases/tag/v1.4.249",
+      "source": "GitHub Releases",
+      "summary": "オンボーディングで Chat UI かターミナルを選び、エージェントとそのスキルを導入できる。スマホアプリの Home は Feed、Usage、Automations、Settings に分かれた。スマホ側の変更には Orca Mobile の更新が必要で、実験機能の Orchestration パネルは再び無効になった。",
+      "publishedAt": "2026-11-04"
+    }
+  ]
+}
