@@ -1,0 +1,13 @@
+{
+  "category": "orca",
+  "collectedAt": "2026-11-07T08:40",
+  "items": [
+    {
+      "title": "v1.4.251: エージェントへの選択範囲の追加とチャット自動再開、ネストしたワーカー深度の既定値が4に",
+      "url": "https://github.com/stablyai/orca/releases/tag/v1.4.251",
+      "source": "GitHub Releases",
+      "summary": "ファイルや Markdown プレビュー、ターミナルの選択範囲を任意のエージェントのチャットに追加でき、再起動や更新後にチャットが自動で再開する。ワーカーが別のワーカーを起動できるようになり、ネストの深さの既定値は4で、1にしていた設定は更新時に4へ移る。Chat UI メニューの「Fork Agent Session…」は削除された。",
+      "publishedAt": "2026-11-06"
+    }
+  ]
+}

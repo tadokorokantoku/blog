@@ -1,0 +1,96 @@
+{
+  "category": "githubtrend",
+  "collectedAt": "2026-11-07T08:40",
+  "items": [
+    {
+      "title": "zed-industries/zed",
+      "url": "https://github.com/zed-industries/zed",
+      "source": "GitHub, Rust",
+      "summary": "Rust 製の高性能なマルチプレイヤー対応コードエディタ。Atom と Tree-sitter の作者たちが開発している。",
+      "image": "https://opengraph.githubassets.com/1/zed-industries/zed",
+      "rank": 1,
+      "stars": 292
+    },
+    {
+      "title": "NVIDIA/auto-ontology",
+      "url": "https://github.com/NVIDIA/auto-ontology",
+      "source": "GitHub, Python",
+      "summary": "データの上に意味的でグラフベースの推論レイヤーを作る Python フレームワーク。決定的なクエリ生成や文脈検索の改善、LLM やエージェントの説明可能性向上に使える。",
+      "image": "https://opengraph.githubassets.com/1/NVIDIA/auto-ontology",
+      "rank": 2,
+      "stars": 2005
+    },
+    {
+      "title": "rails/rails",
+      "url": "https://github.com/rails/rails",
+      "source": "GitHub, Ruby",
+      "summary": "Ruby 製の定番 Web フレームワーク Ruby on Rails。",
+      "image": "https://opengraph.githubassets.com/1/rails/rails",
+      "rank": 3,
+      "stars": 152
+    },
+    {
+      "title": "mpv-player/mpv",
+      "url": "https://github.com/mpv-player/mpv",
+      "source": "GitHub, C",
+      "summary": "コマンドラインで動かすメディアプレーヤー。",
+      "image": "https://opengraph.githubassets.com/1/mpv-player/mpv",
+      "rank": 4,
+      "stars": 36
+    },
+    {
+      "title": "rust-lang/rust",
+      "url": "https://github.com/rust-lang/rust",
+      "source": "GitHub, Rust",
+      "summary": "信頼性が高く効率的なソフトウェアを誰でも作れるようにすることを掲げる Rust 言語本体のリポジトリ。",
+      "image": "https://opengraph.githubassets.com/1/rust-lang/rust",
+      "rank": 5,
+      "stars": 186
+    },
+    {
+      "title": "react/react",
+      "url": "https://github.com/react/react",
+      "source": "GitHub, JavaScript",
+      "summary": "Web とネイティブのユーザーインターフェースを作るためのライブラリ React。",
+      "image": "https://opengraph.githubassets.com/1/react/react",
+      "rank": 6,
+      "stars": 244
+    },
+    {
+      "title": "angular/angular",
+      "url": "https://github.com/angular/angular",
+      "source": "GitHub, TypeScript",
+      "summary": "安心して Web アプリを作るためのフレームワーク Angular。",
+      "image": "https://opengraph.githubassets.com/1/angular/angular",
+      "rank": 7,
+      "stars": 128
+    },
+    {
+      "title": "symfony/symfony",
+      "url": "https://github.com/symfony/symfony",
+      "source": "GitHub, PHP",
+      "summary": "PHP のフレームワーク Symfony。",
+      "image": "https://opengraph.githubassets.com/1/symfony/symfony",
+      "rank": 8,
+      "stars": 89
+    },
+    {
+      "title": "prometheus/prometheus",
+      "url": "https://github.com/prometheus/prometheus",
+      "source": "GitHub, Go",
+      "summary": "監視システム兼時系列データベースの Prometheus。",
+      "image": "https://opengraph.githubassets.com/1/prometheus/prometheus",
+      "rank": 9,
+      "stars": 140
+    },
+    {
+      "title": "google/skills",
+      "url": "https://github.com/google/skills",
+      "source": "GitHub, Python",
+      "summary": "Google の製品や技術向けのエージェントスキル集。",
+      "image": "https://opengraph.githubassets.com/1/google/skills",
+      "rank": 10,
+      "stars": 532
+    }
+  ]
+}

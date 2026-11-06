@@ -1,0 +1,13 @@
+{
+  "category": "claude-code",
+  "collectedAt": "2026-11-07T08:40",
+  "items": [
+    {
+      "title": "Claude Code 2.1.319: MCP タスクのバックグラウンド実行と permissions.denyInsteadOfPrompting を追加",
+      "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#2.1.319",
+      "source": "GitHub Releases",
+      "summary": "MCP サーバーがタスクとして実行するツール呼び出しを即座にバックグラウンドへ移し、完了時に結果を Claude へ伝えるようになった。許可プロンプト待ちになる呼び出しを拒否して処理を続ける permissions.denyInsteadOfPrompting 設定や、フィーチャーフラグだけを止める CLAUDE_CODE_DISABLE_FEATURE_FLAGS も加わった。テレメトリ無効時の auto mode は、サーバー側で確認できない呼び出しを確認または拒否する挙動に変わった。",
+      "publishedAt": "2026-11-06"
+    }
+  ]
+}
