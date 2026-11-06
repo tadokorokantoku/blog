@@ -1,0 +1,77 @@
+{
+  "category": "xtrend",
+  "collectedAt": "2026-11-07T07:04",
+  "items": [
+    {
+      "title": "Claude Codeのクラウドセッションで環境セットアップが自動化",
+      "url": "https://x.com/ClaudeDevs/status/2118795192090386454",
+      "source": "X, @ClaudeDevs",
+      "summary": "ClaudeDevsが、Pro/Max/Ultra向けクラウドセッションで依存関係・ネットワーク・APIキー必要分をClaudeが推定し環境を保存できると発表。APIキーは安全に保存され、Claude本体には見えないとしている。",
+      "publishedAt": "2026-11-06T19:58:33.000Z"
+    },
+    {
+      "title": "TanStack AIがEffect 4向け公式アダプタを同梱",
+      "url": "https://x.com/tan_stack/status/2118772095140368631",
+      "source": "X, @tan_stack",
+      "summary": "TanStackが、TanStack AIにEffect 4向けのファーストパーティアダプタを載せたと発表。AIアプリで両者を併用する際、どちらか一方を選ぶ必要がなくなったとしている。",
+      "publishedAt": "2026-11-06T18:26:47.000Z"
+    },
+    {
+      "title": "Expo Modules 2.0向けJNIライブラリ「Kolibri」を公開",
+      "url": "https://x.com/expo/status/2118769964597588253",
+      "source": "X, @expo",
+      "summary": "Expoが、AndroidのExpo Modules 2.0向けに自前JNIライブラリKolibriを作ったと発表。C++オブジェクトへの呼び出しはfbjni比で最大約51倍速いとし、ブログで詳細を説明している。",
+      "publishedAt": "2026-11-06T18:18:19.000Z"
+    },
+    {
+      "title": "Rauch氏「コーディングは解けたがバグは未解決」とトレース活用を指摘",
+      "url": "https://x.com/rauchg/status/2118777039226642547",
+      "source": "X, @rauchg",
+      "summary": "Guillermo Rauch氏が、Boris Cherny氏の「coding is solved, but bugs are not」に同意。トークンで何でも書ける一方、本番トレースを取り改善ループを回すことが重要だと述べ、エージェントにトレースを読ませる使い方を勧めている。",
+      "publishedAt": "2026-11-06T18:46:25.000Z"
+    },
+    {
+      "title": "ExpoがDevin向け公式プラグインをMarketplaceに公開",
+      "url": "https://x.com/expo/status/2118792671355683040",
+      "source": "X, @expo",
+      "summary": "Expoが、Devin向け公式プラグインをDevin Marketplaceに載せたと発表。ビルド・デプロイ・アップグレード・デバッグ用スキルがあり、エージェントが推測だけで進めないようにする狙いだと説明している。",
+      "publishedAt": "2026-11-06T19:48:32.000Z"
+    },
+    {
+      "title": "OpenAIが湿式実験向けベンチ「BioBasicsBench」を公開",
+      "url": "https://x.com/OpenAI/status/2118782708767965238",
+      "source": "X, @OpenAI",
+      "summary": "OpenAIがLigoと共同で、湿式ラボの定型解析を測るBioBasicsBenchを発表。実実験由来の100タスクで、生データの解釈・誤り検出・証拠不足の認識などを評価するとしている。",
+      "publishedAt": "2026-11-06T19:08:57.000Z",
+      "image": "https://pbs.twimg.com/media/HWdtpRua4AAuNL-.jpg"
+    },
+    {
+      "title": "OpenAIがFMFとサイバー系ジェイルブレイク評価枠組みを発表",
+      "url": "https://x.com/OpenAI/status/2118795218099253606",
+      "source": "X, @OpenAI",
+      "summary": "OpenAIがFrontier Model Forumとその加盟企業と組み、AIの安全策回避が深刻なサイバー危害につながり得るかを評価する枠組みを発表。サイバー系ジェイルブレイクの深刻度を共通に比較する手法づくりが狙いだと説明している。",
+      "publishedAt": "2026-11-06T19:58:39.000Z"
+    },
+    {
+      "title": "Vercel Tracingが全プランで一般提供に",
+      "url": "https://x.com/vercel_dev/status/2118754670961360994",
+      "source": "X, @vercel_dev",
+      "summary": "Vercel Developersが、Vercel Tracingの全プラン一般提供を発表。Next.js 16.5以降の新規プロジェクトでは既定で有効になり、ダッシュボードやCLIからスパンを検索・確認できるとしている。",
+      "publishedAt": "2026-11-06T17:17:32.000Z"
+    },
+    {
+      "title": "NVIDIA BuildでKimi K3.1 Proの無料エンドポイントが話題に",
+      "url": "https://x.com/WojakTheDev/status/2118654627017290032",
+      "source": "X, @WojakTheDev",
+      "summary": "NVIDIA Build上でMoonshotのKimi K3.1 ProにFree Endpointが付いたと紹介する投稿が拡散。Playgroundでの試用を推奨し、APIキー経路はアカウントによって未開放の可能性があると注意もしている。",
+      "publishedAt": "2026-11-06T10:40:00.000Z"
+    },
+    {
+      "title": "エージェント取得失敗を避けるハーネス設計の要点をLangChainが解説",
+      "url": "https://x.com/LangChain/status/2118766011289682169",
+      "source": "X, @LangChain",
+      "summary": "LangChainが、エージェントは全コンテキストを抱えきれずタスクごとに取得するが、雑な検索・過大な結果・古い文面で失敗し得ると解説。jess_weng18氏がハーネス設計時の注意点をまとめたとしている。",
+      "publishedAt": "2026-11-06T18:02:36.000Z"
+    }
+  ]
+}
