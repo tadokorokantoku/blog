@@ -1,6 +1,6 @@
 {
   "category": "xtrend",
-  "collectedAt": "2026-11-06T07:02",
+  "collectedAt": "2026-11-06T18:18",
   "items": [
     {
       "title": "OpenAIがセキュリティ研究向け「GPT-6 Cyber」を発表",
@@ -71,6 +71,79 @@
       "source": "X, @vercel",
       "summary": "VercelがSchedulesのパブリックベータを発表。コード上の静的ジョブ定義に加え、実行時に動的ジョブを作り、プレビュー含む任意環境で動かせると説明している。",
       "publishedAt": "2026-11-05T20:19:56.000Z"
+    },
+    {
+      "title": "Evan Youが「X webがViteで動いている」と紹介",
+      "url": "https://x.com/evanyou/status/2118566402911281623",
+      "source": "X, @evanyou",
+      "summary": "Vue作者のEvan Youが、XのWebクライアントがViteで動いていると投稿。引用先では、低速回線でプロフィール初投稿表示が旧版22秒超から2.7秒になったとするXエンジニアリングの解説が共有されている。",
+      "publishedAt": "2026-11-06T04:49:26.000Z"
+    },
+    {
+      "title": "TheoがT3 Codeの向き不向きを説明",
+      "url": "https://x.com/theo/status/2118620978632904721",
+      "source": "X, @theo",
+      "summary": "Theoが、AIサブが1つ・PCが1台・スマホで書かないならT3 Codeの利点は小さいと説明。どれかが変わると他に現実的な選択肢がほぼないと述べ、複数端末や複数プラン利用者向けだと位置づけた。",
+      "publishedAt": "2026-11-06T08:26:18.000Z",
+      "image": "https://pbs.twimg.com/media/HWbaQzmbIAAQQJo.jpg"
+    },
+    {
+      "title": "Claude Code 2.1.318の変更点まとめ",
+      "url": "https://x.com/oikon48/status/2118560687190687967",
+      "source": "X, @oikon48",
+      "summary": "@oikon48がClaude Code 2.1.318の抜粋を投稿。サインイン期限の表示、不正ツール呼び出し後の会話消失修正、権限プロンプトの誤操作修正、IDE端末での拡張自動更新停止、リポジトリなしのクラウドセッション開始などが含まれる。",
+      "publishedAt": "2026-11-06T04:26:43.000Z",
+      "image": "https://pbs.twimg.com/media/HWajm9TaUAAhGGN.jpg"
+    },
+    {
+      "title": "Workers AIで一部モデルが11/15廃止と話題に",
+      "url": "https://x.com/R0u9h/status/2118565176580682099",
+      "source": "X, @R0u9h",
+      "summary": "@R0u9hが、Cloudflare Workers AIでllama-3.2-1bやkimi-k2.6、GLM-5.3-Flashなどが11月15日に消えると報告。利用中なら後継モデルへの差し替えが必要だと注意している。",
+      "publishedAt": "2026-11-06T04:44:33.000Z"
+    },
+    {
+      "title": "Cloudflare Workersでprocess.versionがv24に",
+      "url": "https://x.com/R0u9h/status/2118568737079198139",
+      "source": "X, @R0u9h",
+      "summary": "@R0u9hが、nodejs_compat利用時に11月24日以降process.versionがv24になると案内。ライブラリがversionで分岐するためengines確認を勧めている。",
+      "publishedAt": "2026-11-06T04:58:42.000Z"
+    },
+    {
+      "title": "Nous ResearchがHermes Agent v0.23.0を公開",
+      "url": "https://x.com/NousResearch/status/2118479744979079669",
+      "source": "X, @NousResearch",
+      "summary": "Nous ResearchがHermes Agent v0.23.0（Hearth Release）を発表。ブラウザタブでデスクトップを開けるようにし、会話を単一ゲートウェイに統合。/Rewind、自動ルーティングのグループチャット、有料ツールの支出上限などを追加したとしている。",
+      "publishedAt": "2026-11-05T23:05:05.000Z"
+    },
+    {
+      "title": "Claude CodeがUser-Agentにメールを載せる問題が拡散",
+      "url": "https://x.com/hackerlogs/status/2118500976344592894",
+      "source": "X, @hackerlogs",
+      "summary": "Claude CodeがWebやシェルのツール呼び出しでアカウントメールをUser-Agentに入れ、第三者サイト経由でスパムが増えたと報告が広がった。Anthropicは意図した機能ではなく、2.1.317で既定のプライバシー対策が入ったとされる。",
+      "publishedAt": "2026-11-06T00:29:27.000Z",
+      "image": "https://pbs.twimg.com/media/HWZtW_2WMAAVWG6.png"
+    },
+    {
+      "title": "Vercel AI GatewayにGemini Omni 1.2 Flashが追加",
+      "url": "https://x.com/vercel_dev/status/2118480043668304003",
+      "source": "X, @vercel_dev",
+      "summary": "Vercel Developersが、Google DeepMindのGemini Omni 1.2 FlashがAI Gatewayで利用可能になったと発表。3〜15秒のネイティブ音声付きクリップ生成、最大6枚の参照画像での編集、合計30秒までの延長などに対応すると説明している。",
+      "publishedAt": "2026-11-05T23:06:16.000Z"
+    },
+    {
+      "title": "Meta買収後のConductor Cloudが11/20にデータ削除へ",
+      "url": "https://x.com/stretchcloud/status/2118504386423038053",
+      "source": "X, @stretchcloud",
+      "summary": "MetaがConductorを買収したあと、Conductor Cloudが11月13日に読み取り専用、11月20日からデータ削除に入ると整理する投稿が拡散。買収発表から約16日での終了に、コーディングエージェント実行環境のホスト依存リスクが議論されている。",
+      "publishedAt": "2026-11-06T00:43:00.000Z"
+    },
+    {
+      "title": "Matt PocockのClaude Code/Codex向けskillsが再注目",
+      "url": "https://x.com/RoundtableSpace/status/2118580387052241012",
+      "source": "X, @RoundtableSpace",
+      "summary": "Matt Pocockが公開している無料のskills集が紹介された。npx skills@latest add mattpocock/skills で入れ、計画・デバッグ・テスト・レビュー用に使えるとしている。",
+      "publishedAt": "2026-11-06T05:45:00.000Z"
     }
   ]
 }
