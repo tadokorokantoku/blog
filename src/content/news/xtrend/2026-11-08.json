@@ -1,0 +1,76 @@
+{
+  "category": "xtrend",
+  "collectedAt": "2026-11-08T07:10",
+  "items": [
+    {
+      "title": "Karpathy、Claude CodeでTristanTubeを3分ワンショット",
+      "url": "https://x.com/karpathy/status/2119114537442189652",
+      "source": "X, @karpathy",
+      "summary": "Tristanの推しYouTubeチャンネル一覧を元に、約4.7万本の技術系動画をまとめたTristanTubeを公開。Claude Codeで3分ほどで一気に作ったとしている。",
+      "publishedAt": "2026-11-07T17:07:31.000Z"
+    },
+    {
+      "title": "Victor Taelin、HOC資金調達を縮小し記号AI研究へ振り切り",
+      "url": "https://x.com/VictorTaelin/status/2119102876521824572",
+      "source": "X, @VictorTaelin",
+      "summary": "大手ファンドの反応が厳しかったため、最大800万ドル・ポストマネー1.2億ドル上限の小規模ラウンドに切り替え、自身も100万ドル出資。プロダクト寄りではなく記号AIの基礎研究に全振りすると表明した。",
+      "publishedAt": "2026-11-07T16:21:11.000Z"
+    },
+    {
+      "title": "Theo、t3os完成は後回しでOmarchyをリモートエージェント向けに推奨",
+      "url": "https://x.com/theo/status/2119159746393731109",
+      "source": "X, @theo",
+      "summary": "t3osの仕上げ時期は未定とし、ベンチを重ねるほどOmarchyが目指していたエージェント能力の大半を備えていると評価。リモートエージェント用途ではOmarchyの利用を勧めた。",
+      "publishedAt": "2026-11-07T20:07:10.000Z"
+    },
+    {
+      "title": "Zach Lloyd、批判されがちなソフトウェア工場こそ組織展開の本丸と主張",
+      "url": "https://x.com/zachlloydtweets/status/2119077756017238215",
+      "source": "X, @zachlloydtweets",
+      "summary": "コーディングエージェント批判の多くは工場プラットフォームを持たない側から出ているとし、市場で本当に難しいのは組織全体への効率的・安全な展開だと論じた。Warpは両方持つと述べている。",
+      "publishedAt": "2026-11-07T14:41:22.000Z"
+    },
+    {
+      "title": "Matt Pocock、Thoughtworks Technology RadarにMarkdownファイルが掲載",
+      "url": "https://x.com/mattpocockuk/status/2119067549438542226",
+      "source": "X, @mattpocockuk",
+      "summary": "ThoughtworksのTechnology RadarにMarkdownファイルが取り上げられたことを報告し、感謝を述べている。エージェントやドキュメント運用まわりの関心の表れとして話題になった。",
+      "publishedAt": "2026-11-07T14:00:48.000Z"
+    },
+    {
+      "title": "Ethan Mollick、BrowseCompなどでAIの事実調査が専門家超えと指摘",
+      "url": "https://x.com/emollick/status/2119140502746308674",
+      "source": "X, @emollick",
+      "summary": "日常業務でのAI事実誤認リスクを過度に恐れる風潮に疑問を呈し、最近のモデルは事実探しや主張検証で人間専門家（博士含む）を上回るデータがあると示した。",
+      "publishedAt": "2026-11-07T18:50:42.000Z"
+    },
+    {
+      "title": "Claire Vo、ソフトウェア工場は床上げ用で天井上げではないと整理",
+      "url": "https://x.com/clairevo/status/2119099298575192119",
+      "source": "X, @clairevo",
+      "summary": "実組織での観察から、工場はモデル選定・評価・組織の床上げに効く一方、個人の天井を押し上げるとは限らないと整理。いきなり汎用工場より、セキュリティやUIなどスコープを絞った工場から始めるよう勧めた。",
+      "publishedAt": "2026-11-07T16:06:58.000Z"
+    },
+    {
+      "title": "Vibe coding批判が再燃、壊れた瞬間にコード位置が分からない問題",
+      "url": "https://x.com/ambassador_grim/status/2119112653012336785",
+      "source": "X, @ambassador_grim",
+      "summary": "自分で書いておらず読んでいないコードが壊れたとき、同じAIにバグ説明を戻す状況が続くと指摘。一発修正もあれば、別の箇所を静かに壊すケースもあるとし、スピードと信頼性の議論を呼び起こした。",
+      "publishedAt": "2026-11-07T17:00:02.000Z"
+    },
+    {
+      "title": "OpenCode Browse、実ブラウザのタブとログインをエージェントに渡す",
+      "url": "https://x.com/opencode/status/2118895128152621153",
+      "source": "X, @opencode",
+      "summary": "MCPサーバーとChromium拡張で、普段使っているブラウザのタブ・ログイン・拡張をエージェントが操作できるようにしたと発表。ログインや2FA、支払いはユーザーにハンドオフする設計で、Claude CodeやCursorなどからも利用できるとされる。",
+      "publishedAt": "2026-11-07T02:35:40.000Z"
+    },
+    {
+      "title": "MetaのConductor買収後、クラウド終了と移行先の議論が続く",
+      "url": "https://x.com/superdoccimo/status/2119052788336382062",
+      "source": "X, @superdoccimo",
+      "summary": "MetaがConductorを買収し、Conductor Cloudは11月20日終了と整理。複数コーディングエージェントを束ねる指揮台UIのチーム動向と、利用者の移行期限をまとめている。",
+      "publishedAt": "2026-11-07T13:02:09.000Z"
+    }
+  ]
+}
