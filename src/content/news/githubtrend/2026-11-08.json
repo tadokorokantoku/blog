@@ -1,0 +1,96 @@
+{
+  "category": "githubtrend",
+  "collectedAt": "2026-11-08T08:40",
+  "items": [
+    {
+      "title": "vercel-labs/agent-browser",
+      "url": "https://github.com/vercel-labs/agent-browser",
+      "source": "GitHub, Rust",
+      "summary": "AI エージェント向けに作られた、ブラウザ自動化のコマンドラインツール。",
+      "image": "https://opengraph.githubassets.com/1/vercel-labs/agent-browser",
+      "rank": 1,
+      "stars": 180
+    },
+    {
+      "title": "cloudflare/security-audit-skill",
+      "url": "https://github.com/cloudflare/security-audit-skill",
+      "source": "GitHub, JavaScript",
+      "summary": "検証済みで機械可読な結果を返す、多段階のセキュリティ監査を実行するエージェントスキル。",
+      "image": "https://opengraph.githubassets.com/1/cloudflare/security-audit-skill",
+      "rank": 2,
+      "stars": 2088
+    },
+    {
+      "title": "google/skills",
+      "url": "https://github.com/google/skills",
+      "source": "GitHub, Python",
+      "summary": "Google の製品や技術向けのエージェントスキル集。",
+      "image": "https://opengraph.githubassets.com/1/google/skills",
+      "rank": 3,
+      "stars": 449
+    },
+    {
+      "title": "mattpocock/skills",
+      "url": "https://github.com/mattpocock/skills",
+      "source": "GitHub, Shell",
+      "summary": "作者自身のエージェント環境から取り出した、実用的なスキルのコレクション。",
+      "image": "https://opengraph.githubassets.com/1/mattpocock/skills",
+      "rank": 4,
+      "stars": 1111
+    },
+    {
+      "title": "anthropics/skills",
+      "url": "https://github.com/anthropics/skills",
+      "source": "GitHub, Python",
+      "summary": "エージェントスキルを公開している Anthropic の公式リポジトリ。",
+      "image": "https://opengraph.githubassets.com/1/anthropics/skills",
+      "rank": 5,
+      "stars": 386
+    },
+    {
+      "title": "meta/astryx",
+      "url": "https://github.com/meta/astryx",
+      "source": "GitHub, TypeScript",
+      "summary": "AI エージェントと組み合わせて使える、カスタマイズ可能なオープンソースのデザインシステム。",
+      "image": "https://opengraph.githubassets.com/1/meta/astryx",
+      "rank": 6,
+      "stars": 185
+    },
+    {
+      "title": "prometheus/prometheus",
+      "url": "https://github.com/prometheus/prometheus",
+      "source": "GitHub, Go",
+      "summary": "監視システムと時系列データベースの Prometheus。",
+      "image": "https://opengraph.githubassets.com/1/prometheus/prometheus",
+      "rank": 7,
+      "stars": 325
+    },
+    {
+      "title": "sherlock-project/sherlock",
+      "url": "https://github.com/sherlock-project/sherlock",
+      "source": "GitHub, Python",
+      "summary": "ユーザー名から多数の SNS のアカウントを検索するツール。",
+      "image": "https://opengraph.githubassets.com/1/sherlock-project/sherlock",
+      "rank": 8,
+      "stars": 1819
+    },
+    {
+      "title": "milind-soni/OpenMausBot",
+      "url": "https://github.com/milind-soni/OpenMausBot",
+      "source": "GitHub, TypeScript",
+      "summary": "Grok bot のオープンソース代替。bot が使える仮想マシンを備えている。",
+      "image": "https://opengraph.githubassets.com/1/milind-soni/OpenMausBot",
+      "rank": 9,
+      "stars": 1986
+    },
+    {
+      "title": "astral-sh/ruff",
+      "url": "https://github.com/astral-sh/ruff",
+      "source": "GitHub, Rust",
+      "summary": "非常に高速な Python のリンターとフォーマッター。",
+      "image": "https://opengraph.githubassets.com/1/astral-sh/ruff",
+      "rank": 10,
+      "stars": 350
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "category": "orca",
+  "collectedAt": "2026-11-08T08:40",
+  "items": [
+    {
+      "title": "v1.4.252: macOS 13.4 以上が必須に、チャットのフォークと Plan モードを追加",
+      "url": "https://github.com/stablyai/orca/releases/tag/v1.4.252",
+      "source": "GitHub Releases",
+      "summary": "動作要件が macOS 12 から 13.4 以上に上がり、Zipformer EN の音声入力モデルは削除されて Parakeet v2 に移る。未使用のペアリング QR コードは10分で失効する。完了した返信から元を変えずにチャットをフォークでき、Claude と Codex のチャットでは /plan で Plan モードに入れる。",
+      "publishedAt": "2026-11-07"
+    }
+  ]
+}
