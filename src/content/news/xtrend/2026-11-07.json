@@ -1,6 +1,6 @@
 {
   "category": "xtrend",
-  "collectedAt": "2026-11-07T07:04",
+  "collectedAt": "2026-11-07T18:07",
   "items": [
     {
       "title": "Claude Codeのクラウドセッションで環境セットアップが自動化",
@@ -72,6 +72,79 @@
       "source": "X, @LangChain",
       "summary": "LangChainが、エージェントは全コンテキストを抱えきれずタスクごとに取得するが、雑な検索・過大な結果・古い文面で失敗し得ると解説。jess_weng18氏がハーネス設計時の注意点をまとめたとしている。",
       "publishedAt": "2026-11-06T18:02:36.000Z"
+    },
+    {
+      "title": "ClaudeとCodex間のコピペがStack Overflow時代の代替になった、とtheo氏",
+      "url": "https://x.com/theo/status/2118957088257056848",
+      "source": "X, @theo",
+      "summary": "Theo氏が、ClaudeとCodexのあいだでコードをコピー＆ペーストする行為は、かつてのStack Overflowからのコピペに相当すると指摘。複数モデルを行き来する現場の使い方が話題になっている。",
+      "publishedAt": "2026-11-07T06:41:52.000Z"
+    },
+    {
+      "title": "Claude Codeの出力をConciseスタイルに切り替えるTips",
+      "url": "https://x.com/addyosmani/status/2118958843501920268",
+      "source": "X, @addyosmani",
+      "summary": "Addy Osmani氏が、Claude CodeのOutput styleをConciseにすると短く要点だけの返答になると紹介。/configから変更するか、settings.jsonに\"outputStyle\": \"Concise\"を書けばよく、詳しく知りたいときは改めて聞けばよいとしている。",
+      "publishedAt": "2026-11-07T06:48:51.000Z",
+      "image": "https://pbs.twimg.com/media/HWf4QwgaMAA_aiY.jpg"
+    },
+    {
+      "title": "Claude Code 2.1.319でMCPタスクのバックグラウンド実行などが追加",
+      "url": "https://x.com/oikon48/status/2118926759232225282",
+      "source": "X, @oikon48",
+      "summary": "oikon48氏がClaude Code 2.1.319の変更点を抜粋。MCPサーバーのツール呼び出しをタスクとしてすぐバックグラウンドに移す対応や、permissions.denyInsteadOfPrompting、/claude-api latency-optimizeなどが入ったとしている。",
+      "publishedAt": "2026-11-07T04:41:21.000Z",
+      "image": "https://pbs.twimg.com/media/HWfwoQ9bgAAhzcN.jpg"
+    },
+    {
+      "title": "Cursorアンバサダー名称がBuild/Bot ambassadorへ変更の案内",
+      "url": "https://x.com/kinopee_ai/status/2118953458393137355",
+      "source": "X, @kinopee_ai",
+      "summary": "kinopee_ai氏が、β時代からのCursorアンバサダーとして、SpaceX買収後に「Build ambassador」または「Bot ambassador」を名乗るよう案内があったと報告。名称変更への迷いも記している。",
+      "publishedAt": "2026-11-07T06:27:27.000Z"
+    },
+    {
+      "title": "IrodrをReact 19とVite+で書き直し、iPhone Duoにも対応",
+      "url": "https://x.com/azu_re/status/2118965741651427495",
+      "source": "X, @azu_re",
+      "summary": "azu氏が、LDR風RSSリーダのIrodrをReact 19とVite+で書き直したと発表。iPhone Duo向けの対応も入れ、Web Scratchで詳細を説明している。",
+      "publishedAt": "2026-11-07T07:16:15.000Z"
+    },
+    {
+      "title": "Anthropicがエージェント記憶の「dreaming」を解説",
+      "url": "https://x.com/AnthropicAI/status/2118814753154064501",
+      "source": "X, @AnthropicAI",
+      "summary": "AnthropicがEngineering Blogで、セッション間にトランスクリプトを見直して誤ったメモを直し学習を整理する「dreaming」を解説。エージェントが経験から学びやすくするための記憶の構成要素をまとめている。",
+      "publishedAt": "2026-11-06T21:16:17.000Z",
+      "image": "https://pbs.twimg.com/news_img/2118814755137990656/LeHabGBF?format=jpg&name=orig"
+    },
+    {
+      "title": "OpenCode Browseが公開、実ブラウザをエージェントが操作可能に",
+      "url": "https://x.com/opencode/status/2118895128152621153",
+      "source": "X, @opencode",
+      "summary": "OpenCodeがBrowseを公開。エージェントが自分のタブ・ログイン・拡張機能つきの実ブラウザを操作できるとし、MCP経由で他クライアントからも使えるとしている。開発者のthdxr氏は、エージェントとブラウザを別マシンで動かす構成にも対応したと補足している。",
+      "publishedAt": "2026-11-07T02:35:40.000Z"
+    },
+    {
+      "title": "「暗黙の状態機械を探せ」プロンプトが現場でリファクタのきっかけに",
+      "url": "https://x.com/GarrettPetersen/status/2118881530064019806",
+      "source": "X, @GarrettPetersen",
+      "summary": "Garrett Petersen氏が、Steve Ruiz氏の「find all of the implicit state machines in my app」プロンプトを試し大規模リファクタにつながったと報告。エージェント用スキルに「no implicit state machines」を足すとも述べ、開発者コミュニティで再拡散している。",
+      "publishedAt": "2026-11-07T01:41:38.000Z"
+    },
+    {
+      "title": "Claude Codeのメール漏洩、来週にも文脈から除外予定との続報",
+      "url": "https://x.com/The_Tradesman1/status/2118899519173824845",
+      "source": "X, @The_Tradesman1",
+      "summary": "Claude CodeがアカウントメールをUser-Agentへ載せうる問題の続報。Anthropicは来週初めにもメールをモデル文脈から外す予定とし、暫定のプライバシー対策はシェル呼び出し中心だと指摘する投稿が広がっている。",
+      "publishedAt": "2026-11-07T02:53:07.000Z"
+    },
+    {
+      "title": "GitHub in Slack / Teamsが一般提供に",
+      "url": "https://x.com/Khaled865412521/status/2118931135199682957",
+      "source": "X, @Khaled865412521",
+      "summary": "GitHub Changelogによると、SlackとMicrosoft Teams上の@GitHubが一般提供になった。会話からバグ調査・issue作成・実装・PR作成ができ、メッセージからのリポジトリ推定やTeamsのCanvasでの計画・差分確認などが入ったとしている。",
+      "publishedAt": "2026-11-07T04:58:45.000Z"
     }
   ]
 }
