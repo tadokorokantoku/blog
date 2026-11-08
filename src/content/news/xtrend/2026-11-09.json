@@ -1,0 +1,76 @@
+{
+  "category": "xtrend",
+  "collectedAt": "2026-11-09T07:05",
+  "items": [
+    {
+      "title": "Emil Kowalskiが /gestures スキルを公開",
+      "url": "https://x.com/emilkowalski/status/2119406396160540738",
+      "source": "X, @emilkowalski",
+      "summary": "アプリのジェスチャー実装を支援するスキルとして紹介され、ラバーバンドやドラッグの速度対応などを加えるとされている。",
+      "publishedAt": "2026-11-08T12:27:00.000Z"
+    },
+    {
+      "title": "Guillermo Rauch、WebGL2とWeb Audioでレコードプレーヤーを再現",
+      "url": "https://x.com/rauchg/status/2119536313712230802",
+      "source": "X, @rauchg",
+      "summary": "WebGL2とWeb Audioで作ったレコードプレーヤーの物理シミュレーションを公開し、精度の高さを強調している。",
+      "publishedAt": "2026-11-08T21:03:00.000Z"
+    },
+    {
+      "title": "Pi Durableで社内向け開発基盤を構築",
+      "url": "https://x.com/R0u9h/status/2119428521256993261",
+      "source": "X, @R0u9h",
+      "summary": "Pi Durableを使えば短時間で作れるとして、すでに社内で稼働させ、非エンジニアも使える開発基盤（Devin的なもの）を目指していると紹介している。",
+      "publishedAt": "2026-11-08T13:55:00.000Z"
+    },
+    {
+      "title": "textlint/create-textlint-rule v3.0.0、依存をなくしてリリース",
+      "url": "https://x.com/azu_re/status/2119395064845935070",
+      "source": "X, @azu_re",
+      "summary": "create-textlint-rule の v3.0.0 がリリースされ、依存関係をなくしたことが紹介されている。",
+      "publishedAt": "2026-11-08T11:42:00.000Z"
+    },
+    {
+      "title": "pstackの/create-verification-skillでエージェントに実アプリを検証させる",
+      "url": "https://x.com/cu30rry_/status/2119402806553805124",
+      "source": "X, @cu30rry_",
+      "summary": "テストだけでなく実際のアプリを動かして検証させるスキルを紹介し、人間の役割は検証の道具を渡すことだと述べている。",
+      "publishedAt": "2026-11-08T12:13:00.000Z"
+    },
+    {
+      "title": "Garry Tan、コーディングエージェントのハーネス比較評価を公開",
+      "url": "https://x.com/garrytan/status/2119492448200405110",
+      "source": "X, @garrytan",
+      "summary": "フロンティアモデルを使い、ハーネスごとの違いを見るオープンソースの評価を進めていて、途中結果を共有している。",
+      "publishedAt": "2026-11-08T18:09:12.000Z"
+    },
+    {
+      "title": "OpenAIDevsが「Tomorrow.」と予告",
+      "url": "https://x.com/OpenAIDevs/status/2119521359185478140",
+      "source": "X, @OpenAIDevs",
+      "summary": "OpenAI開発者向けアカウントが「Tomorrow.」とだけ投稿。GPT-6.2 Solの公開かと憶測されているが、内容は公式には明かされていない。",
+      "publishedAt": "2026-11-08T20:04:05.000Z"
+    },
+    {
+      "title": "Claude Opus 5.5の挙動変化を巡り不満の声",
+      "url": "https://x.com/theo/status/2119402743484096612",
+      "source": "X, @theo",
+      "summary": "11月3日ごろからClaude Opus 5.5の推論の出方が変わったとの報告が広がり、Theoも旧モデルに戻したくなると投稿。Anthropicからの公式コメントは確認できていない。",
+      "publishedAt": "2026-11-08T12:12:00.000Z"
+    },
+    {
+      "title": "「アプリ内の暗黙のステートマシンを全部見つけて」プロンプトが話題",
+      "url": "https://x.com/Voxyz_ai/status/2119444845890617507",
+      "source": "X, @Voxyz_ai",
+      "summary": "ClaudeやCodexに暗黙のステートマシンを洗い出させるプロンプトが紹介され、多くの開発者が試している。",
+      "publishedAt": "2026-11-08T15:00:03.000Z"
+    },
+    {
+      "title": "AIによるリバースエンジニアリング対策のOSS「BLA」が話題",
+      "url": "https://x.com/0xMovez/status/2119444022657712593",
+      "source": "X, @0xMovez",
+      "summary": "ビルド成果物に偽のキーや罠を仕込み、AIエージェントによる解析を妨げるとされるOSS「BLA」が紹介されている。",
+      "publishedAt": "2026-11-08T14:56:47.000Z"
+    }
+  ]
+}
