@@ -1,0 +1,13 @@
+{
+  "category": "claude-code",
+  "collectedAt": "2026-11-09T08:40",
+  "items": [
+    {
+      "title": "Claude Fable 5.1 で性能低下（解決済み）",
+      "url": "https://status.claude.com",
+      "source": "Claude Status",
+      "summary": "11月8日 08:18〜08:32（UTC）に、Claude Fable 5.1 へのリクエストでエラーが増えた。claude.ai、Claude API、Claude Code、Claude Cowork が影響を受けた。修正は 08:39 に反映され、08:54 に解決とされた。",
+      "publishedAt": "2026-11-08"
+    }
+  ]
+}

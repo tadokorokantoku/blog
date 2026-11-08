@@ -1,0 +1,87 @@
+{
+  "category": "githubtrend",
+  "collectedAt": "2026-11-09T08:40",
+  "items": [
+    {
+      "title": "sherlock-project/sherlock",
+      "url": "https://github.com/sherlock-project/sherlock",
+      "source": "GitHub, Python",
+      "summary": "ユーザー名から複数のソーシャルネットワーク上のアカウントを探し出すツール。",
+      "image": "https://opengraph.githubassets.com/1/sherlock-project/sherlock",
+      "rank": 1,
+      "stars": 2372
+    },
+    {
+      "title": "dsx-ai-factory/nvke",
+      "url": "https://github.com/dsx-ai-factory/nvke",
+      "source": "GitHub, Go",
+      "summary": "ベアメタル上の GPU 向け Kubernetes を管理するための管理基盤。",
+      "image": "https://opengraph.githubassets.com/1/dsx-ai-factory/nvke",
+      "rank": 2,
+      "stars": 345
+    },
+    {
+      "title": "milind-soni/OpenMausBot",
+      "url": "https://github.com/milind-soni/OpenMausBot",
+      "source": "GitHub, TypeScript",
+      "summary": "Grok Bot のオープンソース代替で、ボット用の仮想マシンを備える。",
+      "image": "https://opengraph.githubassets.com/1/milind-soni/OpenMausBot",
+      "rank": 3,
+      "stars": 1437
+    },
+    {
+      "title": "anthropics/claude-quickstarts",
+      "url": "https://github.com/anthropics/claude-quickstarts",
+      "source": "GitHub, Python",
+      "summary": "Claude API を使ったデプロイ可能なアプリのスタータープロジェクト集。",
+      "image": "https://opengraph.githubassets.com/1/anthropics/claude-quickstarts",
+      "rank": 4,
+      "stars": 28
+    },
+    {
+      "title": "vercel-labs/agent-browser",
+      "url": "https://github.com/vercel-labs/agent-browser",
+      "source": "GitHub, Rust",
+      "summary": "AI エージェント向けに作られた、ブラウザ自動化のコマンドラインツール。",
+      "image": "https://opengraph.githubassets.com/1/vercel-labs/agent-browser",
+      "rank": 5,
+      "stars": 812
+    },
+    {
+      "title": "meta/astryx",
+      "url": "https://github.com/meta/astryx",
+      "source": "GitHub, TypeScript",
+      "summary": "カスタマイズでき、エージェントにも使いやすいオープンソースのデザインシステム。",
+      "image": "https://opengraph.githubassets.com/1/meta/astryx",
+      "rank": 6,
+      "stars": 863
+    },
+    {
+      "title": "anthropics/skills",
+      "url": "https://github.com/anthropics/skills",
+      "source": "GitHub, Python",
+      "summary": "Agent Skills を公開しているリポジトリ。",
+      "image": "https://opengraph.githubassets.com/1/anthropics/skills",
+      "rank": 7,
+      "stars": 793
+    },
+    {
+      "title": "google-deepmind/mujoco",
+      "url": "https://github.com/google-deepmind/mujoco",
+      "source": "GitHub, C++",
+      "summary": "接触を伴う多関節の動力学を扱える汎用の物理シミュレータ。",
+      "image": "https://opengraph.githubassets.com/1/google-deepmind/mujoco",
+      "rank": 8,
+      "stars": 26
+    },
+    {
+      "title": "ranxianglei/billion-context",
+      "url": "https://github.com/ranxianglei/billion-context",
+      "source": "GitHub, TypeScript",
+      "summary": "長いセッションでトークンを節約するための、コンテキスト圧縮プラグイン。",
+      "image": "https://opengraph.githubassets.com/1/ranxianglei/billion-context",
+      "rank": 9,
+      "stars": 460
+    }
+  ]
+}

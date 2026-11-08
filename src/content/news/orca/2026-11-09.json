@@ -1,0 +1,20 @@
+{
+  "category": "orca",
+  "collectedAt": "2026-11-09T08:40",
+  "items": [
+    {
+      "title": "v1.4.254: Claude Code テーマ連動が既定でオフに、orca serve は公開アドレスを拒否",
+      "url": "https://github.com/stablyai/orca/releases/tag/v1.4.254",
+      "source": "GitHub Releases",
+      "summary": "Claude Code のテーマ連動は既定でオフになり、変更前に一度確認される。検索ショートカットは新規プロファイルで Mac は Cmd+K、Windows と Linux は Ctrl+K になり、orca serve は許可しない限り公開インターネットのアドレスを拒否する。Windows のターミナルフォントは Regular に変わり、新規タブのメニューから Permissions と Arguments が消えた。",
+      "publishedAt": "2026-11-08"
+    },
+    {
+      "title": "v1.4.254: Git Graph タブ、/btw と /fork、スマホ音声入力を追加",
+      "url": "https://github.com/stablyai/orca/releases/tag/v1.4.254",
+      "source": "GitHub Releases",
+      "summary": "ローカルとリモートのブランチ、タグ、コミット詳細を見られる Git Graph タブが加わり、フォルダのワークスペースでも Source Control が使える。/btw で分岐したチャットに脇道の質問ができ、iPhone（iOS 26 以降）と Android ではオンデバイスで音声入力できる。新しいリポジトリは、エージェント実行前に信頼の確認が必要になった。",
+      "publishedAt": "2026-11-08"
+    }
+  ]
+}
