@@ -1,6 +1,6 @@
 {
   "category": "xtrend",
-  "collectedAt": "2026-11-08T07:10",
+  "collectedAt": "2026-11-08T18:10",
   "items": [
     {
       "title": "Karpathy、Claude CodeでTristanTubeを3分ワンショット",
@@ -71,6 +71,55 @@
       "source": "X, @superdoccimo",
       "summary": "MetaがConductorを買収し、Conductor Cloudは11月20日終了と整理。複数コーディングエージェントを束ねる指揮台UIのチーム動向と、利用者の移行期限をまとめている。",
       "publishedAt": "2026-11-07T13:02:09.000Z"
+    },
+    {
+      "title": "steipete、Asahi Linuxの新たな制限とAI拒否方針を批判",
+      "url": "https://x.com/steipete/status/2119264334627090514",
+      "source": "X, @steipete",
+      "summary": "閉じたものを開くのがAsahiの精神なのに、他プロジェクトが乗りにくくなる制限を足すのは違うと指摘し、AIを理由にした拒否も「ばかげている」と述べた。背景にはOmarchyのMacBook Neo対応やAsahiの反AI方針をめぐる議論があるとされている。",
+      "publishedAt": "2026-11-08T03:02:46.000Z"
+    },
+    {
+      "title": "Opus 5.5劣化説、theoは推論要約の変更をアカウント単位で展開中と分析",
+      "url": "https://x.com/theo/status/2119238026136330313",
+      "source": "X, @theo",
+      "summary": "Anthropicが推論サマリーの仕組みをアカウントごとに切り替えているようだとし、自分の環境では能力低下は見られないと述べた。一方で「昨晩からOpus 5.5が弱くなった、xhighなら大丈夫」との声も出ており、議論が続いている。",
+      "publishedAt": "2026-11-08T01:18:13.000Z"
+    },
+    {
+      "title": "Grok Botの利用上限問題でMuseに風、潮目はコスパで動くとの見方",
+      "url": "https://x.com/kinopee_ai/status/2119266616735355269",
+      "source": "X, @kinopee_ai",
+      "summary": "Grok Bot礼賛から利用上限の話題に移り、MetaのMuseへ関心が流れていると整理。Museも今の形は持続しないとみて、Duetの登場も含め一番の要因はコスパだと述べている。",
+      "publishedAt": "2026-11-08T03:11:50.000Z"
+    },
+    {
+      "title": "libghostty-vt 1.0リリース、C ABIの安定性を保証",
+      "url": "https://x.com/azu_re/status/2119238923964838290",
+      "source": "X, @azu_re",
+      "summary": "Ghosttyのコアから切り出したターミナルエミュレーションライブラリが1.0に。C ABIの安定性を保証するとしている。",
+      "publishedAt": "2026-11-08T01:21:47.000Z"
+    },
+    {
+      "title": "Expo、Cloud Simsでエージェント型モバイル開発のループを強調",
+      "url": "https://x.com/expo/status/2119238299005186107",
+      "source": "X, @expo",
+      "summary": "Cloud Simsをクラウドビルド、OTA更新、ストア申請、監視と組み合わせることで、エージェントによるモバイル開発が回るようになると説明。自社を「エージェント型モバイルインフラ企業」と位置づけた。",
+      "publishedAt": "2026-11-08T01:19:18.000Z"
+    },
+    {
+      "title": "「サイトのAIではなく、自分のAIアシスタントで使いたい」Rob Milesの投稿が拡散",
+      "url": "https://x.com/robertskmiles/status/2119249454591336857",
+      "source": "X, @robertskmiles",
+      "summary": "企業サイトに組み込まれたAIアシスタントではなく、自分が使っているAIでサイトを操作したいと投稿し、大きく広がった。返信ではエージェント向けのサイト設計やMCPのような標準の話にも発展している。",
+      "publishedAt": "2026-11-08T02:03:38.000Z"
+    },
+    {
+      "title": "Coinbase CEO、領域ごとのリードエージェントと参謀エージェントで働き方を刷新",
+      "url": "https://x.com/brian_armstrong/status/2119112609223827547",
+      "source": "X, @brian_armstrong",
+      "summary": "注力領域ごとに常時動くリードエージェントを置き、それらを束ねる参謀役（chief of staff）エージェントを配置。各リードがコード作成・テスト・レビュー催促などのサブエージェントを動かす構成で、今日も「中間管理職の自動化だ」など議論が広がった。",
+      "publishedAt": "2026-11-07T16:59:51.000Z"
     }
   ]
 }
