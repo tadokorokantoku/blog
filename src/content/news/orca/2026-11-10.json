@@ -1,0 +1,20 @@
+{
+  "category": "orca",
+  "collectedAt": "2026-11-10T08:40",
+  "items": [
+    {
+      "title": "v1.4.255: セッション履歴検索の高速化、スマホの Agents タブ、Git Graph の操作追加",
+      "url": "https://github.com/stablyai/orca/releases/tag/v1.4.255",
+      "source": "GitHub Releases",
+      "summary": "セッション履歴の検索が別スレッドで動き、SSH やリモート環境でも使える。スマホに接続中のデスクトップ横断でエージェントを一覧できる Agents タブが加わり、Git Graph ではチェックアウト、cherry-pick、revert ができる。フォークがチャット履歴を保持し、キュー済みメッセージが再起動後に再開する。",
+      "publishedAt": "2026-11-09"
+    },
+    {
+      "title": "v1.4.255: 挙動の変更（速度ボタン、リンク、保存形式）",
+      "url": "https://github.com/stablyai/orca/releases/tag/v1.4.255",
+      "source": "GitHub Releases",
+      "summary": "公式に破壊的変更の表記はないが、エージェント速度の Standard/Fast が1つのボタンになり、Web リンクは新しいタブで開く。ORCA_INSTANCE_ID を変えるとサーバーのペアリング ID が変わり、複数のストアが SQLite の行単位保存へ移った。",
+      "publishedAt": "2026-11-09"
+    }
+  ]
+}

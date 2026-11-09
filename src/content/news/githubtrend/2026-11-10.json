@@ -1,0 +1,96 @@
+{
+  "category": "githubtrend",
+  "collectedAt": "2026-11-10T08:40",
+  "items": [
+    {
+      "title": "anthropics/skills",
+      "url": "https://github.com/anthropics/skills",
+      "source": "GitHub, Python",
+      "summary": "Agent Skills を集めた公開コレクション。Claude に専門的な作業手順を覚えさせるためのスキルが並ぶ。",
+      "image": "https://opengraph.githubassets.com/1/anthropics/skills",
+      "rank": 1,
+      "stars": 1052
+    },
+    {
+      "title": "meta/astryx",
+      "url": "https://github.com/meta/astryx",
+      "source": "GitHub, TypeScript",
+      "summary": "AI エージェント向けに作られた、カスタマイズ可能なオープンソースのデザインシステム。",
+      "image": "https://opengraph.githubassets.com/1/meta/astryx",
+      "rank": 2,
+      "stars": 3324
+    },
+    {
+      "title": "sherlock-project/sherlock",
+      "url": "https://github.com/sherlock-project/sherlock",
+      "source": "GitHub, Python",
+      "summary": "ユーザー名から複数のソーシャルネットワーク上のアカウントを探し出すツール。",
+      "image": "https://opengraph.githubassets.com/1/sherlock-project/sherlock",
+      "rank": 3,
+      "stars": 4294
+    },
+    {
+      "title": "google-deepmind/mujoco",
+      "url": "https://github.com/google-deepmind/mujoco",
+      "source": "GitHub, C++",
+      "summary": "関節を持つ物体の接触を含む動力学を扱える汎用の物理シミュレータ。",
+      "image": "https://opengraph.githubassets.com/1/google-deepmind/mujoco",
+      "rank": 4,
+      "stars": 579
+    },
+    {
+      "title": "anthropics/claude-quickstarts",
+      "url": "https://github.com/anthropics/claude-quickstarts",
+      "source": "GitHub, Python",
+      "summary": "Claude API を使ったデプロイ可能なアプリのスタータープロジェクト集。",
+      "image": "https://opengraph.githubassets.com/1/anthropics/claude-quickstarts",
+      "rank": 5,
+      "stars": 560
+    },
+    {
+      "title": "garrytan/gbrain",
+      "url": "https://github.com/garrytan/gbrain",
+      "source": "GitHub, TypeScript",
+      "summary": "OpenClaw や Hermes のエージェント向けの、個人用で主観的な「脳」設定集。",
+      "image": "https://opengraph.githubassets.com/1/garrytan/gbrain",
+      "rank": 6,
+      "stars": 215
+    },
+    {
+      "title": "vercel-labs/agent-browser",
+      "url": "https://github.com/vercel-labs/agent-browser",
+      "source": "GitHub, Rust",
+      "summary": "AI エージェントがブラウザを自動操作するためのコマンドラインツール。",
+      "image": "https://opengraph.githubassets.com/1/vercel-labs/agent-browser",
+      "rank": 7,
+      "stars": 914
+    },
+    {
+      "title": "ruvnet/RuView",
+      "url": "https://github.com/ruvnet/RuView",
+      "source": "GitHub, Rust",
+      "summary": "身近な WiFi 信号を使い、映像なしで空間の把握や生体情報の計測、在室検知を行う。",
+      "image": "https://opengraph.githubassets.com/1/ruvnet/RuView",
+      "rank": 8,
+      "stars": 245
+    },
+    {
+      "title": "ZhuLinsen/daily_stock_analysis",
+      "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+      "source": "GitHub, Python",
+      "summary": "LLM を使った複数市場対応の株式分析システム。ニュース、判断ダッシュボード、通知、定期実行を備える。",
+      "image": "https://opengraph.githubassets.com/1/ZhuLinsen/daily_stock_analysis",
+      "rank": 9,
+      "stars": 505
+    },
+    {
+      "title": "homeassistant-ai/ha-mcp",
+      "url": "https://github.com/homeassistant-ai/ha-mcp",
+      "source": "GitHub, Python",
+      "summary": "Claude や ChatGPT などの AI アシスタントから Home Assistant を設定・自動化するための MCP サーバー。",
+      "image": "https://opengraph.githubassets.com/1/homeassistant-ai/ha-mcp",
+      "rank": 10,
+      "stars": 31
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "category": "claude-code",
+  "collectedAt": "2026-11-10T08:40",
+  "items": [
+    {
+      "title": "Claude Fable 5.2 と Claude Mythos 5.2 が登場",
+      "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+      "source": "Anthropic News",
+      "summary": "両者は同じモデルで、Fable は生物・サイバー面の安全策が強く全ユーザーが使え、Mythos は制限が少なく審査済みの組織向けである。Fable 5.1 より出力が最大30%速く、料金は入力100万トークン8ドル・出力40ドル。API の ID は claude-fable-5-2 で、Claude Code では fast mode も使える。",
+      "publishedAt": "2026-11-09"
+    },
+    {
+      "title": "v2.1.321: Fable 5.2 が既定の Fable モデルに",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.321",
+      "source": "GitHub Releases",
+      "summary": "claude-fable-5-2（1M コンテキスト）が既定の Fable になり、保存済みの Fable 5.1 の選択は fable に移る。claude remote-control に --settings が加わった。MCP OAuth が別ホストへ秘密情報を送る問題や、読み取り専用 Bash がサンドボックス外で確認なしに動く問題など、セキュリティ修正が多い。",
+      "publishedAt": "2026-11-09"
+    },
+    {
+      "title": "JPMorganChase が Claude Code を全社の従業員へ拡大",
+      "url": "https://claude.com/resources/articles/jpmorganchase-expands-claude-code",
+      "source": "Claude Blog",
+      "summary": "JPMorganChase が Claude Code の利用を社内のより多くの従業員に広げたという事例記事である。",
+      "publishedAt": "2026-11-09"
+    }
+  ]
+}
