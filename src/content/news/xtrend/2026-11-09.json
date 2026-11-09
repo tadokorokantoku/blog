@@ -1,6 +1,6 @@
 {
   "category": "xtrend",
-  "collectedAt": "2026-11-09T07:05",
+  "collectedAt": "2026-11-09T18:08",
   "items": [
     {
       "title": "Emil Kowalskiが /gestures スキルを公開",
@@ -71,6 +71,69 @@
       "source": "X, @0xMovez",
       "summary": "ビルド成果物に偽のキーや罠を仕込み、AIエージェントによる解析を妨げるとされるOSS「BLA」が紹介されている。",
       "publishedAt": "2026-11-08T14:56:47.000Z"
+    },
+    {
+      "title": "React Server ComponentsにCVSS 9.5の認証不要RCE",
+      "url": "https://x.com/about_hiroppy/status/2119573025737912536",
+      "source": "X, @about_hiroppy",
+      "summary": "RSCのペイロード処理に起因するリモートコード実行の脆弱性（GHSA-xqc2-xf4c-x3h3）が公開された。影響はごくまれなケースに限られるとされるが、react-server-dom系パッケージの更新は必須。",
+      "publishedAt": "2026-11-08T23:29:23.000Z"
+    },
+    {
+      "title": "TypeScript 7.1 Beta、Node.js 26 LTS、Safari 27.1などをまとめた週次記事",
+      "url": "https://x.com/azu_re/status/2119593295978627550",
+      "source": "X, @azu_re",
+      "summary": "TypeScript 7.1 Betaの新しいコンパイラAPIとContent Mappers、Node.jsが27から年1回リリースになり奇数版もLTSになる話、Safari 27.1のiPhone Duo向けWeb APIの試験サポートを紹介している。",
+      "publishedAt": "2026-11-09T00:49:00.000Z"
+    },
+    {
+      "title": "workerdにKV実装が入る",
+      "url": "https://x.com/R0u9h/status/2119595319264747607",
+      "source": "X, @R0u9h",
+      "summary": "CloudflareのランタイムworkerdにKVが実装され、namespaceごとにSQLiteのDurable Objectを使い、64KiBを超える値はblobに逃がす作りだと紹介されている。",
+      "publishedAt": "2026-11-09T00:57:00.000Z"
+    },
+    {
+      "title": "GitHub、プルリクエストの新しいOverviewをプレビュー公開",
+      "url": "https://x.com/gihyojp/status/2119672555028070429",
+      "source": "X, @gihyojp",
+      "summary": "チェック、レビューコメント、承認の状況をページ上部で確認でき、そこからマージもできるようになる。同じ時間帯にはGitHubで504エラーが出たという声も上がっていた。",
+      "publishedAt": "2026-11-09T06:04:00.000Z"
+    },
+    {
+      "title": "秘書エージェント「Muse」を試す投稿がTLで急増",
+      "url": "https://x.com/kenn/status/2119665248336855101",
+      "source": "X, @kenn",
+      "summary": "Muse Spacesの内部SDKが流出したとされ、サーバーはBun、Drizzle ORM、Cloudflare D1、クライアントはReact 19とTanStack Queryという構成だと紹介されている。ほかにもGrok Botとの比較や、リアルタイム通話ができない点などの使用感が多く投稿されている。",
+      "publishedAt": "2026-11-09T05:35:00.000Z"
+    },
+    {
+      "title": "Greg Brockman「フロンティアモデルが科学的発見のエンジンに」",
+      "url": "https://x.com/gdb/status/2119561347805687848",
+      "source": "X, @gdb",
+      "summary": "大量のテスト時計算を使うフロンティアモデルが科学的発見の原動力になりつつあると投稿し、約4,900いいねを集めた。返信や関連投稿では、AIエージェントによる数学の証明などの事例が議論されている。",
+      "publishedAt": "2026-11-08T22:42:59.000Z"
+    },
+    {
+      "title": "Ryan Dahl「ソフトウェア開発が短期間で100% AIが書く形に移った」",
+      "url": "https://x.com/rough__sea/status/2119644076702376014",
+      "source": "X, @rough__sea",
+      "summary": "Node.jsとDenoの作者が、AIは自分より上手にC++を書くが、動作を確かめる問題は残っているとして、エンジニアが何事もなかったように振る舞っていることへの驚きを書き、1,200以上のいいねを集めた。",
+      "publishedAt": "2026-11-09T04:11:43.000Z"
+    },
+    {
+      "title": "Artificial Analysis Decision Index v2を公開",
+      "url": "https://x.com/ArtificialAnlys/status/2119578471559213411",
+      "source": "X, @ArtificialAnlys",
+      "summary": "独自の非公開評価と更新したベンチマークを加え、モデルのキャリブレーション（自信の度合いの正確さ）を評価に反映する新しい指標を導入した。",
+      "publishedAt": "2026-11-08T23:51:02.000Z"
+    },
+    {
+      "title": "DeepSeek Harness、日間アクティブユーザー154万人に",
+      "url": "https://x.com/op7418/status/2119432018450870276",
+      "source": "X, @op7418",
+      "summary": "オープンソースのAIエージェント基盤DeepSeek Harnessが日間アクティブユーザー154万人を超えたとされ、プラグイン作者が驚きとともに共有している。1日あたり約92兆トークンを消費しているとの数字も出回っている。",
+      "publishedAt": "2026-11-08T14:09:04.000Z"
     }
   ]
 }
