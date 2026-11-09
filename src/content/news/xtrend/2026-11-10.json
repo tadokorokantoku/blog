@@ -1,0 +1,76 @@
+{
+  "category": "xtrend",
+  "collectedAt": "2026-11-10T07:09",
+  "items": [
+    {
+      "title": "Anthropic、Claude Fable 5.2とClaude Mythos 5.2を発表",
+      "url": "https://x.com/claudeai/status/2119867114450268322",
+      "source": "X, @claudeai",
+      "summary": "コーディング・推論・画像認識が向上した新モデル。Fable 5.2はClaude PlatformとClaude Codeで利用でき、5.1比で最大30%高速、価格は100万トークンあたり$8/$40に値下げされた（@ClaudeDevs）。",
+      "publishedAt": "2026-11-09T18:57:59Z"
+    },
+    {
+      "title": "Meta、最小・最高効率モデル「Muse Ember」を公開",
+      "url": "https://x.com/AIatMeta/status/2119853591703998787",
+      "source": "X, @AIatMeta",
+      "summary": "アプリをまたぐワークフローやツールの連続呼び出し、テスト実行とコード修正向けの小型モデルで、コンテキストは100万トークン。Alexandr Wang氏は価格を100万トークンあたり$0.10/$0.50とし、Haiku並みの性能を約3分の1のコストで出せるとしている。",
+      "publishedAt": "2026-11-09T18:04:15Z"
+    },
+    {
+      "title": "Chrome 157でHTML-in-Canvasが正式リリース",
+      "url": "https://x.com/ChromiumDev/status/2119814186561638756",
+      "source": "X, @ChromiumDev",
+      "summary": "DOMを操作可能なままcanvasや3Dシーンのテクスチャに描画できるAPI。スクリーンリーダーやAIエージェントからも読め、翻訳やページ内検索も効く。Safariはまだ未対応との声も出ている。",
+      "publishedAt": "2026-11-09T15:27:40Z"
+    },
+    {
+      "title": "Unreal Engine 5.9 MegaJam Preview、主にエージェントで開発",
+      "url": "https://x.com/UnrealEngine/status/2119806791567773829",
+      "source": "X, @UnrealEngine",
+      "summary": "初めて主にエージェント主導のワークフローで作られたUEリリースとされ、エディタ内でのAIコーディングエージェント利用、Unreal MCPの拡充、ブラウザ実行などを実験的機能として追加した。",
+      "publishedAt": "2026-11-09T14:58:17Z"
+    },
+    {
+      "title": "OpenAI、研究基盤の監視・停止システム「Control Room」を公開",
+      "url": "https://x.com/OpenAI/status/2119913172039868579",
+      "source": "X, @OpenAI",
+      "summary": "研究用の推論ワークロードを一元管理し、安全上の懸念があれば介入決定から35秒以内にモデル出力を止められる仕組みだと説明している。",
+      "publishedAt": "2026-11-09T22:01:00Z"
+    },
+    {
+      "title": "Expo、エージェント向けUIフレームワーク「Exact」をプレアルファ公開",
+      "url": "https://x.com/expo/status/2119805185967169720",
+      "source": "X, @expo",
+      "summary": "UIは型付き言語「Contract」で書き、120fpsスクロールやほぼ即時の起動、Astro並みのWeb性能をうたう。まだプレアルファで、フィードバックを募っている。",
+      "publishedAt": "2026-11-09T14:51:55Z"
+    },
+    {
+      "title": "Vite Ecosystem Fund、第1弾として44プロジェクトに30万1300ドルを分配",
+      "url": "https://x.com/voidzerodev/status/2119778924016103477",
+      "source": "X, @voidzerodev",
+      "summary": "VoidZeroがCloudflare参加時に発表した100万ドル基金の初回分配。重要な依存ライブラリからコントリビューターまで44のプロジェクト・メンテナーが対象。",
+      "publishedAt": "2026-11-09T13:07:33Z"
+    },
+    {
+      "title": "Cursor、Claude Fable 5.2に対応しCursorBenchで首位",
+      "url": "https://x.com/cursor_ai/status/2119880829212172509",
+      "source": "X, @cursor_ai",
+      "summary": "Fable 5.2はmax effortでCursorBench 60%とトップ、デフォルトでも56.9%（Fable 5.1は49.2%）。TLではOpus 5.5との使い分けに迷う声も多い。",
+      "publishedAt": "2026-11-09T19:52:29Z"
+    },
+    {
+      "title": "Matt Pocock氏、「Software Factory」という言葉を擁護",
+      "url": "https://x.com/mattpocockuk/status/2119748545691402733",
+      "source": "X, @mattpocockuk",
+      "summary": "誇張された流行語だと認めつつ、先端チームはエージェントで直接開発する段階から、エージェントが開発するための自動化を作る段階へ一段上がっていると指摘。賛否の議論が広がった。",
+      "publishedAt": "2026-11-09T11:06:50Z"
+    },
+    {
+      "title": "「読みにくいDB」はAI開発のコストを1.9倍にするという検証",
+      "url": "https://x.com/koder_dev/status/2119732227680678339",
+      "source": "X, @koder_dev",
+      "summary": "カラム名の略語化や日付の文字列格納だけで、AIが意味を確かめるため実DBを何度も叩くようになりコストが倍近くになったという検証の紹介。人に読みやすい設計はAIにも効くという話。",
+      "publishedAt": "2026-11-09T10:02:00Z"
+    }
+  ]
+}
