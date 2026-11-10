@@ -1,6 +1,6 @@
 {
   "category": "xtrend",
-  "collectedAt": "2026-11-10T07:09",
+  "collectedAt": "2026-11-10T18:06",
   "items": [
     {
       "title": "Anthropic、Claude Fable 5.2とClaude Mythos 5.2を発表",
@@ -71,6 +71,76 @@
       "source": "X, @koder_dev",
       "summary": "カラム名の略語化や日付の文字列格納だけで、AIが意味を確かめるため実DBを何度も叩くようになりコストが倍近くになったという検証の紹介。人に読みやすい設計はAIにも効くという話。",
       "publishedAt": "2026-11-09T10:02:00Z"
+    },
+    {
+      "title": "Claude Codeの最近のTips【2026/11】をoikon氏がZennに公開",
+      "url": "https://x.com/oikon48/status/2119988918938714393",
+      "source": "X, @oikon48",
+      "summary": "oikon氏が久々にZennで、最近使っているClaude CodeのTipsをまとめた記事を公開。TLでも多く反応されている。",
+      "publishedAt": "2026-11-10T03:02:00Z"
+    },
+    {
+      "title": "Notionが使うFireworks AIへの侵入でユーザー情報流出の恐れ",
+      "url": "https://x.com/about_hiroppy/status/2120024729931456552",
+      "source": "X, @about_hiroppy",
+      "summary": "NotionがFireworks AIのインシデントについて告知を出し、一部ワークスペースに影響の可能性があるとされている。報道では課金情報だけでなく一部顧客のデータセットや重みにも被害が及んだとされる。",
+      "publishedAt": "2026-11-10T05:24:00Z"
+    },
+    {
+      "title": "Fable 5.2の使用感、初日から評価が割れる",
+      "url": "https://x.com/theo/status/2119988540708896897",
+      "source": "X, @theo",
+      "summary": "Theo氏は「Opusでは考えにくい単純ミスが多い」と投稿。一方TLでは、曖昧な依頼や新規プロジェクトならOpusの約4分の1の時間で同等以上に届くという声もある。",
+      "publishedAt": "2026-11-10T03:00:00Z"
+    },
+    {
+      "title": "ginza.jsの登壇枠、まだ空きあり",
+      "url": "https://x.com/__syumai/status/2119991850601955372",
+      "source": "X, @__syumai",
+      "summary": "syumai氏がginza.jsでの登壇を告知し、フロカン東京で落選したネタを話す予定とのこと。他の登壇枠もまだ空いているそう。",
+      "publishedAt": "2026-11-10T03:13:00Z"
+    },
+    {
+      "title": "「Leanで堅いシステム」への現場目線の疑問",
+      "url": "https://x.com/kenn/status/2120074714597245344",
+      "source": "X, @kenn",
+      "summary": "kenn氏は、価値の高い部分はインターフェース境界のような泥臭い所にあり、定理証明は仕様変更のたびに壊れてお荷物になりがちだと指摘。AI時代の形式検証ブームへの反論として読まれている。",
+      "publishedAt": "2026-11-10T08:42:00Z"
+    },
+    {
+      "title": "Google、Gemini新モデルを予告か",
+      "url": "https://x.com/OfficialLoganK/status/2120024720510984234",
+      "source": "X, @OfficialLoganK",
+      "summary": "Logan Kilpatrick氏が「Gemini」の一語だけを投稿し、次期モデルの発表が近いと話題になっている。詳細はまだ明かされていない。",
+      "publishedAt": "2026-11-10T05:24:16Z"
+    },
+    {
+      "title": "T3 CodeでClaudeの利用比率が急伸",
+      "url": "https://x.com/theo/status/2119970535056846996",
+      "source": "X, @theo",
+      "summary": "Theo氏がT3 CodeでのCodexとClaudeの利用比率の推移をグラフで公開し、Opus 5.5の「圧倒的な支配」と表現した。Xのまとめでは直近7日のターンの75%とされている。",
+      "publishedAt": "2026-11-10T01:48:57Z"
+    },
+    {
+      "title": "新モデルが出るたびに試したい「プロジェクト総点検」プロンプト",
+      "url": "https://x.com/alexalbert__/status/2119884951550386671",
+      "source": "X, @alexalbert__",
+      "summary": "AnthropicのAlex Albert氏が、プロジェクト全体から壊れた・非効率・不要な箇所を探させ、確実なものは直し残りは一覧にさせるプロンプトを紹介。1万件超ブックマークされている。",
+      "publishedAt": "2026-11-09T20:08:52Z"
+    },
+    {
+      "title": "Fable 5.2がワンショットでFPSゲームを丸ごと制作",
+      "url": "https://x.com/felixrieseberg/status/2119925633564463609",
+      "source": "X, @felixrieseberg",
+      "summary": "Felix Rieseberg氏が、モデル・音・テクスチャまでFable 5.2に一から作らせたゲームを公開。8時間、API換算で約550ドルかかったとしている。",
+      "publishedAt": "2026-11-09T22:50:32Z"
+    },
+    {
+      "title": "Zyphra、端末上で動くオープンなTTS「ZONOS3-Mini」を公開",
+      "url": "https://x.com/ZyphraAI/status/2119914895861076151",
+      "source": "X, @ZyphraAI",
+      "summary": "音声クローンと単語単位の制御に対応したオープンソースの音声合成モデルで、スマホ上でリアルタイムに動くとしている。",
+      "publishedAt": "2026-11-09T22:07:51Z"
     }
   ]
 }
