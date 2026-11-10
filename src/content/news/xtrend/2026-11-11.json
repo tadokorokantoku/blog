@@ -1,0 +1,76 @@
+{
+  "category": "xtrend",
+  "collectedAt": "2026-11-11T06:54",
+  "items": [
+    {
+      "title": "Google、Gemini 4 Carbonを公開",
+      "url": "https://x.com/Google/status/2120186185423159331",
+      "source": "X, @Google",
+      "summary": "長時間・多段の推論が必要な難題向けの最上位モデルで、Gemini APIとUltraプランで提供開始。CursorではCursorBenchで60.4%の首位とされ、OpenCodeやVS CodeのGitHub Copilotでも使えるようになった。",
+      "publishedAt": "2026-11-10T16:05:52Z"
+    },
+    {
+      "title": "Anthropic、Claude Whiteboards・Sheets・Dataを順次提供",
+      "url": "https://x.com/claudeai/status/2120206365759094857",
+      "source": "X, @claudeai",
+      "summary": "ホワイトボードで計画を整理し、シートでトラッカーを作り、データで分析結果を見せる3つの新機能。チームでの共同編集にも対応する。",
+      "publishedAt": "2026-11-10T17:26:03Z"
+    },
+    {
+      "title": "OpenAI、ChatGPT上のビジネスページをベータ公開",
+      "url": "https://x.com/OpenAI/status/2120216592395174382",
+      "source": "X, @OpenAI",
+      "summary": "事業者が自社情報を登録・管理し、ユーザーの反応を確認できる。対象の事業者は、顧客の質問に答えるBusiness Agentも作れる。",
+      "publishedAt": "2026-11-10T18:06:42Z"
+    },
+    {
+      "title": "AI Futures Project、超人的AI研究者の到来予測を2027年に前倒し",
+      "url": "https://x.com/DKokotajlo/status/2120204075803500595",
+      "source": "X, @DKokotajlo",
+      "summary": "METRの新しいレポートの分析をもとに、AIによる研究加速は「AI 2027」シナリオより5か月早いペースだとする予測更新。Kokotajlo氏は2027年に知能爆発が起きそうだと書いている。",
+      "publishedAt": "2026-11-10T17:16:57Z"
+    },
+    {
+      "title": "マルチエージェントの指揮能力を測るベンチマーク「WorkflowArena」",
+      "url": "https://x.com/EinsiaAI/status/2120162063905681632",
+      "source": "X, @EinsiaAI",
+      "summary": "モデルが自分でワーカーを立ててワークフローを組む力を、8分野145タスクで評価する。Claude CodeとCodex上の9モデル・25構成を比べ、ハーネスと論文も公開している。",
+      "publishedAt": "2026-11-10T14:30:01Z"
+    },
+    {
+      "title": "Vercel Security Review、公開1週間で約5.8万件の脆弱性を検出",
+      "url": "https://x.com/rauchg/status/2120188488628977819",
+      "source": "X, @rauchg",
+      "summary": "検出57,897件のうち6,029件が重大・高リスクで、14,665件はすでにエージェントが修正済みだとRauch氏が報告した。",
+      "publishedAt": "2026-11-10T16:15:01Z"
+    },
+    {
+      "title": "Next.js 16.5で、あるAIラボのビルドが3.3倍高速に",
+      "url": "https://x.com/timneutkens/status/2120214416704622872",
+      "source": "X, @timneutkens",
+      "summary": "Tim Neutkens氏によると、大手AIラボでビルドが3.3倍速くなったとのこと。next@canaryで試せる。",
+      "publishedAt": "2026-11-10T17:58:03Z"
+    },
+    {
+      "title": "Claude、MCP Apps拡張の対応範囲を拡大",
+      "url": "https://x.com/ClaudeDevs/status/2120227979041341943",
+      "source": "X, @ClaudeDevs",
+      "summary": "アプリのツールや埋め込みサイトなどに対応し、自作アプリをまるごとClaudeの中で動かせるようになった。",
+      "publishedAt": "2026-11-10T18:51:56Z"
+    },
+    {
+      "title": "Matt Pocock氏の複数リポジトリ運用術「Home Repo」",
+      "url": "https://x.com/mattpocockuk/status/2120260969750540327",
+      "source": "X, @mattpocockuk",
+      "summary": "skillsやsteeringファイル、wikiをまとめた1つのリポジトリでエージェントを動かし、そこから他のリポジトリを扱うというシンプルな方法を紹介している。",
+      "publishedAt": "2026-11-10T21:03:02Z"
+    },
+    {
+      "title": "「AGENTS.mdやrulesより、linterでできることはlinterで」",
+      "url": "https://x.com/R0u9h/status/2120159118120128970",
+      "source": "X, @R0u9h",
+      "summary": "AGENTS.mdやCLAUDE.md、rulesはそろそろ要らないのでは、という問題提起。機械的にチェックできることはlinterに任せるべきだという意見に反応が集まっている。",
+      "publishedAt": "2026-11-10T14:18:19Z"
+    }
+  ]
+}
