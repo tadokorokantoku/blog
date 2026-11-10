@@ -1,0 +1,20 @@
+{
+  "category": "orca",
+  "collectedAt": "2026-11-11T08:35",
+  "items": [
+    {
+      "title": "v1.4.256: 音声入力の改善、スマホの下書き保存、クラウド VM の一時停止",
+      "url": "https://github.com/stablyai/orca/releases/tag/v1.4.256",
+      "source": "GitHub Releases",
+      "summary": "音声入力は言語に合ったオンデバイスモデルの提案とワンボタン設定になり、独自の語彙登録やフィラー除去、Auto モードが加わった。スマホでは再起動後もチャットの最近のメッセージや各種下書きが残り、ターミナルのキー列に Shift・Ctrl・Alt が付いた。クラウド VM のワークスペースは作成の進捗が見え、一時停止と再開ができる。",
+      "publishedAt": "2026-11-10"
+    },
+    {
+      "title": "v1.4.256: 音声モデルの更新が必要になる場合がある",
+      "url": "https://github.com/stablyai/orca/releases/tag/v1.4.256",
+      "source": "GitHub Releases",
+      "summary": "ダウンロード済みのローカル音声モデルは、更新しないと音声入力が動かない場合がある。スマホ向けの変更には対応するスマホアプリの更新も必要である。",
+      "publishedAt": "2026-11-10"
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "category": "githubtrend",
+  "collectedAt": "2026-11-11T08:35",
+  "items": [
+    {
+      "title": "meta/astryx",
+      "url": "https://github.com/meta/astryx",
+      "source": "GitHub, TypeScript",
+      "summary": "AI エージェント向けに作られた、カスタマイズ可能なオープンソースのデザインシステム。",
+      "image": "https://opengraph.githubassets.com/1/meta/astryx",
+      "rank": 1,
+      "stars": 3111
+    },
+    {
+      "title": "anthropics/skills",
+      "url": "https://github.com/anthropics/skills",
+      "source": "GitHub, Python",
+      "summary": "Agent Skills を集めた公開コレクション。Claude に専門的な作業手順を覚えさせるためのスキルが並ぶ。",
+      "image": "https://opengraph.githubassets.com/1/anthropics/skills",
+      "rank": 2,
+      "stars": 1676
+    },
+    {
+      "title": "addyosmani/agent-skills",
+      "url": "https://github.com/addyosmani/agent-skills",
+      "source": "GitHub, JavaScript",
+      "summary": "AI コーディングエージェント向けの、実運用を想定したエンジニアリング用スキル集。",
+      "image": "https://opengraph.githubassets.com/1/addyosmani/agent-skills",
+      "rank": 3,
+      "stars": 465
+    },
+    {
+      "title": "anthropics/claude-quickstarts",
+      "url": "https://github.com/anthropics/claude-quickstarts",
+      "source": "GitHub, Python",
+      "summary": "Claude API を使ってデプロイ可能なアプリケーションをすぐに作り始めるためのサンプルプロジェクト集。",
+      "image": "https://opengraph.githubassets.com/1/anthropics/claude-quickstarts",
+      "rank": 4,
+      "stars": 530
+    },
+    {
+      "title": "google-deepmind/mujoco",
+      "url": "https://github.com/google-deepmind/mujoco",
+      "source": "GitHub, C++",
+      "summary": "関節を持つ物体の接触を含む動力学を扱える汎用の物理シミュレーター。",
+      "image": "https://opengraph.githubassets.com/1/google-deepmind/mujoco",
+      "rank": 5,
+      "stars": 453
+    },
+    {
+      "title": "we-promise/sure",
+      "url": "https://github.com/we-promise/sure",
+      "source": "GitHub, Ruby",
+      "summary": "誰でも使え、誰でも開発に参加できる個人向けの家計管理アプリ。",
+      "image": "https://opengraph.githubassets.com/1/we-promise/sure",
+      "rank": 6,
+      "stars": 184
+    },
+    {
+      "title": "homeassistant-ai/ha-mcp",
+      "url": "https://github.com/homeassistant-ai/ha-mcp",
+      "source": "GitHub, Python",
+      "summary": "Claude や ChatGPT などの AI アシスタントから Home Assistant の設定や自動化を行える MCP サーバー。",
+      "image": "https://opengraph.githubassets.com/1/homeassistant-ai/ha-mcp",
+      "rank": 7,
+      "stars": 792
+    },
+    {
+      "title": "vercel-labs/agent-browser",
+      "url": "https://github.com/vercel-labs/agent-browser",
+      "source": "GitHub, Rust",
+      "summary": "AI エージェント向けのブラウザ自動操作 CLI。",
+      "image": "https://opengraph.githubassets.com/1/vercel-labs/agent-browser",
+      "rank": 8,
+      "stars": 775
+    },
+    {
+      "title": "sherlock-project/sherlock",
+      "url": "https://github.com/sherlock-project/sherlock",
+      "source": "GitHub, Python",
+      "summary": "ユーザー名から複数のソーシャルネットワーク上のアカウントを探し出すツール。",
+      "image": "https://opengraph.githubassets.com/1/sherlock-project/sherlock",
+      "rank": 9,
+      "stars": 2387
+    },
+    {
+      "title": "tokio-rs/topcoat",
+      "url": "https://github.com/tokio-rs/topcoat",
+      "source": "GitHub, Rust",
+      "summary": "必要な機能を一通り備えた Web アプリケーション開発用のフレームワーク。",
+      "image": "https://opengraph.githubassets.com/1/tokio-rs/topcoat",
+      "rank": 10,
+      "stars": 192
+    }
+  ]
+}

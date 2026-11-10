@@ -1,0 +1,48 @@
+{
+  "category": "claude-code",
+  "collectedAt": "2026-11-11T08:35",
+  "items": [
+    {
+      "title": "v2.1.322: Vertex で fast mode が使えるように",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.322",
+      "source": "GitHub Releases",
+      "summary": "Vertex の global・us・eu リージョンで fast mode に対応した。Vertex 側が fast mode を受け付けない場合は通常の速度に戻る。",
+      "publishedAt": "2026-11-10"
+    },
+    {
+      "title": "Claude Whiteboards・Claude Sheets・Claude Data が登場",
+      "url": "https://claude.com/resources/articles/sheets-whiteboards-data",
+      "source": "Claude Blog",
+      "summary": "共同で使えるホワイトボードの Whiteboards と、Claude が作成・編集する表計算の Sheets がベータで公開された。Claude Dashboards は Claude Data として正式提供になり、データストーリーや指標の認定が加わった。いずれも有料プラン向けである。",
+      "publishedAt": "2026-11-10"
+    },
+    {
+      "title": "アプリが Claude の中で開き、Claude がその中で作業できるように",
+      "url": "https://claude.com/resources/articles/interactive-connectors-full-tool",
+      "source": "Claude Blog",
+      "summary": "対応するコネクタでは Asana、Canva、Notion、Confluence などのアプリを Claude の画面内で開き、Claude が直接ページや行を編集できる。Web とデスクトップアプリの全プランに順次展開され、開発者は MCP Apps（パブリックプレビュー）で対応アプリを作れる。",
+      "publishedAt": "2026-11-10"
+    },
+    {
+      "title": "Anthropic が IPO のロードショーを開始",
+      "url": "https://www.anthropic.com/news/roadshow-launch",
+      "source": "Anthropic News",
+      "summary": "Anthropic が新規株式公開に向けたロードショーを始めた。クラス A 株 8億2,500万株を1株70〜78ドルの想定価格で売り出し、Nasdaq Global Select Market にティッカー ANT で上場する予定である。",
+      "publishedAt": "2026-11-10"
+    },
+    {
+      "title": "Fable 5.2 と Mythos 5.2 でエラーが増加（解消済み）",
+      "url": "https://status.claude.com/incidents/pgz8r13pk4sm",
+      "source": "Claude Status",
+      "summary": "Fable 5.2 と Mythos 5.2 で4分間 Overloaded エラーが発生したが、すでに解消している。",
+      "publishedAt": "2026-11-10"
+    },
+    {
+      "title": "DISABLE_TELEMETRY を設定すると /model に Fable 5.2 が出ない",
+      "url": "https://github.com/anthropics/claude-code/issues/108726",
+      "source": "GitHub Issues",
+      "summary": "テレメトリを無効にすると機能フラグが読まれず、/model のピッカーから Fable 5.2 が消えるという報告である。",
+      "publishedAt": "2026-11-10"
+    }
+  ]
+}
