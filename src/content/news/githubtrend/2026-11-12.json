@@ -1,0 +1,95 @@
+{
+  "category": "githubtrend",
+  "collectedAt": "2026-11-12T08:35",
+  "items": [
+    {
+      "title": "meta/astryx",
+      "url": "https://github.com/meta/astryx",
+      "source": "GitHub, TypeScript",
+      "summary": "AI エージェント向けに作られた、カスタマイズ可能なオープンソースのデザインシステム。",
+      "image": "https://opengraph.githubassets.com/1/meta/astryx",
+      "rank": 1,
+      "stars": 2842
+    },
+    {
+      "title": "ZhuLinsen/daily_stock_analysis",
+      "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+      "source": "GitHub, Python",
+      "summary": "LLM を使って複数市場の株式を分析するツール。市場データやニュースをもとに判断用ダッシュボードを作り、通知や定期実行にも対応する。",
+      "image": "https://opengraph.githubassets.com/1/ZhuLinsen/daily_stock_analysis",
+      "rank": 2,
+      "stars": 429
+    },
+    {
+      "title": "GoogleChrome/modern-web-guidance-src",
+      "url": "https://github.com/GoogleChrome/modern-web-guidance-src",
+      "source": "GitHub, TypeScript",
+      "image": "https://opengraph.githubassets.com/1/GoogleChrome/modern-web-guidance-src",
+      "rank": 3,
+      "stars": 133
+    },
+    {
+      "title": "shadcn/improve",
+      "url": "https://github.com/shadcn/improve",
+      "source": "GitHub",
+      "summary": "最も高性能なモデルでコードベースを監査し、安価なモデルが実行するための計画を書かせるツール。",
+      "image": "https://opengraph.githubassets.com/1/shadcn/improve",
+      "rank": 4,
+      "stars": 333
+    },
+    {
+      "title": "addyosmani/agent-skills",
+      "url": "https://github.com/addyosmani/agent-skills",
+      "source": "GitHub, JavaScript",
+      "summary": "AI コーディングエージェント向けの、実運用を想定したエンジニアリング用スキル集。",
+      "image": "https://opengraph.githubassets.com/1/addyosmani/agent-skills",
+      "rank": 5,
+      "stars": 788
+    },
+    {
+      "title": "vercel-labs/agent-browser",
+      "url": "https://github.com/vercel-labs/agent-browser",
+      "source": "GitHub, Rust",
+      "summary": "AI エージェントのためのブラウザ自動操作 CLI。",
+      "image": "https://opengraph.githubassets.com/1/vercel-labs/agent-browser",
+      "rank": 6,
+      "stars": 712
+    },
+    {
+      "title": "we-promise/sure",
+      "url": "https://github.com/we-promise/sure",
+      "source": "GitHub, Ruby",
+      "summary": "誰でも使えて、誰でも開発に参加できる個人向け家計管理アプリ。",
+      "image": "https://opengraph.githubassets.com/1/we-promise/sure",
+      "rank": 7,
+      "stars": 1079
+    },
+    {
+      "title": "homeassistant-ai/ha-mcp",
+      "url": "https://github.com/homeassistant-ai/ha-mcp",
+      "source": "GitHub, Python",
+      "summary": "Claude や ChatGPT などの AI アシスタントから Home Assistant を設定・自動化できる MCP サーバー。",
+      "image": "https://opengraph.githubassets.com/1/homeassistant-ai/ha-mcp",
+      "rank": 8,
+      "stars": 640
+    },
+    {
+      "title": "openai/codex-security",
+      "url": "https://github.com/openai/codex-security",
+      "source": "GitHub, TypeScript",
+      "summary": "OpenAI による Codex Security の CLI と TypeScript SDK。セキュリティ脆弱性の発見・検証・修正を行う。",
+      "image": "https://opengraph.githubassets.com/1/openai/codex-security",
+      "rank": 9,
+      "stars": 20
+    },
+    {
+      "title": "TheAlgorithms/Java",
+      "url": "https://github.com/TheAlgorithms/Java",
+      "source": "GitHub, Java",
+      "summary": "各種アルゴリズムを Java で実装したコレクション。",
+      "image": "https://opengraph.githubassets.com/1/TheAlgorithms/Java",
+      "rank": 10,
+      "stars": 108
+    }
+  ]
+}
