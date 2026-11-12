@@ -1,6 +1,6 @@
 {
   "category": "xtrend",
-  "collectedAt": "2026-11-11T06:54",
+  "collectedAt": "2026-11-12T21:29",
   "items": [
     {
       "title": "Google、Gemini 4 Carbonを公開",
@@ -71,6 +71,66 @@
       "source": "X, @R0u9h",
       "summary": "AGENTS.mdやCLAUDE.md、rulesはそろそろ要らないのでは、という問題提起。機械的にチェックできることはlinterに任せるべきだという意見に反応が集まっている。",
       "publishedAt": "2026-11-10T14:18:19Z"
+    },
+    {
+      "title": "Chrome公式のWeb開発スキル「Modern Web Guidance」が公開",
+      "url": "https://x.com/_nogu66/status/2120427307840253954",
+      "source": "X, @_nogu66",
+      "summary": "新機能の実装、古いコードの刷新、セキュリティ強化、パフォーマンス改善に使えるエージェント用スキル。npx modern-web-guidance@latest install で入れて、「このサイトのパフォーマンスを改善して」と頼むだけで使えると紹介されている。"
+    },
+    {
+      "title": "OpenAI CodexがCloudflareのDurable Objects上で動くように",
+      "url": "https://x.com/CloudflareDev/status/2120408689035399442",
+      "source": "X, @CloudflareDev",
+      "summary": "状態を保持できるCloudflareのDurable Objects上で、Codexのエージェントループをローカルと同じように動かせる。会話やファイルが残るため、再起動しても作業を続けられる。"
+    },
+    {
+      "title": "PFNがAIエージェントでMN-Core向けに711モデルを移植",
+      "url": "https://x.com/preferred_jp/status/2120419572201464206",
+      "source": "X, @preferred_jp",
+      "summary": "ピーク時には約100のエージェントが並行して作業し、独自AIチップMN-Core L1000向けに711モデルを移植。対象の約2300モデルのダウンロード数の99%をカバーしたという。"
+    },
+    {
+      "title": "OpenAI APIで日本国内での推論が利用可能に",
+      "url": "https://x.com/ShotaAsanoSnow1/status/2120335742555828648",
+      "source": "X, @ShotaAsanoSnow1",
+      "summary": "データを国内に閉じる必要がある場合に役立つという投稿。使えるAPIやモデルには制限があり、MAMかZDRの利用条件を満たす必要があるとされる。"
+    },
+    {
+      "title": "日本語の推敲スキル「yomiyasu」v3.0.0がリリース",
+      "url": "https://x.com/oga_aiichiro/status/2120347027615703506",
+      "source": "X, @oga_aiichiro",
+      "summary": "スキル本文の字数を約3分の1にし、利用料を約25%削減。lint・diff・checkの各コマンドが.envなどのファイルを読まないようにもなった。"
+    },
+    {
+      "title": "Google Antigravityが並列マルチエージェントの「/swarm」を発表",
+      "url": "https://x.com/antigravity/status/2120279327589773639",
+      "source": "X, @antigravity",
+      "summary": "デスクトップアプリとCLIで使えるスラッシュコマンド。1つのプロンプトから複数のエージェントが共有の掲示板を使って計画・実装・検証を分担し、役割ごとにモデルも選べる。"
+    },
+    {
+      "title": "Logan Kilpatrick氏の「Gemini」の一言で次のモデルに注目",
+      "url": "https://x.com/OfficialLoganK/status/2120372550354280848",
+      "source": "X, @OfficialLoganK",
+      "summary": "Gemini 4 Carbon公開の翌日に「Gemini」とだけ投稿し、600件を超える返信で次のモデルの予想が飛び交っている。正式な発表はまだない。"
+    },
+    {
+      "title": "BaiduがERNIE 5.5 Flash Previewを公開",
+      "url": "https://x.com/Baidu_Inc/status/2120391732248637734",
+      "source": "X, @Baidu_Inc",
+      "summary": "総パラメータ280B、トークンごとのアクティブは14B。コンテキストは100万トークンで、生成速度は毎秒200トークン超とうたう。重みは11月25日までに公開予定。"
+    },
+    {
+      "title": "Claudeの有料ユーザーに利用上限の無料リセットが1回付与",
+      "url": "https://x.com/ClaudeDevs/status/2120275296637321476",
+      "source": "X, @ClaudeDevs",
+      "summary": "上限を想定より多く消費していた不具合の修正を受けた措置で、Pro・Max・Ultra・Teamが対象。日本時間12月11日7時までSettings > Usageから使える。"
+    },
+    {
+      "title": "AnthropicがClaudeを3日でAMDのGPUで動かしたと紹介",
+      "url": "https://x.com/AndrewCurran_/status/2120323074860179674",
+      "source": "X, @AndrewCurran_",
+      "summary": "上場に向けたロードショー動画で語られた内容とされる。Mythosに任せたところ人手をほとんどかけずに3日で動き、カーネルもほぼすべてClaudeが移植・作成したという。"
     }
   ]
 }
