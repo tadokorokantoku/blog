@@ -1,0 +1,76 @@
+{
+  "category": "xtrend",
+  "collectedAt": "2026-11-12T21:28",
+  "items": [
+    {
+      "title": "Cloudflare、新しい分散合意アルゴリズムQuePaxaで実験的な合意サービスを構築",
+      "url": "https://x.com/Cloudflare/status/2120518173292110101",
+      "source": "X, @Cloudflare",
+      "summary": "Cloudflareが、これまで本番運用されたことのない合意アルゴリズムQuePaxaを使った実験的な分散合意サービスを作っていると発表。世界規模の分散サービス「Meerkat」で採用したと紹介されている。",
+      "publishedAt": "2026-11-11T14:05:04Z"
+    },
+    {
+      "title": "Zed v1.28、ブランチのリモートをバックグラウンドで自動fetch",
+      "url": "https://x.com/zeddotdev/status/2120599327856881849",
+      "source": "X, @zeddotdev",
+      "summary": "Zed v1.28で、現在のブランチの上流と既定ブランチのリモートを一定間隔で自動fetchできるようになった（git.auto_fetch設定で有効化）。同日にはDeltaのCloud Runnersも発表され、PCを閉じてもエージェントのスレッドをクラウドで動かし続けられる。",
+      "publishedAt": "2026-11-11T19:27:33Z"
+    },
+    {
+      "title": "Prettier 3.10リリース、Yukuベースの公式プラグインを追加",
+      "url": "https://x.com/azu_re/status/2120505961282678903",
+      "source": "X, @azu_re",
+      "summary": "Prettier 3.10で、Yukuを使った公式プラグイン@prettier/plugin-yukuが追加され、yuku／yuku-tsパーサが使えるようになった。",
+      "publishedAt": "2026-11-11T13:16:32Z"
+    },
+    {
+      "title": "Matt Pocock氏「AI時代にいちばん効いているのはDDD」",
+      "url": "https://x.com/mattpocockuk/status/2120503390333768170",
+      "source": "X, @mattpocockuk",
+      "summary": "講座で受講者の反響が大きいのはエージェントの話よりドメイン駆動設計で、ユビキタス言語を作ってエージェントと共有し、コードもその言葉に合わせてリファクタするのが非常に効くという投稿。",
+      "publishedAt": "2026-11-11T13:06:19Z"
+    },
+    {
+      "title": "Google、意思決定特化のGemini Decision 1とDecisions APIを公開",
+      "url": "https://x.com/OfficialLoganK/status/2120581433639198885",
+      "source": "X, @OfficialLoganK",
+      "summary": "文章を生成せず、二択・多肢選択・採点などの閉じた選択を一度に最大1,000問こなす新モデル。画像・音声・動画・PDFに対応し、256Kコンテキスト、入力100万トークンあたり0.10ドルとされている。",
+      "publishedAt": "2026-11-11T18:16:26Z"
+    },
+    {
+      "title": "エージェントがUIで答える共通プロトコル「A2UI 1.0」が安定版に",
+      "url": "https://x.com/yegorjbanov/status/2120590385848394199",
+      "source": "X, @yegorjbanov",
+      "summary": "Googleが主導する生成UIのオープンプロトコルA2UIが1.0に。エージェントが画面の中身を記述し、アプリ側が登録済みのコンポーネントで描画する仕組みで、Flutter・React・SwiftUI・Jetpack ComposeなどのSDKも出たとされている。",
+      "publishedAt": "2026-11-11T18:52:01Z"
+    },
+    {
+      "title": "Node.js、22.x／24.x／26.x向けにセキュリティ更新",
+      "url": "https://x.com/nodejs/status/2120574018311123265",
+      "source": "X, @nodejs",
+      "summary": "llhttp、undici、sqliteの依存更新を含むセキュリティリリースが22.x・24.x・26.xで公開。HTTP/2やHTTPS処理の高深刻度の脆弱性を直すもので、早めのアップデートが勧められている。",
+      "publishedAt": "2026-11-11T17:46:58Z"
+    },
+    {
+      "title": "React Server ComponentsのRCE脆弱性（CVE-2026-126187）、公開エクスプロイトも出回る",
+      "url": "https://x.com/cvedotnow/status/2120289292685549820",
+      "source": "X, @cvedotnow",
+      "summary": "react-server-dom-webpack／parcel／turbopackに認証不要のリモートコード実行の脆弱性（CVSS 9.5）。修正版は19.0.9・19.1.10・19.2.9・19.3.1で、その後PoCコードが公開されたと報じられている。",
+      "publishedAt": "2026-11-10T22:55:35Z"
+    },
+    {
+      "title": "Google Antigravity、エージェントが組み込みブラウザを操作可能に",
+      "url": "https://x.com/antigravity/status/2120556423474028576",
+      "source": "X, @antigravity",
+      "summary": "Antigravityのエージェントが組み込みブラウザで調査、localhostでの動作確認、検証までできるように。ログイン先はユーザーが選び、ダウンロードは承認制。",
+      "publishedAt": "2026-11-11T16:37:04Z"
+    },
+    {
+      "title": "OpenAI研究、モデルが賢くなるほど思考過程（CoT）の監視が難しくなる傾向",
+      "url": "https://x.com/jeffreygwang/status/2120581630196879460",
+      "source": "X, @jeffreygwang",
+      "summary": "学習の過程でCoTなしでの能力とCoTの制御能力がどう変わるかを調べたOpenAIの研究。スケールするにつれて、CoTを通じたモデルの監視が難しくなる可能性があるという結果を共有している。",
+      "publishedAt": "2026-11-11T18:17:13Z"
+    }
+  ]
+}
