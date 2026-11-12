@@ -71,6 +71,76 @@
       "source": "X, @jeffreygwang",
       "summary": "学習の過程でCoTなしでの能力とCoTの制御能力がどう変わるかを調べたOpenAIの研究。スケールするにつれて、CoTを通じたモデルの監視が難しくなる可能性があるという結果を共有している。",
       "publishedAt": "2026-11-11T18:17:13Z"
+    },
+    {
+      "title": "AWS Emulator が一般提供、ローカルやCIでAWS APIを再現",
+      "url": "https://x.com/zaru/status/2120667011026227218",
+      "source": "X, @zaru",
+      "summary": "AWSアカウントもデプロイも不要で、手元やCIでAWSサービスを再現できる無料のエミュレータ。LocalStackの完全な置き換えではないがかなりの部分を代替でき、ecspressoでのECSデプロイ操作のテストにも使えたという検証報告。AWSはコードをすべて自律AIエージェントが書いたと発表している。",
+      "publishedAt": "2026-11-11T23:56:30Z"
+    },
+    {
+      "title": "Modern Web Guidance 1.0、AIエージェントに最新のWeb実装指針を渡すスキル集",
+      "url": "https://x.com/azu_re/status/2120745151291339010",
+      "source": "X, @azu_re",
+      "summary": "Chromeチームが中心となりEdge・Firefox・MDNも加わる、コーディングエージェント向けのWeb実装指針とブラウザ互換性データのスキル集。npx modern-web-guidance@latest install で導入でき、既存コードの古い書き方を洗い出すlegacy-scanもあるとされている。",
+      "publishedAt": "2026-11-12T05:07:00Z"
+    },
+    {
+      "title": "Biome 2.6.7、lintルール23個とgrit()クエリ関数を追加",
+      "url": "https://x.com/biomejs/status/2120645275114979695",
+      "source": "X, @biomejs",
+      "summary": "新しいlintルールを23個追加し、JavaScriptプラグインで特定の形のASTノードを判定しやすくするgrit()クエリ関数が入った。",
+      "publishedAt": "2026-11-11T22:30:07Z"
+    },
+    {
+      "title": "「オーケストレーターはメインのモデルが指示を書き直してしまう」",
+      "url": "https://x.com/kenn/status/2120766422490194376",
+      "source": "X, @kenn",
+      "summary": "どのオーケストレーターにも共通する問題として、議論の中で伝えた細かいニュアンスや結論に至った経緯が、メインのモデルによる指示の書き直しで丸められて落ちてしまうという指摘。",
+      "publishedAt": "2026-11-12T06:31:31Z"
+    },
+    {
+      "title": "T3 Code、オープンウェイトモデルの利用はトラフィックの0.5%未満",
+      "url": "https://x.com/theo/status/2120732020036993066",
+      "source": "X, @theo",
+      "summary": "Theo氏が、AIコーディングエージェントを束ねるT3 Codeのトラフィックのうちオープンウェイトモデルは0.5%未満だと明かした。同日にコントリビューターが1,000人を超えたことも報告している。",
+      "publishedAt": "2026-11-12T04:14:49Z"
+    },
+    {
+      "title": "Apache HTTP ServerのHTTP/2に認証不要のRCE脆弱性（CVE-2026-119618）",
+      "url": "https://x.com/TheHackersNews/status/2120746775455858849",
+      "source": "X, @TheHackersNews",
+      "summary": "HTTP/2を有効にした2.4.55〜2.4.70が対象でCVSS 9.8。2.4.71で修正済みだが、一部のLinuxディストリビューションはまだパッチ待ちとされ、Red Hatは既定構成への確実なエクスプロイトが示されたとしている。",
+      "publishedAt": "2026-11-12T05:13:27Z"
+    },
+    {
+      "title": "Logan Kilpatrick氏が「Gemini」とだけ投稿、Gemini 4 Hydrogen登場か",
+      "url": "https://x.com/OfficialLoganK/status/2120738935261585576",
+      "source": "X, @OfficialLoganK",
+      "summary": "新モデルの予告と受け止められ大きな反響に。Vertex AIで「gemini-4-hydrogen」が応答したという報告も出ており、Flash相当の安価なモデルとされている。",
+      "publishedAt": "2026-11-12T04:42:18Z"
+    },
+    {
+      "title": "Baidu ERNIE 5.5 Flash Preview、Code Arena WebDevでオープンモデル2位に迫る",
+      "url": "https://x.com/arena/status/2120685092909838405",
+      "source": "X, @arena",
+      "summary": "Code Arena: WebDevで1668ポイントとなり、DeepSeek-V4.1-Flash（Max）やKimi K3（Max）を上回ってオープンモデル2位に向かっているとArenaが発表。重みはまもなくApache 2.0で公開されるとしている。",
+      "publishedAt": "2026-11-12T01:08:21Z"
+    },
+    {
+      "title": "Gemini APIのManaged Agents、自前のサンドボックスを使えるように",
+      "url": "https://x.com/GoogleAIStudio/status/2120610219235660183",
+      "source": "X, @GoogleAIStudio",
+      "summary": "Managed Agentsで、コード実行やファイル操作を自社のクラスタやmicroVM、Fly.io・E2B・Modal・Vercelなどのパートナー環境で動かせるセルフホスト環境に対応した。",
+      "publishedAt": "2026-11-11T20:10:49Z"
+    },
+    {
+      "title": "「モノレポはずっとアンチパターンだった」、エージェント時代のリポジトリ構成で議論",
+      "url": "https://x.com/ThePrimeagen/status/2120581902562119919",
+      "source": "X, @ThePrimeagen",
+      "summary": "エージェントがコードを扱う時代にモノレポは不要という主張に乗った投稿が話題に。AGENTS.mdだけを置いた「コーディネーター」リポジトリから複数リポジトリを編集させる運用例も共有されている。",
+      "publishedAt": "2026-11-11T18:18:18Z"
     }
   ]
 }
