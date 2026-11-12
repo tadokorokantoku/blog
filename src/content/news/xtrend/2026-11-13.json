@@ -1,0 +1,76 @@
+{
+  "category": "xtrend",
+  "collectedAt": "2026-11-13T06:54",
+  "items": [
+    {
+      "title": "Expo Simulators登場、エージェント向けのクラウドシミュレーター",
+      "url": "https://x.com/expo/status/2120924979898601506",
+      "source": "X, @expo",
+      "summary": "コーディングエージェントが変更をクラウド上のシミュレーター／エミュレーターで動かし、録画を持ち帰ってから人に確認を求める仕組み。モバイル開発の「書く速さに検証が追いつかない」問題を狙う。",
+      "publishedAt": "2026-11-12T17:01:34Z"
+    },
+    {
+      "title": "Zed、ACP経由でClaude Agentに対応（Delta）",
+      "url": "https://x.com/zeddotdev/status/2120954263463498008",
+      "source": "X, @zeddotdev",
+      "summary": "既に契約しているClaudeのサブスクでサインインして使える。最も要望が多かった機能のため、通常より早めに出したとしている。",
+      "publishedAt": "2026-11-12T18:57:56Z"
+    },
+    {
+      "title": "Matt Pocock氏、複数リポジトリでエージェントを回す「Home Repo」パターンを解説",
+      "url": "https://x.com/mattpocockuk/status/2120838662254420341",
+      "source": "X, @mattpocockuk",
+      "summary": "スキルやステアリングファイル、ツール類を置く「ホームリポジトリ」を作るパターンの記事を公開。自分の組織のリポジトリに適用するためのプロンプトも付いている。",
+      "publishedAt": "2026-11-12T11:18:35Z"
+    },
+    {
+      "title": "Claude Managed Agentsのセルフホスト版がプライベートベータに",
+      "url": "https://x.com/ClaudeDevs/status/2120938988165091693",
+      "source": "X, @ClaudeDevs",
+      "summary": "エージェントのハーネス、サンドボックス、セッション履歴を自社クラウドやオンプレに置け、Claudeへのリクエストの送り先も選べる。",
+      "publishedAt": "2026-11-12T17:57:14Z"
+    },
+    {
+      "title": "Emil Kowalski氏のスキル「/learn-taste」、デザインの手直しをルール化",
+      "url": "https://x.com/emilkowalski/status/2120886540788486199",
+      "source": "X, @emilkowalski",
+      "summary": "セッション中に自分が入れたデザインの修正を集め、理由付きの厳密なルールに変換して、次のエージェントが同じミスをしないようにするスキル。",
+      "publishedAt": "2026-11-12T14:28:50Z"
+    },
+    {
+      "title": "Google、Gemini 4 Hydrogenを公開",
+      "url": "https://x.com/OfficialLoganK/status/2120940951292268640",
+      "source": "X, @OfficialLoganK",
+      "summary": "Gemini 4を誰でも使えるようにする高速モデルで、AI Studio、Gemini API、Geminiアプリ、検索などで提供。Logan Kilpatrick氏は3.8 Flashよりタスクを2.5倍速く終え、作り話は5分の1としており、CursorはCursorBenchで54.3%（3.8 Flashは39.6%）と公表。",
+      "publishedAt": "2026-11-12T18:05:02Z"
+    },
+    {
+      "title": "Vercel、エージェントがUIを組むための「UI SDK」を発表",
+      "url": "https://x.com/vercel/status/2120950020249895314",
+      "source": "X, @vercel",
+      "summary": "ポップアップ、選択、タイプアヘッドなど50以上の振る舞いをまとめたライブラリ。React、Vue、Svelte、Solid、Web Componentsで共通に使えるとされている。",
+      "publishedAt": "2026-11-12T18:41:04Z"
+    },
+    {
+      "title": "Anthropic、IPOを正式告知",
+      "url": "https://x.com/AnthropicAI/status/2120841731302154708",
+      "source": "X, @AnthropicAI",
+      "summary": "SECに登録届出書を提出し、IPO特設ページを公開。Nasdaq上場でティッカーはANT、1株70〜78ドルで約8.25億株、取引開始は11月19日とされている。",
+      "publishedAt": "2026-11-12T11:30:46Z"
+    },
+    {
+      "title": "NVIDIA、CEO交代を発表",
+      "url": "https://x.com/nvidianewsroom/status/2120876571829662014",
+      "source": "X, @nvidianewsroom",
+      "summary": "NVIDIAが公式にCEO交代を発表。報道ではJensen Huang氏が辞任し、CFOのColette Kress氏が暫定CEOを務めるとされ、株価も大きく下げている。",
+      "publishedAt": "2026-11-12T13:49:13Z"
+    },
+    {
+      "title": "Figma、3Dトランスフォームをオープンベータで提供",
+      "url": "https://x.com/figma/status/2120926665790681354",
+      "source": "X, @figma",
+      "summary": "x・y・z軸の回転と遠近で3Dのデザインが作れるようになり、Figmaエージェントでの生成やFigma MCP経由でのコーディングエージェントによる実装にも対応。",
+      "publishedAt": "2026-11-12T17:08:16Z"
+    }
+  ]
+}
