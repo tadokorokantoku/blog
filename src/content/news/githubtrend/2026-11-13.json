@@ -1,0 +1,96 @@
+{
+  "category": "githubtrend",
+  "collectedAt": "2026-11-13T08:31",
+  "items": [
+    {
+      "title": "GoogleChrome/modern-web-guidance-src",
+      "url": "https://github.com/GoogleChrome/modern-web-guidance-src",
+      "source": "GitHub, TypeScript",
+      "summary": "コーディングエージェントに最新の Web のベストプラクティスを教え、知識を最新に保つためのガイダンス集である。",
+      "image": "https://opengraph.githubassets.com/1/GoogleChrome/modern-web-guidance-src",
+      "rank": 1,
+      "stars": 799
+    },
+    {
+      "title": "openai/codex-security",
+      "url": "https://github.com/openai/codex-security",
+      "source": "GitHub, TypeScript",
+      "summary": "OpenAI の Codex Security の CLI と TypeScript SDK。セキュリティ脆弱性の発見・検証・修正を行う。",
+      "image": "https://opengraph.githubassets.com/1/openai/codex-security",
+      "rank": 2,
+      "stars": 663
+    },
+    {
+      "title": "nvm-sh/nvm",
+      "url": "https://github.com/nvm-sh/nvm",
+      "source": "GitHub, Shell",
+      "summary": "複数の Node.js のバージョンを切り替えて使うための Node Version Manager。POSIX 準拠の bash スクリプトで書かれている。",
+      "image": "https://opengraph.githubassets.com/1/nvm-sh/nvm",
+      "rank": 3,
+      "stars": 107
+    },
+    {
+      "title": "pookjw/HermesEnabler",
+      "url": "https://github.com/pookjw/HermesEnabler",
+      "source": "GitHub, Objective-C",
+      "summary": "Apple Watch Hermès 専用の文字盤を、どの Apple Watch でも使えるようにするツールである。",
+      "image": "https://opengraph.githubassets.com/1/pookjw/HermesEnabler",
+      "rank": 4,
+      "stars": 300
+    },
+    {
+      "title": "we-promise/sure",
+      "url": "https://github.com/we-promise/sure",
+      "source": "GitHub, Ruby",
+      "summary": "誰でも使え、誰でも開発に参加できるオープンソースの個人向け家計管理アプリである。",
+      "image": "https://opengraph.githubassets.com/1/we-promise/sure",
+      "rank": 5,
+      "stars": 974
+    },
+    {
+      "title": "QwenLM/qwen-code",
+      "url": "https://github.com/QwenLM/qwen-code",
+      "source": "GitHub, TypeScript",
+      "summary": "ターミナル上で動くオープンソースの AI コーディングエージェントである。",
+      "image": "https://opengraph.githubassets.com/1/QwenLM/qwen-code",
+      "rank": 6,
+      "stars": 151
+    },
+    {
+      "title": "ashhart/TensorFold",
+      "url": "https://github.com/ashhart/TensorFold",
+      "source": "GitHub, Zig",
+      "summary": "Zig で書かれた LLM 推論エンジン。Metal・CUDA・Vulkan に対応する。",
+      "image": "https://opengraph.githubassets.com/1/ashhart/TensorFold",
+      "rank": 7,
+      "stars": 94
+    },
+    {
+      "title": "nodejs/node",
+      "url": "https://github.com/nodejs/node",
+      "source": "GitHub, JavaScript",
+      "summary": "JavaScript ランタイム Node.js の本体リポジトリである。",
+      "image": "https://opengraph.githubassets.com/1/nodejs/node",
+      "rank": 8,
+      "stars": 133
+    },
+    {
+      "title": "addyosmani/agent-skills",
+      "url": "https://github.com/addyosmani/agent-skills",
+      "source": "GitHub, JavaScript",
+      "summary": "AI コーディングエージェント向けの、実務レベルのエンジニアリングスキル集である。",
+      "image": "https://opengraph.githubassets.com/1/addyosmani/agent-skills",
+      "rank": 9,
+      "stars": 812
+    },
+    {
+      "title": "meta/astryx",
+      "url": "https://github.com/meta/astryx",
+      "source": "GitHub, TypeScript",
+      "summary": "AI エージェント向けに作られた、カスタマイズ可能なオープンソースのデザインシステム。",
+      "image": "https://opengraph.githubassets.com/1/meta/astryx",
+      "rank": 10,
+      "stars": 1789
+    }
+  ]
+}

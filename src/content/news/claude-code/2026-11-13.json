@@ -1,0 +1,52 @@
+{
+  "category": "claude-code",
+  "collectedAt": "2026-11-13T08:31",
+  "items": [
+    {
+      "title": "v2.1.323: 実験的な Code Mode が登場、プラグインに対応バージョン指定",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.323",
+      "source": "GitHub Releases",
+      "summary": "Claude が JavaScript を書いてツールを呼び出す実験的な Code Mode がオプトインで加わった。plugin.json の engines[\"claude-code\"] で対応バージョンを指定でき、範囲外のプラグインは読み込まれない。ほかに Bash 許可ルールのワイルドカードやサインインまわりの不具合が多数修正され、auto モードが使えないときの --permission-mode auto は Manual で始まるようになった。",
+      "publishedAt": "2026-11-12"
+    },
+    {
+      "title": "Claude Managed Agents を自前の環境で動かせるように",
+      "url": "https://claude.com/resources/articles/self-hosted-claude-managed-agents",
+      "source": "Claude Blog",
+      "summary": "セルフホスト版の Claude Managed Agents がプライベートベータで公開された。自社のクラウドやオンプレミスでエージェントを動かし、ホスティングや認証情報、セッション履歴を自分で管理できる。",
+      "image": "https://claude.com/resources/articles/self-hosted-claude-managed-agents/opengraph-image/og",
+      "publishedAt": "2026-11-12"
+    },
+    {
+      "title": "Claude Meetings がベータで登場",
+      "url": "https://claude.com/resources/articles/claude-meetings",
+      "source": "Claude Blog",
+      "summary": "ビデオ会議に Claude を参加させられるようになった。会話中にメモを取り、質問に答え、ドキュメントやホワイトボードを作っていく。",
+      "image": "https://claude.com/resources/articles/claude-meetings/opengraph-image/og",
+      "publishedAt": "2026-11-12"
+    },
+    {
+      "title": "Claude for Manufacturing が登場",
+      "url": "https://claude.com/resources/articles/claude-for-manufacturing",
+      "source": "Claude Blog",
+      "summary": "製造業向けのプラグインで、17 のスキルと 4 つのコネクタを備える。工場の既存の記録から見積もりや品質レポート、サプライヤーへの依頼を下書きし、担当者が確認・承認する。",
+      "image": "https://claude.com/resources/articles/claude-for-manufacturing/opengraph-image/og",
+      "publishedAt": "2026-11-12"
+    },
+    {
+      "title": "Opus 5.5 を日常の知的作業に使う",
+      "url": "https://claude.com/resources/articles/using-claude-opus-5-5-as-your-daily-driver-for-knowledge-work",
+      "source": "Claude Blog",
+      "summary": "Opus 5.5 は Pro・Max・Ultra・Team プランの既定モデルである。記事では他のモデルとの比べ方と、知的作業での使いこなしのコツを紹介している。",
+      "image": "https://claude.com/resources/articles/using-claude-opus-5-5-as-your-daily-driver-for-knowledge-work/opengraph-image/og",
+      "publishedAt": "2026-11-12"
+    },
+    {
+      "title": "Microsoft 365 コネクタでエラーが多発",
+      "url": "https://status.claude.com/incidents/sqn3fg1l96dl",
+      "source": "Claude Status",
+      "summary": "Microsoft 365 側の障害により、コネクタのメール・カレンダー・検索ツールの大半のリクエストが失敗している。Claude for Outlook も影響を受けており、収集時点では未解決である。",
+      "publishedAt": "2026-11-12"
+    }
+  ]
+}
