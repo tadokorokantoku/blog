@@ -1,0 +1,76 @@
+{
+  "category": "xtrend",
+  "collectedAt": "2026-11-14T06:49",
+  "items": [
+    {
+      "title": "Zed、エージェントがコードを書いたスレッドまでたどれる機能を予告",
+      "url": "https://x.com/zeddotdev/status/2121279582703628747",
+      "source": "X, @zeddotdev",
+      "summary": "エージェントがコードの行から、それを書いた会話スレッドにたどれるようになる予定。コードだけでは分からない判断や理由にアクセスできるとしている。DeltaDBを使ったハイライト表示も紹介された。",
+      "publishedAt": "2026-11-13T16:30:38Z"
+    },
+    {
+      "title": "Claude CodeのStop hookは「exit 2」で再試行させる",
+      "url": "https://x.com/lydiahallie/status/2121313048820617645",
+      "source": "X, @lydiahallie",
+      "summary": "チェックに失敗したときにClaudeにやり直させるなら、Stop hookはexit code 2で終える必要がある。exit 1はブロックしないので、失敗してもそのまま終わってしまう。",
+      "publishedAt": "2026-11-13T18:43:37Z"
+    },
+    {
+      "title": "Matt Pocock氏、長いMarkdownの代わりに動画を作るスキル「/animatic」",
+      "url": "https://x.com/mattpocockuk/status/2121211579098083668",
+      "source": "X, @mattpocockuk",
+      "summary": "ツールを選んでセットアップする/setup-animaticと、アップロードできる動画を作る/animaticの2つのスキルを開発中とのこと。",
+      "publishedAt": "2026-11-13T12:00:25Z"
+    },
+    {
+      "title": "Cloudflare、支出上限を設定できるSpend Managementをオープンベータ公開",
+      "url": "https://x.com/CloudflareDev/status/2121244234967830797",
+      "source": "X, @CloudflareDev",
+      "summary": "支出のしきい値を決めて、達したら処理を止めるよう設定できる。従量課金のユーザー向けで、まずWorkersとDurable Objectsから対応。",
+      "publishedAt": "2026-11-13T14:10:11Z"
+    },
+    {
+      "title": "Vercel、Workflow SDK 5とVercel Workflowsを発表",
+      "url": "https://x.com/rauchg/status/2121277727940776114",
+      "source": "X, @rauchg",
+      "summary": "Guillermo Rauch氏によると、最初のステップが始まるまでの時間とステップ間の時間が大きく縮まった。暗号化とセキュリティも強化したとしている。",
+      "publishedAt": "2026-11-13T16:23:16Z"
+    },
+    {
+      "title": "OpenAI、エージェントが代わりに支払いできる「ChatGPT Wallet」",
+      "url": "https://x.com/ChatGPT/status/2121283151729496235",
+      "source": "X, @ChatGPT",
+      "summary": "dotが本人の承認を得て購入まで済ませられる。実際のカード情報はエージェントに渡らず、購入ごとにセキュリティチェックが入る。まずProユーザーから順次提供。",
+      "publishedAt": "2026-11-13T16:44:49Z"
+    },
+    {
+      "title": "llama.cpp v1.0.0リリース",
+      "url": "https://x.com/ggerganov/status/2121246103312212124",
+      "source": "X, @ggerganov",
+      "summary": "ローカルLLM実行の定番OSSであるllama.cppが1.0に到達した。同時にggml v1.0.0もリリースされている。",
+      "publishedAt": "2026-11-13T14:17:36Z"
+    },
+    {
+      "title": "Google Antigravity、サブエージェントを組み合わせるDynamic Workflowsを提供開始",
+      "url": "https://x.com/antigravity/status/2121327669534933025",
+      "source": "X, @antigravity",
+      "summary": "/run-workflowを使うと、エージェントがPythonスクリプトを書いて、並列や順番に動くサブエージェントをまとめて動かす。プロンプトのぶれではなく、決まった流れで制御できるとしている。",
+      "publishedAt": "2026-11-13T19:41:43Z"
+    },
+    {
+      "title": "Cognition、Devinのクラウド上で動くWebアプリ「Devin Apps」を発表",
+      "url": "https://x.com/cognition/status/2121255137914077300",
+      "source": "X, @cognition",
+      "summary": "Devinのクラウドコンピューター上で動く、非公開で共有もできるWebアプリ。社内ツールやプレビュー環境、Devin自体の拡張に使う想定。",
+      "publishedAt": "2026-11-13T14:53:30Z"
+    },
+    {
+      "title": "Thinking Machines、Inkling 2 Smallを最初から4bitで学習した方法を公開",
+      "url": "https://x.com/thinkymachines/status/2121353292878110868",
+      "source": "X, @thinkymachines",
+      "summary": "事前学習の最初のステップから最後のRLロールアウトまで、フォワードパスを最初から4bitで回した手法をブログ「Connectionism」で詳しく説明した。",
+      "publishedAt": "2026-11-13T21:23:32Z"
+    }
+  ]
+}
