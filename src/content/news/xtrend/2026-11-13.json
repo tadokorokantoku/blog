@@ -1,6 +1,6 @@
 {
   "category": "xtrend",
-  "collectedAt": "2026-11-13T06:54",
+  "collectedAt": "2026-11-13T18:13",
   "items": [
     {
       "title": "Expo Simulators登場、エージェント向けのクラウドシミュレーター",
@@ -71,6 +71,76 @@
       "source": "X, @figma",
       "summary": "x・y・z軸の回転と遠近で3Dのデザインが作れるようになり、Figmaエージェントでの生成やFigma MCP経由でのコーディングエージェントによる実装にも対応。",
       "publishedAt": "2026-11-12T17:08:16Z"
+    },
+    {
+      "title": "Claude Codeで「/doctor prompt-audit」を回そうという呼びかけ",
+      "url": "https://x.com/lydiahallie/status/2121011733699633613",
+      "source": "X, @lydiahallie",
+      "summary": "Lydia Hallie氏が、まだならClaude Codeのリポジトリで `/doctor prompt-audit` を実行しておこうと投稿し、3,400件超のいいねを集めている。",
+      "publishedAt": "2026-11-12T22:46:18Z"
+    },
+    {
+      "title": "vitestをjsdomからwasm-quickjs-domに替えて30%高速化",
+      "url": "https://x.com/azu_re/status/2121106605731414483",
+      "source": "X, @azu_re",
+      "summary": "vitestのDOM環境をjsdomからWasm製のwasm-quickjs-domに置き換えて約30%速くしたというZennの記事を、azu氏が紹介している。",
+      "publishedAt": "2026-11-13T05:03:17Z"
+    },
+    {
+      "title": "GitHub Actions狙いの攻撃、鍵の再発行だけでは終わらない",
+      "url": "https://x.com/nwiizo/status/2121065260304228789",
+      "source": "X, @nwiizo",
+      "summary": "Aikido Securityが報告したCIシークレット窃取キャンペーンでは、クラウド側の信頼設定まで変える挙動が報告されている。失効・再発行に加えて、OIDCの信頼先や追加された権限も点検したいとしている。",
+      "publishedAt": "2026-11-13T02:19:00Z"
+    },
+    {
+      "title": "Google渋谷でImmersive Webの勉強会、11月20日",
+      "url": "https://x.com/clockmaker/status/2121109153422913867",
+      "source": "X, @clockmaker",
+      "summary": "HTML-in-CanvasやWebGPUなどを扱う「Play the Web: Immersive Web meetup in Tokyo」が11月20日（金）18:30から開催され、Chromeチームの人も来るとのこと。",
+      "publishedAt": "2026-11-13T05:13:25Z"
+    },
+    {
+      "title": "OpenAI、社内で常駐エージェントを安全に運用する方法を公開",
+      "url": "https://x.com/kevins8/status/2120962631788114377",
+      "source": "X, @kevins8",
+      "summary": "OpenClawやDotsのような常駐エージェントは「契約者」に近く、裏で勝手に動けるぶん管理が難しいとして、社内でエージェント群を運用するベストプラクティスをブログにまとめた。steipete氏も自チームの記事として紹介している。",
+      "publishedAt": "2026-11-12T19:31:11Z"
+    },
+    {
+      "title": "Claude Meetings、ビデオ会議にClaudeを参加させられるベータ",
+      "url": "https://x.com/claudeai/status/2120973994191094179",
+      "source": "X, @claudeai",
+      "summary": "会話中にドキュメントやホワイトボードなどを一緒に作れる機能で、TeamとEnterpriseプランでベータ提供を開始。日本語圏の紹介ではGoogle Meet対応、通話後にメモやトランスクリプトが残るとされている。",
+      "publishedAt": "2026-11-12T20:16:20Z"
+    },
+    {
+      "title": "Cloudflare、エージェント向けブラウザ「Kitesurf」をオープンソース化",
+      "url": "https://x.com/celso/status/2120994509551223020",
+      "source": "X, @celso",
+      "summary": "Cloudflare Workers上で動くAIエージェント向けのステートレスなブラウザで、GitHubでソースが公開された。国内ではRust製のヘッドレスブラウザとして紹介されている。",
+      "publishedAt": "2026-11-12T21:37:51Z"
+    },
+    {
+      "title": "Rust 1.100リリース、never型とAllocator APIが安定化",
+      "url": "https://x.com/aznhe21/status/2121030282929172576",
+      "source": "X, @aznhe21",
+      "summary": "never型（!）やVec・Box向けの独自アロケーターAPIが安定化。未使用の依存クレートの検知やサプライチェーン攻撃対策も入ったとして、解説記事が出ている。",
+      "publishedAt": "2026-11-13T00:00:00Z"
+    },
+    {
+      "title": "AWS Emulator、AIエージェントだけで作られたローカル版AWS",
+      "url": "https://x.com/codeswithroh/status/2121120237898908132",
+      "source": "X, @codeswithroh",
+      "summary": "200以上のサービスをノートPC上で動かせるオープンソースのエミュレーターで、コードはすべてエージェントが書いたとされている。公開ドキュメントからテストを起こし実環境と突き合わせる作り方や、PRを受け付けない運用が議論を呼んでいる。",
+      "publishedAt": "2026-11-13T05:57:27Z"
+    },
+    {
+      "title": "World Labs、3Dワールド生成の「Atlas」を一般公開",
+      "url": "https://x.com/theworldlabs/status/2120942033401717108",
+      "source": "X, @theworldlabs",
+      "summary": "画像やスケッチなどから一貫した3D空間を生成でき、アプリとAPIからキーフレーム、動画クリップ、3D Gaussian Splatとして書き出せる。",
+      "publishedAt": "2026-11-12T18:09:20Z"
     }
   ]
 }
