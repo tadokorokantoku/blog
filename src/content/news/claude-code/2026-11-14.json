@@ -1,0 +1,58 @@
+{
+  "category": "claude-code",
+  "collectedAt": "2026-11-14T08:31",
+  "items": [
+    {
+      "title": "v2.1.325: サンドボックス内の Bash も通常の許可フローに、セキュリティ修正多数",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.325",
+      "source": "GitHub Releases",
+      "summary": "サンドボックス内の Bash コマンドが既定で通常の許可フローに従うようになり、従来の挙動は sandbox.autoAllowBashIfSandboxed: true で戻せる。スケジュールタスクと /loop は allowed-tools やフックを宣言したスキルの実行前に確認を求めるようになった。zstd 圧縮レスポンスのデコードや Bash の複合コマンドの許可チェックの抜けなど、セキュリティ関連の修正も多数含まれる。",
+      "publishedAt": "2026-11-13"
+    },
+    {
+      "title": "常時稼働するエージェントの作り方",
+      "url": "https://claude.com/resources/articles/building-always-on-agents",
+      "source": "Claude Blog",
+      "summary": "セッションをまたいで動き続け、自分で行動するタイミングを判断するエージェントを作るための基本的な構成要素を解説するガイドである。",
+      "image": "https://claude.com/resources/articles/building-always-on-agents/opengraph-image/og",
+      "publishedAt": "2026-11-13"
+    },
+    {
+      "title": "スタートアップ向け Claude Tag ガイド",
+      "url": "https://claude.com/resources/articles/claude-tag-guide-for-startups",
+      "source": "Claude Blog",
+      "summary": "スタートアップが Claude Tag を使って開発を速め、運用を拡大していく方法を紹介する記事である。",
+      "image": "https://claude.com/resources/articles/claude-tag-guide-for-startups/opengraph-image/og",
+      "publishedAt": "2026-11-13"
+    },
+    {
+      "title": "強い安全性評価を作る",
+      "url": "https://www.anthropic.com/research/building-strong-safety-evaluations",
+      "source": "Anthropic Engineering",
+      "summary": "Anthropic のエンジニアリングブログで、AI の安全性評価をどう設計し、信頼できるものにするかを扱った記事が公開された。",
+      "image": "https://assets.claude.com/04a298be2efa241bd5a4a810b97c62bb8ef257dc.jpg",
+      "publishedAt": "2026-11-13"
+    },
+    {
+      "title": "claude.ai・Claude Code・platform.claude.com でエラーが増加",
+      "url": "https://status.claude.com/incidents/nn11wk485zfn",
+      "source": "Claude Status",
+      "summary": "11月13日 09:58〜11:58（UTC）に claude.ai や Claude Code、platform.claude.com でエラーが増えた。障害はすでに解消している。",
+      "publishedAt": "2026-11-13"
+    },
+    {
+      "title": "claude.ai・Claude API・Claude Code でエラーが増加",
+      "url": "https://status.claude.com/incidents/34wq7gxnxvvm",
+      "source": "Claude Status",
+      "summary": "11月13日 13:09〜15:38（UTC）に claude.ai、Claude API、Claude Code に加え、コネクタや Managed Agents、Claude Meetings などでエラーが増えた。障害はすでに解消している。",
+      "publishedAt": "2026-11-13"
+    },
+    {
+      "title": "v2.1.323 で subagentStatusLine が代替なしに削除されたとの報告",
+      "url": "https://github.com/anthropics/claude-code/issues/109446",
+      "source": "GitHub Issues",
+      "summary": "v2.1.323 で subagentStatusLine が削除され、サブエージェントごとのコンテキスト量やコスト、モデル、effort が見えなくなったという issue が立ち、反応を集めている。",
+      "publishedAt": "2026-11-13"
+    }
+  ]
+}

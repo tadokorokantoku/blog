@@ -1,0 +1,13 @@
+{
+  "category": "orca",
+  "collectedAt": "2026-11-14T08:31",
+  "items": [
+    {
+      "title": "v1.4.258: Copilot Chat に対応、プロジェクト追加をメニューに集約、orca chat CLI を一時撤去",
+      "url": "https://github.com/stablyai/orca/releases/tag/v1.4.258",
+      "source": "GitHub Releases",
+      "summary": "GitHub Copilot Chat を ACP サーバー経由で使えるようになり、返答のストリーミングやツール出力、差分を表示する（Copilot CLI 1.0.88 以上とサインインが必要）。フォルダ追加・URL からのクローン・新規作成を1つのメニューから行えるようになり、ブラウザ拡張は設定に移って既定で有効になった。一方で orca chat の list/read/send/wait は差し戻しで使えなくなり、ソースからの iOS ビルドは iOS 16.4 以上が必要になった。",
+      "publishedAt": "2026-11-13"
+    }
+  ]
+}

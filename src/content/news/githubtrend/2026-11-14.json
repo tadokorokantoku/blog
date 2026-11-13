@@ -1,0 +1,96 @@
+{
+  "category": "githubtrend",
+  "collectedAt": "2026-11-14T08:31",
+  "items": [
+    {
+      "title": "alibaba/open-code-review",
+      "url": "https://github.com/alibaba/open-code-review",
+      "source": "GitHub, Go",
+      "summary": "Alibaba の規模で使われてきたコードレビューツール。ルールベースのパイプラインと LLM エージェントを組み合わせ、ヌルポインタやスレッド安全性、XSS、SQL インジェクションなどを複数言語で検出して行単位でコメントする。",
+      "image": "https://opengraph.githubassets.com/1/alibaba/open-code-review",
+      "rank": 1,
+      "stars": 206
+    },
+    {
+      "title": "GoogleChrome/modern-web-guidance-src",
+      "url": "https://github.com/GoogleChrome/modern-web-guidance-src",
+      "source": "GitHub, TypeScript",
+      "summary": "コーディングエージェントに最新の Web のベストプラクティスを教え、知識を最新に保つためのガイダンス集である。",
+      "image": "https://opengraph.githubassets.com/1/GoogleChrome/modern-web-guidance-src",
+      "rank": 2,
+      "stars": 1875
+    },
+    {
+      "title": "openai/codex-security",
+      "url": "https://github.com/openai/codex-security",
+      "source": "GitHub, TypeScript",
+      "summary": "OpenAI の Codex Security の CLI と TypeScript SDK。セキュリティ脆弱性の発見・検証・修正を行う。",
+      "image": "https://opengraph.githubassets.com/1/openai/codex-security",
+      "rank": 3,
+      "stars": 754
+    },
+    {
+      "title": "ZhuLinsen/daily_stock_analysis",
+      "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+      "source": "GitHub, Python",
+      "summary": "LLM を使った複数市場の株式分析システム。複数ソースの相場データとリアルタイムニュースを集め、意思決定ダッシュボードと自動通知を備え、定期実行を無料で回せる。",
+      "image": "https://opengraph.githubassets.com/1/ZhuLinsen/daily_stock_analysis",
+      "rank": 4,
+      "stars": 272
+    },
+    {
+      "title": "we-promise/sure",
+      "url": "https://github.com/we-promise/sure",
+      "source": "GitHub, Ruby",
+      "summary": "誰でも使える、みんなで作る個人向けの家計管理アプリである。",
+      "image": "https://opengraph.githubassets.com/1/we-promise/sure",
+      "rank": 5,
+      "stars": 944
+    },
+    {
+      "title": "backnotprop/plannotator",
+      "url": "https://github.com/backnotprop/plannotator",
+      "source": "GitHub, TypeScript",
+      "summary": "エージェントの作業を把握し続けるためのワークスペース。計画を練り、コードに注釈を付けてレビューし、チームに共有したうえでワンクリックでエージェントにフィードバックを返せる。",
+      "image": "https://opengraph.githubassets.com/1/backnotprop/plannotator",
+      "rank": 6,
+      "stars": 100
+    },
+    {
+      "title": "louislam/uptime-kuma",
+      "url": "https://github.com/louislam/uptime-kuma",
+      "source": "GitHub, JavaScript",
+      "summary": "セルフホストで使える見た目の良い死活監視ツールである。",
+      "image": "https://opengraph.githubassets.com/1/louislam/uptime-kuma",
+      "rank": 7,
+      "stars": 61
+    },
+    {
+      "title": "block/buzz",
+      "url": "https://github.com/block/buzz",
+      "source": "GitHub, Rust",
+      "summary": "Block による「集合知」のためのコミュニケーション基盤である。",
+      "image": "https://opengraph.githubassets.com/1/block/buzz",
+      "rank": 8,
+      "stars": 95
+    },
+    {
+      "title": "tradermonty/claude-trading-skills",
+      "url": "https://github.com/tradermonty/claude-trading-skills",
+      "source": "GitHub, Python",
+      "summary": "株式投資家・トレーダー向けの Claude Code スキル集。市場分析やテクニカルチャート、経済指標カレンダー、スクリーナー、売買戦略の開発を扱う。",
+      "image": "https://opengraph.githubassets.com/1/tradermonty/claude-trading-skills",
+      "rank": 9,
+      "stars": 60
+    },
+    {
+      "title": "tailscale/tailcat",
+      "url": "https://github.com/tailscale/tailcat",
+      "source": "GitHub, Go",
+      "summary": "netcat のように使えるツールで、Tailscale のコントロールプレーンを使わずにデータプレーンだけで通信する。",
+      "image": "https://opengraph.githubassets.com/1/tailscale/tailcat",
+      "rank": 10,
+      "stars": 324
+    }
+  ]
+}
