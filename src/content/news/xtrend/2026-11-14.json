@@ -1,6 +1,6 @@
 {
   "category": "xtrend",
-  "collectedAt": "2026-11-14T06:49",
+  "collectedAt": "2026-11-14T18:14",
   "items": [
     {
       "title": "Zed、エージェントがコードを書いたスレッドまでたどれる機能を予告",
@@ -71,6 +71,76 @@
       "source": "X, @thinkymachines",
       "summary": "事前学習の最初のステップから最後のRLロールアウトまで、フォワードパスを最初から4bitで回した手法をブログ「Connectionism」で詳しく説明した。",
       "publishedAt": "2026-11-13T21:23:32Z"
+    },
+    {
+      "title": "Claude Code（デスクトップ）、modsでカスタムテーマを作れるように",
+      "url": "https://x.com/ClaudeDevs/status/2121392666244186327",
+      "source": "X, @ClaudeDevs",
+      "summary": "色の変更やアニメーション背景の追加を、Claudeに見た目を伝えるだけで作れる。すぐ試せるtheme-examplesプラグインも用意された。",
+      "publishedAt": "2026-11-13T23:59:59Z"
+    },
+    {
+      "title": "Claude CodeのProjectsが大型アップデート、コーディネーターがより能動的に",
+      "url": "https://x.com/ClaudeDevs/status/2121375309287301360",
+      "source": "X, @ClaudeDevs",
+      "summary": "並列スレッドのタスクをまとめるコーディネーターが、プロジェクトチャットで質問に答えたり、進行中スレッドの状況を報告したりするようになった。",
+      "publishedAt": "2026-11-13T22:51:01Z"
+    },
+    {
+      "title": "Cursor、先日のセキュリティインシデントの詳細と対策を公開",
+      "url": "https://x.com/cursor_ai/status/2121411147714970092",
+      "source": "X, @cursor_ai",
+      "summary": "経緯と対策をまとめた報告を公開した。他の投稿によると、発端はCursorが推論プロバイダーのFireworksに発行したアクセスキーの流出とされている。",
+      "publishedAt": "2026-11-14T01:13:26Z"
+    },
+    {
+      "title": "T3 Code、アプリ内でUIをまるごとカスタマイズ可能に",
+      "url": "https://x.com/theo/status/2121455838414201200",
+      "source": "X, @theo",
+      "summary": "エージェントに変更を頼むと、その場でUIが書き換わる。Claude Codeのテーマ機能と同じ日に出てきた動き。",
+      "publishedAt": "2026-11-14T04:11:01Z"
+    },
+    {
+      "title": "secretlint次期版、10万ファイルでも数秒でチェック",
+      "url": "https://x.com/azu_re/status/2121436947453514127",
+      "source": "X, @azu_re",
+      "summary": "アーキテクチャを整理して、ファイル数が多くてもスケールする形になりそうとのこと。Rustなどへの書き換えではなく、JS/Node.js/Bunのままで実現している。",
+      "publishedAt": "2026-11-14T02:55:57Z"
+    },
+    {
+      "title": "Chrome開発チーム、AI向けスキル集「Modern Web Guidance 1.0」を安定版に",
+      "url": "https://x.com/ChromiumDev/status/2121339675667309047",
+      "source": "X, @ChromiumDev",
+      "summary": "今のWebの作り方をAIに教えるスキル集。Chrome・Firefox・Edgeのエンジニアが書いたとされ、Claude CodeのGoogleのWebチェックのスコアが57%から88%に上がったと紹介する投稿も出ている。",
+      "publishedAt": "2026-11-13T20:29:25Z"
+    },
+    {
+      "title": "エージェントの「環境」を最適化する研究「EnvOpt」",
+      "url": "https://x.com/AlexGDimakis/status/2121385051015582172",
+      "source": "X, @AlexGDimakis",
+      "summary": "エージェントのコストと性能はモデル・ハーネス・環境の3つで決まるとして、手薄だった環境側、つまり情報の見せ方の最適化を研究した。",
+      "publishedAt": "2026-11-13T23:29:44Z"
+    },
+    {
+      "title": "Qwen4-Max Preview登場、正式版を待つ声も",
+      "url": "https://x.com/theaidesk_/status/2121363668617089338",
+      "source": "X, @theaidesk_",
+      "summary": "AlibabaのQwen 4は、まず限定のQwen4-Max Previewとして出てきたとされている。Plus、Flash、オープンウェイト版がいつ出るかを気にする投稿が目立つ。",
+      "publishedAt": "2026-11-13T22:04:46Z"
+    },
+    {
+      "title": "オープンソースのマルチエージェント攻撃フレームワーク「ARTEX」に警戒",
+      "url": "https://x.com/XBToshi/status/2121440069244563483",
+      "source": "X, @XBToshi",
+      "summary": "FBIが、LLMが計画を立てて侵入を並列で進めるARTEXについてFLASHアラートを出したとされている。Amazonもおとりセンサーで活動を捉えたと報告されている。",
+      "publishedAt": "2026-11-14T03:08:21Z"
+    },
+    {
+      "title": "11のコーディングエージェントを読み解いたハーネス研究が話題",
+      "url": "https://x.com/AnnatarXBT/status/2121508682496143364",
+      "source": "X, @AnnatarXBT",
+      "summary": "Wavestone AI LabがClaude CodeやCodexを含む11のエージェントのソースを読み、よくできたものには共通する7つの部品があると分析したとされている。",
+      "publishedAt": "2026-11-14T07:41:00Z"
     }
   ]
 }
