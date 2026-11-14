@@ -1,0 +1,62 @@
+{
+  "category": "xtrend",
+  "collectedAt": "2026-11-15T06:57",
+  "items": [
+    {
+      "title": "「クイックフィックスは有害」エージェントに最小の変更を頼む落とし穴",
+      "url": "https://x.com/poteto/status/2121646643124809848",
+      "source": "X, @poteto",
+      "summary": "「最小・最速の変更」を頼むと、その場しのぎの修正パターンが次のエージェントにコピーされ、コードベースに広がっていくと指摘。Xニュースでも取り上げられ、議論が広がっている。",
+      "publishedAt": "2026-11-14T16:49:12Z"
+    },
+    {
+      "title": "「No AI Slop Manifesto」、Hacker Newsのトップに",
+      "url": "https://x.com/dexhorthy/status/2121660606256435325",
+      "source": "X, @dexhorthy",
+      "summary": "AI Engineer Code Summit（SF）で登壇者や参加者と共同で書いたマニフェスト。Hacker Newsのトップページに載り、Baseten、SpaceX、OpenAI、PostHogなどの人を含む300人以上が署名したとしている。",
+      "publishedAt": "2026-11-14T17:44:41Z"
+    },
+    {
+      "title": "Rauch氏「エージェントはこうやってコードを出荷する」",
+      "url": "https://x.com/rauchg/status/2121711321347715093",
+      "source": "X, @rauchg",
+      "summary": "エージェントが機能フラグ付きでコードを書き、push時に検証ゲート（証明チェック、セキュリティ監査）を通し、出したあとはメトリクスを監視する流れを提示。Vercel CLIの vercel flags や vercel metrics などで今すぐ試せるとしている。",
+      "publishedAt": "2026-11-14T21:06:13Z"
+    },
+    {
+      "title": "記事「最近の HTML の新機能の紹介（2026 年版）」",
+      "url": "https://x.com/azu_re/status/2121580212320407762",
+      "source": "X, @azu_re",
+      "summary": "azu氏が、2026年時点のHTMLの新機能をまとめた記事を紹介している。",
+      "publishedAt": "2026-11-14T12:25:14Z"
+    },
+    {
+      "title": "「AIに指示する前に、AIに質問させろ」が再び注目",
+      "url": "https://x.com/koder_dev/status/2121544166908060067",
+      "source": "X, @koder_dev",
+      "summary": "暗黙知を引き出すため、自明な質問は避けて最大3問ずつAIに自分へインタビューさせ、最後にトレードオフ表を作らせる手法を紹介。plan mode任せで前提の言語化を省きがちな人への示唆として共有されている。",
+      "publishedAt": "2026-11-14T10:02:00Z"
+    },
+    {
+      "title": "Discord、Rust製の新クライアントでLinuxにもオーバーレイ",
+      "url": "https://x.com/svishnevskiy/status/2121671429402005624",
+      "source": "X, @svishnevskiy",
+      "summary": "CTOのStanislav Vishnevskiy氏が、新しいRustクライアントの設計でプラットフォーム間の機能差を縮められると説明。LinuxでもオーバーレイなどWindows限定だった機能が使えるようになり、macOSにも展開するとしている。",
+      "publishedAt": "2026-11-14T18:27:42Z"
+    },
+    {
+      "title": "Dwarkesh Patel氏、AI研究の自動化を論じたエッセイの要点を補足",
+      "url": "https://x.com/dwarkesh_sp/status/2121696412773781549",
+      "source": "X, @dwarkesh_sp",
+      "summary": "今のAIは多くの領域で人間に劣るが、数学のように検証できる代理指標がある領域では人間並みかそれ以上になりうるとし、AI研究もそうした領域だと主張。超知能までの時間軸をめぐる議論が続いている。",
+      "publishedAt": "2026-11-14T20:06:58Z"
+    },
+    {
+      "title": "Rutger Bregman氏「AIについてパニックになるべき時だ」",
+      "url": "https://x.com/rutgerbregman/status/2121633046025613517",
+      "source": "X, @rutgerbregman",
+      "summary": "AIを「詐欺」や「高機能な自動補完」とみなす批判に長年うなずいてきたが、その見方を改めたと書いた長文投稿。AIへの懐疑と危機感をめぐる議論で広く読まれている。",
+      "publishedAt": "2026-11-14T15:55:10Z"
+    }
+  ]
+}
