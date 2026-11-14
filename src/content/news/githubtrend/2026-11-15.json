@@ -1,0 +1,96 @@
+{
+  "category": "githubtrend",
+  "collectedAt": "2026-11-15T08:33",
+  "items": [
+    {
+      "title": "backnotprop/plannotator",
+      "url": "https://github.com/backnotprop/plannotator",
+      "source": "GitHub, TypeScript",
+      "summary": "エージェントの作業を把握し続けるためのワークスペース。計画の作成・判断・注釈付け・コードレビューを行い、チームと共有したうえで、フィードバックをワンクリックでエージェントに送れる。",
+      "image": "https://opengraph.githubassets.com/1/backnotprop/plannotator",
+      "rank": 1,
+      "stars": 412
+    },
+    {
+      "title": "GoogleChrome/modern-web-guidance-src",
+      "url": "https://github.com/GoogleChrome/modern-web-guidance-src",
+      "source": "GitHub, TypeScript",
+      "summary": "コーディングエージェントに最新の Web のベストプラクティスを教え、知識を最新に保つためのガイダンス集である。",
+      "image": "https://opengraph.githubassets.com/1/GoogleChrome/modern-web-guidance-src",
+      "rank": 2,
+      "stars": 1225
+    },
+    {
+      "title": "tradermonty/claude-trading-skills",
+      "url": "https://github.com/tradermonty/claude-trading-skills",
+      "source": "GitHub, Python",
+      "summary": "株式投資家やトレーダー向けの Claude Code スキル集。市場分析、テクニカルチャート、経済指標カレンダー、スクリーナー、売買戦略の開発を扱う。",
+      "image": "https://opengraph.githubassets.com/1/tradermonty/claude-trading-skills",
+      "rank": 3,
+      "stars": 556
+    },
+    {
+      "title": "ChromeDevTools/chrome-devtools-mcp",
+      "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+      "source": "GitHub, TypeScript",
+      "summary": "コーディングエージェントから Chrome DevTools を使えるようにする MCP サーバーである。",
+      "image": "https://opengraph.githubassets.com/1/ChromeDevTools/chrome-devtools-mcp",
+      "rank": 4,
+      "stars": 673
+    },
+    {
+      "title": "alibaba/open-code-review",
+      "url": "https://github.com/alibaba/open-code-review",
+      "source": "GitHub, Go",
+      "summary": "Alibaba の規模で使われてきたコードレビューツール。ルールベースのパイプラインと LLM エージェントを組み合わせ、ヌルポインタやスレッド安全性、XSS、SQL インジェクションなどを複数言語で検出して行単位でコメントする。",
+      "image": "https://opengraph.githubassets.com/1/alibaba/open-code-review",
+      "rank": 5,
+      "stars": 897
+    },
+    {
+      "title": "QwenLM/qwen-code",
+      "url": "https://github.com/QwenLM/qwen-code",
+      "source": "GitHub, TypeScript",
+      "summary": "ターミナルで動くオープンソースの AI コーディングエージェントである。",
+      "image": "https://opengraph.githubassets.com/1/QwenLM/qwen-code",
+      "rank": 6,
+      "stars": 116
+    },
+    {
+      "title": "dream-num/univer",
+      "url": "https://github.com/dream-num/univer",
+      "source": "GitHub, TypeScript",
+      "summary": "自前の AI オフィスを作るための Univer Office SDK。編集・計算・共同作業・ファイル処理を人と AI エージェントの両方向けにプロダクトへ組み込める。拡張可能なオープンソースのコアの上に作られている。",
+      "image": "https://opengraph.githubassets.com/1/dream-num/univer",
+      "rank": 7,
+      "stars": 495
+    },
+    {
+      "title": "ag-ui-protocol/ag-ui",
+      "url": "https://github.com/ag-ui-protocol/ag-ui",
+      "source": "GitHub, TypeScript",
+      "summary": "エージェントとユーザーのやり取りを定めるプロトコル AG-UI。エージェントをフロントエンドのアプリケーションに組み込むためのものである。",
+      "image": "https://opengraph.githubassets.com/1/ag-ui-protocol/ag-ui",
+      "rank": 8,
+      "stars": 9
+    },
+    {
+      "title": "ashhart/TensorFold",
+      "url": "https://github.com/ashhart/TensorFold",
+      "source": "GitHub, Zig",
+      "summary": "Metal・CUDA・Vulkan に対応した LLM の推論エンジンである。",
+      "image": "https://opengraph.githubassets.com/1/ashhart/TensorFold",
+      "rank": 9,
+      "stars": 53
+    },
+    {
+      "title": "JuliusBrussee/caveman",
+      "url": "https://github.com/JuliusBrussee/caveman",
+      "source": "GitHub, Go",
+      "summary": "原始人のような話し方をさせることでトークンを 65% 削減する、コーディングエージェント向けのスキルとプロキシである。",
+      "image": "https://opengraph.githubassets.com/1/JuliusBrussee/caveman",
+      "rank": 10,
+      "stars": 227
+    }
+  ]
+}
