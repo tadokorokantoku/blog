@@ -21,8 +21,10 @@ const empty = view.layout === 'ranking' ? view.ranking === null : view.articles.
 ---
 
 <Base title={`news / ${label}`} description={`AI が集めた${label}のニュース`}>
-  <h1 class="news-heading">news</h1>
-  <NewsTabs active={category} />
+  <Fragment slot="masthead">
+    <h1 class="news-heading">news</h1>
+    <NewsTabs active={category} />
+  </Fragment>
   {empty && <p class="news-empty">まだ何も集まっていない。</p>}
   {view.layout === 'ranking' && view.ranking && <NewsRankingTable ranking={view.ranking} />}
   {

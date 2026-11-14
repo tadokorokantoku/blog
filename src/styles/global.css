@@ -72,6 +72,21 @@ a {
   padding: 2rem 0;
 }
 
+.site-masthead.is-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  /* body の左右 padding まで背景で覆い、下を流れる記事が透けないようにする */
+  margin: 0 -1rem;
+  padding: 0 1rem;
+  background: var(--bg);
+}
+
+/* 固定エリアの下端と本文の間の余白。固定エリアの中に入れると、その分だけ画面が狭くなる */
+.site-masthead.is-sticky + main {
+  padding-top: 1.5rem;
+}
+
 .site-title {
   color: var(--fg);
   font-size: 1.25rem;

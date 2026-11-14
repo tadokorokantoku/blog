@@ -11,6 +11,8 @@ interface Props {
 const { title, description = SITE_DESCRIPTION } = Astro.props;
 const pageTitle = title ? `${title} | ${SITE_TITLE}` : SITE_TITLE;
 const canonical = new URL(Astro.url.pathname, Astro.site);
+// masthead slot を渡したページだけ、ヘッダーからその中身までをスクロールしても上に残す
+const sticky = Astro.slots.has('masthead');
 ---
 
 <!doctype html>
@@ -40,13 +42,16 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     </script>
   </head>
   <body>
-    <header class="site-header">
-      <a class="site-title" href="/">{SITE_TITLE}</a>
-      <nav>
-        <a href="/news/xtrend/">news</a>
-        <a href="/rss.xml">RSS</a>
-      </nav>
-    </header>
+    <div class:list={['site-masthead', { 'is-sticky': sticky }]}>
+      <header class="site-header">
+        <a class="site-title" href="/">{SITE_TITLE}</a>
+        <nav>
+          <a href="/news/xtrend/">news</a>
+          <a href="/rss.xml">RSS</a>
+        </nav>
+      </header>
+      <slot name="masthead" />
+    </div>
     <main>
       <slot />
     </main>
