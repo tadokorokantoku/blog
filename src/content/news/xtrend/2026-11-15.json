@@ -1,6 +1,6 @@
 {
   "category": "xtrend",
-  "collectedAt": "2026-11-15T06:57",
+  "collectedAt": "2026-11-15T18:19",
   "items": [
     {
       "title": "「クイックフィックスは有害」エージェントに最小の変更を頼む落とし穴",
@@ -57,6 +57,69 @@
       "source": "X, @rutgerbregman",
       "summary": "AIを「詐欺」や「高機能な自動補完」とみなす批判に長年うなずいてきたが、その見方を改めたと書いた長文投稿。AIへの懐疑と危機感をめぐる議論で広く読まれている。",
       "publishedAt": "2026-11-14T15:55:10Z"
+    },
+    {
+      "title": "Rauch氏、Vercelの「UI SDK」でフレームワークなしのWeb Componentsアプリを試作",
+      "url": "https://x.com/rauchg/status/2121804295381377342",
+      "source": "X, @rauchg",
+      "summary": "fxとGemini Argonへの2回のプロンプトで、純粋なWeb Componentsだけのアプリを作成。エージェントがウィンドウのリサイズやドラッグ、ARIA、WebMCPでのエージェント操作など、UI SDKの振る舞い14個をそのまま使ったと紹介している。",
+      "publishedAt": "2026-11-15T03:15:39Z"
+    },
+    {
+      "title": "Addy Osmani氏「普段使いはOpus 5.5のmedium、難所はFable 5.2」",
+      "url": "https://x.com/addyosmani/status/2121732470118965298",
+      "source": "X, @addyosmani",
+      "summary": "うまくいかないときはモデルを替える前にeffortを上げるべきで、大規模な移行や長時間の無人実行のような本当に難しい作業はFable 5.2が向くとし、モデル選びの記事も公開している。",
+      "publishedAt": "2026-11-14T22:30:15Z"
+    },
+    {
+      "title": "Secretlint v14リリース、設定なしで動作し大幅に高速化",
+      "url": "https://x.com/azu_re/status/2121878832693260381",
+      "source": "X, @azu_re",
+      "summary": "設定ファイルなしでも動くようになり、Rustなどに書き換えずJSのまま数倍〜数十倍速くなったとのこと。10万ファイルでも2〜3秒ほどでクレデンシャルをチェックできるとしている。",
+      "publishedAt": "2026-11-15T08:11:50Z"
+    },
+    {
+      "title": "Claude Codeのスラッシュコマンド、実際どれを使う？",
+      "url": "https://x.com/oikon48/status/2121826866537603234",
+      "source": "X, @oikon48",
+      "summary": "/goal、/plan、/compact、/rewind、/loop などを1つずつ「要る・要らない」で整理。/subtask は存在しない、/plan は Shift+Tab のモード切り替えで十分、といった実用目線のコメントが反響を呼んでいる。",
+      "publishedAt": "2026-11-15T04:45:21Z"
+    },
+    {
+      "title": "Shu Ding氏のGPU Lexer v0.0.5、言語判定の精度が92%台に",
+      "url": "https://x.com/shuding/status/2121885837562695808",
+      "source": "X, @shuding",
+      "summary": "再学習したGPU Lexerを公開し、上位25言語の加重精度が86.77%から92.20%に上がったと報告。失敗するケースはissueで報告してほしいとしている。",
+      "publishedAt": "2026-11-15T08:39:41Z"
+    },
+    {
+      "title": "Claude Codeに実験的な「Code Mode」、ツール呼び出しをJSでまとめて実行",
+      "url": "https://x.com/dani_avila7/status/2121789088499933223",
+      "source": "X, @dani_avila7",
+      "summary": "Claude Code 2.1.325で、ツールを1つずつ呼ぶ代わりにClaudeがJavaScriptを書き、複数の呼び出しを並列・連結して結果を絞ってから返す仕組みが試せるとして使い方を紹介。トークン消費が37%減るとされており、実装の違い（Claude CodeはBun上のnode:vm）を比べる投稿も出ている。",
+      "publishedAt": "2026-11-15T02:15:14Z"
+    },
+    {
+      "title": "Gemini 4 Carbon、Thinking「Low」で内部の思考を延々と出力",
+      "url": "https://x.com/alonamit/status/2121751642005721122",
+      "source": "X, @alonamit",
+      "summary": "数学の質問でThinkingをLowのままにしたところ、すぐ回答を始めたあと何画面分もの思考メモのような出力が続いたとスクリーンショット付きで報告。Xニュースにも取り上げられ、大きく拡散している。",
+      "publishedAt": "2026-11-14T23:46:26Z"
+    },
+    {
+      "title": "T3 Codeの新テーマ機能で「Claude CodeそっくりのUI」を再現",
+      "url": "https://x.com/rohit3a/status/2121724781376786584",
+      "source": "X, @rohit3a",
+      "summary": "エージェントに頼むとUIをその場で書き換えられるT3 Codeの新しいテーマ機能を使い、Opus 5.5でClaude Code風の見た目「T3 Clawd」を作ったと動画付きで紹介している。",
+      "publishedAt": "2026-11-14T21:59:42Z"
+    },
+    {
+      "title": "LocalStack、AWS公式の「AWS Emulator」登場を受けて立場を表明",
+      "url": "https://x.com/kakakakku/status/2121884413571248345",
+      "source": "X, @kakakakku",
+      "summary": "AWSが公開したローカルエミュレータについて、LocalStackが「LocalStackユーザーが知っておくべきこと」という記事を出したと紹介。国内でもAWS EmulatorをCDKやCIの結合テストに組み込む記事が出始めている。",
+      "publishedAt": "2026-11-15T08:34:01Z"
     }
   ]
 }
