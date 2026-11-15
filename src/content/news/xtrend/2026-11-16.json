@@ -1,0 +1,69 @@
+{
+  "category": "xtrend",
+  "collectedAt": "2026-11-16T07:00",
+  "items": [
+    {
+      "title": "textlint v16リリース、Markdownパーサを書き直し",
+      "url": "https://x.com/azu_re/status/2121976939657511304",
+      "source": "X, @azu_re",
+      "summary": "Node.js 20のサポートを終了し、Text/Markdownパーサを書き直した。cjkFriendlyEmphasisオプションの追加や、ASTの細かい仕様の見直し・文書化も入っている。",
+      "publishedAt": "2026-11-15T14:41:41Z"
+    },
+    {
+      "title": "Biome 2.6.8、lintルールが800を超える",
+      "url": "https://x.com/biomejs/status/2121978324641587447",
+      "source": "X, @biomejs",
+      "summary": "25個の新しいlintルールを追加して800ルールを突破。抑制コメントのないファイルのlintが最大で約60%速くなり、型推論も大きく改善したとしている。",
+      "publishedAt": "2026-11-15T14:47:11Z"
+    },
+    {
+      "title": "Cloudflareのエージェント向けブラウザ「Kitesurf」を試す動き",
+      "url": "https://x.com/__syumai/status/2122013987294621753",
+      "source": "X, @__syumai",
+      "summary": "CloudflareがオープンソースにしたAIエージェント向けのブラウザエンジン。syumai氏はcloneした直後に direnv allow を求められる構成に驚きつつ、自分のGitHubプロフィールを表示させ「大体表示できているが、ところどころ崩れている」と報告している。",
+      "publishedAt": "2026-11-15T17:08:54Z"
+    },
+    {
+      "title": "mizchi氏の自作rustc、コンパイルが20倍速に",
+      "url": "https://x.com/mizchi/status/2122067159748874577",
+      "source": "X, @mizchi",
+      "summary": "パーサはsynを使い、中間IRを省いて直接cranelift IRを生成する構成。まだno_stdに毛が生えた程度だが、20倍速でコンパイルでき、中間ビルドキャッシュも1/10以下になったという。",
+      "publishedAt": "2026-11-15T20:40:11Z"
+    },
+    {
+      "title": "Rails 8.0.5.2 / 8.1.4.1、21件のセキュリティ修正",
+      "url": "https://x.com/ThePracticalDev/status/2121953113896616275",
+      "source": "X, @ThePracticalDev",
+      "summary": "1件はcritical。ファイルアップロードを受け付けてImageMagickを使っているアプリは、細工したファイルを添付されるだけで発火するため、最優先で確認するよう呼びかけている。",
+      "publishedAt": "2026-11-15T13:07:00Z"
+    },
+    {
+      "title": "「直す人が足りない」FFmpegの反発に再び共感",
+      "url": "https://x.com/MalwareTechBlog/status/2121880786257465755",
+      "source": "X, @MalwareTechBlog",
+      "summary": "Marcus Hutchins氏が、問題を指摘する人1,000人に対して直す人は1人しかいないと、セキュリティ界の偏りを指摘し大きく拡散。Google Project Zeroが脆弱性の公開期限を段階的に短くする方針もあわせて議論されている。",
+      "publishedAt": "2026-11-15T08:19:00Z"
+    },
+    {
+      "title": "DHH氏「OmarchyがNVIDIA N1xで18秒でインストール」",
+      "url": "https://x.com/dhh/status/2121986141280739691",
+      "source": "X, @dhh",
+      "summary": "自作のLinuxディストリビューションOmarchyがN1x上で18秒でインストールでき、その数秒後にはローカルモデルのダウンロードを案内されるとしている。",
+      "publishedAt": "2026-11-15T15:18:00Z"
+    },
+    {
+      "title": "米国でコンピュータサイエンス専攻が12%超減少",
+      "url": "https://x.com/unusual_whales/status/2122011999315882011",
+      "source": "X, @unusual_whales",
+      "summary": "National Student Clearinghouseの速報値として、今秋のコンピュータ・情報科学の学部の入学者が12%超、大学院が10%超減ったと紹介。AIと雇用をめぐる議論が広がっている。",
+      "publishedAt": "2026-11-15T17:01:00Z"
+    },
+    {
+      "title": "T3 Codeに「オーケストレーターがない」と賛否",
+      "url": "https://x.com/agent_wrapper/status/2121886468440486030",
+      "source": "X, @agent_wrapper",
+      "summary": "「コーディネーターなしで1体ずつエージェントと話すのは原始的」という投稿に100件超の返信がつき、UXを評価する声と、複数エージェントの統括機能を求める声で割れている。",
+      "publishedAt": "2026-11-15T08:42:00Z"
+    }
+  ]
+}
