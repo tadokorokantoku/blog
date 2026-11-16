@@ -1,0 +1,69 @@
+{
+  "category": "xtrend",
+  "collectedAt": "2026-11-17T06:56",
+  "items": [
+    {
+      "title": "OpenCode Browse 0.1.0、Rustで書き直し",
+      "url": "https://x.com/opencode/status/2122377687968678258",
+      "source": "X, @opencode",
+      "summary": "Rustで書き直し、メモリ使用量は25分の1、サイズは23分の1に。Playwrightへの依存をなくし、ブラウザ操作を直接エージェントに公開している。",
+      "publishedAt": "2026-11-16T17:14:07Z"
+    },
+    {
+      "title": "Claude Codeデスクトップ版、iOSシミュレータでiPhone Duoに対応",
+      "url": "https://x.com/ClaudeDevs/status/2122439098740674839",
+      "source": "X, @ClaudeDevs",
+      "summary": "パブリックベータ。会話の横でアプリをDuo上で動かし、Claudeが端末を折りたたみ・展開して各レイアウトをテストできる。",
+      "publishedAt": "2026-11-16T21:18:08Z"
+    },
+    {
+      "title": "Claude Codeに「Code Mode」が追加",
+      "url": "https://x.com/oikon48/status/2122346788665618672",
+      "source": "X, @oikon48",
+      "summary": "ツールを1つずつ呼ぶ代わりに、JavaScriptを書いて複数のツールをプログラムとして操作する仕組み。oikon48氏は軽く使った印象として「実験的機能」と評している。",
+      "publishedAt": "2026-11-16T15:11:20Z"
+    },
+    {
+      "title": "CSSのscroll-stateで横スクロールの左右ボタンを簡単に",
+      "url": "https://x.com/clockmaker/status/2122345400598511919",
+      "source": "X, @clockmaker",
+      "summary": "横スワイプできることを示す左右ボタンは従来JavaScriptで実装が面倒だったが、CSSのscroll-stateを使えば簡単に実装できると紹介している。",
+      "publishedAt": "2026-11-16T15:05:49Z"
+    },
+    {
+      "title": "workerdにD1を内蔵するPR",
+      "url": "https://x.com/R0u9h/status/2122280504447889737",
+      "source": "X, @R0u9h",
+      "summary": "DBごとにSQLiteのDurable Objectに保存する作りで、MiniflareのD1シミュレーションを置き換える予定。PRの作者はRyan Dahl氏とされている。",
+      "publishedAt": "2026-11-16T10:47:56Z"
+    },
+    {
+      "title": "OpenAI、外部機関とアラインメントの「組み込み評価」",
+      "url": "https://x.com/OpenAI/status/2122359930628063248",
+      "source": "X, @OpenAI",
+      "summary": "Apollo Research、METR、Transluce、Goodfireと組み、外部の専門家に社内のモデルやシステムへの深いアクセスを与えて、アラインメントの調査やセーフガードの検証を行う。",
+      "publishedAt": "2026-11-16T16:03:33Z"
+    },
+    {
+      "title": "OpenAI、最先端モデルを最大20万人の研究者に無償提供",
+      "url": "https://x.com/OpenAI/status/2122377585523126615",
+      "source": "X, @OpenAI",
+      "summary": "トレーニングとサポート付きで、応募は11月23日から。プログラム経由のデータは既定で学習に使わない。1,800人超の参加者の調査では、生産性がほぼ2倍になったとの報告があったとしている。",
+      "publishedAt": "2026-11-16T17:13:42Z"
+    },
+    {
+      "title": "Linear、PRの53%が「作者＋エージェント」のレビューのみに",
+      "url": "https://x.com/linear/status/2122374415446880512",
+      "source": "X, @linear",
+      "summary": "1月はほぼすべてのPRに人間の2人目のレビュアーがいたが、10月には53%がエージェントと作者だけでレビューされた。人間の注意をどこに向けるかを意識的に決めるようになったという。",
+      "publishedAt": "2026-11-16T17:01:07Z"
+    },
+    {
+      "title": "AIエージェント時代の新しい技術的負債「理解負債」",
+      "url": "https://x.com/Prayag12B/status/2122350982705119490",
+      "source": "X, @Prayag12B",
+      "summary": "エージェントがスキーマ、API、フロント、テスト、ドキュメントまで作ると、誰もコードを理解していない「Comprehension debt」が生まれるという投稿が拡散。「大規模システムでは昔からある問題」という反論も出ている。",
+      "publishedAt": "2026-11-16T15:28:00Z"
+    }
+  ]
+}
