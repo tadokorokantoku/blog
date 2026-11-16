@@ -1,0 +1,96 @@
+{
+  "category": "githubtrend",
+  "collectedAt": "2026-11-17T08:31",
+  "items": [
+    {
+      "title": "ag-ui-protocol/ag-ui",
+      "url": "https://github.com/ag-ui-protocol/ag-ui",
+      "source": "GitHub, TypeScript",
+      "summary": "エージェントとユーザーのやり取りを定める AG-UI（Agent-User Interaction Protocol）。エージェントをフロントエンドのアプリケーションに組み込むためのプロトコルである。",
+      "image": "https://opengraph.githubassets.com/1/ag-ui-protocol/ag-ui",
+      "rank": 1,
+      "stars": 790
+    },
+    {
+      "title": "backnotprop/plannotator",
+      "url": "https://github.com/backnotprop/plannotator",
+      "source": "GitHub, TypeScript",
+      "summary": "エージェントの作業を把握し続けるためのワークスペース。計画の作成・判断・注釈付け・コードレビューを行い、チームと共有したうえで、フィードバックをワンクリックでエージェントに送れる。",
+      "image": "https://opengraph.githubassets.com/1/backnotprop/plannotator",
+      "rank": 2,
+      "stars": 689
+    },
+    {
+      "title": "dream-num/univer",
+      "url": "https://github.com/dream-num/univer",
+      "source": "GitHub, TypeScript",
+      "summary": "自前の AI オフィスを構築するための Univer Office SDK。編集・計算・共同編集・ファイル処理を、人と AI エージェントの双方向けに自分のプロダクトへ組み込める。拡張可能なオープンソースのコアの上に作られている。",
+      "image": "https://opengraph.githubassets.com/1/dream-num/univer",
+      "rank": 3,
+      "stars": 1878
+    },
+    {
+      "title": "tradermonty/claude-trading-skills",
+      "url": "https://github.com/tradermonty/claude-trading-skills",
+      "source": "GitHub, Python",
+      "summary": "株式投資家やトレーダー向けの Claude Code スキル集。市場分析、テクニカルチャート、経済指標カレンダー、スクリーナー、売買戦略の開発を扱う。",
+      "image": "https://opengraph.githubassets.com/1/tradermonty/claude-trading-skills",
+      "rank": 4,
+      "stars": 841
+    },
+    {
+      "title": "elementalsouls/Claude-BugHunter",
+      "url": "https://github.com/elementalsouls/Claude-BugHunter",
+      "source": "GitHub, Python",
+      "summary": "バグハンティングと外部レッドチーム作業向けの Claude Code スキル集。82 のスキルと 15 のスラッシュコマンドに加え、公開済み報告のパターンや攻撃マトリクスを収録している。",
+      "image": "https://opengraph.githubassets.com/1/elementalsouls/Claude-BugHunter",
+      "rank": 5,
+      "stars": 1057
+    },
+    {
+      "title": "getarcaneapp/arcane",
+      "url": "https://github.com/getarcaneapp/arcane",
+      "source": "GitHub, Go",
+      "summary": "誰でも使えるように設計された、モダンな Docker 管理ツール。",
+      "image": "https://opengraph.githubassets.com/1/getarcaneapp/arcane",
+      "rank": 6,
+      "stars": 31
+    },
+    {
+      "title": "DeanChensj/jiangshan-map",
+      "url": "https://github.com/DeanChensj/jiangshan-map",
+      "source": "GitHub, JavaScript",
+      "summary": "紀元前403年から現代までの中国史をたどる、対話型の歴史地図タイムライン。18 の王朝にわたる領域のスナップショット、地名の系譜、詩の舞台をめぐるルートを見られる。",
+      "image": "https://opengraph.githubassets.com/1/DeanChensj/jiangshan-map",
+      "rank": 7,
+      "stars": 285
+    },
+    {
+      "title": "google-labs-code/stitch-skills",
+      "url": "https://github.com/google-labs-code/stitch-skills",
+      "source": "GitHub, TypeScript",
+      "summary": "Stitch MCP サーバーと組み合わせて使う Agent Skills のライブラリ。各スキルは Agent Skills のオープン標準に沿っており、複数のコーディングエージェントで使える。",
+      "image": "https://opengraph.githubassets.com/1/google-labs-code/stitch-skills",
+      "rank": 8,
+      "stars": 540
+    },
+    {
+      "title": "mvanhorn/last30days-skill",
+      "url": "https://github.com/mvanhorn/last30days-skill",
+      "source": "GitHub, Python",
+      "summary": "任意のトピックを Reddit・X・YouTube・HN・Polymarket・Web から調べる AI エージェント用スキル。集めた情報から根拠付きの要約をまとめる。",
+      "image": "https://opengraph.githubassets.com/1/mvanhorn/last30days-skill",
+      "rank": 9,
+      "stars": 122
+    },
+    {
+      "title": "NVIDIA/SkillEvaluator",
+      "url": "https://github.com/NVIDIA/SkillEvaluator",
+      "source": "GitHub, Python",
+      "summary": "AI エージェントのスキルやプラグインを評価する多層フレームワーク。品質ゲート、意味的な重複の検出、合成データセットの生成、実際のエージェントでの評価を備える。",
+      "image": "https://opengraph.githubassets.com/1/NVIDIA/SkillEvaluator",
+      "rank": 10,
+      "stars": 953
+    }
+  ]
+}

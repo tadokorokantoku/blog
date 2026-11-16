@@ -1,0 +1,27 @@
+{
+  "category": "orca",
+  "collectedAt": "2026-11-17T08:31",
+  "items": [
+    {
+      "title": "v1.4.261: Chat に Cursor が参加、+ メニューのカスタマイズと Memory Saver を追加",
+      "url": "https://github.com/stablyai/orca/releases/tag/v1.4.261",
+      "source": "GitHub Releases",
+      "summary": "Chat で Cursor を動かせるようになり、+ メニューは並べ替え・非表示・ショートカット割り当てができる。4時間使われていないブラウザページを解放して戻ったときに再読み込みする Memory Saver が入り、Antigravity Chat の Windows 対応、Pi Chat のサブエージェント表示、実験的なワークスペースカードも加わった。スマホ側ではデスクトップのプロジェクトグループが表示され、スマホから操作中のブラウザタブをまとめてデスクトップに戻せる。",
+      "publishedAt": "2026-11-16"
+    },
+    {
+      "title": "v1.4.261: チャットの保存先が SQLite に移行、終了したエージェントは一覧から消える",
+      "url": "https://github.com/stablyai/orca/releases/tag/v1.4.261",
+      "source": "GitHub Releases",
+      "summary": "既存のチャットは新しい SQLite ストアに変換される。元のファイルは残るが、ダウングレード後に再アップグレードすると変換済みのチャットが重複して表示されることがある。Memory Saver で解放されたページはスクロール位置などがリセットされ、終了したエージェントはプロセス終了や SSH 切断の時点でワークスペースカード・Agents 一覧・ダッシュボードから外れる。",
+      "publishedAt": "2026-11-16"
+    },
+    {
+      "title": "android-v0.0.67: GitHub 版から Google Play 版への移行を案内",
+      "url": "https://github.com/stablyai/orca/releases/tag/android-v0.0.67",
+      "source": "GitHub Releases",
+      "summary": "GitHub から入れた Orca の Android アプリで、更新カード・設定・更新必須画面から Google Play のページを開けるようになった。中国本土や Play ストアが使えない端末では引き続き GitHub の APK で更新する。Jira Tasks ボードのレーンもドラッグで並べ替えられる。",
+      "publishedAt": "2026-11-16"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "category": "claude-code",
+  "collectedAt": "2026-11-17T08:31",
+  "items": [
+    {
+      "title": "Claude Code 2.1.326 をリリース",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.326",
+      "source": "GitHub Releases",
+      "summary": "エージェントチームを有効にしたままでも Code Mode を使えるようになった。`--allowedTools` などに不完全なルールがあると起動時に警告し、`/status` にはプロバイダや `DISABLE_TELEMETRY` などで無効になっている機能を示す行が加わった。隠れた起動時の通知を Ctrl+O で表示でき、OpenTelemetry にホスト情報を含める `OTEL_RESOURCE_INCLUDE_HOST` も追加された。",
+      "publishedAt": "2026-11-17"
+    },
+    {
+      "title": "Anthropic、協調的脆弱性開示ポリシーの期限を短縮",
+      "url": "https://www.anthropic.com/research/coordinated-vulnerability-disclosure-timelines",
+      "source": "Anthropic Research",
+      "summary": "脆弱性の開示期限を 90 日から、高・重大度は 30 日、それ以外は 45 日に短縮する。AI で脆弱性の再発見が増え、修正も速くなったことが理由で、2027年1月1日以降の報告に適用される。メンテナーが応答しない場合の外部調整機関へのエスカレーションも 30 日から 15 日に早める。",
+      "image": "https://assets.claude.com/87317c13cd86cd0b62244c430e91d0bb13b920a1.jpg",
+      "publishedAt": "2026-11-16"
+    },
+    {
+      "title": "Claude Sonnet 5.5 と Claude Fable 5.2 でエラーが増加",
+      "url": "https://status.claude.com/incidents/r1b4f9bbnsx1",
+      "source": "Claude Status",
+      "summary": "claude.ai・Claude API・Claude Code・Claude Cowork で Sonnet 5.5 や Fable 5.2 などのモデルのエラーが増えた。影響は 11月16日 07:32〜08:45 UTC で、修正が入り解決済みである。",
+      "publishedAt": "2026-11-16"
+    },
+    {
+      "title": "Claude Meetings（ベータ）で Claude が通話に参加できない",
+      "url": "https://status.claude.com/incidents/b5cq662qf2wm",
+      "source": "Claude Status",
+      "summary": "Claude Meetings（ベータ）で Claude が新しい通話に参加できない問題が起きており、Auto-join は一時停止中である。手動での追加も影響を受けるが、進行中の通話や他の機能には影響がない。解決には時間がかかる見込みとされている。",
+      "publishedAt": "2026-11-16"
+    },
+    {
+      "title": "Fable 以外のモデルでプレミアムシートの利用上限が 3〜5 倍速く尽きる",
+      "url": "https://github.com/anthropics/claude-code/issues/110480",
+      "source": "GitHub Issues",
+      "summary": "11月9日の週から、組織全体で Fable 以外のモデルを使うとプレミアムシートの利用上限が以前の 3〜5 倍の速さで消費されるという報告。regression と area:cost のラベルが付いている。",
+      "publishedAt": "2026-11-16"
+    },
+    {
+      "title": "Claude Code が OpenStreetMap の公開 Overpass API に負荷をかけている",
+      "url": "https://github.com/anthropics/claude-code/issues/110292",
+      "source": "GitHub Issues",
+      "summary": "Claude Code が地図データの取得に既定で OpenStreetMap の公開 Overpass API サーバーを使い、人間のマッパーが使うリソースを圧迫しているという報告。直近の issue の中で反応が最も多い。",
+      "publishedAt": "2026-11-15"
+    }
+  ]
+}
