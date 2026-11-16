@@ -1,6 +1,6 @@
 {
   "category": "xtrend",
-  "collectedAt": "2026-11-16T07:00",
+  "collectedAt": "2026-11-16T18:18",
   "items": [
     {
       "title": "textlint v16リリース、Markdownパーサを書き直し",
@@ -64,6 +64,76 @@
       "source": "X, @agent_wrapper",
       "summary": "「コーディネーターなしで1体ずつエージェントと話すのは原始的」という投稿に100件超の返信がつき、UXを評価する声と、複数エージェントの統括機能を求める声で割れている。",
       "publishedAt": "2026-11-15T08:42:00Z"
+    },
+    {
+      "title": "Guillermo Rauch氏、X投稿レンダラー「xeet」を公開",
+      "url": "https://x.com/rauchg/status/2122184794209714368",
+      "source": "X, @rauchg",
+      "summary": "安全なRust/wasmで書かれた、X投稿をピクセル単位で再現するレンダラー。ブラウザ・ネットワーク・ファイルシステム・システムフォントに依存せず、投稿を約1msでPNGにできるという。",
+      "publishedAt": "2026-11-16T04:27:37Z"
+    },
+    {
+      "title": "mizchi氏、ブラウザ特化のSQLiteサブセットをMoonBitで開発中",
+      "url": "https://x.com/mizchi/status/2122218397165605092",
+      "source": "X, @mizchi",
+      "summary": "未圧縮600KBほどで、ブラウザ上でlitestreamのLTXを処理できる。適切なリレーサーバーがあればブラウザだけで分散ストレージになるはずとしている（moonbit --target jsで実装）。",
+      "publishedAt": "2026-11-16T06:41:09Z"
+    },
+    {
+      "title": "ステージング環境の認証はCloudflare Access等で手軽に",
+      "url": "https://x.com/zaru/status/2122132495848374319",
+      "source": "X, @zaru",
+      "summary": "Cloudflare AccessやAWS Verified Accessを使い、Google Workspaceにログインしたメンバーだけがアクセスできるようにするのが手軽でおすすめ、という実践Tips。",
+      "publishedAt": "2026-11-16T00:59:48Z"
+    },
+    {
+      "title": "Claude Desktopで背景を自由に変更可能に",
+      "url": "https://x.com/oikon48/status/2122153648289730770",
+      "source": "X, @oikon48",
+      "summary": "背景のカスタマイズができるようになり、コンテキスト量に応じて雪を積もらせる演出も作れると紹介している。",
+      "publishedAt": "2026-11-16T02:23:52Z"
+    },
+    {
+      "title": "エージェントに渡すツールはPythonのREPL1つで足りる？",
+      "url": "https://x.com/AM09_21/status/2122100521603678655",
+      "source": "X, @AM09_21",
+      "summary": "ハーネスからAIエージェントに与えるツールをPythonのREPLだけにする構成について、変数が毎回初期化されず残るのがシンプルで面白いとし、MakiやPiと比べてみたいとしている。",
+      "publishedAt": "2026-11-15T22:52:45Z"
+    },
+    {
+      "title": "Alibaba、Qwen4-Maxを発表",
+      "url": "https://x.com/Alibaba_Qwen/status/2122148127520289151",
+      "source": "X, @Alibaba_Qwen",
+      "summary": "新しいMoEアーキテクチャで、ネイティブのビジョン対応と100万トークンのコンテキストを持つ。社内評価でQwen3.8-Maxをトークン最大約50%減で上回り、タスクあたりの平均コストは60%以上下がったとしている。OpenCode Goでもすぐ使えるようになった。",
+      "publishedAt": "2026-11-16T02:01:55Z"
+    },
+    {
+      "title": "Tencent、低価格モデル「Hy4 flash」を公開",
+      "url": "https://x.com/TencentHunyuan/status/2122217770314301469",
+      "source": "X, @TencentHunyuan",
+      "summary": "人による比較テストで日常業務ではClaude Haiku 5.5(high)に並び、タスクコストは18分の1とする。API価格は100万トークンあたり入力$0.070・出力$0.281。OpenCodeでは2週間ほぼ無制限で無料。",
+      "publishedAt": "2026-11-16T06:38:39Z"
+    },
+    {
+      "title": "OpenAI、GPT-6 Astraで素粒子物理の研究を支援",
+      "url": "https://x.com/OpenAI/status/2122123437141553630",
+      "source": "X, @OpenAI",
+      "summary": "物理学者のNathaniel Craig氏がGPT-6 Astraと組み、標準模型の格子定義の候補を作った事例を紹介。OpenAIの新しいサイエンスブログの第1弾の記事。",
+      "publishedAt": "2026-11-16T00:23:49Z"
+    },
+    {
+      "title": "Anthropic、史上最大規模のIPOで最大904億ドル調達へ",
+      "url": "https://x.com/business/status/2122087254621302803",
+      "source": "X, @business",
+      "summary": "Bloombergによると、Anthropicは上場で最大904億ドルを調達する計画で、実現すれば過去最大のIPOになる。今週中にNasdaqに上場するとされている。",
+      "publishedAt": "2026-11-15T22:00:02Z"
+    },
+    {
+      "title": "Node.js 27.0.0のアルファ版が公開",
+      "url": "https://x.com/codezine/status/2122132558284763412",
+      "source": "X, @codezine",
+      "summary": "CodeZineによると、X.509証明書の生成などに対応したNode.js 27.0.0のアルファ版が公開された。",
+      "publishedAt": "2026-11-16T01:00:03Z"
     }
   ]
 }
