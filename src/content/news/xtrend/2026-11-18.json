@@ -1,0 +1,76 @@
+{
+  "category": "xtrend",
+  "collectedAt": "2026-11-18T06:57",
+  "items": [
+    {
+      "title": "OpenAI、GPT-6.2 AstraとSolを公開",
+      "url": "https://x.com/OpenAI/status/2122750124543926515",
+      "source": "X, @OpenAI",
+      "summary": "GPT-6.2 AstraとSolが公開され、CodexとAPIでも利用可能に。Astraは入力100万トークンあたり$8・出力$40に値下げとされ、@theo氏が辛口評価を出すなど評価が割れている。",
+      "publishedAt": "2026-11-17T17:54:03Z"
+    },
+    {
+      "title": "MAI Code 2／Flash、VS CodeのGitHub Copilotで利用可能に",
+      "url": "https://x.com/code/status/2122767534491340899",
+      "source": "X, @code",
+      "summary": "MicrosoftのMAI Code 2とMAI Code 2 FlashがVS CodeのCopilotで選べるようになった。2027年5月17日まで両モデル50%オフ。",
+      "publishedAt": "2026-11-17T19:03:13Z"
+    },
+    {
+      "title": "Copilot Fusion Max、Terminal-Bench 4.1で71.2%",
+      "url": "https://x.com/github/status/2122756587073028306",
+      "source": "X, @github",
+      "summary": "GitHubによると、Copilot Fusion MaxがTerminal-Bench 4.1で解決率71.2%を記録し、Opus 5.5やFable 5.2を5.4ポイント上回りつつコストも大幅に低いとしている。",
+      "publishedAt": "2026-11-17T18:19:43Z"
+    },
+    {
+      "title": "Microsoft AI、MAI-Image-2.7が画像編集ベンチで首位",
+      "url": "https://x.com/ArtificialAnlys/status/2122754535206846610",
+      "source": "X, @ArtificialAnlys",
+      "summary": "Artificial AnalysisのAA-Image-Editingで、MAI-Image-2.7が1位に。上位4モデルの6分の1の価格とされ、Flash版も公開された。",
+      "publishedAt": "2026-11-17T18:11:34Z"
+    },
+    {
+      "title": "スパコン「富岳」に不正アクセス、利用者情報流出の恐れ",
+      "url": "https://x.com/AlertaMundial19/status/2122727881021251998",
+      "source": "X, @AlertaMundial19",
+      "summary": "理研が富岳の運用システムへの不正アクセスを公表。富岳の利用者最大4,597人分とAI用スパコン「りきゅう」の375人分の情報などが流出した可能性があるとされている。",
+      "publishedAt": "2026-11-17T16:25:39Z"
+    },
+    {
+      "title": "Oxlint、tsrsで型情報を使うLintに対応",
+      "url": "https://x.com/voidzerodev/status/2122721897091633169",
+      "source": "X, @voidzerodev",
+      "summary": "tsgolintの代わりにtsrsを使えるようになり、型を使うLintと型チェックで最大7倍速く、メモリも最大75%少ないとしている。",
+      "publishedAt": "2026-11-17T16:01:53Z"
+    },
+    {
+      "title": "TanStack Angular Queryが安定版に",
+      "url": "https://x.com/tan_stack/status/2122737887565275159",
+      "source": "X, @tan_stack",
+      "summary": "@tanstack/angular-queryがstableに。SSRの自動ハイドレーション、injectQueriesの安定化、実験的なtoResource APIなどを含み、Angular 20.1以上が必要。",
+      "publishedAt": "2026-11-17T17:05:25Z"
+    },
+    {
+      "title": "Rex for Windowsのアルファ版が開始",
+      "url": "https://x.com/mitchellh/status/2122731286175580550",
+      "source": "X, @mitchellh",
+      "summary": "Mitchell Hashimoto氏が、Windows版Rexのアルファを開始したと発表。Odin製で、独自GUIフレームワークとDirectXの独自レンダラを使っている。",
+      "publishedAt": "2026-11-17T16:39:11Z"
+    },
+    {
+      "title": "mizchi氏、安くて速いミューテーションテストの記事",
+      "url": "https://x.com/mizchi/status/2122630673706234306",
+      "source": "X, @mizchi",
+      "summary": "「安くてうまくて速い」ミューテーションテストのやり方をまとめた記事を公開。",
+      "publishedAt": "2026-11-17T09:59:23Z"
+    },
+    {
+      "title": "Claude Platformで「Linked billing」がベータに",
+      "url": "https://x.com/ClaudeDevs/status/2122751844455956760",
+      "source": "X, @ClaudeDevs",
+      "summary": "Factory、Linear、Rampなどのツールの利用者が、APIキーを渡さずにClaude Platformの組織経由でClaude APIの利用料を払えるようになった。",
+      "publishedAt": "2026-11-17T18:00:53Z"
+    }
+  ]
+}
