@@ -1,0 +1,96 @@
+{
+  "category": "githubtrend",
+  "collectedAt": "2026-11-18T08:31",
+  "items": [
+    {
+      "title": "elementalsouls/Claude-BugHunter",
+      "url": "https://github.com/elementalsouls/Claude-BugHunter",
+      "source": "GitHub, Python",
+      "summary": "バグバウンティや外部レッドチーム向けの Claude Code スキルとスラッシュコマンドをまとめたもの。公開済みの脆弱性報告数百件のパターンを元にしている。",
+      "image": "https://opengraph.githubassets.com/1/elementalsouls/Claude-BugHunter",
+      "rank": 1,
+      "stars": 1007
+    },
+    {
+      "title": "mvanhorn/last30days-skill",
+      "url": "https://github.com/mvanhorn/last30days-skill",
+      "source": "GitHub, Python",
+      "summary": "あるトピックについて、SNS・動画・フォーラム・予測市場・Web から直近の議論を集め、出典付きの要約を書く AI エージェント用スキルである。",
+      "image": "https://opengraph.githubassets.com/1/mvanhorn/last30days-skill",
+      "rank": 2,
+      "stars": 772
+    },
+    {
+      "title": "alibaba/open-code-review",
+      "url": "https://github.com/alibaba/open-code-review",
+      "source": "GitHub, Go",
+      "summary": "Alibaba のコードレビューツール。ルールベースのパイプラインと LLM エージェントを組み合わせて行単位のコメントを付け、よくあるバグの検査を内蔵する。OpenAI と Anthropic の API に対応する。",
+      "image": "https://opengraph.githubassets.com/1/alibaba/open-code-review",
+      "rank": 3,
+      "stars": 764
+    },
+    {
+      "title": "Tencent/LoopForge",
+      "url": "https://github.com/Tencent/LoopForge",
+      "source": "GitHub, Go",
+      "summary": "CodeBuddy・Codex・Claude Code などのコーディングエージェントを、スクリプト化した手順でつなぐセルフホスト型のツール。途中に人の承認を挟むチェックポイントを置ける。",
+      "image": "https://opengraph.githubassets.com/1/Tencent/LoopForge",
+      "rank": 4,
+      "stars": 590
+    },
+    {
+      "title": "dream-num/univer",
+      "url": "https://github.com/dream-num/univer",
+      "source": "GitHub, TypeScript",
+      "summary": "自前の AI オフィスを構築するための Univer Office SDK。編集・計算・共同編集・ファイル処理を、人と AI エージェントの双方向けに自分のプロダクトへ組み込める。",
+      "image": "https://opengraph.githubassets.com/1/dream-num/univer",
+      "rank": 5,
+      "stars": 1776
+    },
+    {
+      "title": "getarcaneapp/arcane",
+      "url": "https://github.com/getarcaneapp/arcane",
+      "source": "GitHub, Go",
+      "summary": "誰でも使えることを目指したモダンな Docker 管理ツールである。",
+      "image": "https://opengraph.githubassets.com/1/getarcaneapp/arcane",
+      "rank": 6,
+      "stars": 654
+    },
+    {
+      "title": "google-labs-code/stitch-skills",
+      "url": "https://github.com/google-labs-code/stitch-skills",
+      "source": "GitHub, TypeScript",
+      "summary": "Stitch MCP サーバー向けのエージェントスキル集。Gemini CLI や Cursor など複数のコーディングエージェントで使えるようにまとめられている。",
+      "image": "https://opengraph.githubassets.com/1/google-labs-code/stitch-skills",
+      "rank": 7,
+      "stars": 350
+    },
+    {
+      "title": "cursor/plugins",
+      "url": "https://github.com/cursor/plugins",
+      "source": "GitHub, TypeScript",
+      "summary": "Cursor のプラグイン仕様と公式プラグインを収めたリポジトリである。",
+      "image": "https://opengraph.githubassets.com/1/cursor/plugins",
+      "rank": 8,
+      "stars": 196
+    },
+    {
+      "title": "obra/superpowers",
+      "url": "https://github.com/obra/superpowers",
+      "source": "GitHub, Shell",
+      "summary": "エージェント向けのスキルフレームワークと、それを使ったソフトウェア開発の方法論である。",
+      "image": "https://opengraph.githubassets.com/1/obra/superpowers",
+      "rank": 9,
+      "stars": 598
+    },
+    {
+      "title": "ag-ui-protocol/ag-ui",
+      "url": "https://github.com/ag-ui-protocol/ag-ui",
+      "source": "GitHub, TypeScript",
+      "summary": "エージェントとユーザーのやり取りを定める AG-UI（Agent-User Interaction Protocol）。エージェントをフロントエンドのアプリケーションに組み込むためのプロトコルである。",
+      "image": "https://opengraph.githubassets.com/1/ag-ui-protocol/ag-ui",
+      "rank": 10,
+      "stars": 1444
+    }
+  ]
+}
