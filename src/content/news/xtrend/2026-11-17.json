@@ -1,6 +1,6 @@
 {
   "category": "xtrend",
-  "collectedAt": "2026-11-17T06:56",
+  "collectedAt": "2026-11-17T18:22",
   "items": [
     {
       "title": "OpenCode Browse 0.1.0、Rustで書き直し",
@@ -64,6 +64,76 @@
       "source": "X, @Prayag12B",
       "summary": "エージェントがスキーマ、API、フロント、テスト、ドキュメントまで作ると、誰もコードを理解していない「Comprehension debt」が生まれるという投稿が拡散。「大規模システムでは昔からある問題」という反論も出ている。",
       "publishedAt": "2026-11-16T15:28:00Z"
+    },
+    {
+      "title": "Claude Codeチーム、「検証ループ」の考え方を公開",
+      "url": "https://x.com/ClaudeDevs/status/2122457608963395586",
+      "source": "X, @ClaudeDevs",
+      "summary": "テストやベンチマーク、E2Eなど以前は高コストだった検証が安くなり、Claudeは自分の作業を検証できるとより良いコードを書く、という内容。oikon48氏の解説では、チーム内ではコードの約90%をClaude自身が書き・レビューしているとされている。",
+      "publishedAt": "2026-11-16T22:31:41Z"
+    },
+    {
+      "title": "Mitchell Hashimoto氏、リモート開発環境「Rex」をデモ",
+      "url": "https://x.com/mitchellh/status/2122464126240989217",
+      "source": "X, @mitchellh",
+      "summary": "リモートとの自動コピー＆ペースト、ドラッグ＆ドロップ、ポートフォワーディング（リモートのWebサーバーをローカルのブラウザで開ける）を披露。内部の仕組みとLuaスクリプトでの拡張も紹介し、「リモート版Vagrant」をようやく正しく作れたと述べている。",
+      "publishedAt": "2026-11-16T22:57:35Z"
+    },
+    {
+      "title": "macOSの新しい権限アラートに不満の声",
+      "url": "https://x.com/steipete/status/2122463466304971068",
+      "source": "X, @steipete",
+      "summary": "エージェントがmacOS上でつきっきりの承認なしに動けるよう権限アラートを減らしてほしいという声に対し、Appleは新たな「怖い」アラートを追加した、と皮肉る投稿。",
+      "publishedAt": "2026-11-16T22:54:58Z"
+    },
+    {
+      "title": "LayerX、内製Background Coding Agent「haro」の運用記",
+      "url": "https://x.com/LayerX_tech/status/2122542948361674981",
+      "source": "X, @LayerX_tech",
+      "summary": "1時間おきにアラートを読み、振り分けから調査、draft PR作成まで任せる仕組み。バクラク勤怠のKazu氏が3週間半の運用とWikiの育て方を解説している。",
+      "publishedAt": "2026-11-17T04:10:48Z"
+    },
+    {
+      "title": "yusukebe氏ら、OSSメンテナの2026年を語る対談イベント",
+      "url": "https://x.com/yusukebe/status/2122497445678715228",
+      "source": "X, @yusukebe",
+      "summary": "12月21日のLayerXのイベントで、@utam0k、@goccy54、@sivchari各氏と「OSSメンテナと話す2026年の変化とこれから」を対談。Honoで外部からのPRを無効化した判断についても話すという。",
+      "publishedAt": "2026-11-17T01:09:59Z"
+    },
+    {
+      "title": "Optimizely Web経由のサプライチェーン攻撃、178組織に影響か",
+      "url": "https://x.com/HormuzLetter/status/2122535982591365248",
+      "source": "X, @HormuzLetter",
+      "summary": "Optimizelyのスニペットに不正なJavaScriptが仕込まれ、決済情報を盗むスクリプトやiOSを狙うコードが訪問者に配信されたとされている。影響先としてZoom、CNN、BBC、HSBCなど大手の名前が挙がっている。",
+      "publishedAt": "2026-11-17T03:43:07Z"
+    },
+    {
+      "title": "Google Antigravity、マルチエージェント向けにUIを全面刷新",
+      "url": "https://x.com/antigravity/status/2122514607726043205",
+      "source": "X, @antigravity",
+      "summary": "複数エージェントを並列で動かすことを前提にインターフェースをゼロから作り直し、状況を一目で把握して制御できるようにしたと解説している。",
+      "publishedAt": "2026-11-17T02:18:11Z"
+    },
+    {
+      "title": "ChatGPT for Healthcare、コンピュータ操作エージェントや20超のプラグインを追加",
+      "url": "https://x.com/OpenAI/status/2122465625109090646",
+      "source": "X, @OpenAI",
+      "summary": "より高性能なcomputer-useエージェント、臨床的な回答の強化、20以上の医療向けプラグインを発表。Abridge、Cigna、CVS Healthなどが導入しているとしている。",
+      "publishedAt": "2026-11-16T23:03:33Z"
+    },
+    {
+      "title": "AI日程調整のHowie、Google Labsに合流",
+      "url": "https://x.com/awwstn/status/2122458546457792959",
+      "source": "X, @awwstn",
+      "summary": "スモールビジネス向けにスケジュール・カレンダー管理を担うAI「Howie」のチームがGoogle Labsに加わり、開発を続けると発表した。",
+      "publishedAt": "2026-11-16T22:35:25Z"
+    },
+    {
+      "title": "Reuters独自：中国、米国AIモデルの出力で国産モデルを学習",
+      "url": "https://x.com/Reuters/status/2122537762439975368",
+      "source": "X, @Reuters",
+      "summary": "半導体規制が効く中、米国のAIモデルを使って国産の対抗モデルを訓練している（蒸留）とReutersが報じた。",
+      "publishedAt": "2026-11-17T03:50:12Z"
     }
   ]
 }
