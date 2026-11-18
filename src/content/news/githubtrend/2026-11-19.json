@@ -1,0 +1,96 @@
+{
+  "category": "githubtrend",
+  "collectedAt": "2026-11-19T08:32",
+  "items": [
+    {
+      "title": "elementalsouls/Claude-BugHunter",
+      "url": "https://github.com/elementalsouls/Claude-BugHunter",
+      "source": "GitHub, Python",
+      "summary": "バグバウンティや外部レッドチーム向けの Claude Code スキルバンドル。82 のスキルと 15 のスラッシュコマンドを収め、公開済みの脆弱性報告のパターンを元にしている。",
+      "image": "https://opengraph.githubassets.com/1/elementalsouls/Claude-BugHunter",
+      "rank": 1,
+      "stars": 2322
+    },
+    {
+      "title": "cursor/plugins",
+      "url": "https://github.com/cursor/plugins",
+      "source": "GitHub, TypeScript",
+      "summary": "Cursor のプラグイン仕様と公式プラグインを収めたリポジトリである。",
+      "image": "https://opengraph.githubassets.com/1/cursor/plugins",
+      "rank": 2,
+      "stars": 315
+    },
+    {
+      "title": "HKUDS/CLI-Anything",
+      "url": "https://github.com/HKUDS/CLI-Anything",
+      "source": "GitHub, Python",
+      "summary": "あらゆるソフトウェアをエージェントから扱えるよう CLI 化することを目指すプロジェクト。作った CLI を集めた CLI-Hub も公開している。",
+      "image": "https://opengraph.githubassets.com/1/HKUDS/CLI-Anything",
+      "rank": 3,
+      "stars": 384
+    },
+    {
+      "title": "mvanhorn/last30days-skill",
+      "url": "https://github.com/mvanhorn/last30days-skill",
+      "source": "GitHub, Python",
+      "summary": "あるトピックについて、Reddit・X・YouTube・HN・Polymarket・Web から直近の議論を集めて調べる AI エージェント用スキルである。",
+      "image": "https://opengraph.githubassets.com/1/mvanhorn/last30days-skill",
+      "rank": 4,
+      "stars": 1062
+    },
+    {
+      "title": "getarcaneapp/arcane",
+      "url": "https://github.com/getarcaneapp/arcane",
+      "source": "GitHub, Go",
+      "summary": "誰でも使えることを目指したモダンな Docker 管理ツールである。",
+      "image": "https://opengraph.githubassets.com/1/getarcaneapp/arcane",
+      "rank": 5,
+      "stars": 547
+    },
+    {
+      "title": "NVIDIA/SkillEvaluator",
+      "url": "https://github.com/NVIDIA/SkillEvaluator",
+      "source": "GitHub, Python",
+      "summary": "AI エージェントのスキルやプラグインを評価する多層フレームワーク。品質ゲートや意味的な重複の検出などを備える。",
+      "image": "https://opengraph.githubassets.com/1/NVIDIA/SkillEvaluator",
+      "rank": 6,
+      "stars": 323
+    },
+    {
+      "title": "nvm-sh/nvm",
+      "url": "https://github.com/nvm-sh/nvm",
+      "source": "GitHub, Shell",
+      "summary": "複数の Node.js のバージョンを切り替えて使うための Node Version Manager。POSIX 準拠の bash スクリプトで書かれている。",
+      "image": "https://opengraph.githubassets.com/1/nvm-sh/nvm",
+      "rank": 7,
+      "stars": 111
+    },
+    {
+      "title": "astral-sh/uv",
+      "url": "https://github.com/astral-sh/uv",
+      "source": "GitHub, Rust",
+      "summary": "Rust で書かれた非常に高速な Python のパッケージ・プロジェクト管理ツールである。",
+      "image": "https://opengraph.githubassets.com/1/astral-sh/uv",
+      "rank": 8,
+      "stars": 260
+    },
+    {
+      "title": "google-research/paper-orchestra",
+      "url": "https://github.com/google-research/paper-orchestra",
+      "source": "GitHub, Python",
+      "summary": "AI 研究論文の執筆を自動化するマルチエージェントフレームワーク PaperOrchestra である。",
+      "image": "https://opengraph.githubassets.com/1/google-research/paper-orchestra",
+      "rank": 9,
+      "stars": 1529
+    },
+    {
+      "title": "google-labs-code/stitch-skills",
+      "url": "https://github.com/google-labs-code/stitch-skills",
+      "source": "GitHub, TypeScript",
+      "summary": "Stitch MCP サーバー向けのエージェントスキル集。各スキルは Agent Skills のオープン標準に沿っている。",
+      "image": "https://opengraph.githubassets.com/1/google-labs-code/stitch-skills",
+      "rank": 10,
+      "stars": 369
+    }
+  ]
+}
