@@ -1,0 +1,76 @@
+{
+  "category": "xtrend",
+  "collectedAt": "2026-11-19T06:51",
+  "items": [
+    {
+      "title": "Zed v1.29、Git Panelでブランチ差分を表示できるように",
+      "url": "https://x.com/zeddotdev/status/2123102114490491023",
+      "source": "X, @zeddotdev",
+      "summary": "Git Panelに別ブランチとの差分を見るオプションが入り、コミット済みと未コミットの変更をまとめて確認できる。",
+      "publishedAt": "2026-11-18T17:12:44Z"
+    },
+    {
+      "title": "VS Code最新版、エージェント作業の計画機能を強化",
+      "url": "https://x.com/code/status/2123132578425159819",
+      "source": "X, @code",
+      "summary": "リクエストを下書き保存したり、フォローアップを後で実行するよう予約したりできる。結果をチャートやモックアップで見せる新しい表示も試せる。",
+      "publishedAt": "2026-11-18T19:13:47Z"
+    },
+    {
+      "title": "Biome、Rustクレートの大半を外部から使えるように",
+      "url": "https://x.com/biomejs/status/2123078100065964440",
+      "source": "X, @biomejs",
+      "summary": "フォーマッターが言語非依存になり、他の言語からも使える。カスタム設定、埋め込みフォーマット、独自の構文木の持ち込みに対応し、PrettierのIRを使う。",
+      "publishedAt": "2026-11-18T15:37:18Z"
+    },
+    {
+      "title": "OpenAI、Codexのサンドボックスを解説",
+      "url": "https://x.com/OpenAIDevs/status/2123129469447880885",
+      "source": "X, @OpenAIDevs",
+      "summary": "Codexは既存の環境でコマンドを実行しつつ、ファイルシステムとネットワークへのアクセスをユーザーが決めた範囲に制限できる。リポジトリを編集するコマンドに自動でネットワークを許すべきではない、という考え方。",
+      "publishedAt": "2026-11-18T19:01:26Z"
+    },
+    {
+      "title": "clockmaker氏、CSSのscroll-state()でテーブルの続きを示す矢印をJSなしで制御",
+      "url": "https://x.com/clockmaker/status/2123037478819188879",
+      "source": "X, @clockmaker",
+      "summary": "テーブルの右や下に続きがあることを示す矢印を、スクロールしたら隠す。CSSのコンテナークエリーとscroll-state()で実現でき、JavaScriptは不要。",
+      "publishedAt": "2026-11-18T12:55:53Z"
+    },
+    {
+      "title": "NGINXにHTTP/2の重大な脆弱性、認証なしでRCEの恐れ",
+      "url": "https://x.com/nirohfeld/status/2123070394227663006",
+      "source": "X, @nirohfeld",
+      "summary": "CVE-2026-123633とCVE-2026-123007（CVSS 4.0で9.2）が公開された。静的ファイルを配信するだけのNGINXでも、HTTP/2が有効なら遠隔からコードを実行できたとしている。パッチは公開済みと報じられている。",
+      "publishedAt": "2026-11-18T15:06:41Z"
+    },
+    {
+      "title": "Google、Gemini 4 Neonを公開",
+      "url": "https://x.com/OfficialLoganK/status/2123167791922741362",
+      "source": "X, @OfficialLoganK",
+      "summary": "CarbonとHydrogenの間に位置するモデルで、Google AI Studio、Gemini API、有料のGoogle AI Pro/Ultraなどで順次使えるようになる。料金は入力100万トークンあたり$3、出力$15とされている。",
+      "publishedAt": "2026-11-18T21:33:42Z"
+    },
+    {
+      "title": "PHP、11月19日に重大度「critical」のセキュリティリリースを予告",
+      "url": "https://x.com/ericlbarnes/status/2123135705303908502",
+      "source": "X, @ericlbarnes",
+      "summary": "サポート中の全バージョンが対象で、公開は11月19日14:00〜14:30（UTC）とされている。",
+      "publishedAt": "2026-11-18T19:26:12Z"
+    },
+    {
+      "title": "OpenAIのモデル、AMDのGPU設計でPPAを最大14%改善",
+      "url": "https://x.com/OpenAI/status/2123100386638877054",
+      "source": "X, @OpenAI",
+      "summary": "AMDと協力し、5か月足らずで主力GPU IPのPPAを最大14%改善したと発表。自社初の推論チップJalapeñoの改善にも使い、Synopsysと組んでチップ設計者向けに広げる。",
+      "publishedAt": "2026-11-18T17:05:52Z"
+    },
+    {
+      "title": "ChatGPTに「Live Dictation」",
+      "url": "https://x.com/ChatGPT/status/2123114715257946334",
+      "source": "X, @ChatGPT",
+      "summary": "話しながらその場で文字になる音声入力。OpenAIの開発者によると、従来の10分の録音上限もなくなった。",
+      "publishedAt": "2026-11-18T18:02:48Z"
+    }
+  ]
+}
