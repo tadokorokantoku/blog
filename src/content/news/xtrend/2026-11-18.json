@@ -1,6 +1,6 @@
 {
   "category": "xtrend",
-  "collectedAt": "2026-11-18T06:57",
+  "collectedAt": "2026-11-18T18:15",
   "items": [
     {
       "title": "OpenAI、GPT-6.2 AstraとSolを公開",
@@ -71,6 +71,76 @@
       "source": "X, @ClaudeDevs",
       "summary": "Factory、Linear、Rampなどのツールの利用者が、APIキーを渡さずにClaude Platformの組織経由でClaude APIの利用料を払えるようになった。",
       "publishedAt": "2026-11-17T18:00:53Z"
+    },
+    {
+      "title": "Vite、開発サーバーに影響する重大なセキュリティアドバイザリを公開",
+      "url": "https://x.com/vite_js/status/2122949427497165033",
+      "source": "X, @vite_js",
+      "summary": "Viteチームが開発サーバーに関する重大な脆弱性のアドバイザリを公開しました。Vite 8.3.7／8.2.5／8.1.7／7.3.8／6.4.6、Vite+ 1.5.1 以降への更新を呼びかけています。",
+      "publishedAt": "2026-11-18T07:06:00.000Z"
+    },
+    {
+      "title": "Claude Desktopに更新頻度の高い「Latest」リリースチャンネル",
+      "url": "https://x.com/ClaudeDevs/status/2122821051910684824",
+      "source": "X, @ClaudeDevs",
+      "summary": "Windows／Mac版のClaude Desktopで、設定からLatestチャンネルを選ぶと修正や改善を早く受け取れるようになりました。Stableより不安定な場合があり、既定はStableのままです。",
+      "publishedAt": "2026-11-17T22:35:53.000Z"
+    },
+    {
+      "title": "OpenAI APIの利用状況ダッシュボードを刷新",
+      "url": "https://x.com/OpenAIDevs/status/2122824859491205152",
+      "source": "X, @OpenAIDevs",
+      "summary": "Analyticsで利用量と支出の追跡、レート制限とその対象リクエストの確認、モデル・プロジェクト・APIキー別のエラー調査ができるようになりました。",
+      "publishedAt": "2026-11-17T22:51:01.000Z"
+    },
+    {
+      "title": "yusukebe氏、エージェント向けにCloudflareを操作できる「cf CLI」を紹介",
+      "url": "https://x.com/yusukebe/status/2122946084431699969",
+      "source": "X, @yusukebe",
+      "summary": "Cloudflareのあらゆるリソースをエージェントから操作できるcf CLIについて、利用者からの評判がとても良いと紹介しています。",
+      "publishedAt": "2026-11-18T06:52:43.000Z"
+    },
+    {
+      "title": "nwiizo氏、「技術勉強会やめませんか？」へのトラックバック記事",
+      "url": "https://x.com/nwiizo/status/2122882244046184474",
+      "source": "X, @nwiizo",
+      "summary": "勉強会の問題はテーマがAIで分かることではなく、何のために集まるのかが伝わっていないことだとし、招待・断り方・終わり方まで書いています。",
+      "publishedAt": "2026-11-18T02:39:02.000Z"
+    },
+    {
+      "title": "CISA、Javaの重大脆弱性「Java4Shell」の即時パッチを要請",
+      "url": "https://x.com/CISACyber/status/2122821451635916849",
+      "source": "X, @CISACyber",
+      "summary": "米CISAが、Oracle Javaのメモリ破損脆弱性CVE-2026-114938（Java4Shell）について、組織に即時のパッチ適用を求めました。CVSS 4.0で9.2とされています。",
+      "publishedAt": "2026-11-17T22:37:28.000Z"
+    },
+    {
+      "title": "Tencent、Hy4 Flashをオープンウェイトで公開",
+      "url": "https://x.com/TencentHunyuan/status/2122912575302119554",
+      "source": "X, @TencentHunyuan",
+      "summary": "総パラメータ224B（アクティブ12B）、100万トークンのコンテキスト、ネイティブのマルチモーダル対応です。FP8版とBase版も公開され、上位のHy4も予告されています。",
+      "publishedAt": "2026-11-18T04:39:34.000Z"
+    },
+    {
+      "title": "Claude Codeに実験的な「Code Mode」",
+      "url": "https://x.com/ClaudeDevs/status/2122801681939234950",
+      "source": "X, @ClaudeDevs",
+      "summary": "Claudeがツールをつなぐスクリプトを書いてまとめて実行し、長いコマンドの実行中でも応答できる新しい方式です。CLAUDE_CODE_EXPERIMENTAL_CODE_MODE=1 で有効にできます。",
+      "publishedAt": "2026-11-17T21:18:55.000Z"
+    },
+    {
+      "title": "OpenAI、営業向けの「ChatGPT for Sales」を発表",
+      "url": "https://x.com/ChatGPT/status/2122818162995634504",
+      "source": "X, @ChatGPT",
+      "summary": "新しいSalesプラグインと30以上のパートナープラグインを組み合わせ、営業ツールや顧客情報をChatGPTで扱えるようにするものです。",
+      "publishedAt": "2026-11-17T22:24:24.000Z"
+    },
+    {
+      "title": "Googleのローガン・キルパトリック氏が「Gemini」とだけ投稿、新モデル予告か",
+      "url": "https://x.com/OfficialLoganK/status/2122876403091959982",
+      "source": "X, @OfficialLoganK",
+      "summary": "一語だけの投稿で、Gemini 4系の新モデルが近く出るのではと憶測が広がっています。リリースはまだ確認されていません。",
+      "publishedAt": "2026-11-18T02:15:50.000Z"
     }
   ]
 }
