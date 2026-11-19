@@ -1,0 +1,76 @@
+{
+  "category": "xtrend",
+  "collectedAt": "2026-11-20T06:58",
+  "items": [
+    {
+      "title": "OpenAI、音声モデル「GPT-Live-1.1」をAPIで公開",
+      "url": "https://x.com/OpenAIDevs/status/2123506733524136446",
+      "source": "X, @OpenAIDevs",
+      "summary": "いろいろな言語で、より自然で安定したアクセントで話せるようになりました。新しいstandbyオプションで待機中のコストを下げられ、タスクもより確実にこなせるとしています。",
+      "publishedAt": "2026-11-19T20:00:32Z"
+    },
+    {
+      "title": "OpenAI、Codexのエージェントで遅くなった箇所を直す「Performance Factory」を紹介",
+      "url": "https://x.com/OpenAIDevs/status/2123471880292299171",
+      "source": "X, @OpenAIDevs",
+      "summary": "ChatGPTが遅くなった原因をエージェントが調べ、修正案をエンジニアのレビューに出し、本番で効いたかまで確かめる仕組みです。",
+      "publishedAt": "2026-11-19T17:42:03Z"
+    },
+    {
+      "title": "Prime Intellectで管理者権限が乗っ取られ、モデルがすり替えられていた",
+      "url": "https://x.com/theo/status/2123430257697157587",
+      "source": "X, @theo",
+      "summary": "theo氏は、OpenRouterから影響を受けた利用者に知らせがあったと投稿しました。Xニュースによると、11月8〜10日（UTC）にDeepSeek V4.1 Flashのエンドポイントが、安全性テストでほとんど拒否しない改変版に差し替えられていたとされています。",
+      "publishedAt": "2026-11-19T14:56:39Z"
+    },
+    {
+      "title": "TanStack AIで、ゲーム用の3Dモデルやモーションを作れるように",
+      "url": "https://x.com/tan_stack/status/2123443012428825027",
+      "source": "X, @tan_stack",
+      "summary": "テキストや画像からGLBを作るgenerate3DModel()と、プロンプトからアニメーションを作るgenerateMotion()が入りました。どちらも実験的な機能です。",
+      "publishedAt": "2026-11-19T15:47:20Z"
+    },
+    {
+      "title": "エージェントにデザインシステムを正しく使わせるには、ルールで縛る",
+      "url": "https://x.com/emilkowalski/status/2123467231510057157",
+      "source": "X, @emilkowalski",
+      "summary": "lintルールと型で厳しくしたprops、使い方を間違えたら落ちるCI、各コンポーネントの使いどころの文書化、役割で名前を付けたトークンを挙げています。",
+      "publishedAt": "2026-11-19T17:23:34Z"
+    },
+    {
+      "title": "Dockerがリブランド、エージェントの時代に向けて新しいロゴとメッセージ",
+      "url": "https://x.com/Docker/status/2123464195270152664",
+      "source": "X, @Docker",
+      "summary": "新しいロゴと、新しくなったMobyを発表しました。Xニュースによると、AIエージェントを専用カーネルのmicroVMで隔離して動かすSandboxesなども打ち出しているとされています。",
+      "publishedAt": "2026-11-19T17:11:30Z"
+    },
+    {
+      "title": "Gemini for Macに「computer use」、裏のウィンドウでMacを操作",
+      "url": "https://x.com/GeminiApp/status/2123513203745538423",
+      "source": "X, @GeminiApp",
+      "summary": "Geminiがフォルダやアプリ、Webをまたいで作業します。操作はバックグラウンドのウィンドウで行うので、自分の画面やカーソルはふさがりません。米国の英語版で、Google AI Plus、Pro、Ultraの契約者から順に使えるようになります。",
+      "publishedAt": "2026-11-19T20:26:15Z"
+    },
+    {
+      "title": "Antigravityのデスクトップアプリが、SSHでリモートサーバーに接続できるように",
+      "url": "https://x.com/antigravity/status/2123476398601908551",
+      "source": "X, @antigravity",
+      "summary": "これまでのRemote Controlに加えて、アプリからSSHでリモートのサーバーにつなげるようになりました。",
+      "publishedAt": "2026-11-19T18:00:00Z"
+    },
+    {
+      "title": "VMware vCenterに深刻度9.8の認証回避の脆弱性、修正版が公開",
+      "url": "https://x.com/TheHackersNews/status/2123438652575608980",
+      "source": "X, @TheHackersNews",
+      "summary": "CVE-2026-123890は、ネットワークに届くだけで認証を回避されるおそれがある脆弱性で、vCenter 8.0、9.0、9.1が対象です。修正版は出ていますが、回避策はないとされています。",
+      "publishedAt": "2026-11-19T15:30:01Z"
+    },
+    {
+      "title": "Anthropic、Nasdaq上場初日の終値は97.17ドル",
+      "url": "https://x.com/CoinDesk/status/2123527275366793268",
+      "source": "X, @CoinDesk",
+      "summary": "公開価格の83ドルから17.07%高く引けました。始値は111.50ドルで、高値は115.10ドルでした。",
+      "publishedAt": "2026-11-19T21:22:10Z"
+    }
+  ]
+}
