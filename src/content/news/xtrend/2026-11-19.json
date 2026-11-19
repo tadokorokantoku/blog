@@ -1,6 +1,6 @@
 {
   "category": "xtrend",
-  "collectedAt": "2026-11-19T06:51",
+  "collectedAt": "2026-11-19T18:18",
   "items": [
     {
       "title": "Zed v1.29、Git Panelでブランチ差分を表示できるように",
@@ -71,6 +71,76 @@
       "source": "X, @ChatGPT",
       "summary": "話しながらその場で文字になる音声入力。OpenAIの開発者によると、従来の10分の録音上限もなくなった。",
       "publishedAt": "2026-11-18T18:02:48Z"
+    },
+    {
+      "title": "Claude Code 2.1.328が公開、CLIの変更は144件",
+      "url": "https://x.com/ClaudeCodeLog/status/2123226990551445634",
+      "source": "X, @ClaudeCodeLog",
+      "summary": "クラウドやゲートウェイ経由のOpus/Sonnet 4.6でAuto modeが使え、許可の確認を飛ばせるようになりました。mcp_toolフックにonFailure: blockが入り、フックが失敗したら操作を止められます。確認を飛ばすとクラウドのセッションでメッセージが保留・欠落することがある、という注意書きも加わっています。",
+      "publishedAt": "2026-11-19T01:28:56Z"
+    },
+    {
+      "title": "Hono JSXにSignalsを入れるPR",
+      "url": "https://x.com/yusukebe/status/2123219486602056074",
+      "source": "X, @yusukebe",
+      "summary": "Honoの作者のyusukebe氏が、Hono JSXにSignalsを導入するプルリクエストを紹介しました。",
+      "publishedAt": "2026-11-19T00:59:07Z"
+    },
+    {
+      "title": "Vercel、人とエージェントのための掲示板「vercel board」を試験公開",
+      "url": "https://x.com/vercel/status/2123234769236619673",
+      "source": "X, @vercel",
+      "summary": "エージェントがタスクを共有する場所で、人とエージェントそれぞれに権限を設定できます。Guillermo Rauch氏は「エージェント向けのヘッドレスなSlack」と説明し、モデルや実行環境を選ばない作りだとしています。",
+      "publishedAt": "2026-11-19T01:59:51Z"
+    },
+    {
+      "title": "OpenAI、急がない処理をトークン単価で最大40%安く",
+      "url": "https://x.com/OpenAIDevs/status/2123188195202617408",
+      "source": "X, @OpenAIDevs",
+      "summary": "Responses APIのbackground modeで、最初の応答までの目標を2時間か8時間から選ぶと、GPT-6.2 AstraやSolがStandardより最大40%安くなります。パブリックベータです。",
+      "publishedAt": "2026-11-18T22:54:47Z"
+    },
+    {
+      "title": "Gemini 4 Neon、CursorとGitHub Copilotでも使えるように",
+      "url": "https://x.com/cursor_ai/status/2123198346802450926",
+      "source": "X, @cursor_ai",
+      "summary": "CursorはCursorBench 4.1で63.7%（Gemini 4 Hydrogenは57.3%）と発表し、GitHub CopilotでもGAになりました。TLではtheo氏やkenn氏が「Fableより良い」と驚いていて、評価が一気に広がっています。",
+      "publishedAt": "2026-11-18T23:35:07Z"
+    },
+    {
+      "title": "Rubyに重大な脆弱性「ruby2ßhell」、認証なしでRCEの恐れ",
+      "url": "https://x.com/0jayden_/status/2123274181861314993",
+      "source": "X, @0jayden_",
+      "summary": "文字列の大文字・小文字変換で1バイトのヒープオーバーフローが起き、素のRailsやGitLab、Mastodon、Discourseなどで認証なしのリモートコード実行につながるとされています。Rubyは修正版を出しているとされ、Rubyと自前でホストしているソフトの更新が呼びかけられています。",
+      "publishedAt": "2026-11-19T04:36:28Z"
+    },
+    {
+      "title": "Anthropic、IPO価格を1株83ドルに",
+      "url": "https://x.com/AnthropicAI/status/2123196808675405860",
+      "source": "X, @AnthropicAI",
+      "summary": "Nasdaqでの取引は日本時間の今夜から始まる予定です。Xニュースでは、想定レンジの70〜78ドルを上回り、評価額は約1.5兆ドルと報じられています。",
+      "publishedAt": "2026-11-18T23:29:00Z"
+    },
+    {
+      "title": "GitHub Copilot、GitHubが検証したMCPサーバーを「コネクタ」として公開プレビュー",
+      "url": "https://x.com/github/status/2123217310752342095",
+      "source": "X, @github",
+      "summary": "サービスを選んでサインインするだけでつながります。GitHub CopilotアプリやCopilot CLI、VS Codeなどで使えます。",
+      "publishedAt": "2026-11-19T00:50:29Z"
+    },
+    {
+      "title": "自分のパソコンで動く個人エージェント「Linger」がオープンソースに",
+      "url": "https://x.com/zhangboknight/status/2123237197050794364",
+      "source": "X, @zhangboknight",
+      "summary": "データや文脈を自分で持てるよう、手元のパソコンで動かす前提の個人エージェントです。Xニュースでは、12のオープンモデルに対応しているとされています。",
+      "publishedAt": "2026-11-19T02:09:30Z"
+    },
+    {
+      "title": "AIエージェントの自律的なML研究を測るベンチマーク「FrontierML」",
+      "url": "https://x.com/SynScience/status/2123191679964545342",
+      "source": "X, @SynScience",
+      "summary": "答えに近い検証用データを渡さず、25の課題でエージェントが自分で進み具合の測り方を作り、最後は隠された評価で採点されます。",
+      "publishedAt": "2026-11-18T23:08:38Z"
     }
   ]
 }
