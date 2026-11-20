@@ -3,6 +3,15 @@
   "collectedAt": "2026-11-21T01:31",
   "items": [
     {
+      "title": "Claude Code 2.1.330 をリリース",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.330",
+      "source": "GitHub Releases",
+      "tag": "claude-code",
+      "summary": "Enterprise Admin Console で管理する組織へのサインインに対応し、グラフを描く組み込みの mod「easel」が加わった。予定タスクと `/loop` は最長30日まで続くようになり、危険な `rm` コマンドの多くが承認を求めるようになった。長い会話を圧縮した直後に数分固まる問題など、多数の不具合も修正された。",
+      "detail": "<p class=\"release-counts\"><span class=\"breaking\">破壊的変更 <strong>3</strong> 件</span><span>新機能 <strong>16</strong> 件</span><span>不具合修正 <strong>98</strong> 件</span></p>\n\n- Anthropic の Enterprise Admin Console で管理する組織にサインインできるようになり、`claude auth login` のあとは組織の設定とクラウドプロバイダーやゲートウェイが使われる\n- グラフを描く組み込みの mod「easel」が加わり、頼んだときや MCP のメトリクス結果の下にグラフが出る（自動のグラフは `/config` で切れる）\n- 予定タスクと `/loop` が、セッションが動いている限り7日ではなく最長30日まで続くようになった\n\n## 新機能\n\n- Enterprise Admin Console で管理される組織へのサインインに対応した。`claude auth login` のあと、組織の設定が適用され、組織のクラウドプロバイダーやゲートウェイが使われる。\n- 組み込みの mod「easel」が追加された。頼んだときや MCP のメトリクス結果の下にグラフを描く。Pro・Max と、利用できる場合は Team・Enterprise の macOS と Linux で使え、自動のグラフは `/config` で止められる。\n- `CLAUDE_CODE_FULL_SIGN_IN_LINK=1` で、短いリンクがエラーになるときやスクリプトが値を読むときのために、完全なサインインリンクを表示できる。あわせて `/login` などで出るサインインリンク自体がかなり短くなった。\n- セルフホストランナーに `--start-dir` / `SELF_HOSTED_RUNNER_START_DIR` が加わり、リポジトリ内のフォルダから作業を始められる。`/metrics` には作業指示から登録・最初のセッションまでの秒数を測る指標が2つ増えた。\n- `claude plugin install --json` の結果に `commandPrinted` と `commandFailed` が加わった。\n- VS Code 拡張に `/fork` と `/workflows`、Escape で止めない `claudeCode.escapeStopsClaude`、送ったメッセージを固定しない `claudeCode.pinPrompt`、コンテキスト表示のしきい値 `claudeCode.contextUsageThreshold` などが加わった。\n\n## 動作の変更\n\n- 予定タスクと `/loop` は、セッションが動いている限り最長30日まで続き、終わるときにそれを知らせる。このリリースより前に作ったタスクは7日で終わる。\n- ルート、ホーム、トップレベルのフォルダ、作業フォルダを狙う `rm` コマンドの多くが承認を求めるようになった。応答できる人がいない場合は拒否される。\n- skill に `model` を指定しても、`context: fork` 以外ではサブエージェント、フォーク、圧縮、`/recap` はセッションのモデルのまま動く。\n- プロンプトフックの `model` に `haiku` や `sonnet` などのエイリアスが書けるようになった。\n\n## 主な不具合修正\n\n- 非常に長い会話を圧縮した直後に、Claude Code が数分間固まることがあった問題が修正された。\n- WebFetch が一部のページでセッションを数分止める問題や、空の結果を返す問題が修正された。\n- `ExitWorktree` とワークツリー終了ダイアログが、別の Claude Code セッションが作業中のワークツリーを削除してしまう問題が修正された。\n- 複数のプロセスが同時に保存したときにユーザー設定の変更が失われる問題や、`--continue` / `--resume` が空のセッションを開く問題が修正された。\n- Code Mode まわりでは、数百ファイルを読むコードのあとの長い停止、組み込みのグラフツールが失敗する問題、Esc と `/compact` のあとにファイルが戻らない問題などが直った。\n\n<div class=\"note\"><strong>更新時の注意</strong> <code>deniedMcpServers</code> の名前指定は、その名前の claude.ai コネクタだけを隠すようになった（同じ URL のものをすべて止めるには URL を正確に指定する）。一部の環境で <code>claude --teleport</code> はブランチを切り替えず git コマンドを表示するだけになり、<code>-p</code> 付きでは切り替えるまで終了コード 1 で終わる。セルフホストランナーの 403 のログはサーバーが返した理由を先頭に書くようになったので、古い文言に合わせたログアラートは直す必要がある。</div>",
+      "publishedAt": "2026-11-20"
+    },
+    {
       "title": "Codex CLI 0.171.0 をリリース",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.171.0",
       "source": "GitHub Releases",
