@@ -1,6 +1,6 @@
 {
   "category": "xtrend",
-  "collectedAt": "2026-11-20T06:58",
+  "collectedAt": "2026-11-20T18:22",
   "items": [
     {
       "title": "OpenAI、音声モデル「GPT-Live-1.1」をAPIで公開",
@@ -71,6 +71,69 @@
       "source": "X, @CoinDesk",
       "summary": "公開価格の83ドルから17.07%高く引けました。始値は111.50ドルで、高値は115.10ドルでした。",
       "publishedAt": "2026-11-19T21:22:10Z"
+    },
+    {
+      "title": "OpenAI、Responses APIでGPT-6.2の推論を会話履歴に紐づける仕様に",
+      "url": "https://x.com/OpenAIDevs/status/2123566018866151579",
+      "source": "X, @OpenAIDevs",
+      "summary": "GPT-6.2のエージェントは過去の推論を引き継げるようになり、少ないトークンとキャッシュヒット増で精度が上がるとしています。一方で過去メッセージを編集すると、それ以降の推論は破棄されるため、履歴は書き換えずに追記するよう案内しています。",
+      "publishedAt": "2026-11-19T23:56:07Z"
+    },
+    {
+      "title": "Cloudflare、nginxの脆弱性群「nginx2root」を解説",
+      "url": "https://x.com/Cloudflare/status/2123659503123980374",
+      "source": "X, @Cloudflare",
+      "summary": "nginxにある5件のメモリ破壊バグ（nginx2root）で、認証なしの攻撃者がサーバー上でコードを実行できる恐れがあるとして、その仕組みを解説しています。",
+      "publishedAt": "2026-11-20T06:07:35Z"
+    },
+    {
+      "title": "Claude Code 2.1.329リリース、130件のCLI変更",
+      "url": "https://x.com/ClaudeCodeLog/status/2123546030654333070",
+      "source": "X, @ClaudeCodeLog",
+      "summary": "危険操作の確認プロンプトを廃止してゲート付きステップを自動実行にしたほか、/tasksでスケジュール済みタスクや/loopの起動、goalやforkが見られるようになったとまとめられています。",
+      "publishedAt": "2026-11-19T22:36:41Z"
+    },
+    {
+      "title": "VS CodeのCopilotで画像生成が可能に",
+      "url": "https://x.com/code/status/2123574538176770491",
+      "source": "X, @code",
+      "summary": "VS Code上でCopilotから直接画像を生成でき、デザインモックから実装までを素早くつなげられると紹介しています。",
+      "publishedAt": "2026-11-20T00:29:58Z"
+    },
+    {
+      "title": "mizchi氏、11/26に「ソフトウェアファクトリーオンラインハッカソン」開催",
+      "url": "https://x.com/mizchi/status/2123686165392048422",
+      "source": "X, @mizchi",
+      "summary": "自分のハーネスを使い「入力から最終成果物まで人間が介在しない」ファクトリー作りをテーマに、テクニックを共有しながら進めるオンラインハッカソンです。",
+      "publishedAt": "2026-11-20T07:53:32Z"
+    },
+    {
+      "title": "Tencent、マルチモーダルMoE「Hy4」のオープンウェイトを公開",
+      "url": "https://x.com/TencentHunyuan/status/2123625549147070538",
+      "source": "X, @TencentHunyuan",
+      "summary": "総パラメータ770B（アクティブ49B）、1Mコンテキストのネイティブマルチモーダルモデルで、安全性評価を含むシステムカードも同時に公開しました。vLLMはDay-0対応を発表しています。",
+      "publishedAt": "2026-11-20T03:52:40Z"
+    },
+    {
+      "title": "OpenAI、常時稼働エージェント「dots」をChatGPT Plusの一部ユーザーでテスト開始",
+      "url": "https://x.com/thsottiaux/status/2123556256392847657",
+      "source": "X, @thsottiaux",
+      "summary": "OpenAIのthsottiaux氏は、dotsのテストをPlusの一部ユーザーに広げたと投稿しました。新しいモバイル版ChatGPTもProユーザーから展開を始めるとしています。",
+      "publishedAt": "2026-11-19T23:17:19Z"
+    },
+    {
+      "title": "Google、Gemini 4 Neonを含む最新Geminiラインナップを整理",
+      "url": "https://x.com/NewsFromGoogle/status/2123534801139614132",
+      "source": "X, @NewsFromGoogle",
+      "summary": "長期の研究向けのCarbon、ソフトウェア開発などの深い推論向けのNeonといった使い分けを示しています。開発者からは「扱いやすさ」を評価する声が相次いでいます。",
+      "publishedAt": "2026-11-19T21:52:04Z"
+    },
+    {
+      "title": "Chrome 158公開、204件の脆弱性を修正しXSLTサポートを終了",
+      "url": "https://x.com/nov65536/status/2123604996075983141",
+      "source": "X, @nov65536",
+      "summary": "窓の杜の記事を共有した投稿です。XSLTのサポート終了により、XSLTで表示していたWordPressのサイトマップなどに影響が出ると報じられています。",
+      "publishedAt": "2026-11-20T02:31:00Z"
     }
   ]
 }
