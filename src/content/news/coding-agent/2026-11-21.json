@@ -1,0 +1,63 @@
+{
+  "category": "coding-agent",
+  "collectedAt": "2026-11-21T01:31",
+  "items": [
+    {
+      "title": "Codex CLI 0.171.0 をリリース",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.171.0",
+      "source": "GitHub Releases",
+      "tag": "codex",
+      "summary": "モデルカタログに GPT-6.2 Sol と GPT-6.2 Astra が加わり、Sol が既定になった。TUI ワークスペースが既定で有効になり、`codex exec --remote <ADDR>` で既存のアプリサーバー上の非対話セッションを開始・再開できるようになった。",
+      "detail": "<p class=\"release-counts\"><span class=\"breaking\">破壊的変更 <strong>0</strong> 件</span><span>新機能 <strong>6</strong> 件</span><span>不具合修正 <strong>6</strong> 件</span></p>\n\n- モデルカタログに GPT-6.2 Sol と GPT-6.2 Astra を追加し、Sol を既定にした\n- TUI ワークスペースを既定で有効にし、文書や画像のプレビュー、サブエージェントのトランスクリプトをメインの会話と並べて表示できるようにした\n- `codex exec --remote <ADDR>` で、既存のアプリサーバー上の非対話セッションを開始・再開できるようにした\n\n## 新機能\n\n- モデルカタログに GPT-6.2 Sol と GPT-6.2 Astra が追加され、カタログの既定は Sol になった。\n- TUI ワークスペースが既定で有効になった。検索できる文書プレビュー、画像プレビュー、サブエージェントのトランスクリプトを、メインの会話と並べて表示できる。\n- Vim モードではないプロンプト入力欄に、取り消しとやり直しのショートカットが追加された。ショートカットは設定で変更でき、取り消しでは添付ファイルや大量に貼り付けたテキストも元に戻る。\n- `codex exec --remote <ADDR>` が追加され、既存のアプリサーバー上で非対話セッションを開始または再開できるようになった。\n- TUI に `/rc` と `/remote` が追加された。ローカルのリモートコントロールを管理し、端末のペアリングコードを表示できる。\n- `tui_extensions_statusline` を有効にすると、`/statusline` から MCP を使った独自のステータスラインを選択・作成できるようになった。\n\n## 主な不具合修正\n\n- セッションの切り替えや再開の際に、下書き、キューに入れた追加指示、中断した入力が元のスレッドに残るようになった。\n- 作業ディレクトリを変更しても権限プロファイルが維持されるようになった。\n- 前のターンの完了イベントが遅れて届いたときに、新しいターンの承認が取り消される問題が修正された。\n- スクロール時に不要な文字が入る問題、入力欄のカーソルが飛ぶ問題、古い端末サイズで再描画される問題が修正された。\n- リフレッシュトークンを発行せず ID トークンだけを返す ID プロバイダで、エンタープライズ向け MCP のサインインができない問題が修正された。",
+      "image": "https://opengraph.githubassets.com/1/openai/codex",
+      "publishedAt": "2026-11-20"
+    },
+    {
+      "title": "gpt-6 Luna の API リクエストでエラー率が上昇",
+      "url": "https://status.openai.com/incidents/01M7T8MRF9SDBDNQ62Z6V156ZZ",
+      "source": "OpenAI Status",
+      "tag": "codex",
+      "summary": "OpenAI の API で gpt-6 Luna へのリクエストのエラー率が上昇し、Chat Completions と Responses が影響を受けた。障害は日本時間11月20日 01:01 から 01:58 まで続き、その後解消した。",
+      "detail": "- 影響範囲: API の Chat Completions と Responses（gpt-6 Luna へのリクエスト）\n- 影響時間: 日本時間11月20日 01:01〜01:58（約1時間）\n- 原因: 公表されていない\n\n## 時系列（日本時間）\n\n- 11月20日 01:01 調査を開始した\n- 01:21 緩和策を適用し、復旧の確認に入った\n- 01:58 すべての対象サービスが正常に戻ったとして解消した\n\n状況は部分的な障害（Partial outage）として扱われた。原因の説明はステータスページに記載されていない。",
+      "publishedAt": "2026-11-20"
+    },
+    {
+      "title": "Gemini の Mac アプリにコンピュータ操作機能",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/computer-use-mac/",
+      "source": "Google Blog",
+      "tag": "gemini",
+      "summary": "Gemini の Mac アプリに、ローカルのファイル、デスクトップアプリ、Web をまたぐ作業を代行する computer use が加わった。操作は独立したバックグラウンドのウィンドウで行われ、利用者はアクセスを許可するアプリの選択や、主要な操作の事前承認ができる。米国で英語版から順次提供される。",
+      "detail": "- Gemini の Mac アプリで computer use が使えるようになった\n- 作業はバックグラウンドの独立したウィンドウで行い、チャット内にライブプレビューが表示される\n- 米国で英語版から順次提供される\n\n## 機能の概要\n\ncomputer use は、ローカルのファイル、デスクトップアプリ、Web をまたぐ複数ステップの作業を自動化する機能である。利用者が作業内容を説明すると、Gemini がクリック、文字入力、メニュー操作、フォーム入力を行う。\n\nGemini は独立したバックグラウンドのウィンドウで動作し、チャット内にライブプレビューが表示される。メインの画面とカーソルは使われないため、利用者はその間も自分の作業を続けられる。\n\n## 利用者側の制御\n\n- Gemini がアクセスできるアプリを選べる\n- 各ステップをライブで確認でき、いつでも一時停止できる\n- 主要な操作を実行前に承認できる\n\n## 想定される使い方\n\n記事では、デザインソフトでの写真の一括色補正、ローカルの PDF から重さや寸法、住所を抜き出して配送見積もりのフォームに入力する作業、複数地域のダッシュボードから指標とスクリーンショットを集めて Google スライドの資料にする作業、衣類の写真から価格を調べて販売サイトへの出品を準備する作業が例に挙げられている。\n\n提供は米国の英語版から順次始まり、アプリは gemini.google/mac から入手できる。",
+      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/hero_header_CU_copy.width-1300.png",
+      "publishedAt": "2026-11-20"
+    },
+    {
+      "title": "Genie 4 が Gemini API と Google AI Studio で利用可能に",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/genie-4-in-gemini-api/",
+      "source": "Google Blog",
+      "tag": "gemini",
+      "summary": "Google は、前日に発表した Genie 4 を Gemini API（Interactions API 経由）と Google AI Studio で開発者に提供し始めた。テキストや参照画像から 720p・24fps の連続した世界を、同期したネイティブ音声付きで生成でき、キーボード操作とテキストで生成中の世界を変えられる。",
+      "detail": "- Genie 4 が Gemini API（Interactions API 経由）と Google AI Studio で使えるようになった\n- テキストのプロンプト、参照画像、またはその両方から、720p・24fps の連続した世界を同期したネイティブ音声付きで生成する\n- リアルタイムのキーボード操作とテキストのプロンプトで、天候、照明、物体、出来事を変えられる\n\n## できること\n\n音声には環境音や効果音、キャラクターの台詞が含まれる。生成中の環境はキーボードで移動でき、テキストのプロンプトで天候、照明、物体、出来事をその場で変えられる。世界の状態は Gemini の推論によって一貫した状態に保たれる。\n\n記事では、インタラクティブな体験の試作、空間的なコンセプトのデザインの可視化、ロボットや AI エージェントの学習といった用途が挙げられている。すべての出力には、知覚できない SynthID の透かしが入る。\n\n## 試し方\n\nGoogle AI Studio にインタラクティブなキャンバスとスターターアプリが用意されている。料金と Gemini API のドキュメントも公開されている。",
+      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Genie_4_Social_Share.max-1440x810.png",
+      "publishedAt": "2026-11-20"
+    },
+    {
+      "title": "Antigravity CLI 1.5.12 をリリース",
+      "url": "https://antigravity.google/docs/changelog?tab=cli",
+      "source": "Antigravity Changelog",
+      "tag": "gemini",
+      "summary": "Antigravity CLI（agy）1.5.12 は、リモートコントロールのブラウザビューに分割ビューを加え、`GEMINI_API_KEY` で接続したときに Gemini 4 Neon を選べるようにした。大きな会話の `/fork` は、最大1時間かかっていた処理が数秒で終わるようになった。ネットワークの再試行やレンダリング、リモートコントロールに関する不具合も修正された。",
+      "detail": "<p class=\"release-counts\"><span class=\"breaking\">破壊的変更 <strong>0</strong> 件</span><span>新機能 <strong>3</strong> 件</span><span>不具合修正 <strong>7</strong> 件</span></p>\n\n- リモートコントロールのブラウザビューに分割ビューを追加し、複数の会話を並べて開けるようにした\n- `GEMINI_API_KEY` で接続したときの `/model` と `--model` の選択肢に Gemini 4 Neon（Low、Medium、High、XHigh）を追加した\n- `/fork` がファイルをコピーせず元の会話を参照するようになり、最大1時間かかっていたフォークが数秒で終わるようになった\n\n## 新機能\n\n- リモートコントロールのブラウザビューに分割ビューが追加された。サイドバーの会話メニューまたはタイトルバーの「⋮」メニューにある Split から、Split Right か Split Down を選ぶ。スマートフォンでは使えない。\n- `GEMINI_API_KEY` で接続した場合の `/model` と `--model` の選択肢に、Gemini 4 Neon（Low、Medium、High、XHigh）が加わった。\n- full screen（altscreen）レンダリングモードにスクロール位置の表示が追加された。上にスクロールしている間、表示位置より下に残っている会話の量が、プロンプトの上の行に `↓ 25 lines · 2 turns` のように表示される。\n\n## 機能改善\n\n- `/fork` は、すべてのファイルをコピーする代わりに、ファイルを元の会話に残したままフォーク先のエージェントから参照するようになった。リポジトリのクローンやビルド出力でアーティファクトフォルダが大きくなった会話でも、フォークは数秒で終わる。\n- エージェントの応答やアーティファクト内の Markdown 見出しで、先頭の `##`〜`######` が表示されなくなり、太字、斜体、下線で区別したテキストだけが表示されるようになった。\n- リモートコントロールのブラウザビューで過去のメッセージを読み込む間は Loading older messages… と表示される。読み込みに失敗した場合は自動の再試行をやめ、Couldn't load older messages · Retry から手動で再試行する形になった。\n- ターミナルのサンドボックス外に出るコマンドに対する Auto モードの審査が速くなり、タイムアウトと安全なコマンドへの承認要求が減った。審査を Gemini 4 Hydrogen で行う場合の思考レベルは high から medium に変わった。\n\n## 注目すべき不具合修正\n\n- サーバーによる接続リセット、応答の途中切断、スリープ復帰直後のネットワーク未準備といった一時的な接続の問題で、エージェントのターンがエラーで止まる不具合が修正された。CLI はこれらのリクエストを自動で再試行する。\n- `GEMINI_API_KEY` での接続時に、利用できないリモートコントロール、`--remote-agent`、音声入力が提示され、必ず失敗していた不具合が修正された。\n- `GEMINI_API_KEY` での接続時に、ステータスラインに赤字で AI: Out of credits と表示される不具合が修正された。API キーは AI クレジットを使わないため、この表示と `/config` 内の Use AI Credits の設定は表示されなくなった。\n- 中国語、日本語、韓国語のテキストに隣接する太字で、太字の先頭か末尾が句読点や記号のときに `**` がそのまま表示される不具合が修正された。\n- このほか、長いプロンプトをマウスでコピーすると折り返し位置に改行が入る不具合、エクスポートされた Markdown から @ メンションを貼り付けた会話でブラウザビューがクラッシュする不具合、送信ボタンが無効な間に Enter でメッセージが送信される不具合も修正された。\n\n<div class=\"note\"><strong>更新時の注意</strong> <code>GEMINI_API_KEY</code> での接続時に <code>--remote-control</code> または <code>--remote-agent</code> を付けて起動すると、終了コード 2 で終了するようになった。また、<code>/fork</code> で作成した会話は元の会話のファイルを参照するため、元の会話を削除するとそれらのファイルも削除される。</div>",
+      "publishedAt": "2026-11-19"
+    },
+    {
+      "title": "Copilot で GPT-6 Luna の可用性が低下",
+      "url": "https://www.githubstatus.com/incidents/gp7nhc88bwv9",
+      "source": "GitHub Status",
+      "tag": "copilot",
+      "summary": "GitHub Copilot の製品と IDE で、GPT-6 Luna モデルの可用性が低下した。上流のモデル提供元の問題によるもので、日本時間11月20日 00:56 の調査開始から 01:37 の解消までおよそ40分続いた。",
+      "detail": "- 影響範囲: Copilot の製品と IDE で使う GPT-6 Luna（コンポーネントは Copilot AI Model Providers）\n- 影響時間: 日本時間11月20日 00:56〜01:37（約40分）\n- 原因: 上流のモデル提供元の問題とされている。詳しい根本原因の分析は後日公開される予定\n\n## 時系列（日本時間）\n\n- 11月20日 00:56 Copilot AI Model Providers の性能低下の報告を受けて調査を開始した\n- 00:57 GPT-6 Luna の可用性低下を確認した。上流のモデル提供元の問題によるもので、その間は別のモデルか Fusion を選ぶよう案内した\n- 01:28 影響を緩和し、安定性の監視に入った\n- 01:37 解消した",
+      "publishedAt": "2026-11-20"
+    }
+  ]
+}
