@@ -32,7 +32,8 @@ const tags = Astro.props.tags.map(newsTag);
       other.setAttribute('aria-pressed', String(other === chip));
     }
     const { tag } = chip.dataset;
-    for (const item of slot?.nextElementSibling?.querySelectorAll<HTMLElement>('.news-item') ?? []) {
+    // 隣の要素ではなく親から探す。Astro はコンポーネントの直後に <script> を差し込むので、隣は一覧とは限らない
+    for (const item of slot?.parentElement?.querySelectorAll<HTMLElement>('.news-list .news-item') ?? []) {
       item.hidden = tag !== undefined && item.dataset.tag !== tag;
     }
   });
