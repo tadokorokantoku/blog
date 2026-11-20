@@ -7,6 +7,7 @@
       "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.329",
       "source": "GitHub Releases",
       "summary": "フォルダの trust ダイアログにフックの宣言元が出るようになり、`/tasks` に予定タスクや `/loop` の起床、フォークが並ぶ。対象なしの `/code-review` はブランチ全体をデフォルトブランチと比べてレビューするようになり、auto mode は `git status` の実行を減らした。旧バージョンで保存した予定タスクは、新しいサインイン済みセッションでは多くが再登録を要する。",
+      "detail": "## 表示まわり\n\n- フォルダの trust ダイアログに、フックの宣言元が出るようになった\n- `/tasks` に、予定タスクと `/loop` の起床、フォークが並ぶ\n\n## レビューと auto mode\n\n- 対象を渡さない `/code-review` は、ブランチ全体をデフォルトブランチと比べてレビューする\n- auto mode は `git status` の実行回数を減らした\n\n## 注意\n\n- 旧バージョンで保存した予定タスクは、新しいサインイン済みセッションでは多くが再登録を要する",
       "publishedAt": "2026-11-19"
     },
     {

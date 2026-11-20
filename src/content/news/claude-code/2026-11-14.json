@@ -7,6 +7,7 @@
       "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.325",
       "source": "GitHub Releases",
       "summary": "サンドボックス内の Bash コマンドが既定で通常の許可フローに従うようになり、従来の挙動は sandbox.autoAllowBashIfSandboxed: true で戻せる。スケジュールタスクと /loop は allowed-tools やフックを宣言したスキルの実行前に確認を求めるようになった。zstd 圧縮レスポンスのデコードや Bash の複合コマンドの許可チェックの抜けなど、セキュリティ関連の修正も多数含まれる。",
+      "detail": "## 許可フローの変更\n\n- サンドボックス内の Bash コマンドが既定で通常の許可フローに従うようになった\n- 従来の挙動は `sandbox.autoAllowBashIfSandboxed: true` で戻せる\n- スケジュールタスクと `/loop` は、`allowed-tools` やフックを宣言したスキルを実行する前に確認を求める\n\n## セキュリティ関連の修正\n\n- zstd 圧縮レスポンスのデコード\n- Bash の複合コマンドの許可チェックの抜け",
       "publishedAt": "2026-11-13"
     },
     {
