@@ -1,0 +1,76 @@
+{
+  "category": "xtrend",
+  "collectedAt": "2026-11-21T06:58",
+  "items": [
+    {
+      "title": "Warpのザック・ロイド氏、「ソフトウェアファクトリー」と「エージェントチーム」の2つの方向性を整理",
+      "url": "https://x.com/zachlloydtweets/status/2123808803070063033",
+      "source": "X, @zachlloydtweets",
+      "summary": "これからの開発には2つの見方があると書いています。1つは、コードで定義したパイプラインで計測と改善を回し続けるソフトウェアファクトリー（例：Warp Factories）。もう1つがエージェントのチームです。開発者のあいだで議論になっています。",
+      "publishedAt": "2026-11-20T16:00:51Z"
+    },
+    {
+      "title": "TanStack AI、VercelのAI SDKと相互につなげるパッケージを公開",
+      "url": "https://x.com/tan_stack/status/2123716901394133391",
+      "source": "X, @tan_stack",
+      "summary": "AI SDKとTanStack AIのあいだのプロトコルを、どちらの向きにもつなげます。片方だけでなく、両方を組み合わせて使えます。同じ日に、サンドボックスでエージェントにパスワードを見せずにWebサイトへログインさせる機能も発表しています。",
+      "publishedAt": "2026-11-20T09:55:40Z"
+    },
+    {
+      "title": "LangChain、今週の発表をまとめて紹介（LangSmith Agent Platformなど）",
+      "url": "https://x.com/LangChain/status/2123838785960198512",
+      "source": "X, @LangChain",
+      "summary": "新しいLangSmith Agent Platform、トレースに含まれる機密データを守る設定、コーディングエージェント向けのLangSmith、LangSmith Tool Gatewayの4つです。",
+      "publishedAt": "2026-11-20T18:00:00Z"
+    },
+    {
+      "title": "メルカリ・STORES・LayerXが「Remote Agent Battle」を12/15に開催",
+      "url": "https://x.com/LayerX_tech/status/2123703818504532304",
+      "source": "X, @LayerX_tech",
+      "summary": "各社がリモートエージェントの基盤をどう作っているかを持ち寄るイベントです。LayerXからはバクラク事業部のSRE、@itkq さんが登壇します。",
+      "publishedAt": "2026-11-20T09:03:41Z"
+    },
+    {
+      "title": "pstack v0.15.46、Gemini 4 Neonがレビュー役に加わる",
+      "url": "https://x.com/poteto/status/2123824683862855898",
+      "source": "X, @poteto",
+      "summary": "スキルを大きく削って短くしました。Gemini 4 Neonがパネルのレビュー役に加わっています。Grok BotとCursorでは自動で更新され、モデルの振り分けを変えるときは /setup-pstack を実行し直します。",
+      "publishedAt": "2026-11-20T17:03:58Z"
+    },
+    {
+      "title": "OpenAI、自社モデルの蒸留（ディスティレーション）対策の研究を公開",
+      "url": "https://x.com/OpenAI/status/2123862344422088794",
+      "source": "X, @OpenAI",
+      "summary": "蒸留を使うと、モデルの安全対策を外したまま能力だけを再現できてしまうと指摘しています。能力がどう移るか、組織的な蒸留の試みをどう見つけて止めるかをまとめました。Xニュースでは、学習の改善、抽出の検知、APIの制限を重ねた多層の防御とされています。",
+      "publishedAt": "2026-11-20T19:33:37Z"
+    },
+    {
+      "title": "Thinking Machines Lab、ノートPCでも動く「Inkling 2 Mini」を公開",
+      "url": "https://x.com/thinkymachines/status/2123871643797995872",
+      "source": "X, @thinkymachines",
+      "summary": "パラメータ数26Bのlooped transformerです。ノートPCで動く小ささですが、エージェント用途にも使える性能で、AA Indexのスコアは20.1。594BのInkling 2 Smallは大きすぎるという声に応えたとしています。",
+      "publishedAt": "2026-11-20T20:10:34Z"
+    },
+    {
+      "title": "リーマン予想を解いたとする主張が拡散、Claudeが証明に関わったとされる",
+      "url": "https://x.com/yifanzhang_/status/2123789252756414577",
+      "source": "X, @yifanzhang_",
+      "summary": "「リーマン予想が解かれた」とする投稿が大きく広まっています。Xニュースでは、Anthropicの数学者Levent Alpöge氏が証明を発表し、重要な手順でClaudeの貢献を記しているとされています。検証はまだこれからです。",
+      "publishedAt": "2026-11-20T14:43:10Z"
+    },
+    {
+      "title": "GPUカーネルを形式検証する「TensorLean」、38件のバグを発見",
+      "url": "https://x.com/RonghuiGu/status/2123786837797773807",
+      "source": "X, @RonghuiGu",
+      "summary": "CertiKとコロンビア大学の研究者と作った、最適化された本番用GPUカーネルを形式検証する枠組みです。149のカーネルを検証して合計38件のバグを見つけ、そのうち2件はDeepSeekのものでした。",
+      "publishedAt": "2026-11-20T14:33:34Z"
+    },
+    {
+      "title": "米国防総省の高官、Anthropicを「サプライチェーン上のリスク」と発言",
+      "url": "https://x.com/atrupar/status/2123816258218918351",
+      "source": "X, @atrupar",
+      "summary": "Emil Michael氏は、利用規約で兵器開発への利用を禁じている点などを理由に挙げました。Xニュースでは、上場2日目のAnthropic株（ANT）が約10%下がったとされています。",
+      "publishedAt": "2026-11-20T16:30:29Z"
+    }
+  ]
+}
