@@ -44,6 +44,12 @@ const news = defineCollection({
           url: z.url(),
           source: z.string(),
           summary: z.string().optional(),
+          // 特筆すべき内容を Markdown で。これがある記事だけ一覧でモーダルが開く。
+          // Sveltia は空欄のまま保存すると '' を書くので、無しと同じ扱いに寄せる
+          detail: z
+            .string()
+            .optional()
+            .transform((v) => (v?.trim() ? v : undefined)),
           image: z.url().optional(),
           publishedAt: z.coerce.date().optional(),
           // rank と stars は githubtrend だけが使う。

@@ -1,0 +1,85 @@
+/* summary レイアウト用。set:html で入れた中身には scoped な <style> が効かないのでファイルに出す */
+
+.news-card {
+  display: flex;
+  gap: 1rem;
+  /* flex になった .news-item の中で行いっぱいに広がり、長いタイトルでもはみ出さないようにする */
+  flex: 1;
+  min-width: 0;
+  /* カード全体がリンクだが、中の文字はリンクに見せない */
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.news-card:hover .news-title {
+  text-decoration: underline;
+}
+
+.news-dialog {
+  width: calc(100% - 2rem);
+  max-width: 36rem;
+  max-height: 85vh;
+  overflow: auto;
+  /* 余白は .news-dialog-body が持つ。クリック対象が <dialog> 自身なら背景を押したと判定できる */
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.news-dialog::backdrop {
+  background: rgb(0 0 0 / 0.5);
+}
+
+.news-dialog-body {
+  padding: 1.5rem;
+}
+
+.news-dialog-close {
+  float: right;
+  padding: 0 0.25rem;
+  border: none;
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.news-dialog-close:hover {
+  color: var(--accent);
+}
+
+.news-dialog-title {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.news-detail > :first-child {
+  margin-top: 0;
+}
+
+/* Shiki を通らないので、フェンスコードブロックは色が付かないまま地だけ敷く */
+.news-detail pre {
+  background: var(--code-bg);
+}
+
+.news-dialog-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.9375rem;
+}
+
+/* 素の h2 は 1.5rem で、モーダルのタイトルより大きくなってしまう */
+.news-detail h2 {
+  margin: 1.5rem 0 0.5rem;
+  font-size: 1rem;
+}
+
+.news-detail h3 {
+  margin: 1.25rem 0 0.5rem;
+  font-size: 0.9375rem;
+}

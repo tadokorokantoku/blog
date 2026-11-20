@@ -1,0 +1,80 @@
+---
+import '../styles/news-dialog.css';
+import { formatDate } from '../lib/posts';
+import type { NewsSummaryArticle } from '../lib/news';
+
+interface Props {
+  article: NewsSummaryArticle;
+}
+
+const { article } = Astro.props;
+const { title, url, source, summary, image, categoryLabel, detailHtml, date } = article;
+---
+
+<li class="news-item">
+  <!-- 常に元記事へのリンク。JS があるときだけ押下を奪ってモーダルにする -->
+  <a
+    class="news-card"
+    href={url}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-haspopup={detailHtml ? 'dialog' : undefined}
+  >
+    {image && <img class="news-thumb" src={image} alt="" loading="lazy" decoding="async" />}
+    <div class="news-body">
+      <h2 class="news-title">{title}</h2>
+      <p class="news-from">
+        <span>from: {source}, {categoryLabel}</span>
+        <time datetime={date.toISOString()}>{formatDate(date)}</time>
+      </p>
+      {summary && <p class="news-summary">{summary}</p>}
+    </div>
+  </a>
+  {
+    detailHtml && (
+      <dialog class="news-dialog">
+        <div class="news-dialog-body">
+          <form method="dialog">
+            <button class="news-dialog-close" aria-label="閉じる">
+              ×
+            </button>
+          </form>
+          <h2 class="news-dialog-title">{title}</h2>
+          <p class="news-from">
+            <span>from: {source}, {categoryLabel}</span>
+            <time datetime={date.toISOString()}>{formatDate(date)}</time>
+          </p>
+          <div class="prose news-detail" set:html={detailHtml} />
+          <a class="news-dialog-link" href={url} target="_blank" rel="noopener noreferrer">
+            元記事を開く ↗
+          </a>
+        </div>
+      </dialog>
+    )
+  }
+</li>
+
+<script>
+  document.addEventListener('click', (event) => {
+    const card = (event.target as Element)?.closest('.news-card[aria-haspopup]');
+    if (!card) return;
+    // cmd+クリックや中クリックは素通しして、元記事を新しいタブで開けるようにする
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) {
+      return;
+    }
+
+    const dialog = card.closest('.news-item')?.querySelector<HTMLDialogElement>('.news-dialog');
+    // ClientRouter で script が二重評価されても InvalidStateError を投げないようにする
+    if (!dialog || dialog.open) return;
+    event.preventDefault();
+    dialog.showModal();
+  });
+
+  document.addEventListener('click', (event) => {
+    const target = event.target;
+    // ::backdrop への click は <dialog> 自身が受け取る
+    if (target instanceof HTMLDialogElement && target.classList.contains('news-dialog')) {
+      target.close();
+    }
+  });
+</script>

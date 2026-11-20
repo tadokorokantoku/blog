@@ -1,4 +1,5 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
+import { marked } from 'marked';
 import { NEWS_CATEGORIES, NEWS_CATEGORY_IDS, type NewsCategory } from '../consts';
 
 export type { NewsCategory };
@@ -11,12 +12,17 @@ export interface NewsArticle {
   url: string;
   source: string;
   summary?: string;
+  // JSON に書かれた素の Markdown。表示側に渡す前に detailHtml へ変換する
+  detail?: string;
   image?: string;
   rank?: number;
   // 個別ポストの URL のときだけ入る。トレンドの話題ページは埋め込めない
   xPost?: string;
   date: Date;
 }
+
+// summary レイアウトの1記事。生 Markdown を持たせないので、変換はこのファイルの中だけで起きる
+export type NewsSummaryArticle = Omit<NewsArticle, 'detail'> & { detailHtml?: string };
 
 const X_POST = /^https:\/\/(?:x|twitter)\.com\/[^/]+\/status\/\d+/;
 
@@ -48,7 +54,8 @@ export interface NewsRanking {
 // カテゴリの layout ごとに、表示に必要なものだけを持つ
 export type NewsCategoryView =
   | { layout: 'list'; articles: NewsArticle[] }
-  | { layout: 'ranking'; ranking: NewsRanking | null };
+  | { layout: 'ranking'; ranking: NewsRanking | null }
+  | { layout: 'summary'; articles: NewsSummaryArticle[] };
 
 // どのカテゴリも新しい順にこの件数まで
 const NEWS_LIMIT = 15;
@@ -72,6 +79,7 @@ export async function getNewsArticles(): Promise<NewsArticle[]> {
           url: item.url,
           source: item.source,
           summary: item.summary,
+          detail: item.detail,
           image: item.image,
           rank: item.rank,
           xPost: xPostUrl(item.url),
@@ -90,8 +98,19 @@ export async function getNewsArticlesByCategory(category: NewsCategory): Promise
 }
 
 export async function getNewsCategoryView(category: NewsCategory): Promise<NewsCategoryView> {
-  if (NEWS_CATEGORIES[category].layout === 'ranking') {
+  const { layout } = NEWS_CATEGORIES[category];
+  if (layout === 'ranking') {
     return { layout: 'ranking', ranking: await getNewsRanking(category) };
+  }
+  if (layout === 'summary') {
+    const articles = (await getNewsArticlesByCategory(category)).map(
+      ({ detail, ...article }): NewsSummaryArticle => ({
+        ...article,
+        // Shiki は通らないので、フェンスコードブロックに色は付かない
+        detailHtml: detail === undefined ? undefined : marked.parse(detail, { async: false }),
+      }),
+    );
+    return { layout: 'summary', articles };
   }
   return { layout: 'list', articles: await getNewsArticlesByCategory(category) };
 }

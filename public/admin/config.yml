@@ -141,6 +141,13 @@ collections:
           - { name: url, label: URL, widget: string }
           - { name: source, label: 出典, widget: string, hint: 'from: のあとに出る名前' }
           - { name: summary, label: 要約, widget: text, required: false }
+          - {
+              name: detail,
+              label: 詳細,
+              widget: text,
+              required: false,
+              hint: '特筆すべき内容を Markdown で。書くと一覧でモーダルが開く',
+            }
           - { name: image, label: サムネ画像 URL, widget: string, required: false }
           - {
               name: publishedAt,

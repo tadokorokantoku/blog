@@ -2,6 +2,7 @@
 import '../../styles/news.css';
 import NewsItem from '../../components/NewsItem.astro';
 import NewsRankingTable from '../../components/NewsRankingTable.astro';
+import NewsSummaryItem from '../../components/NewsSummaryItem.astro';
 import NewsTabs from '../../components/NewsTabs.astro';
 import Base from '../../layouts/Base.astro';
 import { getNewsCategoryView, newsCategoryList, type NewsCategory } from '../../lib/news';
@@ -32,6 +33,15 @@ const empty = view.layout === 'ranking' ? view.ranking === null : view.articles.
       <ul class="news-list">
         {view.articles.map((article) => (
           <NewsItem article={article} />
+        ))}
+      </ul>
+    )
+  }
+  {
+    view.layout === 'summary' && view.articles.length > 0 && (
+      <ul class="news-list">
+        {view.articles.map((article) => (
+          <NewsSummaryItem article={article} />
         ))}
       </ul>
     )
