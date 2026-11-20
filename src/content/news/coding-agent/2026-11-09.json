@@ -8,6 +8,7 @@
       "source": "Claude Status",
       "tag": "claude-code",
       "summary": "11月8日 08:18〜08:32（UTC）に、Claude Fable 5.1 へのリクエストでエラーが増えた。claude.ai、Claude API、Claude Code、Claude Cowork が影響を受けた。修正は 08:39 に反映され、08:54 に解決とされた。",
+      "detail": "- 2026 年 11 月 8 日、Claude Fable 5.1 へのリクエストでエラーが増加し、性能低下が発生した（解決済み）\n- 影響は claude.ai、Claude API、Claude Code、Claude Cowork に及んだ\n- 影響時間は 08:18〜08:32 UTC の約 14 分\n\n## 影響範囲\n\nClaude Fable 5.1 へのリクエストでエラーが増えた。解決時の報告によると、影響は claude.ai、Claude API、Claude Code、Claude Cowork に及んだ。\n\n## 時系列（UTC）\n\n- 08:18 影響が始まる（00:18 PT）\n- 08:28 Claude Fable 5.1 へのリクエストでエラーが増えていることを調査中と報告\n- 08:32 影響が終わる（00:32 PT）\n- 08:39 Claude Fable 5.1 向けの修正をデプロイし、回復を監視中と報告\n- 08:54 解決を報告\n\n## 原因\n\n原因は公表されていない。",
       "publishedAt": "2026-11-08"
     }
   ]

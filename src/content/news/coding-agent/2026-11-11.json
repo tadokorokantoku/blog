@@ -8,6 +8,7 @@
       "source": "GitHub Releases",
       "tag": "claude-code",
       "summary": "Vertex の global・us・eu リージョンで fast mode に対応した。Vertex 側が fast mode を受け付けない場合は通常の速度に戻る。",
+      "detail": "<p class=\"release-counts\"><span class=\"breaking\">破壊的変更 <strong>0</strong> 件</span><span>新機能 <strong>1</strong> 件</span><span>不具合修正 <strong>0</strong> 件</span></p>\n\n- Vertex の global、us、eu リージョンで fast mode が使えるようになった\n- Vertex が fast mode を受け付けない場合は標準速度に切り替わる",
       "publishedAt": "2026-11-10"
     },
     {
@@ -16,6 +17,7 @@
       "source": "Claude Blog",
       "tag": "claude-code",
       "summary": "共同で使えるホワイトボードの Whiteboards と、Claude が作成・編集する表計算の Sheets がベータで公開された。Claude Dashboards は Claude Data として正式提供になり、データストーリーや指標の認定が加わった。いずれも有料プラン向けである。",
+      "detail": "- 共有ボードで Claude とブレインストーミングできる Claude Whiteboards と、Claude が作成・編集するスプレッドシート Claude Sheets がベータで登場した\n- ベータだった Claude Dashboards が Claude Data に改名して一般提供になり、認定クエリとライブ共有（ベータ）などが加わった\n- いずれもすべての有料プランで、Web、デスクトップ、モバイルから使える\n\n## Claude Whiteboards\n\nClaude と口頭で整理しきれていない計画を話し合うと、Claude が担当者と日付付きのタイムラインを持つボードにまとめ、チームでリアルタイムに共同作業できる。\n\n- 振り返り会議では、参加者が付箋を追加し、Claude がテーマごとにまとめて各自のアクションアイテムを起こす\n- ボードの一部を枠で囲んで、その部分について Claude に質問できる\n- ブレインストーミング後は、ボードをドキュメントやスライドに変換したり、Lucid、Miro、Vani by Zoho に持ち込んだりできる\n\n## Claude Sheets\n\nキャンペーンの管理表や採用予算といった短い指示から、タブ、数式、書式、ドロップダウンを含むスプレッドシートを生成する。Claude がセルを編集する際は変更箇所を枠で示し、変更を追える。シートはチームと共有でき、Claude と一緒に編集できる。\n\n現時点の機能は基本的なスプレッドシートの範囲にとどまり、今後拡充される。Excel の全機能が必要な場合は .xlsx や CSV に書き出すか Claude for Excel を使える。Airtable、Asana、monday.com、Smartsheet などのパートナーツールで作業を続けることもできる。\n\n## Claude Data\n\n10 月にベータで始まった Claude Dashboards は、Amazon Redshift、BigQuery、ClickHouse などにある社内データに質問できる機能で、今回 Claude Data として一般提供になった。データの使われ方がダッシュボードより広いことから名称を変えた。認定クエリとライブ共有はベータ。\n\n- **認定クエリ**: データチームが全員の使うべきクエリを認定でき、データが食い違うダッシュボードを防ぐ。認定された指標で作ったチャートには「certified」バッジが付く\n- **データストーリー**: 指標からデータストーリーやナレーション付き動画の下書きを作り、共有前に確認できる\n- **ライブ共有**: 共有されたダッシュボードを開いた同僚は、データを更新するコネクタへのアクセス権がなくても最新の数字を見られる。閲覧者は承認済みクエリの結果だけを見られ、共有者の権限で別のクエリは実行できない\n- **デザインシステム**: Claude Data でデザインシステムが使えるようになった\n- **キャッシュ**: 従来は毎回再読み込みしていたダッシュボードがキャッシュに対応し、更新頻度をダッシュボードごとに設定できる\n- **変更履歴**: 誰が編集したかを確認し、特定のバージョンに戻せる\n\nパートナーは Amplitude、Mixpanel、Omni、PostHog、Sigma、ThoughtSpot。\n\n## 他のツールでの作業\n\n同日から、interactive connectors を会話の横や全画面でフルアプリとして開けるようになり、Adobe、Atlassian、Box、Notion などで自分で作業したり、Claude に変更を頼んだりできる。\n\n## 提供条件\n\n- Claude Data にはデータウェアハウスや CRM などのデータコネクタが必要\n- Team プランでは 3 つとも既定で有効\n- Enterprise プランでは Whiteboards と Sheets が既定で無効、Claude Data は 2026 年 11 月 20 日に既定で有効になる\n- 設定は Organization settings > Artifacts でいつでも変更できる",
       "publishedAt": "2026-11-10"
     },
     {
@@ -24,6 +26,7 @@
       "source": "Claude Blog",
       "tag": "claude-code",
       "summary": "対応するコネクタでは Asana、Canva、Notion、Confluence などのアプリを Claude の画面内で開き、Claude が直接ページや行を編集できる。Web とデスクトップアプリの全プランに順次展開され、開発者は MCP Apps（パブリックプレビュー）で対応アプリを作れる。",
+      "detail": "- 対応するコネクタのツールを会話の横や全画面で開けるようになり、開いたツールの中で Claude が変更を加えられるようになった\n- まず Asana、Canva、Carta、Dropbox、monday.com、Smartsheet、Vercel、Webflow などで提供され、Adobe、Atlassian、Box、HubSpot、Notion でも使える\n- 開発者向けには、MCP Apps のアプリツールや埋め込みサイトへの対応がパブリックプレビューになった\n\n## 概要\n\nAnthropic は今年、ツールの小さなライブビューを Claude の中に表示する interactive connectors を提供していた。今回から、コネクタが対応していれば、ツールを会話の横に開いたり全画面に広げたりして、Claude にその場で作業させられる。\n\nWeb と Claude デスクトップアプリで全プランに展開され、チャットと Cowork を統合した新しい Claude の一部として提供される。アカウントが新しい Claude に更新されるか、組織が有効にすると使えるようになる。\n\n## 主な変更点\n\n- **開いたツールで Claude が作業する**: 開いているページ、行、ファイルへの変更を Claude に頼め、コネクタの操作と同じ方法で承認する。変更は Claude が行うと同時にツールに反映される\n- **ツール全体を会話の横に表示する**: ツール内で作業しながらチャットを隠したり全画面にしたりできる。Confluence や Notion では、限定的なプレビューではなく、自分のアカウントでサインインした状態のエディターをそのまま使える\n- **プロンプトなしで直接開く**: 接続済みのツールを直接開き、必要なときに同じ画面から Claude に頼める\n- **よく使うツールのピン留め**: アーティファクトと並べて配置し、サイドバーと + メニューからワンクリックで開ける\n\n## ツールごとの例\n\n- **Adobe**: 写真のレタッチ、編集、エフェクト追加と、PDF のハイライト、編集、墨消し\n- **Atlassian**: Confluence のページを横に開き、Claude に執筆や編集を頼んで変更をページ上で確認する\n- **Box**: Box のファイルを横に開き、Claude に修正させ、変更を残す前に版を並べて比較する\n- **HubSpot**: パイプラインのタスクやフォローアップを優先順位付けし、Claude の中で対応する\n- **Notion**: Notion のドキュメントやデータベースを Claude に作らせ、チャットしながら作るか自分で編集する\n\nFigma、Harvey、Shopify も連携を開発中である。\n\n## 開発者向け: MCP Apps\n\ninteractive connectors は、MCP サーバーが独自の UI を AI アプリケーションに持ち込める Model Context Protocol の拡張 MCP Apps の上に作られている。作った MCP App は Claude に限らず、この拡張に対応する AI アプリケーションで動く。\n\nこれまで Claude の MCP Apps は主に会話内のインタラクティブなビューとして表示されていた。今回、アプリツールなど拡張のより多くの部分と埋め込みサイトに対応し、開発者のアプリ全体を Claude 内で動かせるようになった。これらの機能は開発者向けのパブリックプレビューで、ドキュメントを参照してすぐに開発を始められる。\n\n## 利用方法\n\n紹介したツールはディレクトリから接続でき、チャットから開くかサイドバーにピン留めして使う。組織がコネクタのツールをすべて許可している場合、新機能は展開に合わせて表示される。管理者は従来と同じ方法でコネクタのツールを制限できる。",
       "publishedAt": "2026-11-10"
     },
     {
@@ -32,6 +35,7 @@
       "source": "Anthropic News",
       "tag": "claude-code",
       "summary": "Anthropic が新規株式公開に向けたロードショーを始めた。クラス A 株 8億2,500万株を1株70〜78ドルの想定価格で売り出し、Nasdaq Global Select Market にティッカー ANT で上場する予定である。",
+      "detail": "- Anthropic, PBC が Class A 普通株式の新規株式公開（IPO）に向けたロードショーを 2026年11月10日に開始した\n- 募集株式数は 825,000,000 株、想定価格は1株あたり 70.00〜78.00 ドル\n- Nasdaq Global Select Market にティッカーシンボル「ANT」での上場を申請している\n\n## 募集の内訳\n\n募集株式 825,000,000 株のうち、801,351,354 株を Anthropic が、23,648,646 株を一部の既存株主が売り出す。既存株主による売り出し分の売却代金は Anthropic には入らない。\n\nAnthropic は引受会社に対し、30日間にわたって Class A 普通株式を最大 123,750,000 株追加で購入できるオプションを付与する見込みである。\n\n## 手続きの状況\n\n募集は目論見書によってのみ行われる。仮目論見書は Goldman Sachs & Co. LLC と Morgan Stanley & Co. LLC の目論見書担当部門から入手できる。\n\n有価証券に関する登録届出書は米証券取引委員会（SEC）に提出済みだが、発表時点ではまだ効力が発生していない。効力発生前に株式を売却したり、購入の申し込みを受け付けたりすることはできないとしている。",
       "publishedAt": "2026-11-10"
     },
     {
@@ -40,6 +44,7 @@
       "source": "Claude Status",
       "tag": "claude-code",
       "summary": "Fable 5.2 と Mythos 5.2 で4分間 Overloaded エラーが発生したが、すでに解消している。",
+      "detail": "- Fable 5.2 と Mythos 5.2 で Overloaded エラーが4分間発生した\n- 障害はすでに緩和され、解消済みとなっている\n\n## 障害の概要\n\nClaude のステータスページによると、Fable 5.2 と Mythos 5.2 で4分間にわたって Overloaded エラーが発生した。報告は 2026年11月10日 21:47 UTC に「Resolved」として投稿され、障害は緩和済みとされている。\n\n報告は解消時の1件のみで、発生時刻や途中経過の記載はない。影響を受けた製品の範囲や原因も公表されていない。",
       "publishedAt": "2026-11-10"
     },
     {
@@ -48,6 +53,7 @@
       "source": "GitHub Issues",
       "tag": "claude-code",
       "summary": "テレメトリを無効にすると機能フラグが読まれず、/model のピッカーから Fable 5.2 が消えるという報告である。",
+      "detail": "- `DISABLE_TELEMETRY=1` を設定すると、Claude Code の `/model` ピッカーに Fable 5.2 が表示されず、「Fable」の行が Fable 5.1 のままになる\n- テレメトリを無効にすると機能フラグのダウンロードとディスク上のキャッシュ読み込みも止まり、サーバー側のモデルカタログが使われなくなることが原因と報告されている\n- VS Code 拡張機能は VS Code のテレメトリ設定がオフのときに自動で `DISABLE_TELEMETRY=1` を付けるため、利用者が気づかないまま影響を受ける場合がある\n\n## 報告の内容\n\nIssue #108726 は Claude Code 2.1.322 を対象に 2026年11月10日に起票され、Open のままとなっている。`~/.claude/settings.json` の `env` に `\"DISABLE_TELEMETRY\": \"1\"` を入れると、`/model` の一覧に Fable 5.2 が出ない。同じ設定でも `claude --model claude-fable-5-2` は動作するため、アカウントには Fable 5.2 の利用権がある。\n\n`--debug-file` のログには `[servedCatalog] off (flag)` と出力される。変数を外すとサーバーから配信されたモデル一覧（13行）がコンパイル時の一覧を置き換え、Fable 5.2 が表示される。\n\n起票者の分析では、サーバーのモデルカタログを使うかどうかを機能フラグ `tengu_delegated_quail` が決めている。テレメトリがオフだとキャッシュ済みの値が読まれず、既定値の `{\"mode\":\"off\"}` が適用される。カタログがオフの場合は、コンパイル時の一覧に `/api/claude_cli/bootstrap` が返す `additional_model_options` を加えた一覧が使われ、そこには旧来の `claude-fable-5-1[1m]` の1行しか含まれない。チャンネル機能が使えない #36460、Monitor ツールが使えない #86171 と同じ根本原因だとしている。\n\n## VS Code と VSCodium での影響\n\nコメントによると、VS Code 拡張機能は `\"telemetry.telemetryLevel\": \"off\"` のときにプロセス環境へ `DISABLE_TELEMETRY=1` を設定する。この値は `claudeCode.environmentVariables` より後に適用されるため、そこでは上書きできない。VSCodium はビルド時にテレメトリを無効にしているので、ユーザー設定でテレメトリを有効にしても拡張機能はオフとして扱う。Windows、macOS、Ubuntu の環境でも同じ症状が報告されている。\n\n## 報告されている回避策\n\n- `DISABLE_TELEMETRY` を外す。動作はするが、テレメトリも送信される\n- プロセス環境に `CLAUDE_CODE_GB_DISK_CACHE_WHEN_TELEMETRY_OFF=1` を設定する。テレメトリをオフにしたまま動作するが、キャッシュ済みのフラグは更新されない。`settings.json` の `env` ブロックに書いても効果はなく、VS Code では `claudeCode.environmentVariables` で指定すると有効になる\n- `~/.claude/settings.json` の `modelPicker.options` に `claude-fable-5-2` を追加する。テレメトリをオフにしたまま一覧に Fable 5.2 の行が加わり、VSCodium でも動作が確認されている\n- VSCodium では `env` で `\"CLAUDE_CODE_ENABLE_TELEMETRY\": \"1\"` と `\"DISABLE_TELEMETRY\": \"\"` を指定して解決したという報告もある\n- `/model claude-fable-5-2` でモデルを直接指定する\n\n`CLAUDE_CODE_GB_DISK_CACHE_WHEN_TELEMETRY_OFF=1` には副作用も報告されている。配信された一覧が優先されると、`default` がプランの既定ではなくアカウント側に保存された選択状態のモデルに解決され、あるアカウントでは新しいセッションが Opus 5.5 ではなく Sonnet 5.5 で始まった。`model` 設定を指定すれば上書きできる。\n\n起票者は、機能フラグとカタログのダウンロードを `DISABLE_TELEMETRY` と `DO_NOT_TRACK` から切り離すよう提案している。これらを止めたい利用者向けには、すでに `CLAUDE_CODE_DISABLE_FEATURE_FLAGS` と `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC` がある。",
       "publishedAt": "2026-11-10"
     }
   ]
