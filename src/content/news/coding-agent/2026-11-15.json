@@ -1,0 +1,22 @@
+{
+  "category": "coding-agent",
+  "collectedAt": "2026-11-15T08:33",
+  "items": [
+    {
+      "title": "Claude iOS アプリで Apple によるサインアップができない問題",
+      "url": "https://status.claude.com/incidents/ct4c2pwf2xpj",
+      "source": "Claude Status",
+      "tag": "claude-code",
+      "summary": "Claude iOS アプリの「Apple でサインイン」に不具合が起きており、主に新規アカウントが影響を受けている。新規ユーザーは Google かメールで登録するよう案内されており、調査が続いている。",
+      "publishedAt": "2026-11-14"
+    },
+    {
+      "title": "claude.ai で購入時のエラーが増加",
+      "url": "https://status.claude.com/incidents/qrpz8k79qm7x",
+      "source": "Claude Status",
+      "tag": "claude-code",
+      "summary": "claude.ai で購入・プランのアップグレード・解約にエラーが出た。影響は 11月14日 02:34〜04:03 UTC で、遅れていたプラン変更と支払いは反映済みである。",
+      "publishedAt": "2026-11-14"
+    }
+  ]
+}

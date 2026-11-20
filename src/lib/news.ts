@@ -1,8 +1,8 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { marked } from 'marked';
-import { NEWS_CATEGORIES, NEWS_CATEGORY_IDS, type NewsCategory } from '../consts';
+import { NEWS_CATEGORIES, NEWS_CATEGORY_IDS, NEWS_TAGS, type NewsCategory, type NewsTag } from '../consts';
 
-export type { NewsCategory };
+export type { NewsCategory, NewsTag };
 
 // 1日分の束をほどいた、表示用の1記事
 export interface NewsArticle {
@@ -11,6 +11,7 @@ export interface NewsArticle {
   title: string;
   url: string;
   source: string;
+  tag?: NewsTag;
   summary?: string;
   // JSON に書かれた素の Markdown。表示側に渡す前に detailHtml へ変換する
   detail?: string;
@@ -78,6 +79,7 @@ export async function getNewsArticles(): Promise<NewsArticle[]> {
           title: item.title,
           url: item.url,
           source: item.source,
+          tag: item.tag,
           summary: item.summary,
           detail: item.detail,
           image: item.image,
@@ -156,4 +158,15 @@ function rankDelta(before: number | undefined, now: number): RankDelta {
   if (before > now) return { kind: 'up', by: before - now };
   if (before < now) return { kind: 'down', by: now - before };
   return { kind: 'same' };
+}
+
+export function newsTag(tag: NewsTag) {
+  return { id: tag, ...NEWS_TAGS[tag] };
+}
+
+// 日本時間の YYYY-MM-DD。Today の判定はこの形で比べる
+const JST_DAY = new Intl.DateTimeFormat('sv-SE', { timeZone: 'Asia/Tokyo' });
+
+export function jstDay(date: Date) {
+  return JST_DAY.format(date);
 }

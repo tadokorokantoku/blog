@@ -4,6 +4,7 @@ import NewsItem from '../../components/NewsItem.astro';
 import NewsRankingTable from '../../components/NewsRankingTable.astro';
 import NewsSummaryItem from '../../components/NewsSummaryItem.astro';
 import NewsTabs from '../../components/NewsTabs.astro';
+import NewsTagFilter from '../../components/NewsTagFilter.astro';
 import Base from '../../layouts/Base.astro';
 import { getNewsCategoryView, newsCategoryList, type NewsCategory } from '../../lib/news';
 
@@ -18,6 +19,9 @@ interface Props {
 const category = Astro.params.category as NewsCategory;
 const { label } = Astro.props;
 const view = await getNewsCategoryView(category);
+// 一覧に実際に出ているタグだけをチップにする
+const tags =
+  view.layout === 'summary' ? [...new Set(view.articles.flatMap(({ tag }) => (tag ? [tag] : [])))] : [];
 const empty = view.layout === 'ranking' ? view.ranking === null : view.articles.length === 0;
 ---
 
@@ -39,11 +43,14 @@ const empty = view.layout === 'ranking' ? view.ranking === null : view.articles.
   }
   {
     view.layout === 'summary' && view.articles.length > 0 && (
-      <ul class="news-list">
-        {view.articles.map((article) => (
-          <NewsSummaryItem article={article} />
-        ))}
-      </ul>
+      <>
+        {tags.length > 0 && <NewsTagFilter tags={tags} />}
+        <ul class="news-list">
+          {view.articles.map((article) => (
+            <NewsSummaryItem article={article} />
+          ))}
+        </ul>
+      </>
     )
   }
 </Base>

@@ -1,7 +1,7 @@
 import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
-import { NEWS_CATEGORY_IDS } from './consts';
+import { NEWS_CATEGORY_IDS, NEWS_TAG_IDS } from './consts';
 
 // 長文記事。URL は /posts/<slug>/
 const posts = defineCollection({
@@ -43,6 +43,8 @@ const news = defineCollection({
           title: z.string(),
           url: z.url(),
           source: z.string(),
+          // カテゴリの中の分類（coding-agent なら claude-code や codex、ade なら orca）。src/consts.ts の NEWS_TAGS のどれか
+          tag: z.enum(NEWS_TAG_IDS).optional(),
           summary: z.string().optional(),
           // 特筆すべき内容を Markdown で。これがある記事だけ一覧でモーダルが開く。
           // Sveltia は空欄のまま保存すると '' を書くので、無しと同じ扱いに寄せる

@@ -4,9 +4,15 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   site: 'https://inok.dev',
-  trailingSlash: 'always',
+  // dev サーバーでスラッシュ無しの URL も 404 にしない。本番は Cloudflare がスラッシュ付きに寄せる
+  trailingSlash: 'ignore',
   // /news は最初のカテゴリに送る。全カテゴリ混在のページは持たない
-  redirects: { '/news': '/news/xtrend' },
+  // claude-code は coding-agent に、orca は ade に改名した。古いリンクを生かしておく
+  redirects: {
+    '/news': '/news/xtrend/',
+    '/news/claude-code': '/news/coding-agent/',
+    '/news/orca': '/news/ade/',
+  },
   markdown: {
     shikiConfig: {
       themes: { light: 'github-light', dark: 'github-dark' },

@@ -9,10 +9,29 @@ export type NewsLayout = 'list' | 'ranking' | 'summary';
 export const NEWS_CATEGORIES = {
   xtrend: { label: 'X トレンド', layout: 'list' },
   githubtrend: { label: 'GitHub トレンド', layout: 'ranking' },
-  'claude-code': { label: 'Claude Code', layout: 'summary' },
-  orca: { label: 'Orca', layout: 'summary' },
+  'coding-agent': { label: 'CodingAgent', layout: 'summary' },
+  ade: { label: 'ADE', layout: 'summary' },
 } as const satisfies Record<string, { label: string; layout: NewsLayout }>;
 
 export type NewsCategory = keyof typeof NEWS_CATEGORIES;
 
 export const NEWS_CATEGORY_IDS = Object.keys(NEWS_CATEGORIES) as [NewsCategory, ...NewsCategory[]];
+
+// カテゴリの中をさらに分ける印。記事の tag に入れると、カードがこの色になり、一覧の上のチップで絞り込める
+// （public/admin/config.yml の select は YAML なので手で揃える）
+export const NEWS_TAGS = {
+  'claude-code': { label: 'Claude Code', color: '#d97757' },
+  codex: { label: 'Codex', color: '#10a37f' },
+  gemini: { label: 'Gemini', color: '#4285f4' },
+  grok: { label: 'Grok', color: '#9ca3af' },
+  copilot: { label: 'Copilot', color: '#a371f7' },
+  opencode: { label: 'OpenCode', color: '#f59e0b' },
+  orca: { label: 'Orca', color: '#8b5cf6' },
+  cursor: { label: 'Cursor', color: '#0ea5e9' },
+  t3code: { label: 'T3 Code', color: '#ec4899' },
+  devin: { label: 'Devin', color: '#14b8a6' },
+} as const satisfies Record<string, { label: string; color: string }>;
+
+export type NewsTag = keyof typeof NEWS_TAGS;
+
+export const NEWS_TAG_IDS = Object.keys(NEWS_TAGS) as [NewsTag, ...NewsTag[]];

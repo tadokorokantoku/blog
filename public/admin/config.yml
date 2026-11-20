@@ -118,8 +118,8 @@ collections:
             [
               { label: X トレンド, value: xtrend },
               { label: GitHub トレンド, value: githubtrend },
-              { label: Claude Code, value: claude-code },
-              { label: Orca, value: orca },
+              { label: CodingAgent, value: coding-agent },
+              { label: ADE, value: ade },
             ],
         }
       - {
@@ -140,6 +140,26 @@ collections:
           - { name: title, label: タイトル, widget: string }
           - { name: url, label: URL, widget: string }
           - { name: source, label: 出典, widget: string, hint: 'from: のあとに出る名前' }
+          - {
+              name: tag,
+              label: タグ,
+              widget: select,
+              required: false,
+              options:
+                [
+                  { label: Claude Code, value: claude-code },
+                  { label: Codex, value: codex },
+                  { label: Gemini, value: gemini },
+                  { label: Grok, value: grok },
+                  { label: Copilot, value: copilot },
+                  { label: OpenCode, value: opencode },
+                  { label: Orca, value: orca },
+                  { label: Cursor, value: cursor },
+                  { label: T3 Code, value: t3code },
+                  { label: Devin, value: devin },
+                ],
+              hint: 'カテゴリの中の分類。カードの色と一覧の絞り込みに使う',
+            }
           - { name: summary, label: 要約, widget: text, required: false }
           - {
               name: detail,

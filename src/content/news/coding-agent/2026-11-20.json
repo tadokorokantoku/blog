@@ -1,0 +1,47 @@
+{
+  "category": "coding-agent",
+  "collectedAt": "2026-11-20T08:32",
+  "items": [
+    {
+      "title": "Claude Code 2.1.329 をリリース",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.329",
+      "source": "GitHub Releases",
+      "tag": "claude-code",
+      "summary": "フォルダの trust ダイアログにフックの宣言元が出るようになり、`/tasks` に予定タスクや `/loop` の起床、フォークが並ぶ。対象なしの `/code-review` はブランチ全体をデフォルトブランチと比べてレビューするようになり、auto mode は `git status` の実行を減らした。旧バージョンで保存した予定タスクは、新しいサインイン済みセッションでは多くが再登録を要する。",
+      "detail": "<p class=\"release-counts\"><span class=\"breaking\">破壊的変更 <strong>1</strong> 件</span><span>新機能 <strong>6</strong> 件</span><span>不具合修正 <strong>74</strong> 件</span></p>\n\n- 旧バージョンで保存したスケジュールタスクの多くは、新しいサインイン済みセッションで再登録が必要になった\n- `/tasks` にスケジュールタスク、`/loop` の次回実行予定、会話のフォークが表示されるようになった\n- `/code-review` が PR 番号の指定時に `gh pr diff` で PR の差分を取得するようになった\n\n## VS Code 拡張機能における IME 関連の不具合修正\n\nVS Code 拡張機能において、入力方式（IME）での変換中に発生していた複数の不具合が修正された。変換中のキー入力によって権限プロンプトのフォーカス移動や拒否、メニュー項目の実行、ダイアログの終了が誤って行われる問題が解消された。また、メッセージ入力欄で変換中に上矢印キーを押すと入力中のテキストが過去のメッセージで上書きされる挙動や、変換確定の Enter キーによってプラン作成中のコメントが送信されたり、セッション名の変更やメンション対象ファイルの選択が確定したりする問題も修正された。\n\nさらに、拡張機能のトークン更新に対して認証サーバーの応答に10〜30秒を要した際、すべてのウィンドウやターミナルでサインアウトされてしまう現象に対処されたほか、信頼プロンプトを拒否した後でもウィンドウを再読み込みせずに再確認できる「Review trust」リンクがメッセージ入力欄の上部に追加された。\n\n## Code Mode の動作環境拡大とリソース制御\n\nCode Mode の対応環境が拡大され、安定性とリソース管理が強化された。OpenTelemetry のイベントやメトリクス収集が有効な状態でも Code Mode の起動が可能になり、コードが実行する各ツール呼び出しからイベントが送信されるようになった（トレーシング有効時は無効が維持される）。また、テレメトリや不要なトラフィック、機能フラグが無効化されている環境でも起動可能となった。\n\nスクリプト実行時の保護機能も強化された。無限ループによるメモリ枯渇を防ぐ制限が導入されたほか、大量のメモリを消費する恐れのある 256MiB を超える行範囲の読み込みが拒否されるようになった。また、スクリプト実行中に Esc キーで停止した際、適用済みの編集や停止されたコマンドが非表示になり終了時に失われていた問題が修正された。スクリプト内で独自の `log`、`preview`、`sleep` を宣言して実行することも可能になっている。\n\n## コードレビューとタスク・セッション管理の改善\n\n`/code-review` コマンドにおいて、プルリクエスト番号を指定した際にプルリクエストではなくチェックアウト中のブランチが意図せずレビューされる問題が修正され、`gh pr diff` を介してプルリクエストの差分を正しく取得するようになった。また、引数なしで実行した場合はブランチ全体がデフォルトブランチと比較される仕様に変更され、複数コミットが存在するブランチで差分が見失われる不具合も解消された。\n\nタスクやセッション管理では、`/tasks` コマンドに現在のセッションでスケジュールされたタスク、`/loop` による復帰、目標、会話のフォークが表示されるようになり、キー操作 `x` による確認後の停止に対応した。さらに、ネットワークの遅延やファイルロックに伴い `~/.claude.json` が初期化されてしまう不具合や、macOS においてキーチェーンの書き込み権限不足によりサインアウトが繰り返される問題が修正された。\n\n<div class=\"note\"><strong>更新時の注意</strong> 過去のバージョンで保存されたスケジュールタスクは、新しいサインインセッションでは大半が再登録を必要とする（該当セッションを <code>--resume</code> で再開した場合は引き続き実行される）。</div>",
+      "publishedAt": "2026-11-19"
+    },
+    {
+      "title": "Claude Code 2.1.328 を latest として公開",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.328",
+      "source": "GitHub Releases",
+      "tag": "claude-code",
+      "summary": "前日 next で出ていた 2.1.328 が CHANGELOG と GitHub Releases に載った。Amazon Bedrock・Google Cloud・Microsoft Foundry などで Opus 4.6 と Sonnet 4.6 の auto mode が使え、`mcp_tool` フックに `\"onFailure\": \"block\"` が入った。`/code-review` は多くのモデルでバグと CLAUDE.md 違反だけを報告し、整理の提案は `/simplify` に分かれた。",
+      "publishedAt": "2026-11-19"
+    },
+    {
+      "title": "Anthropic が IPO の公開価格を1株 83 ドルに決定",
+      "url": "https://www.anthropic.com/news/anthropic-prices-initial-public-offering",
+      "source": "Anthropic News",
+      "tag": "claude-code",
+      "summary": "Anthropic がクラス A 普通株 9億8000万株の新規株式公開の価格を1株 83 ドルに決めた。Nasdaq Global Select Market にティッカー「ANT」で上場し、11月19日に取引が始まる。払い込みは11月20日の予定である。",
+      "publishedAt": "2026-11-18"
+    },
+    {
+      "title": "Claude Mythos 5.2 と Claude Fable 5.2 でエラーが増加",
+      "url": "https://status.claude.com/incidents/c1kmrkmv5f3d",
+      "source": "Claude Status",
+      "tag": "claude-code",
+      "summary": "Mythos 5.2 と Fable 5.2 へのリクエストでエラーが増えた。claude.ai・Claude API・Claude Code・Claude Cowork が影響を受け、影響は 11月19日 08:56〜09:11 UTC で、解決済みである。",
+      "publishedAt": "2026-11-19"
+    },
+    {
+      "title": "Claude Meetings の通話参加の不具合が解決",
+      "url": "https://status.claude.com/incidents/b5cq662qf2wm",
+      "source": "Claude Status",
+      "tag": "claude-code",
+      "summary": "11月16日から続いていた、Claude Meetings（ベータ）で Claude が通話に参加できない障害が解決した。原因は想定以上の需要で、Enterprise では自動参加が戻り、Team では一部から順に戻している。",
+      "publishedAt": "2026-11-19"
+    }
+  ]
+}

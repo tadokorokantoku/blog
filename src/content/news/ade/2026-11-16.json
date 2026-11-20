@@ -1,0 +1,14 @@
+{
+  "category": "ade",
+  "collectedAt": "2026-11-16T08:32",
+  "items": [
+    {
+      "title": "android-v0.0.65: Android アプリを新パッケージ dev.orca.app に移行、Agents タブを追加",
+      "url": "https://github.com/stablyai/orca/releases/tag/android-v0.0.65",
+      "source": "GitHub Releases",
+      "tag": "orca",
+      "summary": "Orca の Android アプリが新しいアプリ（`dev.orca.app`）に移り、旧アプリ（`com.stably.orca.mobile`）は今回の更新を最後にセキュリティ修正も含めて更新されなくなる。新アプリは別アプリとして並行インストールされるため、入れ直して PC の Settings → Mobile から再ペアリングする必要がある。新アプリでは全 PC のエージェントを一覧する Agents タブが加わり、セッション離脱後も続く音声入力、アプリ終了後も残る下書き、写真のリサイズと HEIC から JPEG への変換に対応した。",
+      "publishedAt": "2026-11-15"
+    }
+  ]
+}

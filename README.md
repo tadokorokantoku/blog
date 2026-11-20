@@ -76,8 +76,8 @@ AI が定期的に集めたニュースを `/news` に出す。収集するの�
 | --- | --- | --- |
 | `xtrend` | X トレンド | X で伸びているもの（Grokbot の出力を手で貼る） |
 | `githubtrend` | GitHub トレンド | GitHub のトレンドリポジトリ |
-| `claude-code` | Claude Code | Claude Code まわり |
-| `orca` | Orca | Orca まわり |
+| `coding-agent` | CodingAgent | Claude Code や Codex などコーディングエージェントまわり。記事ごとに `tag` を付ける |
+| `ade` | ADE | Orca などエージェント開発環境（ADE）まわり。記事ごとに `tag` を付ける |
 
 ```jsonc
 {
@@ -88,6 +88,7 @@ AI が定期的に集めたニュースを `/news` に出す。収集するの�
       "title": "記事のタイトル",     // 必須
       "url": "https://...",        // 必須。絶対 URL
       "source": "GitHub",          // 必須。行に `from: GitHub` として出る
+      "tag": "claude-code",        // 任意。カテゴリの中の分類。src/consts.ts の NEWS_TAGS のどれか
       "summary": "2〜3行の要約",     // 任意。カードに3行で切られて出る
       "detail": "## 見出し\n- 箇条書き", // 任意。Markdown。書くとカードを押してモーダルが開く
       "image": "https://...",      // 任意。絶対 URL。無ければサムネ無しの行になる
@@ -101,7 +102,7 @@ AI が定期的に集めたニュースを `/news` に出す。収集するの�
 
 画像は外部 URL をそのまま読む（ビルド時に落としてこない）。ホットリンクを弾くドメインの URL を入れると画像が割れるので、OGP 画像のように外から読める URL を入れる。
 
-並び順は `publishedAt ?? collectedAt` の降順。カテゴリ一覧と日本語の表示名、カテゴリごとの表示（`layout`）は `src/consts.ts` の `NEWS_CATEGORIES` が持っていて、Zod のスキーマ・タブ・ページ生成・表示の出し分けが全部そこを読む。レイアウトは3種で、`list`（`xtrend`）が行のリスト、`ranking`（`githubtrend`）が順位の表、`summary`（`claude-code` と `orca`）がカードを押すとモーダルが開く形。カテゴリを増やすときはここと `public/admin/config.yml` の select を直す。
+並び順は `publishedAt ?? collectedAt` の降順。カテゴリ一覧と日本語の表示名、カテゴリごとの表示（`layout`）は `src/consts.ts` の `NEWS_CATEGORIES` が持っていて、Zod のスキーマ・タブ・ページ生成・表示の出し分けが全部そこを読む。レイアウトは3種で、`list`（`xtrend`）が行のリスト、`ranking`（`githubtrend`）が順位の表、`summary`（`coding-agent` と `ade`）がカードを押すとモーダルが開く形。カテゴリを増やすときはここと `public/admin/config.yml` の select を直す。
 
 ### GitHub トレンドだけランキングの表になる
 
@@ -111,11 +112,15 @@ AI が定期的に集めたニュースを `/news` に出す。収集するの�
 
 **前日比は書かなくていい。** 収集側はその日の順位だけ書けばよくて、変動（`NEW` / 何位上昇 / 何位下降 / 変化なし）はビルド時に計算する。比べる相手は日付の引き算ではなく**そのカテゴリで今日より前にある最も新しい収集日**なので、収集が1日飛んでも動く。同じ `url` のエントリ同士を突き合わせるので、URL は日をまたいで同じものを書くこと。前の収集日がまだ無いときは全件が変化なしになる。
 
-### Claude Code と Orca は押すと詳しく読める
+### CodingAgent と ADE は押すと詳しく読める
 
-`claude-code` と `orca` は `layout: 'summary'` なので、カードを押すと元記事に飛ぶ代わりに**モーダルが開いて `detail` の中身が出る**。`detail` を書かなかった記事のカードは、押すとそのまま元記事を開く外部リンクのままになる。
+`coding-agent` と `ade` は `layout: 'summary'` なので、カードを押すと元記事に飛ぶ代わりに**モーダルが開いて `detail` の中身が出る**。`detail` を書かなかった記事のカードは、押すとそのまま元記事を開く外部リンクのままになる。
 
 `detail` には**その記事の中で特筆すべき内容を Markdown で**書く。見出しと箇条書きが使える。カードに出るのは `summary`（3行で切られる）だけで、`detail` はモーダルの中にしか出ないので、`summary` を言い換えるのではなく一段詳しい話を書く。設定キーやコマンド名はインラインコードで囲む。
+
+### tag でカードに色が付き、絞り込める
+
+記事に `tag` を書くと、カードの左端とラベルがそのタグの色になり、一覧の上に「すべて」とタグのチップが並んで絞り込めるようになる。`coding-agent` と `ade` の記事には必ず付ける（Claude Code の話なら `claude-code`、Codex の話なら `codex`、Orca の話なら `orca`）。使える値と表示名・色は `src/consts.ts` の `NEWS_TAGS` が持っていて、増やすときはここと `public/admin/config.yml` の select を直す。
 
 モーダルの中の Markdown はビルド時に HTML にする。記事本文と違って Shiki は通らないので、フェンスコードブロックに色は付かない。
 

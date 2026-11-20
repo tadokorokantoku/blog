@@ -1,17 +1,18 @@
 ---
 import '../styles/news-dialog.css';
 import { formatDate } from '../lib/posts';
-import type { NewsSummaryArticle } from '../lib/news';
+import { jstDay, newsTag, type NewsSummaryArticle } from '../lib/news';
 
 interface Props {
   article: NewsSummaryArticle;
 }
 
 const { article } = Astro.props;
-const { title, url, source, summary, image, categoryLabel, detailHtml, date } = article;
+const { title, url, source, tag, summary, image, categoryLabel, detailHtml, date } = article;
+const tagInfo = tag && newsTag(tag);
 ---
 
-<li class="news-item">
+<li class="news-item" data-day={jstDay(date)} data-tag={tagInfo?.id} style={tagInfo && `--tag-color: ${tagInfo.color}`}>
   <!-- 常に元記事へのリンク。JS があるときだけ押下を奪ってモーダルにする -->
   <a
     class="news-card"
@@ -24,6 +25,7 @@ const { title, url, source, summary, image, categoryLabel, detailHtml, date } = 
     <div class="news-body">
       <h2 class="news-title">{title}</h2>
       <p class="news-from">
+        <span class="news-today" hidden>Today</span>
         <span>from: {source}, {categoryLabel}</span>
         <time datetime={date.toISOString()}>{formatDate(date)}</time>
       </p>
@@ -34,20 +36,25 @@ const { title, url, source, summary, image, categoryLabel, detailHtml, date } = 
     detailHtml && (
       <dialog class="news-dialog">
         <div class="news-dialog-body">
-          <form method="dialog">
-            <button class="news-dialog-close" aria-label="閉じる">
-              ×
-            </button>
-          </form>
-          <h2 class="news-dialog-title">{title}</h2>
-          <p class="news-from">
-            <span>from: {source}, {categoryLabel}</span>
-            <time datetime={date.toISOString()}>{formatDate(date)}</time>
-          </p>
+          <header class="news-dialog-header">
+            <div class="news-dialog-heading">
+              <h2 class="news-dialog-title">{title}</h2>
+              <p class="news-from">
+                {tagInfo && <span class="news-tag">{tagInfo.label}</span>}
+                <span>from: {source}, {categoryLabel}</span>
+                <time datetime={date.toISOString()}>{formatDate(date)}</time>
+              </p>
+            </div>
+            <div class="news-dialog-actions">
+              <a class="news-dialog-link" href={url} target="_blank" rel="noopener noreferrer">
+                元記事を開く ↗
+              </a>
+              <form method="dialog">
+                <button class="news-dialog-close" aria-label="閉じる">×</button>
+              </form>
+            </div>
+          </header>
           <div class="prose news-detail" set:html={detailHtml} />
-          <a class="news-dialog-link" href={url} target="_blank" rel="noopener noreferrer">
-            元記事を開く ↗
-          </a>
         </div>
       </dialog>
     )
@@ -55,6 +62,16 @@ const { title, url, source, summary, image, categoryLabel, detailHtml, date } = 
 </li>
 
 <script>
+  // ビルドした日ではなく見ている日で判定したいので、Today はブラウザで付ける
+  const today = new Intl.DateTimeFormat('sv-SE', { timeZone: 'Asia/Tokyo' });
+
+  document.addEventListener('astro:page-load', () => {
+    const day = today.format(new Date());
+    for (const item of document.querySelectorAll<HTMLElement>(`.news-item[data-day="${day}"]`)) {
+      item.querySelector<HTMLElement>('.news-today')?.removeAttribute('hidden');
+    }
+  });
+
   document.addEventListener('click', (event) => {
     const card = (event.target as Element)?.closest('.news-card[aria-haspopup]');
     if (!card) return;

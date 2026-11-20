@@ -17,49 +17,160 @@
 
 .news-dialog {
   width: calc(100% - 2rem);
-  max-width: 36rem;
-  max-height: 85vh;
+  max-width: 56rem;
+  max-height: 90vh;
   overflow: auto;
-  /* 余白は .news-dialog-body が持つ。クリック対象が <dialog> 自身なら背景を押したと判定できる */
+  /* 余白は中の要素が持つ。クリック対象が <dialog> 自身なら背景を押したと判定できる */
   padding: 0;
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 12px;
   background: var(--bg);
   color: var(--fg);
+  box-shadow: 0 24px 64px rgb(0 0 0 / 0.35);
 }
 
 .news-dialog::backdrop {
-  background: rgb(0 0 0 / 0.5);
+  background: rgb(0 0 0 / 0.55);
+  backdrop-filter: blur(2px);
 }
 
 .news-dialog-body {
-  padding: 1.5rem;
+  padding: 0 2rem 2rem;
 }
 
-.news-dialog-close {
-  float: right;
-  padding: 0 0.25rem;
-  border: none;
-  background: none;
-  color: var(--muted);
-  cursor: pointer;
-  font-size: 1.5rem;
-  line-height: 1;
+/* 長い要約をスクロールしても、タイトルと閉じる操作は上に残す */
+.news-dialog-header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin: 0 -2rem;
+  padding: 1.25rem 2rem 1rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
 }
 
-.news-dialog-close:hover {
-  color: var(--accent);
+.news-dialog-heading {
+  min-width: 0;
 }
 
 .news-dialog-title {
   margin: 0;
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   font-weight: 700;
+  line-height: 1.45;
+}
+
+.news-dialog-actions {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.news-dialog-link {
+  padding: 0.25rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.news-dialog-link:hover {
+  border-color: var(--accent);
+}
+
+.news-dialog-close {
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.news-dialog-close:hover {
+  background: var(--code-bg);
+  color: var(--fg);
+}
+
+.news-detail {
+  font-size: 0.9375rem;
+  line-height: 1.85;
+}
+
+/* 冒頭は「この回で何が変わるか」なので、段落でも箇条書きでもリードとして箱に入れる */
+.news-detail > :is(p, ul):first-child {
+  margin: 1.5rem 0 0;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.news-detail > ul:first-child {
+  padding-left: 2.5rem;
+}
+
+.news-detail h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 2.25rem 0 0.75rem;
+  font-size: 1.0625rem;
   line-height: 1.5;
 }
 
-.news-detail > :first-child {
-  margin-top: 0;
+.news-detail h2::before {
+  flex: none;
+  width: 4px;
+  height: 1.1em;
+  border-radius: 2px;
+  background: var(--accent);
+  content: "";
+}
+
+.news-detail h3 {
+  margin: 1.5rem 0 0.5rem;
+  font-size: 0.9375rem;
+}
+
+.news-detail p {
+  margin: 0.75rem 0 0;
+}
+
+.news-detail ul {
+  margin: 0.75rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.news-detail li + li {
+  margin-top: 0.35rem;
+}
+
+.news-detail li::marker {
+  color: var(--accent);
+}
+
+.news-detail strong {
+  color: var(--fg);
+}
+
+.news-detail :not(pre) > code {
+  padding: 0.1em 0.4em;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--code-bg);
+  font-size: 0.85em;
 }
 
 /* Shiki を通らないので、フェンスコードブロックは色が付かないまま地だけ敷く */
@@ -67,19 +178,195 @@
   background: var(--code-bg);
 }
 
-.news-dialog-link {
+/* detail に生の HTML で <div class="note"> を書くと、注意書きの枠になる */
+.news-detail .note {
+  margin: 1rem 0 0;
+  padding: 0.75rem 1rem;
+  border-left: 4px solid var(--rank-new);
+  border-radius: 0 6px 6px 0;
+  background: color-mix(in srgb, var(--rank-new) 10%, transparent);
+}
+
+/* タグ（カテゴリの中の分類）。色は src/consts.ts の NEWS_TAGS から --tag-color で渡る */
+.news-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0 0.5rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--tag-color) 16%, transparent);
+  color: var(--tag-color);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.news-item[data-tag] {
+  margin-left: -0.75rem;
+  padding-left: 0.75rem;
+  border-left: 3px solid var(--tag-color);
+}
+
+.news-tag-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 1.25rem;
+}
+
+.news-tag-chip {
+  --tag-color: var(--fg);
+  padding: 0.25rem 0.875rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.8125rem;
+}
+
+.news-tag-chip[data-tag]::before {
   display: inline-block;
-  margin-top: 1rem;
-  font-size: 0.9375rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-right: 0.4rem;
+  border-radius: 999px;
+  background: var(--tag-color);
+  content: "";
 }
 
-/* 素の h2 は 1.5rem で、モーダルのタイトルより大きくなってしまう */
-.news-detail h2 {
-  margin: 1.5rem 0 0.5rem;
+.news-tag-chip:hover {
+  border-color: var(--tag-color);
+  color: var(--fg);
+}
+
+.news-tag-chip[aria-pressed="true"] {
+  border-color: var(--tag-color);
+  background: color-mix(in srgb, var(--tag-color) 14%, transparent);
+  color: var(--fg);
+  font-weight: 700;
+}
+
+
+/* .news-item は display: flex なので、hidden 属性だけでは消えない */
+.news-item[hidden] {
+  display: none;
+}
+
+.news-today {
+  padding: 0 0.5rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--bg);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.news-today[hidden] {
+  display: none;
+}
+
+/* スクロールで元の場所が隠れたら、本文の左の余白に縦に並べて浮かせる */
+.news-tag-filter.is-floating {
+  position: fixed;
+  z-index: 5;
+  top: var(--float-top);
+  right: calc(50% + 21rem + 1.5rem);
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 0;
+}
+
+/* 左に余白が無い幅では、画面の下に横並びで出す */
+@media (max-width: 64rem) {
+  .news-tag-filter.is-floating {
+    top: auto;
+    right: auto;
+    bottom: 1rem;
+    left: 50%;
+    flex-direction: row;
+    /* left: 50% だと幅が画面の半分に縮んでチップが折り返すので、中身の幅に合わせる */
+    width: max-content;
+    max-width: calc(100% - 2rem);
+    padding: 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--bg);
+    box-shadow: 0 8px 24px rgb(0 0 0 / 0.25);
+    transform: translateX(-50%);
+  }
+}
+
+.news-tag-filter.is-floating .news-tag-chip {
+  background: var(--bg);
+}
+
+.news-tag-filter.is-floating .news-tag-chip[aria-pressed="true"] {
+  background: color-mix(in srgb, var(--tag-color) 14%, var(--bg));
+}
+
+/* 浮いた瞬間に、一覧のある右側から（狭い画面では下から）薄い状態で滑ってくる */
+@keyframes news-tag-float-in {
+  from {
+    opacity: 0;
+    translate: 3rem 0;
+  }
+}
+
+@keyframes news-tag-float-up {
+  from {
+    opacity: 0;
+    translate: 0 1.5rem;
+  }
+}
+
+.news-tag-filter.is-floating {
+  animation: news-tag-float-in 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@media (max-width: 64rem) {
+  .news-tag-filter.is-floating {
+    animation-name: news-tag-float-up;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .news-tag-filter.is-floating {
+    animation: none;
+  }
+}
+
+/* リリースの件数。箇条書きとは別の行として、青い箱の上段に置く。すぐ後の箇条書きが下段になって1つの箱に見える */
+.news-detail > .release-counts:first-child {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  margin: 1.5rem 0 0;
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+  border-radius: 8px 8px 0 0;
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+  color: var(--muted);
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.release-counts strong {
+  margin-right: 0.15rem;
+  color: var(--fg);
+  font-size: 1.125rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.release-counts .breaking strong {
+  color: var(--rank-new);
+}
+
+.news-detail > .release-counts:first-child + ul {
+  margin: 0;
+  padding: 0.75rem 1.25rem 1rem 2.5rem;
+  border-radius: 0 0 8px 8px;
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
   font-size: 1rem;
-}
-
-.news-detail h3 {
-  margin: 1.25rem 0 0.5rem;
-  font-size: 0.9375rem;
+  font-weight: 500;
 }

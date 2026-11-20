@@ -1,0 +1,22 @@
+{
+  "category": "ade",
+  "collectedAt": "2026-11-18T08:31",
+  "items": [
+    {
+      "title": "v1.4.262: Workspace Cleanup・Git blame・エージェントピッカーの刷新",
+      "url": "https://github.com/stablyai/orca/releases/tag/v1.4.262",
+      "source": "GitHub Releases",
+      "tag": "orca",
+      "summary": "macOS と Linux でチャットごとのヘルパーアプリが不要になり、非表示のチャットは戻るまで一時停止する。ワークスペースが消えた Claude Code・Codex・Orca のチャットを削除する Workspace Cleanup（既定はオフ）、カーソル行の作者と日付を出す Git blame が入った。保存した Claude・Codex アカウントに名前を付けてプランを表示でき、エージェントピッカーはモデル・effort・Fast mode を1枚のカードにまとめた。Codex の自動レビューで止められた操作は理由が表示され、1回だけ承認できる。",
+      "publishedAt": "2026-11-17"
+    },
+    {
+      "title": "v1.4.262: Codex の会話履歴をアカウント間で共有、orca.yaml の承認の扱いが変わる",
+      "url": "https://github.com/stablyai/orca/releases/tag/v1.4.262",
+      "source": "GitHub Releases",
+      "tag": "orca",
+      "summary": "Codex アカウントは会話を1つのコピーで共有するようになり、更新後にバックグラウンドで1回だけ移行が走る。Windows で古い Orca に戻すと、追加の Codex アカウントは再度更新するまで既定のサインインになる。過去にいずれかの版のリポジトリの `orca.yaml` の手順を承認していれば、そのリポジトリは信頼済みとされ、以降の変更は確認されない。",
+      "publishedAt": "2026-11-17"
+    }
+  ]
+}

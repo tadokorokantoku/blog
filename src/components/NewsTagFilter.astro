@@ -1,0 +1,56 @@
+---
+import { newsTag, type NewsTag } from '../lib/news';
+
+interface Props {
+  tags: NewsTag[];
+}
+
+const tags = Astro.props.tags.map(newsTag);
+---
+
+<!-- チップが浮いている間も、元の場所の高さは slot が持つ。これが無いと浮いた瞬間に一覧が詰まって跳ねる -->
+<div class="news-tag-filter-slot">
+  <div class="news-tag-filter" role="group" aria-label="絞り込み">
+    <button class="news-tag-chip" type="button" aria-pressed="true">すべて</button>
+    {
+      tags.map(({ id, label, color }) => (
+        <button class="news-tag-chip" type="button" aria-pressed="false" data-tag={id} style={`--tag-color: ${color}`}>
+          {label}
+        </button>
+      ))
+    }
+  </div>
+</div>
+
+<script>
+  // 選んだタグと合わないカードを隠す。タグを増やしても CSS を足さずに済むよう、ここで hidden を付け外しする
+  document.addEventListener('click', (event) => {
+    const chip = (event.target as Element)?.closest<HTMLButtonElement>('.news-tag-chip');
+    if (!chip) return;
+    const slot = chip.closest('.news-tag-filter-slot');
+    for (const other of slot?.querySelectorAll('.news-tag-chip') ?? []) {
+      other.setAttribute('aria-pressed', String(other === chip));
+    }
+    const { tag } = chip.dataset;
+    for (const item of slot?.nextElementSibling?.querySelectorAll<HTMLElement>('.news-item') ?? []) {
+      item.hidden = tag !== undefined && item.dataset.tag !== tag;
+    }
+  });
+
+  // 元の場所が固定ヘッダーの下に隠れたら、チップを一覧の横に浮かせる
+  let observer: IntersectionObserver | undefined;
+  document.addEventListener('astro:page-load', () => {
+    observer?.disconnect();
+    const slot = document.querySelector<HTMLElement>('.news-tag-filter-slot');
+    const filter = slot?.querySelector<HTMLElement>('.news-tag-filter');
+    if (!slot || !filter) return;
+    const top = document.querySelector<HTMLElement>('.site-masthead.is-sticky')?.offsetHeight ?? 0;
+    slot.style.minHeight = `${filter.offsetHeight}px`;
+    filter.style.setProperty('--float-top', `${top + 16}px`);
+    observer = new IntersectionObserver(
+      ([entry]) => filter.classList.toggle('is-floating', !entry.isIntersecting && entry.boundingClientRect.top < top),
+      { rootMargin: `-${top}px 0px 0px 0px` },
+    );
+    observer.observe(slot);
+  });
+</script>
