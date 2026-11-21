@@ -271,14 +271,14 @@
   position: fixed;
   z-index: 5;
   top: var(--float-top);
-  right: calc(50% + 21rem + 1.5rem);
+  right: calc(50% + var(--page-width) / 2 + 1.5rem);
   flex-direction: column;
   align-items: flex-end;
   margin: 0;
 }
 
 /* 左に余白が無い幅では、画面の下に横並びで出す */
-@media (max-width: 64rem) {
+@media (max-width: 80rem) {
   .news-tag-filter.is-floating {
     top: auto;
     right: auto;
@@ -324,7 +324,7 @@
   animation: news-tag-float-in 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-@media (max-width: 64rem) {
+@media (max-width: 80rem) {
   .news-tag-filter.is-floating {
     animation-name: news-tag-float-up;
   }

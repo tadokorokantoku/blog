@@ -50,13 +50,19 @@
 }
 
 body {
+  /* 本文の幅。ニュースはモーダルと同じ幅まで広げる（Base の wide） */
+  --page-width: 42rem;
   margin: 0 auto;
-  max-width: 42rem;
+  max-width: var(--page-width);
   padding: 0 1rem;
   background: var(--bg);
   color: var(--fg);
   font-family: system-ui, -apple-system, 'Hiragino Sans', 'Noto Sans JP', sans-serif;
   line-height: 1.8;
+}
+
+body.is-wide {
+  --page-width: 56rem;
 }
 
 a {

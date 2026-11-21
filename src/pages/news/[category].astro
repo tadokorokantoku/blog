@@ -25,7 +25,7 @@ const tags =
 const empty = view.layout === 'ranking' ? view.ranking === null : view.articles.length === 0;
 ---
 
-<Base title={`news / ${label}`} description={`AI が集めた${label}のニュース`}>
+<Base wide title={`news / ${label}`} description={`AI が集めた${label}のニュース`}>
   <Fragment slot="masthead">
     <h1 class="news-heading">news</h1>
     <NewsTabs active={category} />
