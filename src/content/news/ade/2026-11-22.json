@@ -1,0 +1,26 @@
+{
+  "category": "ade",
+  "collectedAt": "2026-11-22T08:32",
+  "items": [
+    {
+      "title": "v1.4.268: ボットが Cursor・Copilot・Hermes に対応し、画像とファイルを送れるように",
+      "url": "https://github.com/stablyai/orca/releases/tag/v1.4.268",
+      "source": "GitHub Releases",
+      "tag": "orca",
+      "summary": "Orca Bots が Cursor、GitHub Copilot、Hermes 上でも動くようになり、ボットのチャットや項目のコメントで画像とファイルをやり取りできるようになった。Slack 連携には予約投稿の `orca slack post --at` などのコマンドが加わり、Linux のタイル型ウィンドウマネージャ向けのモードも追加された。",
+      "detail": "<p class=\"release-counts\"><span class=\"breaking\">破壊的変更 <strong>0</strong> 件</span></p>\n\n## 新機能\n\n- ボットが Cursor、GitHub Copilot、Hermes で動くようになり、OpenCode 2.x のボットには常設の指示が渡されるようになった\n- 新しいボットに ID カードが付き、Soul と Memory のエディタが作り直された\n- ボットのチャット、グループチャット、項目のコメントで画像とファイルを送受信できる（ペアリングしたコンピュータ上のボットにも送れる）\n- Slack に予約投稿の `orca slack post --at` と、`pin`、`canvas`、`list`、`scheduled` コマンドが加わった。コネクタごとに専用のページができた\n- クラッシュや再起動で途切れたチャットを続けられ、ワーカーの最終報告がそれを起動したエージェントを起こすようになった\n- Orca が本物の Antigravity エージェントをインストールして動かすようになり、Cursor には明示的な Auto モデルの選択肢が加わった\n- リモートホストでもブラウザの注釈が使えるようになり、システムの SSH のパスを設定できるようになった\n- Linux のタイル型ウィンドウマネージャ向けのモードと、Tasks と Automations を収める実験的なアプリレールが追加された\n\n<div class=\"note\"><strong>更新時の注意</strong> スマートフォン向けの変更は、対応するモバイルアプリのビルドが必要である。</div>",
+      "image": "https://opengraph.githubassets.com/1/stablyai/orca",
+      "publishedAt": "2026-11-21"
+    },
+    {
+      "title": "v1.4.269: ボットが Kiro や Gemini CLI など8つのエージェントに対応",
+      "url": "https://github.com/stablyai/orca/releases/tag/v1.4.269",
+      "source": "GitHub Releases",
+      "tag": "orca",
+      "summary": "Orca Bots が Kiro、Kimi Code、Auggie、Gemini CLI、Kilo Code、MiMo Code、Droid、Goose でも動くようになった。スマートフォンからエージェントの質問やセットアップカードに答えられるようになり、グループでは返信内の @name で別のメンバーにターンを渡せるようになった。",
+      "detail": "<p class=\"release-counts\"><span class=\"breaking\">破壊的変更 <strong>0</strong> 件</span></p>\n\n## 新機能\n\n- ボットが Kiro、Kimi Code、Auggie、Gemini CLI、Kilo Code、MiMo Code、Droid、Goose で動くようになった\n- チャットで Kiro、Auggie、Goose を直接開けるようになり、Kiro のチャットでは利用者自身のフックが動く\n- スマートフォンから、エージェントの質問や Google・Composio のセットアップカードへの回答、ツールの承認やアクセス要求の確認、新しいチャットの開始などができる\n- Google アカウントの利用者は、Antigravity で Orca 組み込みの Google サインインか agy エージェントかを選べる\n- ボットが返信で別のメンバーを @name で呼ぶと、そのメンバーがターンを引き継ぐ\n- ボットは自分のコンピュータ上のパスではなく、リンクや添付ファイル、内容そのもので結果を共有する\n- ボット自身のスキルは、どのエージェントでも使えるエージェント非依存の1つのフォルダに置かれる\n- アイドル状態の Mac のターミナルの CPU 使用量が減り、macOS と Linux では Git の処理がバックグラウンドのワーカーで動くようになった\n\n<div class=\"note\"><strong>更新時の注意</strong> スマートフォン向けの新機能は、対応するモバイルアプリのビルドが必要である。</div>",
+      "image": "https://opengraph.githubassets.com/1/stablyai/orca",
+      "publishedAt": "2026-11-21"
+    }
+  ]
+}
