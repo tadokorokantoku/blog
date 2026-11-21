@@ -1,69 +1,69 @@
 {
   "category": "xtrend",
-  "collectedAt": "2026-11-22T06:54",
+  "collectedAt": "2026-11-22T06:55",
   "items": [
     {
-      "title": "theo氏「リポジトリの権限が全部か無しかなのはおかしい」と問題提起",
-      "url": "https://x.com/theo/status/2123901093751280052",
-      "source": "X, @theo",
-      "summary": "リポジトリ内のプライベートなファイル、数人だけが見られるブランチ、外部ツールに頼らないシークレット管理が欲しいと書いています。3,000件超のいいねが付き、ソース管理の権限モデルをめぐる議論になっています。",
-      "publishedAt": "2026-11-20T22:07:35Z"
+      "title": "Claude Codeに実験的な「Code Mode」が登場",
+      "url": "https://x.com/addyosmani/status/2124229492248019362",
+      "source": "X, @addyosmani",
+      "summary": "Claudeが複数ステップのツール呼び出しを、スクリプトを書いて実行する形でまとめて行う実験的な機能です。速度とコンテキスト効率の改善が狙いとされ、Xニュースでも取り上げられています。",
+      "publishedAt": "2026-11-21T19:52:31Z"
     },
     {
-      "title": "Claude Code 2.1.330、危険な操作の前に確認を求めるポリシーを追加",
-      "url": "https://x.com/ClaudeCodeLog/status/2123913205575496028",
-      "source": "X, @ClaudeCodeLog",
-      "summary": "CLIの変更は142件です。危険な操作の前に確認を求めるポリシーと、Enterprise Admin Consoleでのサインイン（ログイン後は組織の設定とクラウドプロバイダーを使う）が入りました。",
-      "publishedAt": "2026-11-20T22:55:43Z"
+      "title": "Matt Pocock氏、エージェントに自分の文体を覚えさせる「スコアラー」案",
+      "url": "https://x.com/mattpocockuk/status/2124214098984370645",
+      "source": "X, @mattpocockuk",
+      "summary": "エージェントが例文を送り、本人がスワイプ感覚で1つずつ採点するアプリを作って文体を学ばせる、というシンプルな方法を提案しています。",
+      "publishedAt": "2026-11-21T18:51:21Z"
     },
     {
-      "title": "OpenCode Console、OIDCによるキーレス認証に対応",
-      "url": "https://x.com/opencode/status/2124037654639468759",
-      "source": "X, @opencode",
-      "summary": "CIなどOIDCが使える環境から、長期間有効なAPIトークンなしでモデルを呼び出せるようになりました。",
-      "publishedAt": "2026-11-21T07:10:14Z"
+      "title": "kuromojin 3.1.0リリース、辞書ロード約88%高速化",
+      "url": "https://x.com/azu_re/status/2124073824237048232",
+      "source": "X, @azu_re",
+      "summary": "kuromoji.jsを取り込み、解析結果は同じまま、辞書のロードが約88%速く、メモリ使用量が約85%少なくなったとのこと。textlintの日本語ルールを支えるライブラリです。",
+      "publishedAt": "2026-11-21T09:33:57Z"
     },
     {
-      "title": "リーマン予想のLean証明、第三者の再検証で機械的なチェックをすべて通過",
-      "url": "https://x.com/uehaj/status/2123923498129293408",
-      "source": "X, @uehaj",
-      "summary": "luosiallen氏の検証ログを紹介しています。17.5万モジュールのビルドとカーネル再検査で失敗0、主要な定理は標準の3公理だけに依存していたとのことです。残る課題は、証明の数学的な中身を人間がまだ理解していない点とされています。",
-      "publishedAt": "2026-11-20T23:36:37Z"
-    },
-    {
-      "title": "kenn氏「エージェント間の指示は伝言ゲームで劣化する、生ログを渡すほうがよい」",
-      "url": "https://x.com/kenn/status/2123961554710532585",
+      "title": "Antigravityでも使用量の「リセット祭り」",
+      "url": "https://x.com/kenn/status/2124093887669325982",
       "source": "X, @kenn",
-      "summary": "メインからワーカーへ要約した指示を渡すと情報が落ちるため、生の会話ログをそのまま渡すほうがよいという主張です。待ち時間やトークンも節約できるとして、自作の /relay を紹介しています。",
-      "publishedAt": "2026-11-21T02:07:50Z"
+      "summary": "Gemini 4 NeonとCarbonの使いすぎで燃えていたUltraプランのトークンがリセットされたと報告。「年末はGoogleのターンが続きそう」とコメントしています。",
+      "publishedAt": "2026-11-21T10:53:41Z"
     },
     {
-      "title": "Claudeのモバイルアプリが刷新、新しいタブバーを追加",
-      "url": "https://x.com/RobertJBye/status/2123930535437504635",
-      "source": "X, @RobertJBye",
-      "summary": "iOSとAndroidで新しいアプリを全ユーザーに順次配信します。Xニュースでは、Chat・Projects・Code・Artifactsのタブが入り、モバイルからコーディングのセッションを始めたり再開したりできるとされています。",
-      "publishedAt": "2026-11-21T00:04:35Z"
+      "title": "Mintlifyのドキュメントへのリクエスト、AIエージェントが45.3%に",
+      "url": "https://x.com/ThePracticalDev/status/2124130209536319532",
+      "source": "X, @ThePracticalDev",
+      "summary": "30日間でAIコーディングエージェントからのリクエストが45.3%となり、ブラウザの45.8%とほぼ並んだとのこと。@debs_obrien氏がエージェント時代のDevRelについて書いています。",
+      "publishedAt": "2026-11-21T13:18:01Z"
     },
     {
-      "title": "OpenAIのDot、Apple CarPlayから呼び出せるように",
-      "url": "https://x.com/romainhuet/status/2123924316110966824",
-      "source": "X, @romainhuet",
-      "summary": "運転中に話しかけるだけで、Dotにタスクを頼めるようになりました。@gdb氏も紹介しています。",
-      "publishedAt": "2026-11-20T23:39:52Z"
+      "title": "ファイルアップロードからRCEに至る脆弱性「Upload2Shell」公開",
+      "url": "https://x.com/PaulosYibelo/status/2124203995329933441",
+      "source": "X, @PaulosYibelo",
+      "summary": "アップロード欄のある多くのアプリで再現性高く悪用できるファイル処理のバグとして公開されました。Xニュースでは、GhostscriptのType 1フォント読み込みにあるuse-after-freeだと説明されています。",
+      "publishedAt": "2026-11-21T18:11:12Z"
     },
     {
-      "title": "Google、Gemini 4 Neonは競合の上位モデルより1タスクあたり50〜80%安いと発表",
-      "url": "https://x.com/NewsFromGoogle/status/2123959779894632746",
-      "source": "X, @NewsFromGoogle",
-      "summary": "コーディング、科学、知識労働で最先端の性能だとしています。夕方には @_mohansolo 氏が、Antigravityのキャッシュ改善で同じ枠でこなせる量が22%増えたとして、全員のGemini利用枠をリセットしたと投稿しました。",
-      "publishedAt": "2026-11-21T02:00:47Z"
+      "title": "Apple、Macを操作するAIエージェントを開発中と報道",
+      "url": "https://x.com/markgurman/status/2124227825414578456",
+      "source": "X, @markgurman",
+      "summary": "Bloombergのマーク・ガーマン氏によると、アプリやブラウザをまたいで操作し、コードを書いてデバッグもできるエージェントだとされています。詳細は次回のPower Onで伝えるとのこと。",
+      "publishedAt": "2026-11-21T19:45:54Z"
     },
     {
-      "title": "Brian Armstrong氏、AIでの開発フローを図解し「Brain」に学びをためる課題を指摘",
-      "url": "https://x.com/brian_armstrong/status/2123903397095215184",
-      "source": "X, @brian_armstrong",
-      "summary": "エージェントが作るPRの多くはまだ大きな修正が必要で、チームのレビュー負担が重いと書いています。学びを「Brain」にためれば、全社員の修正の手間が時間とともに減るはずだとしています。",
-      "publishedAt": "2026-11-20T22:16:44Z"
+      "title": "MITの論文「コーディングエージェントでコード量は増えても成果は伸びず」が話題",
+      "url": "https://x.com/thesupermannx/status/2124138507367281023",
+      "source": "X, @thesupermannx",
+      "summary": "エージェントの登場後にストアに出たアプリを追跡した研究として紹介されています。投稿では自律型エージェントを使う開発者のコード量が25.5倍とされ、コード量が成果に結びつくかどうかで議論になっています。",
+      "publishedAt": "2026-11-21T13:50:59Z"
+    },
+    {
+      "title": "Sebastian Raschka氏「米中のオープンウェイトモデルは互いに高め合っている」",
+      "url": "https://x.com/rasbt/status/2124142247285235990",
+      "source": "X, @rasbt",
+      "summary": "米国のオープンウェイトモデルは中国のモデルなしにここまで良くならなかったし、その逆も同じで、プロプライエタリなモデルの性能と安さもオープンウェイトのおかげだと主張。オープンソースAIの議論が広がっています。",
+      "publishedAt": "2026-11-21T14:05:51Z"
     }
   ]
 }
