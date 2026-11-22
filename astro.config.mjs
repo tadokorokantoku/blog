@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
+import { devAskAI } from './src/integrations/dev-ask-ai';
 
 export default defineConfig({
   site: 'https://inok.dev',
@@ -13,6 +14,8 @@ export default defineConfig({
     '/news/claude-code': '/news/coding-agent/',
     '/news/orca': '/news/ade/',
   },
+  // 赤ペンの「AIに聞く」。dev サーバーにだけ API の口を足す（ビルドには何も出ない）
+  integrations: [devAskAI()],
   markdown: {
     shikiConfig: {
       themes: { light: 'github-light', dark: 'github-dark' },

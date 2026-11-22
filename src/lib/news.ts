@@ -1,6 +1,7 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { marked } from 'marked';
 import { NEWS_CATEGORIES, NEWS_CATEGORY_IDS, NEWS_TAGS, type NewsCategory, type NewsTag } from '../consts';
+import { buildTrendSeries, type TrendSeries } from './trend';
 
 export type { NewsCategory, NewsTag };
 
@@ -55,7 +56,7 @@ export interface NewsRanking {
 // カテゴリの layout ごとに、表示に必要なものだけを持つ
 export type NewsCategoryView =
   | { layout: 'list'; articles: NewsArticle[] }
-  | { layout: 'ranking'; ranking: NewsRanking | null }
+  | { layout: 'ranking'; ranking: NewsRanking | null; series: TrendSeries }
   | { layout: 'summary'; articles: NewsSummaryArticle[] };
 
 // どのカテゴリも新しい順にこの件数まで
@@ -102,7 +103,7 @@ export async function getNewsArticlesByCategory(category: NewsCategory): Promise
 export async function getNewsCategoryView(category: NewsCategory): Promise<NewsCategoryView> {
   const { layout } = NEWS_CATEGORIES[category];
   if (layout === 'ranking') {
-    return { layout: 'ranking', ranking: await getNewsRanking(category) };
+    return { layout: 'ranking', ranking: await getNewsRanking(category), series: await getRankingSeries(category) };
   }
   if (layout === 'summary') {
     const articles = (await getNewsArticlesByCategory(category)).map(
@@ -145,6 +146,17 @@ async function getNewsRanking(category: NewsCategory): Promise<NewsRanking | nul
       }),
     ),
   };
+}
+
+// 全収集日の順位を、リポジトリごとの推移にする（推移グラフと週のまとめが使う）
+export async function getRankingSeries(category: NewsCategory): Promise<TrendSeries> {
+  const days = (await getCollection('news')).filter(({ data }) => data.category === category);
+  return buildTrendSeries(
+    days.map(({ data }) => ({
+      day: jstDay(data.collectedAt),
+      items: rankedItems(data.items).map(({ url, title, rank, stars }) => ({ url, title, rank, stars })),
+    })),
+  );
 }
 
 function rankedItems(items: NewsDayItem[]): (NewsDayItem & { rank: number })[] {

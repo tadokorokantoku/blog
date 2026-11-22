@@ -10,7 +10,7 @@ const { article } = Astro.props;
 const { title, url, source, summary, image, categoryLabel, rank, xPost, date } = article;
 ---
 
-<li class="news-item">
+<li class="news-item" data-redpen-url={url} data-redpen-title={title} data-redpen-summary={summary}>
   {image && <img class="news-thumb" src={image} alt="" loading="lazy" decoding="async" />}
   <div class="news-body">
     <h2 class="news-title">

@@ -1,0 +1,215 @@
+/* 週のまとめ。色は global.css の変数と、タグの --tag-color だけを使う */
+
+.weekly-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+}
+
+.weekly-title {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.weekly-pager {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.875rem;
+}
+
+.weekly-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+.weekly-auto {
+  margin-top: 1.5rem;
+}
+
+.weekly-count {
+  color: var(--muted);
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 400;
+}
+
+.weekly-section {
+  margin-top: 2.5rem;
+}
+
+.weekly-section > h2 {
+  margin: 0 0 0.75rem;
+  padding-bottom: 0.375rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 1.0625rem;
+}
+
+.weekly-section h3 {
+  margin: 1.5rem 0 0.5rem;
+  font-size: 1rem;
+}
+
+.weekly-highlights ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.weekly-highlights li + li {
+  margin-top: 0.375rem;
+}
+
+.weekly-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.weekly-stats div {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.weekly-stats dt {
+  font-size: 0.8125rem;
+}
+
+.weekly-stats dd {
+  margin: 0;
+  font-size: 1.5rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+.weekly-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  margin: 0.75rem 0 0.5rem;
+  padding: 0;
+  list-style: none;
+  font-size: 0.8125rem;
+}
+
+.weekly-tags li {
+  padding: 0.125rem 0.625rem;
+  border: 1px solid var(--tag-color);
+  border-radius: 999px;
+}
+
+.weekly-topic + .weekly-topic {
+  margin-top: 1.5rem;
+}
+
+.weekly-topic h3 {
+  margin-top: 0;
+}
+
+.weekly-topic .prose > :first-child {
+  margin-top: 0;
+}
+
+.weekly-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0.25rem 0 0;
+  font-size: 0.8125rem;
+}
+
+.weekly-tag h3::before {
+  display: inline-block;
+  width: 0.625rem;
+  height: 0.625rem;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  background: var(--tag-color);
+  content: '';
+}
+
+/* 縦線にタグの色を通して、時系列の流れに見せる */
+.weekly-timeline {
+  margin: 0;
+  padding: 0 0 0 1rem;
+  border-left: 2px solid var(--tag-color);
+  list-style: none;
+}
+
+.weekly-timeline li {
+  padding: 0.375rem 0;
+}
+
+.weekly-timeline time {
+  margin-right: 0.5rem;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.weekly-timeline a {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.weekly-timeline a:hover {
+  text-decoration: underline;
+}
+
+.weekly-timeline p {
+  margin: 0.125rem 0 0;
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+.weekly-trend-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 0 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.weekly-trend-group h3 {
+  margin-top: 0;
+}
+
+.weekly-repos {
+  margin: 0.5rem 0 0;
+  padding-left: 1.25rem;
+  font-size: 0.875rem;
+}
+
+.weekly-repos a {
+  margin-right: 0.375rem;
+  overflow-wrap: anywhere;
+}
+
+.weekly-weeks {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.weekly-weeks li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 0.75rem;
+}
+
+.weekly-weeks a[aria-current] {
+  color: var(--fg);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* 週を通して読むと要約が長すぎるので、カードと同じく行数で切る */
+.weekly-timeline p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+}

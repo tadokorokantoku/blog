@@ -1,10 +1,11 @@
 ---
 import '../../styles/news.css';
 import NewsItem from '../../components/NewsItem.astro';
-import NewsRankingTable from '../../components/NewsRankingTable.astro';
+import NewsRankingView from '../../components/NewsRankingView.astro';
 import NewsSummaryItem from '../../components/NewsSummaryItem.astro';
 import NewsTabs from '../../components/NewsTabs.astro';
 import NewsTagFilter from '../../components/NewsTagFilter.astro';
+import RedPen from '../../components/RedPen.astro';
 import Base from '../../layouts/Base.astro';
 import { getNewsCategoryView, newsCategoryList, type NewsCategory } from '../../lib/news';
 
@@ -31,7 +32,7 @@ const empty = view.layout === 'ranking' ? view.ranking === null : view.articles.
     <NewsTabs active={category} />
   </Fragment>
   {empty && <p class="news-empty">まだ何も集まっていない。</p>}
-  {view.layout === 'ranking' && view.ranking && <NewsRankingTable ranking={view.ranking} />}
+  {view.layout === 'ranking' && view.ranking && <NewsRankingView ranking={view.ranking} series={view.series} />}
   {
     view.layout === 'list' && view.articles.length > 0 && (
       <ul class="news-list">
@@ -53,4 +54,5 @@ const empty = view.layout === 'ranking' ? view.ranking === null : view.articles.
       </>
     )
   }
+  <RedPen />
 </Base>

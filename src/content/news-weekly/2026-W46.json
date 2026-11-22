@@ -1,0 +1,30 @@
+{
+  "week": "2026-W46",
+  "highlights": [
+    "Claude Fable 5.2 と Mythos 5.2 が登場し、Claude Code でも v2.1.321 で Fable 5.2 が既定の Fable モデルになった。",
+    "Claude Code v2.1.323 で、Claude が JavaScript を書いてツールを呼ぶ実験的な Code Mode がオプトインで入った。",
+    "Anthropic は IPO のロードショーを始め、Claude Meetings・Whiteboards・Sheets やセルフホスト版の Managed Agents など、新しい製品の発表が続いた。",
+    "Orca は v1.4.254 から v1.4.259 で Git Graph タブ、Copilot Chat 対応、Workspace Cleanup を加えた。",
+    "GitHub トレンドは meta/astryx が週の半ばに2日続けて1位になり、後半は GoogleChrome/modern-web-guidance-src が上位に定着した。"
+  ],
+  "topics": [
+    {
+      "title": "Fable 5.2 と Mythos 5.2",
+      "body": "中身は同じモデルで、Fable は生物・サイバー面の安全策が強く全ユーザーが使え、Mythos は制限が少なく審査済みの組織向け。Fable 5.1 より出力が最大30%速く、料金は入力100万トークン8ドル・出力40ドル。",
+      "links": ["https://www.anthropic.com/claude-fable-and-mythos-5-2"]
+    },
+    {
+      "title": "Claude Code の Code Mode",
+      "body": "ツールを1回ずつ呼ぶのではなく、Claude が JavaScript を書いてまとめて呼び出す実験的なモード。v2.1.323 ではオプトインで、`plugin.json` の `engines[\"claude-code\"]` でプラグインの対応バージョンも書けるようになった。同じ版で `subagentStatusLine` が消えたという issue も立っている。",
+      "links": ["https://github.com/anthropics/claude-code/releases/tag/v2.1.323"]
+    },
+    {
+      "title": "Orca、Git まわりと後片付けの強化",
+      "body": "v1.4.254 の Git Graph タブでブランチ・タグ・コミット詳細が見られるようになり、v1.4.258 で GitHub Copilot Chat を ACP 経由で使えるようになった。v1.4.259 の Workspace Cleanup は条件に合うワークスペースを確認して自動で消す（既定は無効）。",
+      "links": [
+        "https://github.com/stablyai/orca/releases/tag/v1.4.254",
+        "https://github.com/stablyai/orca/releases/tag/v1.4.259"
+      ]
+    }
+  ]
+}

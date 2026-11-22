@@ -45,7 +45,7 @@ const rows = ranking.items.map((item) => ({
   <tbody>
     {
       rows.map((row) => (
-        <tr>
+        <tr data-redpen-url={row.url} data-redpen-title={row.title} data-redpen-summary={row.summary}>
           <td class="news-rank-cell">{row.rank}</td>
           <td>
             <span class:list={['news-delta', row.delta.className]} aria-hidden="true">

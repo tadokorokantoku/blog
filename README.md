@@ -16,6 +16,7 @@ Astro で作った個人ブログ。静的ビルドして Cloudflare Workers（S
 - `/` … 記事+ひとことのタイムライン（全件・1ページ）。タグの絞り込みもここでやる
 - `/posts/<slug>/`, `/notes/<slug>/` … 個別ページ
 - `/news/<category>/` … ニュースのカテゴリ別（`/news` は X トレンドにリダイレクトする）
+- `/news/weekly/` … ニュースの週のまとめ（試作。タブの「週まとめ」から入る）
 - `/rss.xml` … 記事とひとことを1本にまとめたフィード。ひとことは本文全文が入る。ニュースは入らない
 
 ### タグの絞り込み
@@ -123,6 +124,46 @@ AI が定期的に集めたニュースを `/news` に出す。収集するの�
 記事に `tag` を書くと、カードの左端とラベルがそのタグの色になり、一覧の上に「すべて」とタグのチップが並んで絞り込めるようになる。`coding-agent` と `ade` の記事には必ず付ける（Claude Code の話なら `claude-code`、Codex の話なら `codex`、Orca の話なら `orca`）。使える値と表示名・色は `src/consts.ts` の `NEWS_TAGS` が持っていて、増やすときはここと `public/admin/config.yml` の select を直す。
 
 モーダルの中の Markdown はビルド時に HTML にする。記事本文と違って Shiki は通らないので、フェンスコードブロックに色は付かない。
+
+### GitHub トレンドの推移（試作）
+
+`/news/githubtrend/` の上に「今日のランキング / 推移」の切り替えがあり、推移（`#trend`）は全収集日の順位をつないだバンプチャートになる。横が日付、縦が順位（1位が上）で、1リポジトリが1本の線。ランク外の日は線が切れる。期間は直近7日 / 30日 / 全期間。
+
+- 色が付くのは最新日の上位8件だけ。残りはグレーで、凡例の「その他」に入る（同じリポジトリは期間を変えても同じ色）
+- ◯ は前の収集日にランク外だったもの、▲ は前の収集日より3位以上（`SURGE_THRESHOLD`）上がったもの
+- 集計は `src/lib/trend.ts`（astro:content を読まない純粋関数）、描画は `src/components/TrendChart.astro`（ビルド時に SVG を出す）、操作は `src/scripts/trend-chart.ts`
+
+### 週のまとめ（試作）
+
+`/news/weekly/` が最新の週、`/news/weekly/<YYYY-Www>/` が各週。週は ISO 週（月曜始まり・日本時間）。件数・タグごとの出来事・GitHub トレンドの週の動きはニュースの JSON から自動で出す。
+
+文章の部分（今週の要点と注目トピック）だけは `src/content/news-weekly/<YYYY-Www>.json` に書く。ファイルが無い週は自動集計だけになる。
+
+```jsonc
+{
+  "week": "2026-W47",            // 必須。ファイル名と揃える
+  "highlights": [                // 必須。今週の要点を1行1文で3〜5行。`code` などインラインの Markdown が使える
+    "Claude Code は ..."
+  ],
+  "topics": [                    // 任意。注目トピックの短い解説
+    {
+      "title": "見出し",
+      "body": "Markdown の本文",
+      "links": ["https://..."]   // 任意。根拠にした記事の URL
+    }
+  ]
+}
+```
+
+週1で書くときは、その週（月〜日）の `coding-agent` と `ade` の記事、`githubtrend` の順位を読んで、要点を3〜5行、トピックを2〜3個にまとめる。記事に無いことは書かない。
+
+### 赤ペン（試作）
+
+`/news` の各カテゴリと週のまとめで、記事の文字を選ぶと「AIに聞く」「赤ペンだけ残す」が出る。選んだところに赤い線が残り、押すとその時の質問と回答が横のパネルに開く（続けて質問・削除ができる）。右下の「赤ペン N」でこのページの赤ペンを一覧できる。
+
+- 保存はブラウザの localStorage だけ（端末をまたがない）。位置は「記事 URL＋選んだ文字＋前後32文字」で持ち、開くたびに探し直す。本文が変わって見つからないものは一覧に「見つからない」として残る
+- AI の口は `pnpm dev` のときだけある（`src/integrations/dev-ask-ai.ts`）。`ANTHROPIC_API_KEY` があれば Anthropic API（`claude-sonnet-5-5`）、無ければ手元の `claude -p` を呼ぶ。本番ビルドではボタンが「ローカルのみ」になって押せない
+- 本番で AI を使うには、`src/integrations/ask-ai.ts` の `askAI` を Workers などのサーバー側に移し、同じ `POST /__redpen/ask`（JSON で `selection` / `article` / `question` / `history` を受けて `{ answer }` を返す）を生やす。API キーは Workers の secret に置き、レート制限か認証を付ける
 
 ## エディタ画面（/admin）で書く
 

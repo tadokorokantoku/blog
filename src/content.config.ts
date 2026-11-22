@@ -74,4 +74,27 @@ const news = defineCollection({
   }),
 });
 
-export const collections = { posts, notes, news };
+// 週のまとめの文章。1ファイルが <YYYY-Www>.json（ISO 週、月曜始まり、日本時間）で1週ぶん。
+// 件数や時系列は news から自動で出すので、ここには人（か AI）が読んで書く部分だけを入れる。
+// ファイルが無い週は自動集計だけが出る。書き方は README の「週のまとめ」
+const newsWeekly = defineCollection({
+  loader: glob({ base: './src/content/news-weekly', pattern: '*.json' }),
+  schema: z.object({
+    // ファイル名と揃える。2026-W47 の形
+    week: z.string().regex(/^\d{4}-W\d{2}$/),
+    // 今週の要点。1行1文で3〜5行
+    highlights: z.array(z.string()).min(1).max(5),
+    // 注目トピックの短い解説。body は Markdown、links はその根拠になった記事の URL
+    topics: z
+      .array(
+        z.object({
+          title: z.string(),
+          body: z.string(),
+          links: z.array(z.url()).default([]),
+        }),
+      )
+      .default([]),
+  }),
+});
+
+export const collections = { posts, notes, news, newsWeekly };

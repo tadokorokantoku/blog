@@ -1,0 +1,282 @@
+/* 順位推移のバンプチャート。系列の色は dataviz の検証済みパレット（8色）を light / dark で持ち分ける */
+
+.trend {
+  --series-1: #2a78d6;
+  --series-2: #eb6834;
+  --series-3: #1baf7a;
+  --series-4: #eda100;
+  --series-5: #e87ba4;
+  --series-6: #008300;
+  --series-7: #6250d6;
+  --series-8: #e34948;
+  --series-other: #b8bcc4;
+  position: relative;
+}
+
+@media (prefers-color-scheme: dark) {
+  .trend {
+    --series-1: #3987e5;
+    --series-2: #d95926;
+    --series-3: #199e70;
+    --series-4: #c98500;
+    --series-5: #d55181;
+    --series-6: #008300;
+    --series-7: #9085e9;
+    --series-8: #e66767;
+    --series-other: #4a515b;
+  }
+}
+
+.trend-ranges {
+  display: flex;
+  gap: 0.375rem;
+  margin-bottom: 0.75rem;
+}
+
+.trend-range {
+  padding: 0.125rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: none;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.8125rem;
+  cursor: pointer;
+}
+
+.trend-range[aria-pressed='true'] {
+  border-color: var(--fg);
+  background: var(--fg);
+  color: var(--bg);
+}
+
+.trend-figure {
+  margin: 0;
+}
+
+/* 狭い画面では文字が潰れないよう SVG の幅を保ち、横にスクロールさせる */
+.trend-scroll {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+}
+
+.trend-svg {
+  display: block;
+  width: 100%;
+  min-width: 36rem;
+  height: auto;
+  font-size: 11px;
+}
+
+.trend-row line {
+  stroke: var(--border);
+  stroke-width: 1;
+}
+
+.trend-row text {
+  fill: var(--muted);
+  dominant-baseline: middle;
+  font-variant-numeric: tabular-nums;
+  text-anchor: end;
+}
+
+.trend-tick {
+  fill: var(--muted);
+  text-anchor: middle;
+  font-variant-numeric: tabular-nums;
+}
+
+.trend-line {
+  --c: var(--series-other);
+  transition: opacity 0.15s;
+}
+
+.trend-path {
+  fill: none;
+  stroke: var(--c);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+
+.trend-line.is-other .trend-path {
+  stroke-width: 1.5;
+}
+
+/* 線そのものは細いので、触れる範囲だけ太くする */
+.trend-hit {
+  fill: none;
+  stroke: transparent;
+  stroke-width: 12;
+  cursor: pointer;
+}
+
+/* 重なった点が見分けられるよう、背景色の輪を付ける */
+.trend-point {
+  fill: var(--c);
+  stroke: var(--bg);
+  stroke-width: 2;
+  cursor: pointer;
+  outline: none;
+}
+
+.trend-point:hover,
+.trend-point:focus-visible {
+  r: 6;
+}
+
+.trend-new {
+  fill: none;
+  stroke: var(--rank-new);
+  stroke-width: 1.5;
+  pointer-events: none;
+}
+
+.trend-surge {
+  fill: var(--rank-up);
+  pointer-events: none;
+}
+
+.trend-label {
+  fill: var(--fg);
+  dominant-baseline: middle;
+}
+
+.trend-line.is-other .trend-label {
+  fill: var(--muted);
+}
+
+.trend-line a:hover .trend-label {
+  text-decoration: underline;
+}
+
+.is-focusing .trend-line:not(.is-active),
+.is-focusing .trend-legend-item:not(.is-active) {
+  opacity: 0.15;
+}
+
+.is-focusing .trend-line.is-active .trend-path {
+  stroke-width: 3;
+}
+
+.trend-caption {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  margin: 0.5rem 0 0;
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+.trend-key {
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-right: 0.25rem;
+  vertical-align: -0.1em;
+}
+
+.trend-key.is-new {
+  border: 1.5px solid var(--rank-new);
+  border-radius: 50%;
+}
+
+.trend-key.is-surge {
+  background: var(--rank-up);
+  clip-path: polygon(50% 10%, 100% 90%, 0 90%);
+}
+
+.trend-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.8125rem;
+}
+
+.trend-legend-item {
+  --c: var(--series-other);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: opacity 0.15s;
+}
+
+.trend-legend-item button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--fg);
+  font: inherit;
+  cursor: pointer;
+  overflow-wrap: anywhere;
+  text-align: left;
+}
+
+/* 色だけに頼らないよう、凡例の印は線の形にして名前を必ず添える */
+.trend-legend-item button::before {
+  display: inline-block;
+  width: 0.875rem;
+  height: 2px;
+  margin-right: 0.375rem;
+  border-radius: 1px;
+  background: var(--c);
+  vertical-align: middle;
+  content: '';
+}
+
+.trend-legend-item a {
+  text-decoration: none;
+}
+
+.trend-best {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.trend-others {
+  margin-top: 0.5rem;
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+.trend-others summary {
+  cursor: pointer;
+}
+
+.trend-tip {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  max-width: 16rem;
+  padding: 0.375rem 0.625rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  box-shadow: 0 4px 16px rgb(0 0 0 / 0.15);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.trend-tip[hidden] {
+  display: none;
+}
+
+.trend-tip a {
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.trend-tip span {
+  font-variant-numeric: tabular-nums;
+}
+
+.trend-tip-note {
+  color: var(--rank-new);
+  font-size: 0.75rem;
+}

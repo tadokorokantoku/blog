@@ -1,0 +1,159 @@
+---
+import '../styles/news-weekly.css';
+import WeeklyTrend from './WeeklyTrend.astro';
+import { formatMonthDay } from '../lib/posts';
+import type { WeekId, WeeklyDigest } from '../lib/weekly';
+import { weekRange } from '../lib/week';
+
+interface Props {
+  digest: WeeklyDigest;
+  weeks: WeekId[];
+}
+
+const { digest, weeks } = Astro.props;
+const { id, notes, categories, tags, timeline, trend } = digest;
+
+const DAY = new Intl.DateTimeFormat('ja-JP', { month: 'numeric', day: 'numeric', weekday: 'short', timeZone: 'UTC' });
+const day = (value: string) => DAY.format(new Date(`${value}T00:00:00Z`));
+const span = (week: WeekId) => {
+  const { from, to } = weekRange(week);
+  return `${day(from)}〜${day(to)}`;
+};
+// 同じサイトのリンクが並んでも見分けられるよう、ホスト名に URL の最後の部分を添える
+const linkLabel = (link: string) => {
+  const url = new URL(link);
+  const last = url.pathname.split('/').filter(Boolean).at(-1);
+  return last ? `${url.hostname} … ${last}` : url.hostname;
+};
+const href = (week: WeekId) => `/news/weekly/${week}/`;
+// 赤ペンのアンカー。週の文章は記事 URL を持たないので、この週のページ自身を指す
+const pageUrl = new URL(href(id), Astro.site).href;
+---
+
+<header class="weekly-head">
+  <div>
+    <h2 class="weekly-title">{id} の週</h2>
+    <p class="weekly-note">{span(id)}（ISO 週・月曜始まり・日本時間）</p>
+  </div>
+  <nav class="weekly-pager" aria-label="週の移動">
+    {digest.prev ? <a href={href(digest.prev)}>← 前の週</a> : <span />}
+    {digest.next && <a href={href(digest.next)}>次の週 →</a>}
+  </nav>
+</header>
+
+{
+  notes ? (
+    <section class="weekly-section weekly-highlights" data-redpen-url={pageUrl} data-redpen-title={`${id} の週の要点`}>
+      <h2>今週の要点</h2>
+      <ul>
+        {notes.highlightsHtml.map((html) => (
+          <li set:html={html} />
+        ))}
+      </ul>
+    </section>
+  ) : (
+    <p class="weekly-note weekly-auto">この週はまとめの文章がまだ無いので、データからの自動集計だけを出している。</p>
+  )
+}
+
+<section class="weekly-section">
+  <h2>件数</h2>
+  <dl class="weekly-stats">
+    {
+      categories.map(({ id: category, label, count }) => (
+        <div>
+          <dt>
+            <a href={`/news/${category}/`}>{label}</a>
+          </dt>
+          <dd>{count}</dd>
+        </div>
+      ))
+    }
+  </dl>
+  {
+    tags.length > 0 && (
+      <ul class="weekly-tags">
+        {tags.map(({ label, color, count }) => (
+          <li style={`--tag-color: ${color}`}>
+            {label} <span class="weekly-count">{count}</span>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+  <p class="weekly-note">GitHub トレンドは延べではなく、週の中でランク入りしたリポジトリの数。</p>
+</section>
+
+{
+  notes && notes.topics.length > 0 && (
+    <section class="weekly-section">
+      <h2>注目トピック</h2>
+      {notes.topics.map((topic) => (
+        <article class="weekly-topic" data-redpen-url={topic.links[0] ?? pageUrl} data-redpen-title={topic.title}>
+          <h3>{topic.title}</h3>
+          <div class="prose" set:html={topic.bodyHtml} />
+          {topic.links.length > 0 && (
+            <p class="weekly-links">
+              {topic.links.map((link) => (
+                <a href={link} target="_blank" rel="noopener noreferrer">
+                  {linkLabel(link)}
+                </a>
+              ))}
+            </p>
+          )}
+        </article>
+      ))}
+    </section>
+  )
+}
+
+{
+  timeline.length > 0 && (
+    <section class="weekly-section">
+      <h2>タグごとの出来事</h2>
+      {timeline.map(({ label, color, articles }) => (
+        <section class="weekly-tag" style={`--tag-color: ${color}`}>
+          <h3>
+            {label} <span class="weekly-count">{articles.length}</span>
+          </h3>
+          <ol class="weekly-timeline">
+            {articles.map((article) => (
+              <li data-redpen-url={article.url} data-redpen-title={article.title} data-redpen-summary={article.summary}>
+                <time datetime={article.date.toISOString()}>{formatMonthDay(article.date)}</time>
+                <a href={article.url} target="_blank" rel="noopener noreferrer">
+                  {article.title}
+                </a>
+                {article.summary && <p>{article.summary}</p>}
+              </li>
+            ))}
+          </ol>
+        </section>
+      ))}
+    </section>
+  )
+}
+
+{
+  trend && (
+    <section class="weekly-section">
+      <h2>GitHub トレンドの週の動き</h2>
+      <WeeklyTrend series={trend.series} stats={trend.stats} />
+    </section>
+  )
+}
+
+<section class="weekly-section">
+  <h2>ほかの週</h2>
+  <ul class="weekly-weeks">
+    {
+      weeks.map((week) => (
+        <li>
+          <a href={href(week)} aria-current={week === id ? 'page' : undefined}>
+            {week}
+          </a>
+          <span class="weekly-note">{span(week)}</span>
+        </li>
+      ))
+    }
+  </ul>
+</section>

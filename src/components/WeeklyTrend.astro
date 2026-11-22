@@ -1,0 +1,49 @@
+---
+import TrendChart from './TrendChart.astro';
+import type { TrendRepo, TrendSeries, TrendWeekStats } from '../lib/trend';
+
+interface Props {
+  series: TrendSeries;
+  stats: TrendWeekStats;
+}
+
+const { series, stats } = Astro.props;
+// 週の半分以上が入れ替わることもあるので、長い一覧は最高順位の良い順に先頭だけ出す
+const LIMIT = 8;
+const groups: { title: string; note: string; repos: TrendRepo[] }[] = [
+  { title: '新しく入った', note: '前の7日間に1度もランク入りしていない', repos: stats.newcomers },
+  { title: '最高順位', note: '週の中で一番良かった順位', repos: stats.best },
+  { title: '居続けた', note: `週の収集日（${series.days.length}日）すべてで上位10位以内`, repos: stats.stayers },
+];
+---
+
+<div class="weekly-trend-groups">
+  {
+    groups.map((group) => (
+      <section class="weekly-trend-group">
+        <h3>
+          {group.title} <span class="weekly-count">{group.repos.length}</span>
+        </h3>
+        <p class="weekly-note">{group.note}</p>
+        {group.repos.length === 0 ? (
+          <p class="weekly-note">なし</p>
+        ) : (
+          <ol class="weekly-repos">
+            {group.repos.slice(0, LIMIT).map((repo) => (
+              <li>
+                <a href={repo.url} target="_blank" rel="noopener noreferrer">
+                  {repo.title}
+                </a>
+                <span class="weekly-note">
+                  最高{repo.bestRank}位・{repo.daysRanked}日
+                </span>
+              </li>
+            ))}
+          </ol>
+        )}
+        {group.repos.length > LIMIT && <p class="weekly-note">ほか {group.repos.length - LIMIT} 件</p>}
+      </section>
+    ))
+  }
+</div>
+<TrendChart ranges={[{ id: 'week', label: 'この週', series }]} />

@@ -2,11 +2,15 @@
 import { newsCategoryList, type NewsCategory } from '../lib/news';
 
 interface Props {
-  active?: NewsCategory;
+  // weekly は週のまとめ。カテゴリではないが同じタブの並びに置く
+  active?: NewsCategory | 'weekly';
 }
 
 const { active } = Astro.props;
-const tabs = newsCategoryList().map(({ id, label }) => ({ id, label, href: `/news/${id}/` }));
+const tabs = [
+  ...newsCategoryList().map(({ id, label }) => ({ id, label, href: `/news/${id}/` })),
+  { id: 'weekly', label: '週まとめ', href: '/news/weekly/' },
+];
 ---
 
 <nav class="news-tabs" aria-label="ニュースのカテゴリ">

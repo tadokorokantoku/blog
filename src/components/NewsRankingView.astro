@@ -1,0 +1,57 @@
+---
+import NewsRankingTable from './NewsRankingTable.astro';
+import TrendChart from './TrendChart.astro';
+import { lastDays, type TrendSeries } from '../lib/trend';
+import type { NewsRanking } from '../lib/news';
+
+interface Props {
+  ranking: NewsRanking;
+  series: TrendSeries;
+}
+
+const { ranking, series } = Astro.props;
+const ranges = [
+  { id: '7d', label: '直近7日', series: lastDays(series, 7) },
+  { id: '30d', label: '30日', series: lastDays(series, 30) },
+  { id: 'all', label: '全期間', series },
+];
+---
+
+<!-- 表がこのページの主役なので、推移は表を押し下げない別タブにする。#trend で直接開ける -->
+<div class="news-view-tabs" role="tablist" aria-label="表示">
+  <a class="news-view-tab" role="tab" href="#today" aria-selected="true" aria-controls="ranking-today">今日のランキング</a>
+  <a class="news-view-tab" role="tab" href="#trend" aria-selected="false" aria-controls="ranking-trend">推移</a>
+</div>
+<section id="ranking-today" role="tabpanel">
+  <NewsRankingTable ranking={ranking} />
+</section>
+<section id="ranking-trend" role="tabpanel" hidden>
+  <TrendChart ranges={ranges} />
+</section>
+
+<script>
+  // ハッシュで切り替えるので、戻る・進むとリンク共有がそのまま効く
+  function sync() {
+    const tabs = document.querySelectorAll<HTMLAnchorElement>('.news-view-tab');
+    if (tabs.length === 0) return;
+    const trend = location.hash === '#trend';
+    for (const tab of tabs) tab.setAttribute('aria-selected', String((tab.hash === '#trend') === trend));
+    document.getElementById('ranking-today')?.toggleAttribute('hidden', trend);
+    document.getElementById('ranking-trend')?.toggleAttribute('hidden', !trend);
+    // 隠れている間は幅が無く、右端へのスクロールが効かないので、見せたときにやり直す
+    for (const scroller of document.querySelectorAll('#ranking-trend .trend-scroll')) {
+      scroller.scrollLeft = scroller.scrollWidth;
+    }
+  }
+
+  document.addEventListener('astro:page-load', sync);
+  window.addEventListener('hashchange', sync);
+  document.addEventListener('click', (event) => {
+    const tab = (event.target as Element)?.closest<HTMLAnchorElement>('.news-view-tab');
+    if (!tab) return;
+    // ハッシュへのスクロールで表が飛ばないよう、履歴だけ書き換える
+    event.preventDefault();
+    history.replaceState(history.state, '', tab.hash === '#trend' ? '#trend' : location.pathname);
+    sync();
+  });
+</script>

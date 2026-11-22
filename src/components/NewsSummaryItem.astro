@@ -12,7 +12,15 @@ const { title, url, source, tag, summary, image, categoryLabel, detailHtml, date
 const tagInfo = tag && newsTag(tag);
 ---
 
-<li class="news-item" data-day={jstDay(date)} data-tag={tagInfo?.id} style={tagInfo && `--tag-color: ${tagInfo.color}`}>
+<li
+  class="news-item"
+  data-day={jstDay(date)}
+  data-tag={tagInfo?.id}
+  style={tagInfo && `--tag-color: ${tagInfo.color}`}
+  data-redpen-url={url}
+  data-redpen-title={title}
+  data-redpen-summary={summary}
+>
   <!-- 常に元記事へのリンク。JS があるときだけ押下を奪ってモーダルにする -->
   <a
     class="news-card"

@@ -1,0 +1,14 @@
+---
+import '../styles/redpen.css';
+
+// AI に聞く口は astro dev のときだけある（src/integrations/dev-ask-ai.ts）。
+// 本番ビルドでは「ローカルのみ」と出して押せなくする
+const ai = import.meta.env.DEV ? 'local' : 'off';
+---
+
+<!-- このページで赤ペンを使う印。中身は src/scripts/redpen -->
+<div id="redpen" data-ai={ai} hidden></div>
+
+<script>
+  import '../scripts/redpen';
+</script>

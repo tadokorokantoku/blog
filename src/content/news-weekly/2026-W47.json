@@ -1,0 +1,30 @@
+{
+  "week": "2026-W47",
+  "highlights": [
+    "Claude Code は 2.1.326 から 2.1.330 までほぼ毎日リリースが続き、`claude mcp add-json` で MCP の設定を標準入力から渡せるようになったほか、予定タスクと `/loop` が最長30日まで続くようになった。",
+    "Anthropic は IPO の公開価格を1株83ドルに決め、11月19日に Nasdaq（ティッカー ANT）で取引が始まった。",
+    "Orca は v1.4.265 で Orca Bots（Beta）を入れ、週末の v1.4.268・v1.4.269 で Cursor・Copilot・Hermes・Kiro・Gemini CLI などへ対応先を一気に広げた。",
+    "Codex CLI 0.171.0 で GPT-6.2 Sol が既定のモデルになり、Gemini の Mac アプリには computer use が加わった。",
+    "GitHub トレンドは elementalsouls/Claude-BugHunter が11月18日から5日続けて1位。Claude Code 向けのスキル集が上位に並んだ週だった。"
+  ],
+  "topics": [
+    {
+      "title": "Claude Code、1週間で5回のリリース",
+      "body": "- 2.1.326: エージェントチームを有効にしたままでも Code Mode を使えるようになった\n- 2.1.327: `claude mcp add-json <name> -` で MCP サーバーの JSON を標準入力から渡せる。トークンをコマンドラインに残さずに済む\n- 2.1.329: フォルダの trust ダイアログにフックの宣言元が出る。対象なしの `/code-review` はブランチ全体をデフォルトブランチと比べる\n- 2.1.330: Enterprise Admin Console で管理する組織へのサインインに対応。危険な `rm` の多くが実行前に確認を求めるようになった",
+      "links": ["https://github.com/anthropics/claude-code/releases/tag/v2.1.330"]
+    },
+    {
+      "title": "Anthropic の上場",
+      "body": "前の週に始めたロードショーでは1株70〜78ドルを想定していたが、公開価格はそれを上回る83ドルになり、売り出しも8億2,500万株から9億8,000万株に増えた。上場初日（11月19日）の終値は97.17ドル。",
+      "links": ["https://www.anthropic.com/news/anthropic-prices-initial-public-offering"]
+    },
+    {
+      "title": "Orca Bots でエージェントの種類を問わなくなる",
+      "body": "v1.4.265 で入った Orca Bots（Beta）は、Claude と Codex に限らず管理対象のエージェントセッションにツールとアイデンティティを持たせる仕組み。v1.4.268 で Cursor・Copilot・Hermes、v1.4.269 で Kiro や Gemini CLI など8つが加わり、ボットとのやり取りで画像やファイルも送れるようになった。",
+      "links": [
+        "https://github.com/stablyai/orca/releases/tag/v1.4.265",
+        "https://github.com/stablyai/orca/releases/tag/v1.4.269"
+      ]
+    }
+  ]
+}
