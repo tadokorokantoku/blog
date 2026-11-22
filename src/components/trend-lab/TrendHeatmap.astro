@@ -1,0 +1,61 @@
+---
+// 案C: 順位のヒートマップ。行がリポジトリ、列が日付で、上位ほど濃い。どの日にどれが居たかを一望する
+import type { TrendSeries } from '../../lib/trend';
+import { badge, repoName, shortDay } from './shared';
+
+interface Props {
+  series: TrendSeries;
+}
+
+const { series } = Astro.props;
+// 最終日に居るものを順位順に並べ、そのあとに2日以上ランク入りしたものを登場日数の多い順で足す
+const LIMIT = 16;
+const today = series.repos.filter(({ lastRank }) => lastRank !== undefined).sort((a, b) => (a.lastRank ?? 0) - (b.lastRank ?? 0));
+const others = series.repos
+  .filter(({ lastRank, daysRanked }) => lastRank === undefined && daysRanked >= 2)
+  .sort((a, b) => b.daysRanked - a.daysRanked || a.bestRank - b.bestRank);
+const rows = [...today, ...others].slice(0, LIMIT);
+const hidden = series.repos.length - rows.length;
+// 1位を 100%、10位を 19% の濃さにする
+const strength = (rank: number) => 100 - (Math.min(rank, 10) - 1) * 9;
+---
+
+<div class="tl tl-heat">
+  <div class="tl-scroll">
+    <table class="tl-heat-table">
+      <thead>
+        <tr>
+          <th scope="col" class="tl-heat-name">リポジトリ</th>
+          {series.days.map((day) => <th scope="col">{shortDay(day)}</th>)}
+        </tr>
+      </thead>
+      <tbody>
+        {
+          rows.map((repo) => {
+            const mark = badge(repo);
+            return (
+              <tr>
+                <th scope="row" class="tl-heat-name">
+                  <a href={repo.url} target="_blank" rel="noopener noreferrer">
+                    {repoName(repo.title)}
+                  </a>
+                  {mark && <span class:list={['tl-chip', `is-${mark.kind}`]}>{mark.text}</span>}
+                </th>
+                {repo.points.map((point) =>
+                  point ? (
+                    <td class:list={['tl-heat-cell', { 'is-strong': point.rank <= 4 }]} style={`--s: ${strength(point.rank)}%`}>
+                      {point.rank}
+                    </td>
+                  ) : (
+                    <td class="tl-heat-cell is-empty" />
+                  ),
+                )}
+              </tr>
+            );
+          })
+        }
+      </tbody>
+    </table>
+  </div>
+  {hidden > 0 && <p class="tl-note">1日だけランク入りしたものなど {hidden} 件は省いている。</p>}
+</div>

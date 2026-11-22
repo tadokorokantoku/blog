@@ -1,6 +1,8 @@
-/* 順位推移のバンプチャート。系列の色は dataviz の検証済みパレット（8色）を light / dark で持ち分ける */
+/* 順位推移のバンプチャート。系列の色は dataviz の検証済みパレット（8色）を light / dark で持ち分ける。
+   .tl は比較ページ（/news/trend-lab/）の3案。同じ色を使う */
 
-.trend {
+.trend,
+.tl {
   --series-1: #2a78d6;
   --series-2: #eb6834;
   --series-3: #1baf7a;
@@ -14,7 +16,8 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  .trend {
+  .trend,
+  .tl {
     --series-1: #3987e5;
     --series-2: #d95926;
     --series-3: #199e70;
