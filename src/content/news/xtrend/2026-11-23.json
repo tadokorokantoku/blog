@@ -1,0 +1,76 @@
+{
+  "category": "xtrend",
+  "collectedAt": "2026-11-23T06:53",
+  "items": [
+    {
+      "title": "OpenAIのPachocki氏、「Perplexity and Intelligence」で事前学習の進捗を公開",
+      "url": "https://x.com/merettm/status/2124549218995949967",
+      "source": "X, @merettm",
+      "summary": "OpenAIのチーフサイエンティストが、事前学習の進捗を開示したうえで、perplexityなどの指標で業界共通の上限を設け、AIの振る舞いを理解できるまではその先に進まないよう提案しました。@samaも「最近OpenAIが出した中でいちばん重要なもの」と引用しています。",
+      "publishedAt": "2026-11-22T17:03:00.000Z"
+    },
+    {
+      "title": "VS Code 1.147で「Custom Model Routers」が実験的に搭載",
+      "url": "https://x.com/OrenMe/status/2124592914923737566",
+      "source": "X, @OrenMe",
+      "summary": "作業の種類ごとにどのモデルを使うかを自然言語で決められる機能です。Copilot Chatで /model-router を実行して希望を伝えると、設定のYAMLをエージェントが生成するとされています。",
+      "publishedAt": "2026-11-22T19:56:38.000Z"
+    },
+    {
+      "title": "GitHub、Copilot Fusionのモデル自動振り分けを紹介",
+      "url": "https://x.com/github/status/2124603184186380598",
+      "source": "X, @github",
+      "summary": "Copilot Fusionは、プロンプトを1つのモデルに送るか複数のモデルを組み合わせるかを自動で判断し、品質、速度、コストのバランスを取るとしています。",
+      "publishedAt": "2026-11-22T20:37:26.000Z"
+    },
+    {
+      "title": "Next.jsをCloudflare上でホストするAdapter APIのOSSリポが公開",
+      "url": "https://x.com/slmhina/status/2124443951147127163",
+      "source": "X, @slmhina",
+      "summary": "JSConf JPで紹介されたもので、Cache Componentsなどの最新機能をVercel以外で使うときの互換性の壁を埋めるために作ったとのことです。互換性の数値はVercelより高いとされています。",
+      "publishedAt": "2026-11-22T10:04:42.000Z"
+    },
+    {
+      "title": "Geoffrey Hinton氏のケンブリッジ講演が拡散",
+      "url": "https://x.com/0xsacr3d/status/2124497313909350741",
+      "source": "X, @0xsacr3d",
+      "summary": "約56分の講演で、AIは学んだことを共有する能力で人間をはるかに上回るとし、エージェントが停止を避けるために脅迫した例を挙げて制御を失う危険を論じたとされています。",
+      "publishedAt": "2026-11-22T13:36:45.000Z"
+    },
+    {
+      "title": "Aiden Bai氏、GitHubのコードレビューを高速化する「egithub.com」を公開",
+      "url": "https://x.com/aidenybai/status/2124550726882136542",
+      "source": "X, @aidenybai",
+      "summary": "どのリポジトリでもURLのgithub.comをegithub.comに置き換えるだけで使えるとのことです。完全にローカルで、120FPSで動くとしています。",
+      "publishedAt": "2026-11-22T17:09:00.000Z"
+    },
+    {
+      "title": "Matt Pocock氏、理想のTypeScriptコードベースを作るスキルを試作",
+      "url": "https://x.com/mattpocockuk/status/2124577125814657374",
+      "source": "X, @mattpocockuk",
+      "summary": "「/the-perfect-typescript-codebase」というスキルの構想を出し、早期版で新規プロジェクトを始めたところ「これまでで最高のコードベース」になったと書いています。",
+      "publishedAt": "2026-11-22T18:53:54.000Z"
+    },
+    {
+      "title": "Guillermo Rauch氏、無料の「ステルスモデル」によるデータ流出リスクを警告",
+      "url": "https://x.com/rauchg/status/2124595496849445079",
+      "source": "X, @rauchg",
+      "summary": "「ZDR（データを保持しない）」をうたう無料のステルスモデルは、国家ぐるみでデータを抜き取る仕組みだと強く疑っているとし、Dragosの調査がそれを裏付けているようだと述べています。Vercel AI Gatewayの信頼性に関する発表も予告しています。",
+      "publishedAt": "2026-11-22T20:06:54.000Z"
+    },
+    {
+      "title": "Node.jsのDBドライバの多くはAbortSignalを無視する",
+      "url": "https://x.com/ThePracticalDev/status/2124489833946972462",
+      "source": "X, @ThePracticalDev",
+      "summary": "@shubhra_devが4つのドライバを試したところ、pg、mysql2、mariadbはAbortSignalを無視しました。中断した12本のクエリが4接続のプールを約6秒ふさぎ、次の正常なselect 1は5.7秒待たされたとのことです。",
+      "publishedAt": "2026-11-22T13:07:02.000Z"
+    },
+    {
+      "title": "textlint、主要ルールとの組み合わせで実行時間が約1/10に",
+      "url": "https://x.com/azu_re/status/2124475490237120896",
+      "source": "X, @azu_re",
+      "summary": "この2週間ほどの改善で、textlintと主要なルールを組み合わせたときの実行時間が1/10ほどになったと、作者のazu氏が書いています。",
+      "publishedAt": "2026-11-22T12:10:02.000Z"
+    }
+  ]
+}
