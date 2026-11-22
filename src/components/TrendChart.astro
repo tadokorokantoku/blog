@@ -1,16 +1,19 @@
 ---
 import '../styles/news-trend.css';
+import '../styles/news-trend-labels.css';
 import type { TrendRepo, TrendSeries } from '../lib/trend';
 
-// 期間ごとに SVG をビルド時に描いておき、切り替えは hidden の付け外しだけにする
+// 順位推移のバンプチャート。期間ごとにビルド時に描いておき、切り替えは hidden の付け外しだけにする。
+// グラフは高さ固定で横に伸び縮みする（preserveAspectRatio="none"）。線と点は non-scaling-stroke で歪ませず、
+// 文字は SVG の外の HTML に置く。右のラベル列はグラフと同じ高さで、はみ出す分はその中でスクロールする
 interface Props {
   ranges: { id: string; label: string; series: TrendSeries }[];
 }
 
 const { ranges } = Astro.props;
 
-// 色はリポジトリに付ける。期間を切り替えても同じリポジトリは同じ色のまま。
-// どの期間も最後の日は同じなので、最初の期間の最終日の上位8件に固定の順で配る（9件目以降はグレー）
+// 色を付けるのは最終日の上位8件だけ（dataviz の検証済みパレットが8色）。残りは落ち着いた色で、触れたときだけ濃くする。
+// どの期間も最後の日は同じなので、同じリポジトリは期間を変えても同じ色になる
 const SERIES = 8;
 const colorOf = new Map(
   (ranges[0]?.series.repos ?? [])
@@ -19,67 +22,69 @@ const colorOf = new Map(
     .map(({ url }, i) => [url, i + 1]),
 );
 
-const W = 640;
-const LEFT = 30;
-const RIGHT = 128;
-const TOP = 14;
-const ROW = 26;
-const BOTTOM = 30;
+// viewBox の座標。縦は 1〜10 位を上下に余白を取って並べる
+const VW = 1000;
+const VH = 1000;
+const PAD_Y = 50;
+const PAD_X = 20;
+const y = (rank: number) => PAD_Y + ((rank - 1) * (VH - PAD_Y * 2)) / 9;
+const pct = (value: number, of: number) => `${((value / of) * 100).toFixed(2)}%`;
 
 const MD = new Intl.DateTimeFormat('ja-JP', { month: 'numeric', day: 'numeric', timeZone: 'UTC' });
 const shortDay = (day: string) => MD.format(new Date(`${day}T00:00:00Z`));
+const repoName = (title: string) => title.split('/').at(-1) ?? title;
 
-function markText(repo: TrendRepo, i: number) {
-  const mark = repo.points[i]?.mark;
-  if (mark?.kind === 'new') return '新しくランク入り';
-  if (mark?.kind === 'surge') return `前回より${mark.by}位上昇`;
-  return '';
+// 最終日の印だけをバッジにする。途中の日の印は出さない
+function badge(repo: TrendRepo) {
+  const mark = repo.points.at(-1)?.mark;
+  if (mark?.kind === 'new') return { text: 'NEW', kind: 'new' };
+  if (mark?.kind === 'surge') return { text: `↑${mark.by}`, kind: 'surge' };
+  return undefined;
 }
 
 function layout(series: TrendSeries) {
   const n = series.days.length;
-  const maxRank = Math.max(10, ...series.repos.map(({ bestRank }) => bestRank));
-  const plotW = W - LEFT - RIGHT;
-  const x = (i: number) => (n === 1 ? LEFT + plotW / 2 : LEFT + (i * plotW) / (n - 1));
-  const y = (rank: number) => TOP + (rank - 1) * ROW;
-  const height = y(maxRank) + BOTTOM;
-  // 日付は8個くらいまでに間引く。最後の日だけは必ず出す
-  const step = Math.ceil(n / 8);
+  const x = (i: number) => (n === 1 ? VW / 2 : PAD_X + (i * (VW - PAD_X * 2)) / (n - 1));
+  // 日付は5個くらいまで。最後の日は必ず出し、その直前の目盛りが近すぎるときは間引く（スマホで重なるので）
+  const step = Math.ceil(n / 5);
   const ticks = series.days.flatMap((day, i) =>
-    i % step === 0 || i === n - 1 ? [{ x: x(i), label: shortDay(day), day }] : [],
+    i === n - 1 || (i % step === 0 && n - 1 - i >= step * 0.6) ? [{ left: pct(x(i), VW), label: shortDay(day) }] : [],
   );
 
-  // グレーを先に描いて、色付きの線を上に重ねる
-  const repos = [...series.repos]
-    .map((repo, i) => ({ repo, key: i, color: colorOf.get(repo.url) }))
-    .sort((a, b) => (a.color ? 1 : 0) - (b.color ? 1 : 0));
-
-  const lines = repos.map(({ repo, key, color }) => {
-    // 連続してランク入りしている区間ごとに1本の path。ランク外の日で線が切れる
+  const lines = series.repos.map((repo, key) => {
+    // 隣り合う日を S 字の曲線でつなぐ。ランク外の日で切れ、途中で消えたものは最後に居た点で終わる
     const segments: string[] = [];
-    let current: string[] = [];
+    let d = '';
     repo.points.forEach((point, i) => {
-      if (point) current.push(`${x(i).toFixed(1)},${y(point.rank)}`);
-      if ((!point || i === n - 1) && current.length > 0) {
-        if (current.length > 1) segments.push(`M${current.join('L')}`);
-        current = [];
+      const prev = repo.points[i - 1];
+      if (!point) {
+        if (d) segments.push(d);
+        d = '';
+        return;
+      }
+      if (d && prev) {
+        const mid = (x(i - 1) + x(i)) / 2;
+        d += ` C${mid} ${y(prev.rank)} ${mid} ${y(point.rank)} ${x(i)} ${y(point.rank)}`;
+      } else {
+        d = `M${x(i)} ${y(point.rank)}`;
       }
     });
-    const points = repo.points.flatMap((point, i) =>
+    if (d) segments.push(d);
+    const dots = repo.points.flatMap((point, i) =>
       point
-        ? [{ cx: x(i), cy: y(point.rank), ...point, day: series.days[i], note: markText(repo, i) }]
+        ? [{ d: `M${x(i)} ${y(point.rank)}h0`, title: `${shortDay(series.days[i])} ${point.rank}位${point.stars ? ` ★${point.stars.toLocaleString('ja-JP')}` : ''}` }]
         : [],
     );
-    const last = repo.lastRank && { x: x(n - 1) + 10, y: y(repo.lastRank) };
-    return { repo, key, color, segments, points, last };
+    return { repo, key, color: colorOf.get(repo.url), segments, dots, badge: badge(repo) };
   });
 
-  return { n, maxRank, height, ticks, lines, y };
+  // 描く順は、色の無い線 → 色付きの下位 → 上位。上位の線がいちばん上に重なる
+  const order = (color: number | undefined) => (color ? SERIES + 1 - color : 0);
+  const drawn = [...lines].sort((a, b) => order(a.color) - order(b.color));
+  return { n, ticks, lines, drawn };
 }
 
 const views = ranges.map((range) => ({ ...range, ...layout(range.series) }));
-const name = (title: string) => title.split('/').at(-1) ?? title;
-const clip = (text: string) => (text.length > 18 ? `${text.slice(0, 17)}…` : text);
 ---
 
 <div class="trend" data-trend>
@@ -97,109 +102,70 @@ const clip = (text: string) => (text.length > 18 ? `${text.slice(0, 17)}…` : t
   {
     views.map((view, i) => (
       <figure class="trend-figure" data-range={view.id} hidden={i !== 0}>
-        <div class="trend-scroll">
-          <svg
-            class="trend-svg"
-            viewBox={`0 0 ${W} ${view.height}`}
-            role="img"
-            aria-label={`${view.label}の順位推移。${view.n}日分、${view.lines.length}リポジトリ`}
-          >
-            {Array.from({ length: view.maxRank }, (_, r) => (
-              <g class="trend-row">
-                <line x1={LEFT} x2={W - RIGHT} y1={view.y(r + 1)} y2={view.y(r + 1)} />
-                <text x={LEFT - 10} y={view.y(r + 1)}>{r + 1}</text>
-              </g>
-            ))}
-            {view.ticks.map((tick) => (
-              <text class="trend-tick" x={tick.x} y={view.height - 8}>
-                {tick.label}
-              </text>
-            ))}
-            {view.lines.map(({ repo, key, color, segments, points, last }) => (
-              <g
-                class:list={['trend-line', { 'is-other': !color }]}
-                data-key={key}
-                data-title={repo.title}
-                data-url={repo.url}
-                style={color ? `--c: var(--series-${color})` : undefined}
-              >
-                {segments.map((d) => (
-                  <>
-                    <path class="trend-hit" d={d} />
-                    <path class="trend-path" d={d} />
-                  </>
+        <div class="trend-body">
+          <div class="trend-plot">
+            <div class="trend-canvas">
+              {[1, 5, 10].map((rank) => (
+                <span class="trend-axis" style={`top: ${pct(y(rank), VH)}`}>
+                  {rank}
+                </span>
+              ))}
+              <svg class="trend-svg" viewBox={`0 0 ${VW} ${VH}`} preserveAspectRatio="none" role="img" aria-label={`${view.label}の順位推移。${view.n}日分、${view.lines.length}リポジトリ`}>
+                {Array.from({ length: 10 }, (_, r) => (
+                  <line class="trend-grid" x1="0" x2={VW} y1={y(r + 1)} y2={y(r + 1)} />
                 ))}
-                {points.map((p) => (
-                  <>
-                    {p.mark?.kind === 'new' && <circle class="trend-new" cx={p.cx} cy={p.cy} r="8" />}
-                    {p.mark?.kind === 'surge' && (
-                      <path class="trend-surge" d={`M${p.cx} ${p.cy - 15}l4.5 6h-9z`} />
-                    )}
-                    <circle
-                      class="trend-point"
-                      cx={p.cx}
-                      cy={p.cy}
-                      r="4"
-                      tabindex="0"
-                      data-day={p.day}
-                      data-rank={p.rank}
-                      data-stars={p.stars}
-                      data-note={p.note}
-                    />
-                  </>
+                {view.drawn.map(({ repo, key, color, segments, dots }) => (
+                  <g class:list={['trend-line', { 'is-other': !color }]} data-key={key} style={color ? `--c: var(--series-${color})` : undefined}>
+                    {segments.map((d) => (
+                      <>
+                        <path class="trend-hit" d={d} />
+                        <path class="trend-path" d={d} />
+                      </>
+                    ))}
+                    {dots.map((dot) => (
+                      <>
+                        <path class="trend-hit" d={dot.d} />
+                        <path class="trend-dot" d={dot.d}>
+                          <title>{`${repo.title} ${dot.title}`}</title>
+                        </path>
+                      </>
+                    ))}
+                  </g>
                 ))}
-                {last && (
-                  <a href={repo.url} target="_blank" rel="noopener noreferrer">
-                    <text class="trend-label" x={last.x} y={last.y}>
-                      {clip(name(repo.title))}
-                    </text>
+              </svg>
+              <div class="trend-ticks" aria-hidden="true">
+                {view.ticks.map((tick) => (
+                  <span style={`left: ${tick.left}`}>{tick.label}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div class="trend-labels">
+            <ol class="trend-label-list">
+              {view.lines.map(({ repo, key, color, badge }) => (
+                <li class:list={['trend-label', { 'is-other': !color, 'is-gone': repo.lastRank === undefined }]} data-key={key} style={color ? `--c: var(--series-${color})` : undefined}>
+                  <span class="trend-pill" title={repo.lastRank ? `最終日 ${repo.lastRank}位` : `最高 ${repo.bestRank}位`}>
+                    {repo.lastRank ?? '—'}
+                  </span>
+                  <button type="button" class="trend-name">
+                    {repoName(repo.title)}
+                  </button>
+                  {badge && <span class:list={['trend-badge', `is-${badge.kind}`]}>{badge.text}</span>}
+                  {!repo.lastRank && <span class="trend-best">最高{repo.bestRank}位</span>}
+                  <a href={repo.url} target="_blank" rel="noopener noreferrer" aria-label={`${repo.title} を GitHub で開く`}>
+                    ↗
                   </a>
-                )}
-              </g>
-            ))}
-          </svg>
+                </li>
+              ))}
+            </ol>
+          </div>
         </div>
         <figcaption class="trend-caption">
-          <span><span class="trend-key is-new" aria-hidden="true" />新しくランク入り</span>
-          <span><span class="trend-key is-surge" aria-hidden="true" />前回より3位以上上昇</span>
-          <span>ランク外の日は線が切れる。線か名前に触れるとそのリポジトリだけ強調する。</span>
+          {view.n}日間に1日でもランク入りした{view.lines.length}件。色付きは最終日の上位8件。線か右の名前に触れるとその1本だけ強調する。
         </figcaption>
-        <ul class="trend-legend">
-          {view.lines
-            .filter(({ color }) => color)
-            .sort((a, b) => (a.color ?? 0) - (b.color ?? 0))
-            .map(({ repo, key, color }) => (
-              <li class="trend-legend-item" data-key={key} style={`--c: var(--series-${color})`}>
-                <button type="button">{repo.title}</button>
-                <a href={repo.url} target="_blank" rel="noopener noreferrer" aria-label={`${repo.title} を GitHub で開く`}>
-                  ↗
-                </a>
-              </li>
-            ))}
-        </ul>
-        {view.lines.some(({ color }) => !color) && (
-          <details class="trend-others">
-            <summary>その他 {view.lines.filter(({ color }) => !color).length} 件（グレーの線）</summary>
-            <ul class="trend-legend">
-              {view.lines
-                .filter(({ color }) => !color)
-                .sort((a, b) => a.repo.bestRank - b.repo.bestRank)
-                .map(({ repo, key }) => (
-                  <li class="trend-legend-item is-other" data-key={key}>
-                    <button type="button">{repo.title}</button>
-                    <span class="trend-best">最高{repo.bestRank}位</span>
-                    <a href={repo.url} target="_blank" rel="noopener noreferrer" aria-label={`${repo.title} を GitHub で開く`}>
-                      ↗
-                    </a>
-                  </li>
-                ))}
-            </ul>
-          </details>
-        )}
       </figure>
     ))
   }
-  <div class="trend-tip" role="tooltip" hidden></div>
 </div>
 
 <script>
