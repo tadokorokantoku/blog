@@ -1,7 +1,6 @@
-// 赤ペン。記事の文字を選ぶと「AIに聞く」「赤ペンだけ残す」が出て、選んだところに赤い線が残る。
+// 赤ペン。記事の文字を選ぶと吹き出しが出て、質問するか赤ペンだけ残せる。選んだところに赤い線が残る。
 // 線は CSS Custom Highlight API で引く。本文の DOM を書き換えないので、カードのリンクや行数の切り詰めを壊さない
 import { anchorOf, locate, ROOT } from './anchor';
-import { h, mountIn } from './dom';
 import { closePanel, openedPenId, openList, openThread } from './panel';
 import { hidePopover, watchSelection, type Picked } from './selection';
 import { getPen, pageKey, pensOnPage, removePen, savePen, type RedPen } from './store';
@@ -14,7 +13,6 @@ let enabled = false;
 let ai = false;
 // 見つかった赤ペンの位置。Range は DOM の変化に合わせて勝手に動く
 let ranges = new Map<string, Range>();
-let fab: HTMLButtonElement | undefined;
 
 function rootsFor(url: string) {
   return [...document.querySelectorAll<HTMLElement>(ROOT)].filter((el) => el.dataset.redpenUrl === url);
@@ -26,7 +24,6 @@ function paint() {
     const range = locate(rootsFor(pen.article.url), pen);
     if (range) ranges.set(pen.id, range);
   }
-  if (fab) fab.textContent = `赤ペン ${pensOnPage().length}`;
   if (!('highlights' in CSS)) return;
   const active = ranges.get(openedPenId() ?? '');
   CSS.highlights.set('redpen', new Highlight(...ranges.values()));
@@ -36,8 +33,9 @@ function paint() {
 function showThread(id: string) {
   const pen = getPen(id);
   if (!pen) return;
-  openThread(pen, { found: ranges.has(id), ai }, {
+  openThread(pen, { found: ranges.has(id), ai, count: pensOnPage().length }, {
     ask: (question) => ask(pen, question),
+    list: openListPanel,
     remove: () => {
       removePen(id);
       closePanel();
@@ -72,7 +70,8 @@ async function ask(pen: RedPen, question: string) {
   if (openedPenId() === pen.id) showThread(pen.id);
 }
 
-function create({ root, range }: Picked, withQuestion: boolean) {
+// 吹き出しから。question があれば赤ペンを引いてすぐ聞き、答えは横のパネルに出す
+function create({ root, range }: Picked, question: string | undefined) {
   const anchor = anchorOf(root, range);
   if (!anchor) return;
   const pen: RedPen = {
@@ -85,7 +84,7 @@ function create({ root, range }: Picked, withQuestion: boolean) {
   };
   savePen(pen);
   paint();
-  if (withQuestion) showThread(pen.id);
+  if (question !== undefined) ask(pen, question);
 }
 
 // クリックした点に重なる赤ペン。Highlight はイベントを受けないので、線の矩形で当たりを取る
@@ -161,9 +160,6 @@ document.addEventListener('astro:page-load', () => {
     return;
   }
   ai = config.dataset.ai === 'local';
-  watchSelection({ ai, pick: create });
-  fab = h('button', { type: 'button', className: 'redpen-ui redpen-fab', title: 'このページの赤ペン' });
-  fab.addEventListener('click', openListPanel);
-  mountIn(fab);
+  watchSelection({ ai, pick: create, count: () => pensOnPage().length, openList: openListPanel });
   paint();
 });

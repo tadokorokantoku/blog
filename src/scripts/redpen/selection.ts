@@ -1,4 +1,5 @@
-// 記事の中の文字が選ばれたら、選択のすぐ下に「AIに聞く」「赤ペンだけ残す」を出す
+// 記事の中の文字が選ばれたら、選択のすぐ下に吹き出しを出す。中で質問を書いて送るか、赤ペンだけ残す。
+// 質問欄にフォーカスすると本文の選択は外れるので、選んだ範囲は redpen-draft のハイライトで見せ続ける
 import { ROOT } from './anchor';
 import { h, mountIn } from './dom';
 
@@ -9,58 +10,121 @@ export interface Picked {
 
 interface Options {
   ai: boolean;
-  pick(picked: Picked, withQuestion: boolean): void;
+  // question が undefined なら赤ペンだけ。空文字は「これは何？」として聞く
+  pick(picked: Picked, question: string | undefined): void;
+  // このページの赤ペンの数。1つ以上あれば吹き出しの隅から一覧を開ける
+  count(): number;
+  openList(): void;
 }
 
 // ページを開くたびに index.ts が渡し直す。赤ペンを使わないページでは undefined
 let options: Options | undefined;
 let selected: Picked | undefined;
-let popover: HTMLElement | undefined;
+let bubble: { el: HTMLElement; input?: HTMLTextAreaElement; list: HTMLButtonElement } | undefined;
 let pointerDown = false;
 let timer: number | undefined;
 
+const GAP = 10;
+const MARGIN = 8;
+
 export function watchSelection(next: Options | undefined) {
   options = next;
-  // ボタンの文言が ai で変わるので、作り直させる
-  popover?.remove();
-  popover = undefined;
+  // 中身が ai で変わるので、作り直させる
+  bubble?.el.remove();
+  bubble = undefined;
+}
+
+function draft(range: Range | undefined) {
+  if ('highlights' in CSS) CSS.highlights.set('redpen-draft', new Highlight(...(range ? [range] : [])));
 }
 
 export function hidePopover() {
-  if (popover) popover.hidden = true;
+  if (bubble) bubble.el.hidden = true;
   selected = undefined;
+  draft(undefined);
 }
 
-function choose(withQuestion: boolean) {
+function choose(question: string | undefined) {
   const picked = selected;
   hidePopover();
   getSelection()?.removeAllRanges();
-  if (picked) options?.pick(picked, withQuestion);
+  if (picked) options?.pick(picked, question);
 }
 
-function showPopover(range: Range, ai: boolean) {
-  if (!popover) {
-    const askButton = h('button', { type: 'button', textContent: ai ? 'AIに聞く' : 'AIに聞く（ローカルのみ）', disabled: !ai });
-    const penButton = h('button', { type: 'button', textContent: '赤ペンだけ残す' });
-    askButton.addEventListener('click', () => choose(true));
-    penButton.addEventListener('click', () => choose(false));
-    popover = h('div', { className: 'redpen-ui redpen-pop', role: 'toolbar', ariaLabel: '選んだ文字に' }, askButton, penButton);
-    // 押した瞬間に選択が外れないよう、フォーカスを奪わせない
-    popover.addEventListener('mousedown', (event) => event.preventDefault());
+function build(ai: boolean) {
+  const list = h('button', { type: 'button', className: 'redpen-bubble-list' });
+  list.addEventListener('click', () => {
+    hidePopover();
+    options?.openList();
+  });
+  const penOnly = h('button', { type: 'button', className: 'redpen-bubble-pen', textContent: '赤ペンだけ残す' });
+  penOnly.addEventListener('click', () => choose(undefined));
+  const foot = h('div', { className: 'redpen-bubble-foot' }, penOnly, list);
+
+  if (!ai) {
+    const note = h('p', { className: 'redpen-local', textContent: 'AI に聞くのはローカルの開発サーバー（pnpm dev）でだけ使える。' });
+    return { el: h('div', { className: 'redpen-ui redpen-bubble' }, note, foot), list };
   }
-  mountIn(popover);
-  popover.hidden = false;
-  // スマホでは OS のメニューが選択の上に出るので、こちらは下に出す
-  const rects = range.getClientRects();
-  const rect = rects[rects.length - 1] ?? range.getBoundingClientRect();
-  const left = Math.min(Math.max(rect.left + rect.width / 2 - popover.offsetWidth / 2, 8), innerWidth - popover.offsetWidth - 8);
-  const top = rect.bottom + 8 + popover.offsetHeight > innerHeight ? rect.top - popover.offsetHeight - 8 : rect.bottom + 8;
-  popover.style.left = `${left}px`;
-  popover.style.top = `${top}px`;
+
+  const input = h('textarea', { className: 'redpen-input', rows: 2, placeholder: '質問（空なら「これは何？」）' });
+  const send = h('button', { type: 'submit', className: 'redpen-send', textContent: '聞く' });
+  const form = h('form', { className: 'redpen-bubble-form' }, input, send);
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    choose(input.value);
+  });
+  input.addEventListener('keydown', (event) => {
+    // Enter で送る。改行は Shift+Enter。変換中の Enter は送らない
+    if (event.key === 'Enter' && !event.shiftKey && !event.isComposing) {
+      event.preventDefault();
+      form.requestSubmit();
+    }
+  });
+  // 質問欄にいる間は本文の選択が外れている。空の欄でコピーしたら、選んでいた文字をコピーする
+  input.addEventListener('copy', (event) => {
+    if (input.selectionStart !== input.selectionEnd || !selected) return;
+    event.preventDefault();
+    event.clipboardData?.setData('text/plain', selected.range.toString());
+  });
+  return { el: h('div', { className: 'redpen-ui redpen-bubble' }, form, foot), input, list };
 }
 
-function checkSelection() {
+// 選択の最後の行の下に出し、三角は選択の真ん中を指す。下に入らなければ選択の上に出す
+function place() {
+  if (!bubble || bubble.el.hidden || !selected) return;
+  const { el } = bubble;
+  const rects = selected.range.getClientRects();
+  const first = rects[0] ?? selected.range.getBoundingClientRect();
+  const last = rects[rects.length - 1] ?? first;
+  const below = last.bottom + GAP + el.offsetHeight <= innerHeight - MARGIN;
+  const anchor = below ? last : first;
+  const center = anchor.left + anchor.width / 2;
+  const left = Math.min(Math.max(center - el.offsetWidth / 2, MARGIN), innerWidth - el.offsetWidth - MARGIN);
+  el.style.left = `${left}px`;
+  el.style.top = `${below ? anchor.bottom + GAP : anchor.top - GAP - el.offsetHeight}px`;
+  el.classList.toggle('is-above', !below);
+  // 吹き出しを端に寄せても、三角は選択を指したままにする
+  el.style.setProperty('--arrow-x', `${Math.min(Math.max(center - left, 16), el.offsetWidth - 16)}px`);
+}
+
+function show(range: Range, ai: boolean, focus: boolean) {
+  bubble ??= build(ai);
+  const count = options?.count() ?? 0;
+  bubble.list.hidden = count === 0;
+  bubble.list.textContent = `このページの赤ペン（${count}）`;
+  if (bubble.input) bubble.input.value = '';
+  mountIn(bubble.el);
+  bubble.el.hidden = false;
+  draft(range);
+  place();
+  // マウスで選んだときはそのまま打ち始められるようにする。タッチではキーボードが選択を隠すので自動では出さない
+  if (focus) bubble.input?.focus({ preventScroll: true });
+}
+
+function checkSelection(focus: boolean) {
   if (!options || pointerDown) return;
+  // 吹き出しの中を触っている間は、本文の選択が外れても閉じない
+  if (bubble && !bubble.el.hidden && bubble.el.contains(document.activeElement)) return;
   const selection = getSelection();
   if (!selection || selection.isCollapsed || selection.rangeCount === 0) return hidePopover();
   const range = selection.getRangeAt(0);
@@ -71,13 +135,29 @@ function checkSelection() {
   const root = el?.closest<HTMLElement>(ROOT);
   if (!root || !range.toString().trim()) return hidePopover();
   selected = { root, range: range.cloneRange() };
-  showPopover(range, options.ai);
+  show(selected.range, options.ai, focus);
 }
 
 document.addEventListener('selectionchange', () => {
   clearTimeout(timer);
-  timer = window.setTimeout(checkSelection, 250);
+  timer = window.setTimeout(() => checkSelection(false), 250);
 });
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && bubble && !bubble.el.hidden) {
+    event.preventDefault();
+    hidePopover();
+  }
+});
+
+// 吹き出しの外を押したら閉じる（新しく選び直すときは selectionchange がまた出す）
+document.addEventListener('pointerdown', (event) => {
+  if (bubble && !bubble.el.hidden && !bubble.el.contains(event.target as Node)) hidePopover();
+});
+
+// 本文やモーダルの中をスクロールしても、選んだ範囲についていく
+document.addEventListener('scroll', place, { capture: true, passive: true });
+window.addEventListener('resize', place);
 
 // カードはまるごと <a> なので、Chrome ではリンクごと掴んでしまい中の文字をドラッグで選べない。
 // マウスで押している間だけ href を外してただの文字にし、離したら click より前に戻す
@@ -104,6 +184,6 @@ document.addEventListener('pointerup', () => {
   if (!pointerDown) return;
   pointerDown = false;
   clearTimeout(timer);
-  timer = window.setTimeout(checkSelection, 10);
+  timer = window.setTimeout(() => checkSelection(true), 10);
 });
 document.addEventListener('pointercancel', relink);

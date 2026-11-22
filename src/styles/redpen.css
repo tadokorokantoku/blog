@@ -16,6 +16,11 @@
   text-underline-offset: 3px;
 }
 
+/* 吹き出しを開いている間、質問欄にフォーカスが移っても選んだ範囲が見えるようにする */
+::highlight(redpen-draft) {
+  background-color: rgb(37 99 235 / 0.25);
+}
+
 ::highlight(redpen-active) {
   background-color: rgb(220 38 38 / 0.28);
 }
@@ -34,63 +39,81 @@
   cursor: pointer;
 }
 
-.redpen-pop {
+/* 選んだ範囲の下に出る吹き出し。--arrow-x の位置で三角が選択の真ん中を指す */
+.redpen-bubble {
+  --arrow-x: 50%;
   position: fixed;
   z-index: 30;
   display: flex;
-  gap: 2px;
-  padding: 3px;
+  flex-direction: column;
+  gap: 0.375rem;
+  width: min(20rem, calc(100vw - 1rem));
+  padding: 0.625rem;
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 10px;
   background: var(--bg);
-  box-shadow: 0 6px 20px rgb(0 0 0 / 0.2);
-}
-
-.redpen-pop button {
-  padding: 0.25rem 0.625rem;
-  border: 0;
-  border-radius: 6px;
-  background: none;
   color: var(--fg);
-  font-size: 0.8125rem;
-  white-space: nowrap;
+  box-shadow: 0 8px 28px rgb(0 0 0 / 0.22);
+  font-size: 0.875rem;
 }
 
-.redpen-pop button:hover:not(:disabled) {
-  background: var(--code-bg);
-}
-
-.redpen-pop button:first-child:not(:disabled) {
-  color: var(--redpen);
-  font-weight: 700;
-}
-
-.redpen-pop button:disabled {
-  color: var(--muted);
-  cursor: default;
-}
-
-.redpen-fab {
-  position: fixed;
-  right: 1rem;
-  bottom: 1rem;
-  z-index: 20;
-  padding: 0.375rem 0.875rem;
-  border: 1px solid var(--redpen);
-  border-radius: 999px;
+.redpen-bubble::before {
+  position: absolute;
+  top: -6px;
+  left: calc(var(--arrow-x) - 6px);
+  width: 10px;
+  height: 10px;
+  border-top: 1px solid var(--border);
+  border-left: 1px solid var(--border);
   background: var(--bg);
-  color: var(--redpen);
-  font-size: 0.8125rem;
-  font-weight: 700;
-  box-shadow: 0 4px 12px rgb(0 0 0 / 0.15);
+  content: '';
+  transform: rotate(45deg);
+}
+
+/* 下に入らず選択の上に出したときは、三角も下向きにする */
+.redpen-bubble.is-above::before {
+  top: auto;
+  bottom: -6px;
+  transform: rotate(225deg);
+}
+
+.redpen-bubble-form {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.375rem;
+}
+
+.redpen-bubble-form .redpen-input {
+  flex: 1;
+  resize: none;
+}
+
+.redpen-bubble-foot {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.redpen-bubble-foot button,
+.redpen-to-list {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font-size: 0.75rem !important;
+}
+
+.redpen-bubble-foot button:hover,
+.redpen-to-list:hover {
+  color: var(--fg);
+  text-decoration: underline;
 }
 
 .redpen-panel {
   position: fixed;
   top: 1rem;
   right: 1rem;
-  /* 右下の「赤ペン」ボタンを覆わないよう、その分だけ上で止める */
-  bottom: 3.75rem;
+  bottom: 1rem;
   z-index: 25;
   display: flex;
   flex-direction: column;
@@ -113,7 +136,7 @@
     top: auto;
     left: 0.5rem;
     right: 0.5rem;
-    bottom: 3.5rem;
+    bottom: 0.5rem;
     width: auto;
     max-height: 60vh;
   }
@@ -121,12 +144,12 @@
 
 .redpen-panel-head {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 0.75rem;
 }
 
-.redpen-panel-head h2 {
+.redpen-panel-title {
   margin: 0;
   font-size: 0.9375rem;
   line-height: 1.5;

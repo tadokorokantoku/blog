@@ -5,6 +5,8 @@ import type { RedPen } from './store';
 export interface ThreadActions {
   ask(question: string): void;
   remove(): void;
+  // ヘッダーから、このページの赤ペンの一覧に切り替える
+  list(): void;
 }
 
 export interface ListActions {
@@ -13,14 +15,20 @@ export interface ListActions {
 
 let panel: HTMLElement | undefined;
 
-function frame(title: string, ...body: (Node | false)[]) {
+// 一覧への入口はスレッドのヘッダーにだけ置く。一覧を開いているときは見出しがその役をする
+function frame(head: { title: string; list?: { count: number; open(): void } }, ...body: (Node | false)[]) {
   panel ??= h('aside', { className: 'redpen-ui redpen-panel', ariaLabel: '赤ペン' });
   const close = h('button', { type: 'button', className: 'redpen-close', ariaLabel: '閉じる', textContent: '×' });
   close.addEventListener('click', closePanel);
-  panel.replaceChildren(
-    h('header', { className: 'redpen-panel-head' }, h('h2', { textContent: title }), close),
-    ...body.filter((node): node is Node => node !== false),
-  );
+  const title = h('h2', { className: 'redpen-panel-title', textContent: head.title });
+  // スレッドでは「← 一覧」の行の下に記事のタイトル、一覧では見出しをそのまま上の行に置く
+  let top: Node[] = [h('header', { className: 'redpen-panel-head' }, title, close)];
+  if (head.list) {
+    const list = h('button', { type: 'button', className: 'redpen-to-list', textContent: `← このページの赤ペン（${head.list.count}）` });
+    list.addEventListener('click', head.list.open);
+    top = [h('header', { className: 'redpen-panel-head' }, list, close), title];
+  }
+  panel.replaceChildren(...top, ...body.filter((node): node is Node => node !== false));
   mountIn(panel);
   panel.hidden = false;
   return panel;
@@ -34,7 +42,11 @@ export function openedPenId() {
   return panel && !panel.hidden ? panel.dataset.pen : undefined;
 }
 
-export function openThread(pen: RedPen, { found, ai }: { found: boolean; ai: boolean }, actions: ThreadActions) {
+export function openThread(
+  pen: RedPen,
+  { found, ai, count }: { found: boolean; ai: boolean; count: number },
+  actions: ThreadActions,
+) {
   const turns = pen.thread.map((turn) =>
     h(
       'li',
@@ -77,7 +89,7 @@ export function openThread(pen: RedPen, { found, ai }: { found: boolean; ai: boo
   remove.addEventListener('click', actions.remove);
 
   const el = frame(
-    pen.article.title,
+    { title: pen.article.title, list: { count, open: actions.list } },
     h('blockquote', { className: 'redpen-quote', textContent: pen.quote }),
     !found && h('p', { className: 'redpen-lost', textContent: '本文が変わって、この部分が見つからなくなった。' }),
     turns.length > 0 && h('ol', { className: 'redpen-thread' }, ...turns),
@@ -107,7 +119,7 @@ export function openList(pens: RedPen[], found: (pen: RedPen) => boolean, action
       return h('li', {}, button);
     });
   const el = frame(
-    `このページの赤ペン（${pens.length}）`,
+    { title: `このページの赤ペン（${pens.length}）` },
     items.length
       ? h('ul', { className: 'redpen-list' }, ...items)
       : h('p', { className: 'redpen-local', textContent: '文字を選ぶと赤ペンを引ける。' }),
