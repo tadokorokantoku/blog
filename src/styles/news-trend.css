@@ -9,9 +9,14 @@
   --series-6: #008300;
   --series-7: #6250d6;
   --series-8: #e34948;
-  /* 色を持たない線。触れたときは文字色まで濃くする */
-  --series-other: #d3d6db;
-  --series-other-active: var(--fg);
+  /* 上位8件以外の線。--h（リポジトリごとの色相）に、彩度と明度を落とした控えめな色を当てる。
+     触れたときだけしっかりした色にする */
+  --other-l: 0.82;
+  --other-c: 0.06;
+  --other-active-l: 0.58;
+  --other-active-c: 0.15;
+  /* 名前の列の文字に使う、背景に埋もれない明度 */
+  --other-text-l: 0.52;
   /* グラフとラベル列の高さ。ラベル列はこの高さで止めて中をスクロールする */
   --trend-height: 22rem;
 }
@@ -26,7 +31,11 @@
     --series-6: #008300;
     --series-7: #9085e9;
     --series-8: #e66767;
-    --series-other: #3a414b;
+    --other-l: 0.42;
+    --other-c: 0.06;
+    --other-active-l: 0.74;
+    --other-active-c: 0.13;
+    --other-text-l: 0.76;
   }
 }
 
@@ -119,8 +128,15 @@
   vector-effect: non-scaling-stroke;
 }
 
+.is-other {
+  --c: oklch(var(--other-l) var(--other-c) var(--h));
+}
+
+.is-other.is-active {
+  --c: oklch(var(--other-active-l) var(--other-active-c) var(--h));
+}
+
 .trend-line {
-  --c: var(--series-other);
   transition: opacity 0.15s;
 }
 
@@ -166,10 +182,6 @@
 
 .is-focusing .trend-line.is-active .trend-path {
   stroke-width: 4;
-}
-
-.trend-line.is-other.is-active {
-  --c: var(--series-other-active);
 }
 
 .trend-line.is-other.is-active .trend-dot {

@@ -22,6 +22,14 @@ const colorOf = new Map(
     .map(({ url }, i) => [url, i + 1]),
 );
 
+// 上位8件以外にも控えめな色を付ける。色相はリポジトリの URL から決めるので、期間を変えても同じ色になる
+function hueOf(url: string) {
+  let hash = 2166136261;
+  for (const char of url) hash = Math.imul(hash ^ char.charCodeAt(0), 16777619);
+  return (hash >>> 0) % 360;
+}
+const styleOf = (url: string, color: number | undefined) => (color ? `--c: var(--series-${color})` : `--h: ${hueOf(url)}`);
+
 // viewBox の座標。縦は 1〜10 位を上下に余白を取って並べる
 const VW = 1000;
 const VH = 1000;
@@ -115,7 +123,7 @@ const views = ranges.map((range) => ({ ...range, ...layout(range.series) }));
                   <line class="trend-grid" x1="0" x2={VW} y1={y(r + 1)} y2={y(r + 1)} />
                 ))}
                 {view.drawn.map(({ repo, key, color, segments, dots }) => (
-                  <g class:list={['trend-line', { 'is-other': !color }]} data-key={key} style={color ? `--c: var(--series-${color})` : undefined}>
+                  <g class:list={['trend-line', { 'is-other': !color }]} data-key={key} style={styleOf(repo.url, color)}>
                     {segments.map((d) => (
                       <>
                         <path class="trend-hit" d={d} />
@@ -143,7 +151,7 @@ const views = ranges.map((range) => ({ ...range, ...layout(range.series) }));
           <div class="trend-labels">
             <ol class="trend-label-list">
               {view.lines.map(({ repo, key, color, badge }) => (
-                <li class:list={['trend-label', { 'is-other': !color, 'is-gone': repo.lastRank === undefined }]} data-key={key} style={color ? `--c: var(--series-${color})` : undefined}>
+                <li class:list={['trend-label', { 'is-other': !color, 'is-gone': repo.lastRank === undefined }]} data-key={key} style={styleOf(repo.url, color)}>
                   <span class="trend-pill" title={repo.lastRank ? `最終日 ${repo.lastRank}位` : `最高 ${repo.bestRank}位`}>
                     {repo.lastRank ?? '—'}
                   </span>
