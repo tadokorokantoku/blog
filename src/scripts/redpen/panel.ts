@@ -44,7 +44,7 @@ export function openThread(pen: RedPen, { found, ai }: { found: boolean; ai: boo
         ? h('p', { className: 'redpen-a', textContent: turn.answer })
         : turn.error
           ? h('p', { className: 'redpen-a is-error', textContent: `答えを取れなかった: ${turn.error}` })
-          : h('p', { className: 'redpen-a is-pending', textContent: '考え中…' }),
+          : h('p', { className: 'redpen-a is-pending', textContent: '調べています…（リンク先や Web も見るので、30秒〜1分ほどかかる）' }),
     ),
   );
   const pending = pen.thread.some((turn) => turn.answer === undefined && !turn.error);
@@ -59,7 +59,7 @@ export function openThread(pen: RedPen, { found, ai }: { found: boolean; ai: boo
     'form',
     { className: 'redpen-form' },
     input,
-    h('button', { type: 'submit', className: 'redpen-send', textContent: pending ? '待っている…' : '聞く', disabled: pending }),
+    h('button', { type: 'submit', className: 'redpen-send', textContent: pending ? '調べています…' : '聞く', disabled: pending }),
   );
   form.addEventListener('submit', (event) => {
     event.preventDefault();
