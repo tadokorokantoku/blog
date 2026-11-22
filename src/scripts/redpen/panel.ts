@@ -1,5 +1,6 @@
 // 横のパネル。1本の赤ペンのスレッドか、このページの赤ペンの一覧を出す（狭い画面では下から出る）
 import { h, mountIn } from './dom';
+import { answerHtml } from './markdown';
 import type { RedPen } from './store';
 
 export interface ThreadActions {
@@ -53,7 +54,7 @@ export function openThread(
       { className: 'redpen-turn' },
       h('p', { className: 'redpen-q', textContent: turn.question || 'これは何？' }),
       turn.answer !== undefined
-        ? h('p', { className: 'redpen-a', textContent: turn.answer })
+        ? h('div', { className: 'redpen-a is-md', innerHTML: answerHtml(turn.answer) })
         : turn.error
           ? h('p', { className: 'redpen-a is-error', textContent: `答えを取れなかった: ${turn.error}` })
           : h('p', { className: 'redpen-a is-pending', textContent: '調べています…（リンク先や Web も見るので、30秒〜1分ほどかかる）' }),

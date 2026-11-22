@@ -199,6 +199,38 @@
   white-space: pre-wrap;
 }
 
+/* Markdown から作った答え。段落や箇条書きの間隔だけ詰める */
+.redpen-a.is-md {
+  white-space: normal;
+}
+
+.redpen-a.is-md > :first-child {
+  margin-top: 0;
+}
+
+.redpen-a.is-md > :last-child {
+  margin-bottom: 0;
+}
+
+.redpen-a.is-md :is(p, ul, ol, blockquote, pre) {
+  margin: 0.5rem 0;
+}
+
+.redpen-a.is-md :is(ul, ol) {
+  padding-left: 1.25rem;
+}
+
+.redpen-a.is-md a {
+  overflow-wrap: anywhere;
+}
+
+.redpen-a.is-md code {
+  padding: 0.05rem 0.25rem;
+  border-radius: 4px;
+  background: var(--code-bg);
+  font-size: 0.8125rem;
+}
+
 .redpen-a.is-pending {
   color: var(--muted);
 }
