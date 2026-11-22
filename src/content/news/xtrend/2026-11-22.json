@@ -1,6 +1,6 @@
 {
   "category": "xtrend",
-  "collectedAt": "2026-11-22T06:55",
+  "collectedAt": "2026-11-22T18:20",
   "items": [
     {
       "title": "Claude Codeに実験的な「Code Mode」が登場",
@@ -64,6 +64,62 @@
       "source": "X, @rasbt",
       "summary": "米国のオープンウェイトモデルは中国のモデルなしにここまで良くならなかったし、その逆も同じで、プロプライエタリなモデルの性能と安さもオープンウェイトのおかげだと主張。オープンソースAIの議論が広がっています。",
       "publishedAt": "2026-11-21T14:05:51Z"
+    },
+    {
+      "title": "JSConf JP 2026で「AIエージェントが書く時代、JavaScriptは完成なのか」という問い",
+      "url": "https://x.com/__syumai/status/2124328310352302464",
+      "source": "X, @__syumai",
+      "summary": "コードの書き手が人間からAIエージェントに移るなら、JSはこれ以上進化する必要があるのか、という話がセッションで出たとの投稿です。会場からはHTML-in-Canvas、Wasm Component、Next.jsのInstant Navigationsなどの実況も続いています。",
+      "publishedAt": "2026-11-22T02:25:11.000Z"
+    },
+    {
+      "title": "「Cloudflare PagesではなくWorkersのStatic Assetsを」",
+      "url": "https://x.com/R0u9h/status/2124395292774760468",
+      "source": "X, @R0u9h",
+      "summary": "静的サイトの置き場はPagesではなくWorkersのStatic Assetsを使おうという呼びかけです。投稿者は続けて「Pagesはいつ非推奨になるのか」とも書いています。",
+      "publishedAt": "2026-11-22T06:51:21.000Z"
+    },
+    {
+      "title": "nwiizo氏「テストが通ったコードはどこまで正しいのか。Rustで考えるAI時代の形式検証」",
+      "url": "https://x.com/nwiizo/status/2124391868557619423",
+      "source": "X, @nwiizo",
+      "summary": "AIが書いたコードの正しさを、テストだけでなく形式検証でどう確かめるかをRustで考えるブログ記事です。",
+      "publishedAt": "2026-11-22T06:37:45.000Z"
+    },
+    {
+      "title": "人のレビューを残すべき領域は「認証・課金・DB」",
+      "url": "https://x.com/kinopee_ai/status/2124351926276145251",
+      "source": "X, @kinopee_ai",
+      "summary": "AIのコードでも人のレビューが必須な分野を、認証・権限、課金・決済、データベースの3つに分けています。決定論的なチェッカーに加え、Botによるマージ可否の判定で人の介入をさらに減らす試みをしているそうです。",
+      "publishedAt": "2026-11-22T03:59:02.000Z"
+    },
+    {
+      "title": "「AIが書いたコードはどこまで理解すべき？」牛尾剛氏の動画が話題",
+      "url": "https://x.com/oikon48/status/2124377454416740675",
+      "source": "X, @oikon48",
+      "summary": "『部下としてのAI』の牛尾剛氏が、AIコーディング時代の成果の出し方を語る動画です。投稿者は、AIで成果の出し方に迷う人に勧めています。",
+      "publishedAt": "2026-11-22T05:40:28.000Z"
+    },
+    {
+      "title": "GoogleのエンジニアがT3 CodeでのAntigravity利用は「BANされない」と明言",
+      "url": "https://x.com/PatrickToulme/status/2124265732540387418",
+      "source": "X, @PatrickToulme",
+      "summary": "Antigravityの規約のスクリーンショットから、T3 CodeでGeminiのサブスクを使うとBANされるという不安が広がっていました。Google DeepMindでAntigravityに関わるとされるPatrick Toulme氏がこれを否定し、T3 Codeのtheo氏も公式の連携だとしています。",
+      "publishedAt": "2026-11-21T22:16:32.000Z"
+    },
+    {
+      "title": "Replitの個人向けAIエージェント「Amuse」がオープンソースに",
+      "url": "https://x.com/amasad/status/2124277564596519355",
+      "source": "X, @amasad",
+      "summary": "Replit Missionsで作られたAmuseが公開されました。自分でホストする個人用エージェントで、Web調査、見て操作を代われるブラウザ、リマインダー、送信や支払いの前の承認カードを備え、TypeScript製でApache-2.0とされています。",
+      "publishedAt": "2026-11-21T23:03:33.000Z"
+    },
+    {
+      "title": "「GPT-6.2の不評でOpenAI社内の雰囲気が沈んでいる」という投稿が拡散",
+      "url": "https://x.com/dummerspast39/status/2124191310231843207",
+      "source": "X, @dummerspast39",
+      "summary": "OpenAIの知人から聞いた話として、GPT-6.2の公開直後に初期テスターの厳しいレビューが相次ぎ、Gemini 4 Neonの登場も重なって社内の空気が落ち込んでいるとする投稿です。裏付けのない話で、OpenAIの社員からは「雰囲気はむしろ良い」という反論も出ています。",
+      "publishedAt": "2026-11-21T17:20:48.000Z"
     }
   ]
 }
