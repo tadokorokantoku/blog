@@ -1,4 +1,5 @@
-// 横のパネル。1本の赤ペンのスレッドか、このページの赤ペンの一覧を出す（狭い画面では下から出る）
+// 横のパネル。1本の赤ペンのスレッドか、このページの赤ペンの一覧を出す（狭い画面では下から出る）。
+// 画面の端に「取っ手」を置き、閉じている間は細いつまみ、開いている間はパネルの縁に付いた「閉じる」取っ手にする
 import { h, mountIn } from './dom';
 import { answerHtml } from './markdown';
 import type { RedPen } from './store';
@@ -15,10 +16,72 @@ export interface ListActions {
 }
 
 let panel: HTMLElement | undefined;
+let handle: { el: HTMLButtonElement; count: HTMLElement; label: HTMLElement; openList(): void } | undefined;
+let closing: number | undefined;
+
+// パネルの出入りと同じ時間。prefers-reduced-motion のときは CSS 側でアニメーションを切る
+const SLIDE_MS = 180;
+
+function isOpen() {
+  return panel !== undefined && !panel.hidden && !panel.classList.contains('is-closing');
+}
+
+// 取っ手はパネルと同じ場所（開いているモーダルの中か body）に置き、開閉の状態を写す
+function syncHandle() {
+  if (!handle) return;
+  const open = isOpen();
+  handle.el.setAttribute('aria-expanded', String(open));
+  handle.el.classList.toggle('is-open', open);
+  handle.label.textContent = open ? '閉じる' : '赤ペン';
+  handle.el.title = open ? '赤ペンのパネルを閉じる' : handle.el.dataset.title ?? '';
+  if (open && panel?.parentElement) panel.parentElement.append(handle.el);
+  else mountIn(handle.el);
+}
+
+const PEN_ICON =
+  '<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M11.5 2.5l2 2L6 12l-3 1 1-3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>';
+
+// ページを開くたびに index.ts が呼ぶ。赤ペンが0件でも出す（開くと使い方の説明が出る）
+export function mountHandle(count: number, openList: () => void) {
+  if (!handle) {
+    const el = h('button', { type: 'button', className: 'redpen-ui redpen-handle' });
+    el.setAttribute('aria-controls', 'redpen-panel');
+    const icon = h('span', { className: 'redpen-handle-icon', innerHTML: PEN_ICON });
+    const countEl = h('span', { className: 'redpen-handle-count' });
+    const label = h('span', { className: 'redpen-handle-label' });
+    el.append(icon, countEl, label);
+    el.addEventListener('click', () => (isOpen() ? closePanel() : handle?.openList()));
+    el.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && isOpen()) closePanel();
+    });
+    handle = { el, count: countEl, label, openList };
+  }
+  handle.openList = openList;
+  setHandleCount(count);
+  syncHandle();
+}
+
+export function setHandleCount(count: number) {
+  if (!handle) return;
+  handle.count.textContent = String(count);
+  handle.count.classList.toggle('is-empty', count === 0);
+  handle.el.dataset.title = `このページの赤ペン（${count}）`;
+  handle.el.setAttribute('aria-label', `このページの赤ペン（${count}件）`);
+  if (!isOpen()) handle.el.title = handle.el.dataset.title;
+}
 
 // 一覧への入口はスレッドのヘッダーにだけ置く。一覧を開いているときは見出しがその役をする
 function frame(head: { title: string; list?: { count: number; open(): void } }, ...body: (Node | false)[]) {
-  panel ??= h('aside', { className: 'redpen-ui redpen-panel', ariaLabel: '赤ペン' });
+  if (!panel) {
+    panel = h('aside', { className: 'redpen-ui redpen-panel', ariaLabel: '赤ペン', id: 'redpen-panel' });
+    // Esc で閉じて、取っ手にフォーカスを戻す
+    panel.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape') return;
+      event.stopPropagation();
+      closePanel();
+      handle?.el.focus();
+    });
+  }
   const close = h('button', { type: 'button', className: 'redpen-close', ariaLabel: '閉じる', textContent: '×' });
   close.addEventListener('click', closePanel);
   const title = h('h2', { className: 'redpen-panel-title', textContent: head.title });
@@ -30,17 +93,29 @@ function frame(head: { title: string; list?: { count: number; open(): void } }, 
     top = [h('header', { className: 'redpen-panel-head' }, list, close), title];
   }
   panel.replaceChildren(...top, ...body.filter((node): node is Node => node !== false));
+  clearTimeout(closing);
+  panel.classList.remove('is-closing');
   mountIn(panel);
   panel.hidden = false;
+  syncHandle();
   return panel;
 }
 
+// 出てきたところへ引っ込めてから隠す
 export function closePanel() {
-  if (panel) panel.hidden = true;
+  if (!panel || panel.hidden) return syncHandle();
+  panel.classList.add('is-closing');
+  const el = panel;
+  clearTimeout(closing);
+  closing = window.setTimeout(() => {
+    el.hidden = true;
+    el.classList.remove('is-closing');
+  }, SLIDE_MS);
+  syncHandle();
 }
 
 export function openedPenId() {
-  return panel && !panel.hidden ? panel.dataset.pen : undefined;
+  return isOpen() ? panel?.dataset.pen : undefined;
 }
 
 export function openThread(
@@ -101,7 +176,7 @@ export function openThread(
   if (ai && !pending) input.focus({ preventScroll: true });
 }
 
-export function openList(pens: RedPen[], found: (pen: RedPen) => boolean, actions: ListActions) {
+export function openList(pens: RedPen[], found: (pen: RedPen) => boolean, ai: boolean, actions: ListActions) {
   const items = [...pens]
     .sort((a, b) => b.createdAt.localeCompare(a.createdAt))
     .map((pen) => {
@@ -123,7 +198,12 @@ export function openList(pens: RedPen[], found: (pen: RedPen) => boolean, action
     { title: `このページの赤ペン（${pens.length}）` },
     items.length
       ? h('ul', { className: 'redpen-list' }, ...items)
-      : h('p', { className: 'redpen-local', textContent: '文字を選ぶと赤ペンを引ける。' }),
+      : h('p', {
+          className: 'redpen-empty',
+          textContent: ai
+            ? '記事の文字をドラッグして選ぶと、そこに赤ペンを残して AI に聞ける。残した赤ペンはここに並ぶ。'
+            : '記事の文字をドラッグして選ぶと、そこに赤ペンを残せる。残した赤ペンはここに並ぶ。',
+        }),
   );
   el.dataset.pen = '';
 }

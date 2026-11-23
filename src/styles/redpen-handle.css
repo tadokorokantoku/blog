@@ -1,0 +1,218 @@
+/* 赤ペンのパネルの取っ手と、パネルの出入り。
+   閉じている間は画面右端から 8px だけのぞくつまみ。触れるとせり出して中身が見え、
+   開いている間はパネルの左の縁に付いた「閉じる」取っ手になる。狭い画面では下端の小さなタブにする */
+
+.redpen-handle {
+  --peek: 8px;
+  --slide: 180ms;
+  position: fixed;
+  top: 50%;
+  right: 0;
+  z-index: 26;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.625rem 0.375rem 0.625rem 0.5rem;
+  border: 1px solid var(--border);
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: var(--bg);
+  color: var(--muted);
+  box-shadow: -2px 0 10px rgb(0 0 0 / 0.06);
+  font-size: 0.75rem;
+  line-height: 1;
+  cursor: pointer;
+  transform: translate(calc(100% - var(--peek)), -50%);
+  transition:
+    transform var(--slide) ease,
+    right var(--slide) ease,
+    color 0.15s;
+}
+
+/* のぞいている 8px の中に見える目印。赤ペンの色を薄く */
+.redpen-handle::before {
+  position: absolute;
+  top: 50%;
+  left: 2px;
+  width: 3px;
+  height: 1.75rem;
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--redpen) 55%, transparent);
+  content: '';
+  transform: translateY(-50%);
+  transition: opacity 0.15s;
+}
+
+.redpen-handle:hover,
+.redpen-handle:focus-visible,
+.redpen-handle.is-open {
+  color: var(--fg);
+  transform: translate(0, -50%);
+}
+
+.redpen-handle:hover::before,
+.redpen-handle:focus-visible::before,
+.redpen-handle.is-open::before {
+  opacity: 0;
+}
+
+.redpen-handle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* 開いている間は、パネルの左の縁に付ける */
+.redpen-handle.is-open {
+  right: calc(1rem + min(24rem, 100vw - 2rem));
+  border-right: 1px solid var(--border);
+  border-radius: 8px 0 0 8px;
+  box-shadow: none;
+}
+
+.redpen-handle-icon {
+  display: flex;
+  color: var(--redpen);
+}
+
+.redpen-handle-count {
+  min-width: 1.125rem;
+  padding: 0.125rem 0.25rem;
+  border-radius: 999px;
+  background: var(--redpen);
+  color: #fff;
+  font-size: 0.6875rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  text-align: center;
+}
+
+.redpen-handle-count.is-empty,
+.redpen-handle.is-open .redpen-handle-count {
+  background: none;
+  box-shadow: inset 0 0 0 1px var(--border);
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.redpen-handle.is-open .redpen-handle-count {
+  display: none;
+}
+
+.redpen-handle-label {
+  writing-mode: vertical-rl;
+  letter-spacing: 0.12em;
+}
+
+/* パネルは取っ手と同じ向きから引き出し、同じ向きへ引っ込める */
+@keyframes redpen-panel-in {
+  from {
+    transform: translateX(calc(100% + 1rem));
+  }
+}
+
+@keyframes redpen-panel-out {
+  to {
+    transform: translateX(calc(100% + 1rem));
+  }
+}
+
+.redpen-panel:not([hidden]) {
+  animation: redpen-panel-in 180ms ease-out;
+}
+
+.redpen-panel.is-closing {
+  animation: redpen-panel-out 180ms ease-in forwards;
+}
+
+/* 狭い画面: 右端の取っ手は本文の操作の邪魔になりやすいので、下端の右寄りに小さなタブを置き、シートは下から出す */
+@media (max-width: 40rem) {
+  .redpen-handle {
+    --peek: 0px;
+    top: auto;
+    right: 0.75rem;
+    bottom: 0;
+    flex-direction: row;
+    gap: 0.25rem;
+    padding: 0.375rem 0.5rem 0.25rem;
+    border: 1px solid var(--border);
+    border-bottom: 0;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 -2px 10px rgb(0 0 0 / 0.06);
+    transform: none;
+    transition:
+      bottom var(--slide) ease,
+      color 0.15s;
+  }
+
+  .redpen-handle:hover,
+  .redpen-handle:focus-visible,
+  .redpen-handle.is-open {
+    transform: none;
+  }
+
+  /* 下端のタブではつまみの線を横にする */
+  .redpen-handle::before {
+    top: 2px;
+    left: 50%;
+    width: 1.5rem;
+    height: 3px;
+    transform: translateX(-50%);
+  }
+
+  .redpen-handle:hover::before,
+  .redpen-handle.is-open::before {
+    opacity: 1;
+  }
+
+  .redpen-handle-label {
+    writing-mode: horizontal-tb;
+    letter-spacing: 0;
+  }
+
+  /* 開いている間はシートの上端に付ける */
+  .redpen-handle.is-open {
+    right: 1.25rem;
+    bottom: calc(60vh + 0.5rem);
+    border-right: 1px solid var(--border);
+    border-radius: 8px 8px 0 0;
+  }
+
+  @keyframes redpen-sheet-in {
+    from {
+      transform: translateY(calc(100% + 0.5rem));
+    }
+  }
+
+  @keyframes redpen-sheet-out {
+    to {
+      transform: translateY(calc(100% + 0.5rem));
+    }
+  }
+
+  .redpen-panel:not([hidden]) {
+    animation-name: redpen-sheet-in;
+  }
+
+  .redpen-panel.is-closing {
+    animation-name: redpen-sheet-out;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .redpen-handle {
+    transition: none;
+  }
+
+  .redpen-panel:not([hidden]),
+  .redpen-panel.is-closing {
+    animation: none;
+  }
+}
+
+.redpen-empty {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  line-height: 1.7;
+}

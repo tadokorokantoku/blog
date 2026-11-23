@@ -138,7 +138,8 @@
     right: 0.5rem;
     bottom: 0.5rem;
     width: auto;
-    max-height: 60vh;
+    /* 取っ手をシートの上端に付けるので、高さを決めておく */
+    height: 60vh;
   }
 }
 

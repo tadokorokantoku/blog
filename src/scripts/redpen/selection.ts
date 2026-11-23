@@ -12,15 +12,12 @@ interface Options {
   ai: boolean;
   // question が undefined なら赤ペンだけ。空文字は「これは何？」として聞く
   pick(picked: Picked, question: string | undefined): void;
-  // このページの赤ペンの数。1つ以上あれば吹き出しの隅から一覧を開ける
-  count(): number;
-  openList(): void;
 }
 
 // ページを開くたびに index.ts が渡し直す。赤ペンを使わないページでは undefined
 let options: Options | undefined;
 let selected: Picked | undefined;
-let bubble: { el: HTMLElement; input?: HTMLTextAreaElement; list: HTMLButtonElement } | undefined;
+let bubble: { el: HTMLElement; input?: HTMLTextAreaElement } | undefined;
 let pointerDown = false;
 let timer: number | undefined;
 
@@ -52,18 +49,14 @@ function choose(question: string | undefined) {
 }
 
 function build(ai: boolean) {
-  const list = h('button', { type: 'button', className: 'redpen-bubble-list' });
-  list.addEventListener('click', () => {
-    hidePopover();
-    options?.openList();
-  });
   const penOnly = h('button', { type: 'button', className: 'redpen-bubble-pen', textContent: '赤ペンだけ残す' });
   penOnly.addEventListener('click', () => choose(undefined));
-  const foot = h('div', { className: 'redpen-bubble-foot' }, penOnly, list);
+  // 一覧への入口は画面端の取っ手が持つので、吹き出しには置かない
+  const foot = h('div', { className: 'redpen-bubble-foot' }, penOnly);
 
   if (!ai) {
     const note = h('p', { className: 'redpen-local', textContent: 'AI に聞くのはローカルの開発サーバー（pnpm dev）でだけ使える。' });
-    return { el: h('div', { className: 'redpen-ui redpen-bubble' }, note, foot), list };
+    return { el: h('div', { className: 'redpen-ui redpen-bubble' }, note, foot) };
   }
 
   const input = h('textarea', { className: 'redpen-input', rows: 2, placeholder: '質問（空なら「これは何？」）' });
@@ -86,7 +79,7 @@ function build(ai: boolean) {
     event.preventDefault();
     event.clipboardData?.setData('text/plain', selected.range.toString());
   });
-  return { el: h('div', { className: 'redpen-ui redpen-bubble' }, form, foot), input, list };
+  return { el: h('div', { className: 'redpen-ui redpen-bubble' }, form, foot), input };
 }
 
 // 選択の最後の行の下に出し、三角は選択の真ん中を指す。下に入らなければ選択の上に出す
@@ -109,9 +102,6 @@ function place() {
 
 function show(range: Range, ai: boolean, focus: boolean) {
   bubble ??= build(ai);
-  const count = options?.count() ?? 0;
-  bubble.list.hidden = count === 0;
-  bubble.list.textContent = `このページの赤ペン（${count}）`;
   if (bubble.input) bubble.input.value = '';
   mountIn(bubble.el);
   bubble.el.hidden = false;

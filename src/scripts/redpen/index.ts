@@ -1,7 +1,7 @@
 // 赤ペン。記事の文字を選ぶと吹き出しが出て、質問するか赤ペンだけ残せる。選んだところに赤い線が残る。
 // 線は CSS Custom Highlight API で引く。本文の DOM を書き換えないので、カードのリンクや行数の切り詰めを壊さない
 import { anchorOf, locate, ROOT } from './anchor';
-import { closePanel, openedPenId, openList, openThread } from './panel';
+import { closePanel, mountHandle, openedPenId, openList, openThread, setHandleCount } from './panel';
 import { hidePopover, watchSelection, type Picked } from './selection';
 import { getPen, pageKey, pensOnPage, removePen, savePen, type RedPen } from './store';
 
@@ -24,6 +24,7 @@ function paint() {
     const range = locate(rootsFor(pen.article.url), pen);
     if (range) ranges.set(pen.id, range);
   }
+  setHandleCount(pensOnPage().length);
   if (!('highlights' in CSS)) return;
   const active = ranges.get(openedPenId() ?? '');
   CSS.highlights.set('redpen', new Highlight(...ranges.values()));
@@ -108,7 +109,7 @@ function reveal(pen: RedPen) {
 }
 
 function openListPanel() {
-  openList(pensOnPage(), (pen) => ranges.has(pen.id), { open: reveal });
+  openList(pensOnPage(), (pen) => ranges.has(pen.id), ai, { open: reveal });
 }
 
 // capture で先に受けて、カードのリンクやモーダルを開く処理より前に止める
@@ -163,7 +164,8 @@ function init() {
   if (config.dataset.ready) return;
   config.dataset.ready = 'true';
   ai = config.dataset.ai === 'local';
-  watchSelection({ ai, pick: create, count: () => pensOnPage().length, openList: openListPanel });
+  watchSelection({ ai, pick: create });
+  mountHandle(pensOnPage().length, openListPanel);
   paint();
 }
 
