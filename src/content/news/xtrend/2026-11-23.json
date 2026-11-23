@@ -1,6 +1,6 @@
 {
   "category": "xtrend",
-  "collectedAt": "2026-11-23T06:53",
+  "collectedAt": "2026-11-23T18:22",
   "items": [
     {
       "title": "OpenAIのPachocki氏、「Perplexity and Intelligence」で事前学習の進捗を公開",
@@ -71,6 +71,69 @@
       "source": "X, @azu_re",
       "summary": "この2週間ほどの改善で、textlintと主要なルールを組み合わせたときの実行時間が1/10ほどになったと、作者のazu氏が書いています。",
       "publishedAt": "2026-11-22T12:10:02.000Z"
+    },
+    {
+      "title": "Theo氏、GeminiサブスクはAntigravity経由のみ利用可と整理。T3 CodeはOK",
+      "url": "https://x.com/theo/status/2124665075638411641",
+      "source": "X, @theo",
+      "summary": "GeminiのサブスクはAntigravity内でのみ使え、T3 CodeはAntigravityのバイナリ経由なので利用可、Piなど他のハーネスは不可と説明。Google側のエンジニアも同趣旨の説明をしていると話題になっている。",
+      "publishedAt": "2026-11-23T00:43:23.000Z"
+    },
+    {
+      "title": "FactoryでProcedural Tool Calling（コードモード）を試し、トークン消費を約1/10に",
+      "url": "https://x.com/dexhorthy/status/2124624191563698426",
+      "source": "X, @dexhorthy",
+      "summary": "毎日のLinear整理タスクが245kトークン→23kトークン、7分→36秒になったと報告。ツール呼び出しをコードとしてまとめる手法の効果例。",
+      "publishedAt": "2026-11-22T22:00:55.000Z"
+    },
+    {
+      "title": "Devin CLI / Desktopにステルスモデル「Pudding」が登場",
+      "url": "https://x.com/kinopee_ai/status/2124682546680373588",
+      "source": "X, @kinopee_ai",
+      "summary": "価格は入力$0.59／出力$2.96で、Claude Sonnet 5.5（$2／$10）の3分の1以下。低コストながらエージェント的なコーディングの手応えは良いとしている。",
+      "publishedAt": "2026-11-23T01:52:48.000Z"
+    },
+    {
+      "title": "Playwrightをフォークした高速E2Eフレームワーク「flashwright」",
+      "url": "https://x.com/azu_re/status/2124761961162559905",
+      "source": "X, @azu_re",
+      "summary": "npmエイリアスで@playwright/testをflashwright-testに差し替えて既存APIのまま使える。ブラウザコンテキストの再利用や待機処理の変更でテスト実行を高速化している。",
+      "publishedAt": "2026-11-23T07:08:22.000Z"
+    },
+    {
+      "title": "Search ConsoleのCSVをClaudeに読ませてSEOの改善点を洗い出す",
+      "url": "https://x.com/tak_dcxi/status/2124750635602239786",
+      "source": "X, @tak_dcxi",
+      "summary": "過去12か月のレポートをCSVでエクスポートし、「表示されているのに対応コンテンツがない検索クエリ」を調べさせると改善案が出るという使い方の紹介。",
+      "publishedAt": "2026-11-23T06:23:22.000Z"
+    },
+    {
+      "title": "Z.ai、GLM-5.4をGLM Coding Planの全ユーザーに提供開始",
+      "url": "https://x.com/ZixuanLi_/status/2124719275864670681",
+      "source": "X, @ZixuanLi_",
+      "summary": "画像認識の追加とコーディング性能の全般的な向上をうたい、週単位の枠のユーザーはGLM-5.3比で50%多い利用枠になる。使った人からは計画立案やオーケストレーションは強い一方、フロントエンドは弱いとの声も出ている。",
+      "publishedAt": "2026-11-23T04:18:45.000Z"
+    },
+    {
+      "title": "Gemini Webに「Helium」の名が出現、次のGemini 4モデルではとの見方",
+      "url": "https://x.com/lyraxana/status/2124742605015535659",
+      "source": "X, @lyraxana",
+      "summary": "Gemini Webに「Helium」というサブスク区分が追加され、以前の動画で次期モデル名として示唆されていた名前と一致すると指摘。Hydrogen・Neonに続くモデルとされているが、Googleの正式発表ではない。",
+      "publishedAt": "2026-11-23T05:51:27.000Z"
+    },
+    {
+      "title": "macOSカーネルをLinuxのカーネルモジュールとして動かす「xnulinux」",
+      "url": "https://x.com/sysxplore/status/2124758461028192269",
+      "source": "X, @sysxplore",
+      "summary": "Apple公開のXNUソースをビルドしてxnu.koとしてarm64 Ubuntuに読み込み、ハイパーバイザーなしでFinderやSafariを動かすプロジェクト。現状はApple Silicon Mac上のarm64 Linux VMと自前のmacOS 27が必要とされている。",
+      "publishedAt": "2026-11-23T06:54:27.000Z"
+    },
+    {
+      "title": "Thinking Machines LabのInkling 2 Mini、ローカルで動く軽量モデルとして話題に",
+      "url": "https://x.com/AlexFinn/status/2124747542566977889",
+      "source": "X, @AlexFinn",
+      "summary": "26.4Bパラメータで16GB以上のメモリの端末で動くとされ、MacBook Proで常時コーディングに使っているという投稿が拡散。性能評価は投稿者個人の体感ベース。",
+      "publishedAt": "2026-11-23T06:11:04.000Z"
     }
   ]
 }
