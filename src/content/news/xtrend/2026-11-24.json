@@ -1,0 +1,62 @@
+{
+  "category": "xtrend",
+  "collectedAt": "2026-11-24T07:10",
+  "items": [
+    {
+      "title": "Claude Ship（ベータ）登場、PRのレビューから修正・承認まで",
+      "url": "https://x.com/ClaudeDevs/status/2124959436640858475",
+      "source": "X, @ClaudeDevs",
+      "summary": "Claudeがプルリクエストをレビューして修正に取り組み、チームのポリシーで許可された範囲では承認までできる。コードを書く速さに合わせてリリースできるよう支援するのが狙い。Boris Cherny氏はTeamとEnterprise向けのベータだと説明している。",
+      "publishedAt": "2026-11-23T11:13:00Z"
+    },
+    {
+      "title": "Claudeのコネクターとスキルがプラグインに統合",
+      "url": "https://x.com/claudeai/status/2124970294523945328",
+      "source": "X, @claudeai",
+      "summary": "ツールの接続と新しいスキルの追加が、プラグインとして1つにまとまった。Free、Pro、Max、Ultraで利用でき、TeamとEnterpriseも近日対応予定とされている。",
+      "publishedAt": "2026-11-23T11:56:00Z"
+    },
+    {
+      "title": "Claude Codeデスクトップ版、サイドパネルを刷新",
+      "url": "https://x.com/ClaudeDevs/status/2124978802006851961",
+      "source": "X, @ClaudeDevs",
+      "summary": "ファイル、変更、ターミナルなどがセッションの横にタブとして開くようになった。複数を同時に表示したり、別ウィンドウに切り離したりもできる。",
+      "publishedAt": "2026-11-23T12:30:00Z"
+    },
+    {
+      "title": "OpenAI、AIエージェントがシステムを防御するLinuxランタイム「Shirudo」",
+      "url": "https://x.com/OpenAI/status/2124980590717911527",
+      "source": "X, @OpenAI",
+      "summary": "ダウンタイムなしでエージェントがシステムを守れるオープンソースのLinuxランタイム。エージェントが動的なeBPF制御を書いてエクスプロイトから守り、防御担当者はパッチのテストと適用に時間を割ける。Ciscoとの取り組み。",
+      "publishedAt": "2026-11-23T12:37:00Z"
+    },
+    {
+      "title": "OpenCode 2.4.0、スケジュールやMCPイベントで動く自動化を搭載",
+      "url": "https://x.com/opencode/status/2124886266835505473",
+      "source": "X, @opencode",
+      "summary": "エージェントが、スケジュール実行やMCPイベントに反応する自動化を作れるようになった。プロンプトやシェルコマンド、MCPツールにアクセスできるコードモードのスクリプトも起動できる。",
+      "publishedAt": "2026-11-23T06:22:00Z"
+    },
+    {
+      "title": "Zedの描画フレームワークGPUIが独立リポジトリに",
+      "url": "https://x.com/zeddotdev/status/2124963878152892798",
+      "source": "X, @zeddotdev",
+      "summary": "Zedが「GPUI is getting its own repository.」と発表した。詳細はポストの範囲では書かれていない。",
+      "publishedAt": "2026-11-23T11:30:00Z"
+    },
+    {
+      "title": "macOS用ウィンドウマネージャー「Spaceman」のデモ",
+      "url": "https://x.com/kitlangton/status/2124929281352671499",
+      "source": "X, @kitlangton",
+      "summary": "kitlangton氏が作っているmacOS向けのウィンドウマネージャー。短いデモ動画が公開され、いいねが約2,300集まった。",
+      "publishedAt": "2026-11-23T09:13:00Z"
+    },
+    {
+      "title": "CrowdStrike、Zscalerの買収で最終契約",
+      "url": "https://x.com/CrowdStrike/status/2124876468383822322",
+      "source": "X, @CrowdStrike",
+      "summary": "ゼロトラストの先駆者であるZscalerを買収する最終契約を結んだ。エンドポイントとネットワークの両方を押さえ、AIエージェントが動く場所を守るとしている。",
+      "publishedAt": "2026-11-23T05:43:00Z"
+    }
+  ]
+}
