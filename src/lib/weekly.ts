@@ -1,8 +1,7 @@
-import { existsSync } from 'node:fs';
-import { join } from 'node:path';
 import { getCollection } from 'astro:content';
 import { marked } from 'marked';
-import { NEWS_CATEGORIES, NEWS_CATEGORY_IDS } from '../consts';
+import videoWeeks from '../content/weekly-videos.json';
+import { MEDIA_ORIGIN, NEWS_CATEGORIES, NEWS_CATEGORY_IDS } from '../consts';
 import { getNewsArticles, getRankingSeries, jstDay, newsTag, type NewsArticle, type NewsCategory, type NewsTag } from './news';
 import { sliceTrend, trendWeekStats, type TrendSeries, type TrendWeekStats } from './trend';
 import { countWeek, timelineByTag, weekOf, weekRange, type WeekId } from './week';
@@ -42,7 +41,7 @@ export interface WeeklyVideoPage {
   // 隣の週。データの無い週は飛ばす。動画の有無は見ない
   prev?: WeekId;
   next?: WeekId;
-  // public/news/weekly/<id>.mp4 があるときだけ。ポスターは同じ名前の .jpg
+  // src/content/weekly-videos.json に載っている週だけ。動画もポスターも R2 にある
   video?: { src: string; poster: string };
 }
 
@@ -92,12 +91,11 @@ export async function getWeeklyDigest(id: WeekId): Promise<WeeklyDigest> {
   };
 }
 
-// 週のまとめ動画。ビルド時に public/ にあるかで決める
+// 週のまとめ動画。R2 の weekly/<id>.mp4 と weekly/<id>.jpg を、一覧に載っている週だけ出す
 function weeklyVideo(id: WeekId): WeeklyVideoPage['video'] {
-  const base = `/news/weekly/${id}`;
-  return existsSync(join(process.cwd(), 'public', `${base}.mp4`))
-    ? { src: `${base}.mp4`, poster: `${base}.jpg` }
-    : undefined;
+  if (!videoWeeks.includes(id)) return undefined;
+  const base = `${MEDIA_ORIGIN}/weekly/${id}`;
+  return { src: `${base}.mp4`, poster: `${base}.jpg` };
 }
 
 // /news/weekly/ に出す週。動画のある一番新しい週で、動画が1本も無ければ記事のある一番新しい週

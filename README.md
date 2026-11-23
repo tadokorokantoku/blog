@@ -171,12 +171,33 @@ AI が定期的に集めたニュースを `/news` に出す。収集するの�
 
 `/news/weekly/` が動画のある一番新しい週（動画が1本も無ければ記事のある一番新しい週）、`/news/weekly/<YYYY-Www>/` が各週。週は ISO 週（月曜始まり・日本時間）で、記事が1件でもある週にページができる。
 
-ページの中身は週のまとめ動画だけ。`public/news/weekly/<YYYY-Www>.mp4` と、ポスター画像の `public/news/weekly/<YYYY-Www>.jpg` を置くと、その週のページに出る（ビルド時にファイルがあるかで決める）。動画が無い週は「まだありません」と各カテゴリへのリンクだけになる。前の週 / 次の週は動画の有無に関係なく辿れる。Cloudflare Workers の静的アセットは1ファイル 25MiB までなので、動画もそれに収める。
+ページの中身は週のまとめ動画だけ。動画とポスター画像は R2 の `blog-media` バケットに `weekly/<YYYY-Www>.mp4` / `weekly/<YYYY-Www>.jpg` のキーで置き、`https://media.inok.dev/weekly/<YYYY-Www>.mp4` で配信する（R2 のカスタムドメインなので Range に対応し、シークできる）。どの週に動画があるかは `src/content/weekly-videos.json`（週の ID の配列）で決め、ビルドは R2 を見に行かない。動画が無い週は「まだありません」と各カテゴリへのリンクだけになる。前の週 / 次の週は動画の有無に関係なく辿れる。
+
+#### 来週以降の動画の足し方
+
+週のまとめ動画を作る bot（VideoMaker）が、このリポジトリのルートで次の4つを順にやれば出る。wrangler がこのアカウント（`blog-media` に書ける権限）でログイン済みであること。
 
 ```sh
-# ポスターは最初のスライドが出ている2秒目あたりの1コマ
-ffmpeg -ss 2 -i public/news/weekly/2026-W47.mp4 -frames:v 1 -q:v 3 public/news/weekly/2026-W47.jpg
+WEEK=2026-W48
+VIDEO=path/to/weekly-$WEEK.mp4   # 横長 16:9 の mp4（H.264 + AAC）
+
+# 1. ポスター画像。最初のスライドが出ている2秒目あたりの1コマ
+ffmpeg -y -ss 2 -i "$VIDEO" -frames:v 1 -q:v 3 "/tmp/$WEEK.jpg"
+
+# 2. R2 にアップロード。Content-Type を必ず付ける
+pnpm exec wrangler r2 object put "blog-media/weekly/$WEEK.mp4" --file "$VIDEO" --content-type video/mp4 --cache-control "public, max-age=86400" --remote
+pnpm exec wrangler r2 object put "blog-media/weekly/$WEEK.jpg" --file "/tmp/$WEEK.jpg" --content-type image/jpeg --cache-control "public, max-age=86400" --remote
+
+# 3. 一覧に足す（重複は入れない・並びは自由）
+node -e 'const f="src/content/weekly-videos.json",fs=require("fs"),w=process.argv[1],a=JSON.parse(fs.readFileSync(f));if(!a.includes(w))a.push(w);fs.writeFileSync(f,JSON.stringify(a.sort())+"\n")' "$WEEK"
+
+# 4. コミットして main に push すると Workers Builds が出し直す
+git add src/content/weekly-videos.json && git commit -m "$WEEK の週のまとめ動画を足す" && git push origin HEAD:main
 ```
+
+- 一覧に載せるのはアップロードが済んでから。先に載せると、その週のページが壊れた動画を出す
+- 同じ週の動画を差し替えるときは同じキーで上書きする。キャッシュが1日残るので、すぐ反映したいときは Cloudflare のダッシュボードで media.inok.dev のキャッシュを消す
+- その週に記事が1件も無いとページ自体ができないので、動画を置いても出ない
 
 以前の中身（件数・タグごとの出来事・GitHub トレンドの週の動き・下の JSON の文章）は `src/components/WeeklyDigest.astro` と `getWeeklyDigest` に残してあるが、今はどのページからも使っていない。文章の部分（今週の要点と注目トピック）は `src/content/news-weekly/<YYYY-Www>.json` に書く。
 

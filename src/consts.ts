@@ -1,6 +1,9 @@
 export const SITE_TITLE = 'blog';
 export const SITE_DESCRIPTION = '個人ブログ';
 
+// 週のまとめ動画などの置き場。R2 の blog-media バケットをこのドメインで公開している（Range に対応）
+export const MEDIA_ORIGIN = 'https://media.inok.dev';
+
 // list は menthas 風の行、ranking は順位表、summary は見出しだけ並べてクリックでモーダル
 export type NewsLayout = 'list' | 'ranking' | 'summary';
 
