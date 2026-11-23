@@ -38,20 +38,23 @@ function readNewsDays(newsDir) {
   );
 }
 
-// Per category, the distinct URLs dated inside the week (like countWeek): a
-// repo on GitHub trending all seven days counts once. For githubtrend only
-// ranked entries count.
+// Per category, the items dated inside the week (by publishedAt, else the
+// collection time). GitHub trending lists the same repo day after day, so it
+// counts distinct ranked repos. Elsewhere one URL can carry several items (a
+// release split into its features and its breaking changes, an incident and
+// its fix), so an item is its URL and title together.
 function countCategories(days, from, to) {
-  const urls = {};
+  const keys = {};
   for (const { category, collectedAt, items } of days) {
     for (const item of items) {
       if (category === 'githubtrend' && item.rank == null) continue;
       const day = jstDay(item.publishedAt ?? collectedAt);
       if (day < from || day > to) continue;
-      (urls[category] ??= new Set()).add(item.url);
+      const key = category === 'githubtrend' ? item.url : `${item.url}\n${item.title}`;
+      (keys[category] ??= new Set()).add(key);
     }
   }
-  return Object.fromEntries(Object.entries(urls).map(([category, set]) => [category, set.size]));
+  return Object.fromEntries(Object.entries(keys).map(([category, set]) => [category, set.size]));
 }
 
 // Each trending repo's rank on each day of the week (null when unranked).

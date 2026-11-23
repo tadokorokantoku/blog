@@ -10,7 +10,7 @@ pnpm weekly-video 2026-W47 --out /tmp/w47
 
 ## 流れ
 
-1. `src/content/news` からその週（ISO 週、月曜始まり、日本時間）の件数と GitHub トレンドの順位を数える。件数はカテゴリごとのユニークな URL の数で、GitHub トレンドは週内にランク入りしたリポジトリの数。
+1. `src/content/news` からその週（ISO 週、月曜始まり、日本時間）の件数と GitHub トレンドの順位を数える。件数は公開日（無ければ収集日時）がその週に入る記事の数。同じ URL でも見出しが違えば別の記事として数える（リリースの新機能と破壊的変更、障害の発生と解消など）。GitHub トレンドは同じリポジトリが毎日載るので、週内にランク入りしたリポジトリの数。
 2. 台本 `weeks/<YYYY-Www>.json` を読む。無ければ雛形を書いて止まる。雛形は数字の場面と最初・最後の場面が埋まっていて、トピックは `TODO`。`src/content/news-weekly/<週>.json` があれば、トピックの題と `hints`（その週の要点）が入る。`TODO` が残っているあいだは動画を作らない。
 3. AivisSpeech Engine（morioki / ノーマル、速度 0.92）でナレーションを作る。エンジンは `~/tts-local/aivis/macOS-arm64/run`（`AIVIS_ENGINE` で変えられる）を自動で起動し、終わったら止める。
 4. `page/*.js` の Canvas をヘッドレス Chrome で実時間で録画し、ffmpeg で音声と合わせてつなぐ。途中のファイルは `.cache/<週>/` に置く（コミットしない）。
