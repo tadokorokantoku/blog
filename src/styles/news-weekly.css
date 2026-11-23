@@ -213,3 +213,31 @@
   line-clamp: 2;
   overflow: hidden;
 }
+
+/* 動画は横幅いっぱいの 16:9。読み込み前もポスターの高さを確保しておく */
+.weekly-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin-top: 1.5rem;
+  border-radius: 8px;
+  background: #000;
+}
+
+.weekly-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.875rem;
+}
+
+.weekly-categories a {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  text-decoration: none;
+}

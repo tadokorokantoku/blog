@@ -1,25 +1,22 @@
 ---
 import '../../../styles/news.css';
 import NewsTabs from '../../../components/NewsTabs.astro';
-import WeeklyDigest from '../../../components/WeeklyDigest.astro';
-import RedPen from '../../../components/RedPen.astro';
+import WeeklyVideo from '../../../components/WeeklyVideo.astro';
 import Base from '../../../layouts/Base.astro';
-import { getNewsWeeks, getWeeklyDigest, type WeekId } from '../../../lib/weekly';
+import { getNewsWeeks, getWeeklyVideoPage, type WeekId } from '../../../lib/weekly';
 
 export async function getStaticPaths() {
   return (await getNewsWeeks()).map((week) => ({ params: { week } }));
 }
 
 const week = Astro.params.week as WeekId;
-const weeks = await getNewsWeeks();
-const digest = await getWeeklyDigest(week);
+const page = await getWeeklyVideoPage(week);
 ---
 
-<Base wide title={`news / ${week} の週`} description={`AI が集めたニュースの ${week} の週のまとめ`}>
+<Base wide title={`news / ${week} の週`} description={`AI が集めたニュースの ${week} の週のまとめ動画`}>
   <Fragment slot="masthead">
     <h1 class="news-heading">news</h1>
     <NewsTabs active="weekly" />
   </Fragment>
-  <WeeklyDigest digest={digest} weeks={weeks} />
-  <RedPen />
+  <WeeklyVideo page={page} />
 </Base>

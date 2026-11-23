@@ -169,9 +169,16 @@ AI が定期的に集めたニュースを `/news` に出す。収集するの�
 
 ### 週のまとめ（試作）
 
-`/news/weekly/` が最新の週、`/news/weekly/<YYYY-Www>/` が各週。週は ISO 週（月曜始まり・日本時間）。件数・タグごとの出来事・GitHub トレンドの週の動きはニュースの JSON から自動で出す。
+`/news/weekly/` が最新の週、`/news/weekly/<YYYY-Www>/` が各週。週は ISO 週（月曜始まり・日本時間）で、記事が1件でもある週にページができる。
 
-文章の部分（今週の要点と注目トピック）だけは `src/content/news-weekly/<YYYY-Www>.json` に書く。ファイルが無い週は自動集計だけになる。
+ページの中身は週のまとめ動画だけ。`public/news/weekly/<YYYY-Www>.mp4` と、ポスター画像の `public/news/weekly/<YYYY-Www>.jpg` を置くと、その週のページに出る（ビルド時にファイルがあるかで決める）。動画が無い週は「まだありません」と各カテゴリへのリンクだけになる。前の週 / 次の週は動画の有無に関係なく辿れる。Cloudflare Workers の静的アセットは1ファイル 25MiB までなので、動画もそれに収める。
+
+```sh
+# ポスターは最初のスライドが出ている2秒目あたりの1コマ
+ffmpeg -ss 2 -i public/news/weekly/2026-W47.mp4 -frames:v 1 -q:v 3 public/news/weekly/2026-W47.jpg
+```
+
+以前の中身（件数・タグごとの出来事・GitHub トレンドの週の動き・下の JSON の文章）は `src/components/WeeklyDigest.astro` と `getWeeklyDigest` に残してあるが、今はどのページからも使っていない。文章の部分（今週の要点と注目トピック）は `src/content/news-weekly/<YYYY-Www>.json` に書く。
 
 ```jsonc
 {

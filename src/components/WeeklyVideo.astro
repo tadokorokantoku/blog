@@ -1,0 +1,46 @@
+---
+import '../styles/news-weekly.css';
+import { newsCategoryList } from '../lib/news';
+import type { WeeklyVideoPage } from '../lib/weekly';
+
+interface Props {
+  page: WeeklyVideoPage;
+}
+
+const { page } = Astro.props;
+const { id, video } = page;
+
+const DAY = new Intl.DateTimeFormat('ja-JP', { month: 'numeric', day: 'numeric', weekday: 'short', timeZone: 'UTC' });
+const day = (value: string) => DAY.format(new Date(`${value}T00:00:00Z`));
+const href = (week: string) => `/news/weekly/${week}/`;
+---
+
+<header class="weekly-head">
+  <div>
+    <h2 class="weekly-title">{id} の週</h2>
+    <p class="weekly-note">{day(page.from)}〜{day(page.to)}（ISO 週・月曜始まり・日本時間）</p>
+  </div>
+  <nav class="weekly-pager" aria-label="週の移動">
+    {page.prev ? <a href={href(page.prev)}>← 前の週</a> : <span />}
+    {page.next && <a href={href(page.next)}>次の週 →</a>}
+  </nav>
+</header>
+
+{
+  video ? (
+    <video class="weekly-video" src={video.src} poster={video.poster} controls preload="metadata" playsinline>
+      <a href={video.src}>動画をダウンロードする</a>
+    </video>
+  ) : (
+    <section class="weekly-section">
+      <p class="news-empty">この週の動画はまだありません。この週のニュースは各カテゴリから。</p>
+      <ul class="weekly-categories">
+        {newsCategoryList().map(({ id: category, label }) => (
+          <li>
+            <a href={`/news/${category}/`}>{label}</a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}

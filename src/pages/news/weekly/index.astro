@@ -1,21 +1,19 @@
 ---
 import '../../../styles/news.css';
 import NewsTabs from '../../../components/NewsTabs.astro';
-import WeeklyDigest from '../../../components/WeeklyDigest.astro';
-import RedPen from '../../../components/RedPen.astro';
+import WeeklyVideo from '../../../components/WeeklyVideo.astro';
 import Base from '../../../layouts/Base.astro';
-import { getNewsWeeks, getWeeklyDigest } from '../../../lib/weekly';
+import { getNewsWeeks, getWeeklyVideoPage } from '../../../lib/weekly';
 
 // 最新の週を出す。中身は /news/weekly/<その週>/ と同じ
 const weeks = await getNewsWeeks();
-const digest = weeks[0] && (await getWeeklyDigest(weeks[0]));
+const page = weeks[0] && (await getWeeklyVideoPage(weeks[0]));
 ---
 
-<Base wide title="news / 週のまとめ" description="AI が集めたニュースの週のまとめ">
+<Base wide title="news / 週のまとめ" description="AI が集めたニュースの週のまとめ動画">
   <Fragment slot="masthead">
     <h1 class="news-heading">news</h1>
     <NewsTabs active="weekly" />
   </Fragment>
-  {digest ? <WeeklyDigest digest={digest} weeks={weeks} /> : <p class="news-empty">まだ何も集まっていない。</p>}
-  <RedPen />
+  {page ? <WeeklyVideo page={page} /> : <p class="news-empty">まだ何も集まっていない。</p>}
 </Base>

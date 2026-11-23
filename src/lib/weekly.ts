@@ -1,3 +1,5 @@
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
 import { getCollection } from 'astro:content';
 import { marked } from 'marked';
 import { NEWS_CATEGORIES, NEWS_CATEGORY_IDS } from '../consts';
@@ -32,6 +34,17 @@ export interface WeeklyDigest {
 // 順位の推移を持つのは ranking レイアウトのカテゴリ（今は githubtrend だけ）
 const RANKING = NEWS_CATEGORY_IDS.find((id) => NEWS_CATEGORIES[id].layout === 'ranking');
 const TIMELINE = new Set(NEWS_CATEGORY_IDS.filter((id) => NEWS_CATEGORIES[id].layout === 'summary'));
+
+export interface WeeklyVideoPage {
+  id: WeekId;
+  from: string;
+  to: string;
+  // 隣の週。データの無い週は飛ばす。動画の有無は見ない
+  prev?: WeekId;
+  next?: WeekId;
+  // public/news/weekly/<id>.mp4 があるときだけ。ポスターは同じ名前の .jpg
+  video?: { src: string; poster: string };
+}
 
 // 記事が1件でもある週。新しい順
 export async function getNewsWeeks(): Promise<WeekId[]> {
@@ -76,5 +89,21 @@ export async function getWeeklyDigest(id: WeekId): Promise<WeeklyDigest> {
         links,
       })),
     },
+  };
+}
+
+// 週のまとめ動画のページ。動画はビルド時に public/ にあるかで決める
+export async function getWeeklyVideoPage(id: WeekId): Promise<WeeklyVideoPage> {
+  const weeks = await getNewsWeeks();
+  const index = weeks.indexOf(id);
+  const base = `/news/weekly/${id}`;
+  return {
+    id,
+    ...weekRange(id),
+    prev: weeks[index + 1],
+    next: index > 0 ? weeks[index - 1] : undefined,
+    video: existsSync(join(process.cwd(), 'public', `${base}.mp4`))
+      ? { src: `${base}.mp4`, poster: `${base}.jpg` }
+      : undefined,
   };
 }
