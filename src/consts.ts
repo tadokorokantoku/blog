@@ -4,6 +4,8 @@ export const SITE_DESCRIPTION = '個人ブログ';
 // list は menthas 風の行、ranking は順位表、summary は見出しだけ並べてクリックでモーダル
 export type NewsLayout = 'list' | 'ranking' | 'summary';
 
+// snapshot は「その日の上位」を毎日撮り直すカテゴリ。日をまたいで混ぜず、最新の収集日の分だけを順位順に出す
+
 // ニュースのカテゴリはここだけで定義する。Zod の enum・タブ・ページ生成・表示の出し分けが全部これを読む
 // （public/admin/config.yml の select は YAML なので手で揃える）
 export const NEWS_CATEGORIES = {
@@ -11,7 +13,8 @@ export const NEWS_CATEGORIES = {
   githubtrend: { label: 'GitHub トレンド', layout: 'ranking' },
   'coding-agent': { label: 'CodingAgent', layout: 'summary' },
   ade: { label: 'ADE', layout: 'summary' },
-} as const satisfies Record<string, { label: string; layout: NewsLayout }>;
+  hackernews: { label: 'Hacker News', layout: 'summary', snapshot: true },
+} as const satisfies Record<string, { label: string; layout: NewsLayout; snapshot?: true }>;
 
 export type NewsCategory = keyof typeof NEWS_CATEGORIES;
 

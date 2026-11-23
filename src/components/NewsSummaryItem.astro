@@ -9,7 +9,12 @@ interface Props {
 
 const { article } = Astro.props;
 const { title, url, source, tag, summary, image, categoryLabel, detailHtml, date } = article;
+const { rank, originalTitle, points, comments, commentsUrl } = article;
 const tagInfo = tag && newsTag(tag);
+// HN の投稿はメタ行を「ポイント・コメント数・ドメイン」にする。source にはドメインが入っている
+const hn = points !== undefined;
+// Ask HN のようにリンク先が無い投稿は url がコメントページなので、元記事のボタンは出さない
+const external = url !== commentsUrl;
 ---
 
 <li
@@ -31,10 +36,24 @@ const tagInfo = tag && newsTag(tag);
   >
     {image && <img class="news-thumb" src={image} alt="" loading="lazy" decoding="async" />}
     <div class="news-body">
-      <h2 class="news-title">{title}</h2>
+      <h2 class="news-title">
+        {rank !== undefined && <span class="news-rank">{rank}.</span>}
+        {title}
+      </h2>
+      {originalTitle && <p class="news-original" lang="en">{originalTitle}</p>}
       <p class="news-from">
         <span class="news-today" hidden>Today</span>
-        <span>from: {source}, {categoryLabel}</span>
+        {
+          hn ? (
+            <>
+              <span>{points} points</span>
+              <span>{comments ?? 0} comments</span>
+              <span>{source}</span>
+            </>
+          ) : (
+            <span>from: {source}, {categoryLabel}</span>
+          )
+        }
         <time datetime={date.toISOString()}>{formatDate(date)}</time>
       </p>
       {summary && <p class="news-summary">{summary}</p>}
@@ -47,16 +66,38 @@ const tagInfo = tag && newsTag(tag);
           <header class="news-dialog-header">
             <div class="news-dialog-heading">
               <h2 class="news-dialog-title">{title}</h2>
+              {originalTitle && <p class="news-original" lang="en">{originalTitle}</p>}
               <p class="news-from">
                 {tagInfo && <span class="news-tag">{tagInfo.label}</span>}
-                <span>from: {source}, {categoryLabel}</span>
+                {
+                  hn ? (
+                    <>
+                      <span>{points} points</span>
+                      <span>{comments ?? 0} comments</span>
+                      <span>{source}</span>
+                    </>
+                  ) : (
+                    <span>from: {source}, {categoryLabel}</span>
+                  )
+                }
                 <time datetime={date.toISOString()}>{formatDate(date)}</time>
               </p>
             </div>
             <div class="news-dialog-actions">
-              <a class="news-dialog-link" href={url} target="_blank" rel="noopener noreferrer">
-                元記事を開く ↗
-              </a>
+              {
+                external && (
+                  <a class="news-dialog-link" href={url} target="_blank" rel="noopener noreferrer">
+                    元記事を開く ↗
+                  </a>
+                )
+              }
+              {
+                commentsUrl && (
+                  <a class="news-dialog-link" href={commentsUrl} target="_blank" rel="noopener noreferrer">
+                    HN のコメント ↗
+                  </a>
+                )
+              }
               <form method="dialog">
                 <button class="news-dialog-close" aria-label="閉じる">×</button>
               </form>

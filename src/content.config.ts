@@ -54,7 +54,7 @@ const news = defineCollection({
             .transform((v) => (v?.trim() ? v : undefined)),
           image: z.url().optional(),
           publishedAt: z.coerce.date().optional(),
-          // rank と stars は githubtrend だけが使う。
+          // rank は githubtrend と hackernews、stars は githubtrend だけが使う。
           // Sveltia は数値欄を空のまま保存すると null を書くので、無しと同じ扱いに寄せる
           rank: z
             .number()
@@ -68,6 +68,22 @@ const news = defineCollection({
             .nonnegative()
             .nullish()
             .transform((v) => v ?? undefined),
+          // ここから下は hackernews だけが使う。title は日本語訳、originalTitle が HN に出ている英語の見出し
+          originalTitle: z.string().optional(),
+          points: z
+            .number()
+            .int()
+            .nonnegative()
+            .nullish()
+            .transform((v) => v ?? undefined),
+          comments: z
+            .number()
+            .int()
+            .nonnegative()
+            .nullish()
+            .transform((v) => v ?? undefined),
+          // HN のコメントページ（https://news.ycombinator.com/item?id=<id>）。Ask HN などリンク先が無い投稿は url もこれになる
+          commentsUrl: z.url().optional(),
         }),
       )
       .default([]),

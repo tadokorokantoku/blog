@@ -120,6 +120,7 @@ collections:
               { label: GitHub トレンド, value: githubtrend },
               { label: CodingAgent, value: coding-agent },
               { label: ADE, value: ade },
+              { label: Hacker News, value: hackernews },
             ],
         }
       - {
@@ -186,7 +187,7 @@ collections:
               value_type: int,
               min: 1,
               required: false,
-              hint: 'GitHub トレンドだけ。1位から。前日比はビルド時に計算するので書かない',
+              hint: 'GitHub トレンドと Hacker News。1位から。前日比はビルド時に計算するので書かない',
             }
           - {
               name: stars,
@@ -196,4 +197,36 @@ collections:
               min: 0,
               required: false,
               hint: 'GitHub トレンドだけ。その日に獲得した star 数',
+            }
+          - {
+              name: originalTitle,
+              label: 英語の見出し,
+              widget: string,
+              required: false,
+              hint: 'Hacker News だけ。HN に出ている元の見出し（タイトル欄は日本語訳）',
+            }
+          - {
+              name: points,
+              label: ポイント,
+              widget: number,
+              value_type: int,
+              min: 0,
+              required: false,
+              hint: 'Hacker News だけ。収集した時点のポイント数',
+            }
+          - {
+              name: comments,
+              label: コメント数,
+              widget: number,
+              value_type: int,
+              min: 0,
+              required: false,
+              hint: 'Hacker News だけ。収集した時点のコメント数',
+            }
+          - {
+              name: commentsUrl,
+              label: HN のコメント URL,
+              widget: string,
+              required: false,
+              hint: 'Hacker News だけ。https://news.ycombinator.com/item?id=<id>',
             }

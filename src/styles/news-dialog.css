@@ -370,3 +370,23 @@
   font-size: 1rem;
   font-weight: 500;
 }
+
+/* hackernews の英語の見出し。日本語訳の見出しの下に小さく添える */
+.news-original {
+  margin: 0.125rem 0 0;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+/* 狭い画面ではリンクが2つ並ぶと見出しが潰れるので、操作を見出しの下の段に回す */
+@media (max-width: 40rem) {
+  .news-dialog-header:has(.news-dialog-link + .news-dialog-link) {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .news-dialog-header:has(.news-dialog-link + .news-dialog-link) .news-dialog-heading {
+    flex: 1 1 100%;
+  }
+}

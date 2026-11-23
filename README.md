@@ -71,7 +71,7 @@ AI が定期的に集めたニュースを `/news` に出す。収集するの�
 
 `src/content/news/<category>/<YYYY-MM-DD>.json` に、**1カテゴリ1日ぶんで1ファイル**。1ファイルの中に、その日の記事を `items` として何件でも入れる。
 
-カテゴリは4つで、これ以外の値はビルドで弾かれる。
+カテゴリは5つで、これ以外の値はビルドで弾かれる。
 
 | `category` | 表示名 | 中身 |
 | --- | --- | --- |
@@ -79,10 +79,11 @@ AI が定期的に集めたニュースを `/news` に出す。収集するの�
 | `githubtrend` | GitHub トレンド | GitHub のトレンドリポジトリ |
 | `coding-agent` | CodingAgent | Claude Code や Codex などコーディングエージェントまわり。記事ごとに `tag` を付ける |
 | `ade` | ADE | Orca などエージェント開発環境（ADE）まわり。記事ごとに `tag` を付ける |
+| `hackernews` | Hacker News | Hacker News のトップ20件。見出しは日本語訳、要約はリンク先を読んで書く |
 
 ```jsonc
 {
-  "category": "githubtrend",      // 必須。上の4つのどれか。フォルダ名と揃える
+  "category": "githubtrend",      // 必須。上の5つのどれか。フォルダ名と揃える
   "collectedAt": "2026-11-03T09:00", // 必須。収集した日時（分まで）
   "items": [
     {
@@ -94,8 +95,12 @@ AI が定期的に集めたニュースを `/news` に出す。収集するの�
       "detail": "## 見出し\n- 箇条書き", // 任意。Markdown。書くとカードを押してモーダルが開く
       "image": "https://...",      // 任意。絶対 URL。無ければサムネ無しの行になる
       "publishedAt": "2026-11-02", // 任意。無ければ collectedAt の日時で並ぶ
-      "rank": 1,                   // 任意。githubtrend だけ。1位からの順位
-      "stars": 1284                // 任意。githubtrend だけ。その日に獲得した star 数
+      "rank": 1,                   // 任意。githubtrend と hackernews。1位からの順位
+      "stars": 1284,               // 任意。githubtrend だけ。その日に獲得した star 数
+      "originalTitle": "...",      // 任意。hackernews だけ。HN に出ている英語の見出し
+      "points": 349,               // 任意。hackernews だけ。収集時点のポイント数
+      "comments": 163,             // 任意。hackernews だけ。収集時点のコメント数
+      "commentsUrl": "https://news.ycombinator.com/item?id=50607261" // 任意。hackernews だけ
     }
   ]
 }
@@ -103,7 +108,7 @@ AI が定期的に集めたニュースを `/news` に出す。収集するの�
 
 画像は外部 URL をそのまま読む（ビルド時に落としてこない）。ホットリンクを弾くドメインの URL を入れると画像が割れるので、OGP 画像のように外から読める URL を入れる。
 
-並び順は `publishedAt ?? collectedAt` の降順。カテゴリ一覧と日本語の表示名、カテゴリごとの表示（`layout`）は `src/consts.ts` の `NEWS_CATEGORIES` が持っていて、Zod のスキーマ・タブ・ページ生成・表示の出し分けが全部そこを読む。レイアウトは3種で、`list`（`xtrend`）が行のリスト、`ranking`（`githubtrend`）が順位の表、`summary`（`coding-agent` と `ade`）がカードを押すとモーダルが開く形。カテゴリを増やすときはここと `public/admin/config.yml` の select を直す。
+並び順は `publishedAt ?? collectedAt` の降順。カテゴリ一覧と日本語の表示名、カテゴリごとの表示（`layout`）は `src/consts.ts` の `NEWS_CATEGORIES` が持っていて、Zod のスキーマ・タブ・ページ生成・表示の出し分けが全部そこを読む。レイアウトは3種で、`list`（`xtrend`）が行のリスト、`ranking`（`githubtrend`）が順位の表、`summary`（`coding-agent`・`ade`・`hackernews`）がカードを押すとモーダルが開く形。カテゴリを増やすときはここと `public/admin/config.yml` の select を直す。
 
 ### GitHub トレンドだけランキングの表になる
 
@@ -118,6 +123,33 @@ AI が定期的に集めたニュースを `/news` に出す。収集するの�
 `coding-agent` と `ade` は `layout: 'summary'` なので、カードを押すと元記事に飛ぶ代わりに**モーダルが開いて `detail` の中身が出る**。`detail` を書かなかった記事のカードは、押すとそのまま元記事を開く外部リンクのままになる。
 
 `detail` には**その記事の中で特筆すべき内容を Markdown で**書く。見出しと箇条書きが使える。カードに出るのは `summary`（3行で切られる）だけで、`detail` はモーダルの中にしか出ないので、`summary` を言い換えるのではなく一段詳しい話を書く。設定キーやコマンド名はインラインコードで囲む。
+
+### Hacker News は毎日その日のトップ20件
+
+`hackernews` も `layout: 'summary'` だが、`NEWS_CATEGORIES` で `snapshot: true` にしてあるので、日をまたいで混ぜず、**最新の収集日のファイルの分だけを `rank` の順に全部**出す（ほかの summary カテゴリは新しい順に15件）。カードは日本語の見出しの下に英語の見出しを小さく出し、メタ行はポイント・コメント数・ドメインになる。モーダルには「元記事を開く」と「HN のコメント」の2つのリンクが出る（リンク先が無い投稿は後者だけ）。
+
+```jsonc
+{
+  "title": "XNU Linux：OS X の GUI ユーザーランドを丸ごと Linux 上で動かす", // 日本語訳。意訳しすぎず、固有名詞はそのまま
+  "originalTitle": "XNU Linux: Full OS X GUI Userspace on Linux",           // HN の見出しをそのまま
+  "url": "https://github.com/AFK-surf/xnulinux",   // リンク先。Ask HN などリンク先が無い投稿は commentsUrl と同じにする
+  "source": "github.com",                          // リンク先のドメイン（先頭の www. は外す）。メタ行に出る
+  "summary": "1〜2文の要約",
+  "detail": "リンク先を読んで書いた数段落の要約（Markdown）",
+  "publishedAt": "2026-11-23",                     // HN の投稿時刻（time）の日本時間の日付
+  "rank": 1,
+  "points": 349,
+  "comments": 163,
+  "commentsUrl": "https://news.ycombinator.com/item?id=50607261"
+}
+```
+
+取り方：
+
+1. `https://hacker-news.firebaseio.com/v0/topstories.json` の先頭20個の ID について、`https://hacker-news.firebaseio.com/v0/item/<id>.json` を取る。`score` が `points`、`descendants` が `comments`（求人の投稿には無いので 0）、`text` が Ask HN などの本文
+2. `url` のある投稿はリンク先を実際に読んで `detail` を書く。最初の段落はモーダルでリードの箱に入るので、記事の要点を1段落で書く。そのあとに `##` の見出しで中身を分け、最後に「## HN の反応」としてコメント上位（`kids` の先頭数件）の論点を短く足す
+3. `url` の無い投稿（Ask HN / Show HN の一部）は、`text` とコメント上位から書く
+4. ペイウォールや取得失敗、JavaScript でしか描画されないページで本文が読めないときは、`detail` の冒頭にその旨を太字で書き、サイトの説明文（meta description）と HN のコメントから分かることだけを書く。推測で埋めない
 
 ### tag でカードに色が付き、絞り込める
 
