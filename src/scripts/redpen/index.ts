@@ -47,6 +47,8 @@ function showThread(id: string) {
 }
 
 async function ask(pen: RedPen, question: string) {
+  // 本番ビルドでは AI の口が無い。ここで抜けておくと、呼び出しのコードと dev 専用の URL がバンドルから消える
+  if (!import.meta.env.DEV) return;
   const history = pen.thread.flatMap((turn) => (turn.answer ? [{ question: turn.question || 'これは何？', answer: turn.answer }] : []));
   const turn: RedPen['thread'][number] = { question: question.trim(), at: new Date().toISOString() };
   pen.thread.push(turn);

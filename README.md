@@ -164,7 +164,7 @@ AI が定期的に集めたニュースを `/news` に出す。収集するの�
 `/news` の各カテゴリと週のまとめで、記事の文字を選ぶと、選んだ範囲のすぐ下に吹き出しが出る。質問を書いて Enter で送ると（空なら「これは何？」）、選んだところに赤い線が残り、答えとその後のやりとりは横のパネルに出る（続けて質問・削除ができる）。吹き出しの「赤ペンだけ残す」なら質問せずに線だけ残る。Esc か外を押すと閉じる。赤い線を押すとそのやりとりがまた開く。このページの赤ペンの一覧は、画面右端の取っ手から開く（閉じている間は右端に細いつまみがのぞき、触れるとせり出して件数が見える。開いている間はパネルの左の縁の「閉じる」取っ手になる。狭い画面では右下の小さなタブで、一覧は下から出る）。スレッドを開いているときは、パネルのヘッダーの「← このページの赤ペン」でも一覧に切り替えられる。
 
 - 保存はブラウザの localStorage だけ（端末をまたがない）。位置は「記事 URL＋選んだ文字＋前後32文字」で持ち、開くたびに探し直す。本文が変わって見つからないものは一覧に「見つからない」として残る
-- AI の口は `pnpm dev` のときだけある（`src/integrations/dev-ask-ai.ts`）。`ANTHROPIC_API_KEY` があれば Anthropic API（`claude-sonnet-5-5`、サーバーツールの web_search / web_fetch 付き）、無ければ手元の `claude -p`（使えるツールは WebFetch と WebSearch だけ）を呼ぶ。本番ビルドではボタンが「ローカルのみ」になって押せない
+- AI の口は `pnpm dev` のときだけある（`src/integrations/dev-ask-ai.ts`）。`ANTHROPIC_API_KEY` があれば Anthropic API（`claude-sonnet-5-5`、サーバーツールの web_search / web_fetch 付き）、無ければ手元の `claude -p`（使えるツールは WebFetch と WebSearch だけ）を呼ぶ。本番ビルドでは質問欄そのものを出さず、吹き出しは「赤ペンを残す」だけになる
 - AI には選んだ文字・記事のタイトル・要約・URL に加えて、記事の本文（`detail`）があればそれも渡す。本文は HTML に載せず、dev の口が URL からニュースの JSON を引いて足す。記事で足りなければリンク先と Web を調べて答え、最後に出典の URL を付ける。1回20秒〜1分ほどかかる
 - 本番で AI を使うには、`src/integrations/ask-ai.ts` の `askAI` を Workers などのサーバー側に移し、同じ `POST /__redpen/ask`（JSON で `selection` / `article` / `question` / `history` を受けて `{ answer }` を返す）を生やす。API キーは Workers の secret に置き、レート制限か認証を付ける
 

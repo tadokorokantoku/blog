@@ -335,3 +335,9 @@
   background: var(--code-bg);
   color: var(--redpen);
 }
+
+/* 本番（AI 無し）の吹き出しは「赤ペンを残す」のボタン1つだけ */
+.redpen-bubble.is-pen-only {
+  width: auto;
+  padding: 0.375rem;
+}

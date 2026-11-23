@@ -3,7 +3,7 @@ import '../styles/redpen.css';
 import '../styles/redpen-handle.css';
 
 // AI に聞く口は astro dev のときだけある（src/integrations/dev-ask-ai.ts）。
-// 本番ビルドでは「ローカルのみ」と出して押せなくする
+// 本番ビルドでは AI に聞く UI を出さない（吹き出しは「赤ペンを残す」だけ）
 const ai = import.meta.env.DEV ? 'local' : 'off';
 ---
 

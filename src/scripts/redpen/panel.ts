@@ -136,7 +136,26 @@ export function openThread(
     ),
   );
   const pending = pen.thread.some((turn) => turn.answer === undefined && !turn.error);
+  // AI の口は dev サーバーにしか無い。本番ビルドでは import.meta.env.DEV が false になり、質問欄のコードごと消える
+  const asking = import.meta.env.DEV && ai ? askForm(pen, pending, actions) : undefined;
 
+  const remove = h('button', { type: 'button', className: 'redpen-remove', textContent: 'この赤ペンを消す' });
+  remove.addEventListener('click', actions.remove);
+
+  const el = frame(
+    { title: pen.article.title, list: { count, open: actions.list } },
+    h('blockquote', { className: 'redpen-quote', textContent: pen.quote }),
+    !found && h('p', { className: 'redpen-lost', textContent: '本文が変わって、この部分が見つからなくなった。' }),
+    turns.length > 0 && h('ol', { className: 'redpen-thread' }, ...turns),
+    // AI の口が無い本番では、質問欄を出さない（残した線と、それまでのやりとりだけを見せる）
+    asking?.form ?? false,
+    h('footer', { className: 'redpen-panel-foot' }, remove),
+  );
+  el.dataset.pen = pen.id;
+  if (asking && !pending) asking.input.focus({ preventScroll: true });
+}
+
+function askForm(pen: RedPen, pending: boolean, actions: ThreadActions) {
   const input = h('textarea', {
     className: 'redpen-input',
     rows: 2,
@@ -160,20 +179,7 @@ export function openThread(
       form.requestSubmit();
     }
   });
-
-  const remove = h('button', { type: 'button', className: 'redpen-remove', textContent: 'この赤ペンを消す' });
-  remove.addEventListener('click', actions.remove);
-
-  const el = frame(
-    { title: pen.article.title, list: { count, open: actions.list } },
-    h('blockquote', { className: 'redpen-quote', textContent: pen.quote }),
-    !found && h('p', { className: 'redpen-lost', textContent: '本文が変わって、この部分が見つからなくなった。' }),
-    turns.length > 0 && h('ol', { className: 'redpen-thread' }, ...turns),
-    ai ? form : h('p', { className: 'redpen-local', textContent: 'AI に聞くのはローカルの開発サーバー（pnpm dev）でだけ使える。' }),
-    h('footer', { className: 'redpen-panel-foot' }, remove),
-  );
-  el.dataset.pen = pen.id;
-  if (ai && !pending) input.focus({ preventScroll: true });
+  return { form, input };
 }
 
 export function openList(pens: RedPen[], found: (pen: RedPen) => boolean, ai: boolean, actions: ListActions) {

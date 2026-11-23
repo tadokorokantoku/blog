@@ -49,16 +49,18 @@ function choose(question: string | undefined) {
 }
 
 function build(ai: boolean) {
+  // AI の口が無い本番では、質問欄も案内も出さず「赤ペンを残す」だけにする。
+  // 本番ビルドでは import.meta.env.DEV が false になり、この先の質問欄のコードは消える
+  if (!import.meta.env.DEV || !ai) {
+    const only = h('button', { type: 'button', className: 'redpen-send redpen-bubble-only', textContent: '赤ペンを残す' });
+    only.addEventListener('click', () => choose(undefined));
+    return { el: h('div', { className: 'redpen-ui redpen-bubble is-pen-only' }, only) };
+  }
+
   const penOnly = h('button', { type: 'button', className: 'redpen-bubble-pen', textContent: '赤ペンだけ残す' });
   penOnly.addEventListener('click', () => choose(undefined));
   // 一覧への入口は画面端の取っ手が持つので、吹き出しには置かない
   const foot = h('div', { className: 'redpen-bubble-foot' }, penOnly);
-
-  if (!ai) {
-    const note = h('p', { className: 'redpen-local', textContent: 'AI に聞くのはローカルの開発サーバー（pnpm dev）でだけ使える。' });
-    return { el: h('div', { className: 'redpen-ui redpen-bubble' }, note, foot) };
-  }
-
   const input = h('textarea', { className: 'redpen-input', rows: 2, placeholder: '質問（空なら「これは何？」）' });
   const send = h('button', { type: 'submit', className: 'redpen-send', textContent: '聞く' });
   const form = h('form', { className: 'redpen-bubble-form' }, input, send);
