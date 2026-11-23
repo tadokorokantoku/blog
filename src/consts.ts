@@ -33,6 +33,8 @@ export const NEWS_TAGS = {
   cursor: { label: 'Cursor', color: '#0ea5e9' },
   t3code: { label: 'T3 Code', color: '#ec4899' },
   devin: { label: 'Devin', color: '#14b8a6' },
+  threadbear: { label: 'Threadbear', color: '#a86b3c' },
+  capy: { label: 'Capy', color: '#ef4444' },
 } as const satisfies Record<string, { label: string; color: string }>;
 
 export type NewsTag = keyof typeof NEWS_TAGS;

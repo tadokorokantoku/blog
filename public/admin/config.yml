@@ -158,6 +158,8 @@ collections:
                   { label: Cursor, value: cursor },
                   { label: T3 Code, value: t3code },
                   { label: Devin, value: devin },
+                  { label: Threadbear, value: threadbear },
+                  { label: Capy, value: capy },
                 ],
               hint: 'カテゴリの中の分類。カードの色と一覧の絞り込みに使う',
             }
