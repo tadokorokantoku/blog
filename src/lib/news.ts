@@ -116,17 +116,13 @@ export async function getNewsArticlesByCategory(category: NewsCategory): Promise
     .slice(0, NEWS_LIMIT);
 }
 
-// snapshot カテゴリの収集日を新しい順に。同じ日に何度か収集していたら、その日の最後のものを使う
+// snapshot カテゴリの収集日を新しい順に。日はファイル名（<YYYY-MM-DD>.json）から取る。
+// collectedAt はタイムゾーンを持たない文字列なので、UTC で動く本番のビルドでは日本時間の日付がずれる
 async function getSnapshotDays(category: NewsCategory): Promise<{ day: string; entry: NewsDay }[]> {
-  const entries = (await getCollection('news'))
+  return (await getCollection('news'))
     .filter(({ data }) => data.category === category)
-    .sort((a, b) => b.data.collectedAt.valueOf() - a.data.collectedAt.valueOf());
-  const days = new Map<string, NewsDay>();
-  for (const entry of entries) {
-    const day = jstDay(entry.data.collectedAt);
-    if (!days.has(day)) days.set(day, entry);
-  }
-  return [...days].map(([day, entry]) => ({ day, entry }));
+    .map((entry) => ({ day: entry.id.split('/').at(-1) ?? entry.id, entry }))
+    .sort((a, b) => b.day.localeCompare(a.day));
 }
 
 export async function getSnapshotDayIds(category: NewsCategory): Promise<string[]> {
