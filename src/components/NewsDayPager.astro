@@ -1,0 +1,26 @@
+---
+import '../styles/news-weekly.css';
+import type { NewsCategory, NewsDayPage } from '../lib/news';
+
+// snapshot カテゴリの日付と前後の日。置き方は週のまとめの見出しと揃える
+interface Props {
+  category: NewsCategory;
+  label: string;
+  page: NewsDayPage;
+}
+
+const { category, label, page } = Astro.props;
+const DAY = new Intl.DateTimeFormat('ja-JP', { year: 'numeric', month: 'numeric', day: 'numeric', weekday: 'short', timeZone: 'UTC' });
+const href = (day: string) => `/news/${category}/${day}/`;
+---
+
+<header class="weekly-head news-day-head">
+  <div>
+    <h2 class="weekly-title">{DAY.format(new Date(`${page.day}T00:00:00Z`))}</h2>
+    <p class="weekly-note">この日に集めた {label} のトップ（日本時間）</p>
+  </div>
+  <nav class="weekly-pager" aria-label="日の移動">
+    {page.prev ? <a href={href(page.prev)}>← 前の日</a> : <span />}
+    {page.next && <a href={href(page.next)}>次の日 →</a>}
+  </nav>
+</header>

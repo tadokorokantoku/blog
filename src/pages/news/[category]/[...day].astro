@@ -1,0 +1,69 @@
+---
+import '../../../styles/news.css';
+import NewsDayPager from '../../../components/NewsDayPager.astro';
+import NewsItem from '../../../components/NewsItem.astro';
+import NewsRankingView from '../../../components/NewsRankingView.astro';
+import NewsSummaryItem from '../../../components/NewsSummaryItem.astro';
+import NewsTabs from '../../../components/NewsTabs.astro';
+import NewsTagFilter from '../../../components/NewsTagFilter.astro';
+import RedPen from '../../../components/RedPen.astro';
+import Base from '../../../layouts/Base.astro';
+import { NEWS_CATEGORIES } from '../../../consts';
+import { getNewsCategoryView, getSnapshotDayIds, newsCategoryList, type NewsCategory } from '../../../lib/news';
+
+// /news/<category>/ は最新。snapshot のカテゴリだけ、データのある日ごとに /news/<category>/<YYYY-MM-DD>/ も作る
+export async function getStaticPaths() {
+  const paths = await Promise.all(
+    newsCategoryList().map(async ({ id, label }) => {
+      const days = 'snapshot' in NEWS_CATEGORIES[id] ? await getSnapshotDayIds(id) : [];
+      return [undefined, ...days].map((day) => ({ params: { category: id, day }, props: { label } }));
+    }),
+  );
+  return paths.flat();
+}
+
+interface Props {
+  label: string;
+}
+
+const category = Astro.params.category as NewsCategory;
+const { day } = Astro.params;
+const { label } = Astro.props;
+const view = await getNewsCategoryView(category, day);
+// 一覧に実際に出ているタグだけをチップにする
+const tags =
+  view.layout === 'summary' ? [...new Set(view.articles.flatMap(({ tag }) => (tag ? [tag] : [])))] : [];
+const empty = view.layout === 'ranking' ? view.ranking === null : view.articles.length === 0;
+---
+
+<Base wide title={day ? `news / ${label} / ${day}` : `news / ${label}`} description={`AI が集めた${label}のニュース`}>
+  <Fragment slot="masthead">
+    <h1 class="news-heading">news</h1>
+    <NewsTabs active={category} />
+  </Fragment>
+  {view.layout === 'summary' && view.day && <NewsDayPager category={category} label={label} page={view.day} />}
+  {empty && <p class="news-empty">まだ何も集まっていない。</p>}
+  {view.layout === 'ranking' && view.ranking && <NewsRankingView ranking={view.ranking} series={view.series} />}
+  {
+    view.layout === 'list' && view.articles.length > 0 && (
+      <ul class="news-list">
+        {view.articles.map((article) => (
+          <NewsItem article={article} />
+        ))}
+      </ul>
+    )
+  }
+  {
+    view.layout === 'summary' && view.articles.length > 0 && (
+      <>
+        {tags.length > 0 && <NewsTagFilter tags={tags} />}
+        <ul class="news-list">
+          {view.articles.map((article) => (
+            <NewsSummaryItem article={article} />
+          ))}
+        </ul>
+      </>
+    )
+  }
+  <RedPen />
+</Base>

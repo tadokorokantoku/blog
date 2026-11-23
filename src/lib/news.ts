@@ -62,7 +62,14 @@ export interface NewsRanking {
 export type NewsCategoryView =
   | { layout: 'list'; articles: NewsArticle[] }
   | { layout: 'ranking'; ranking: NewsRanking | null; series: TrendSeries }
-  | { layout: 'summary'; articles: NewsSummaryArticle[] };
+  | { layout: 'summary'; articles: NewsSummaryArticle[]; day?: NewsDayPage };
+
+// snapshot カテゴリの1日分のページ。日は日本時間の YYYY-MM-DD で、prev は古い側・next は新しい側のデータのある日
+export interface NewsDayPage {
+  day: string;
+  prev?: string;
+  next?: string;
+}
 
 // どのカテゴリも新しい順にこの件数まで
 const NEWS_LIMIT = 15;
@@ -104,35 +111,56 @@ function dayArticles({ data }: NewsDay): NewsArticle[] {
 }
 
 export async function getNewsArticlesByCategory(category: NewsCategory): Promise<NewsArticle[]> {
-  if ('snapshot' in NEWS_CATEGORIES[category]) return getSnapshotArticles(category);
   return (await getNewsArticles())
     .filter((article) => article.category === category)
     .slice(0, NEWS_LIMIT);
 }
 
-// 最新の収集日の分だけを、その日の順位どおりに全部
-async function getSnapshotArticles(category: NewsCategory): Promise<NewsArticle[]> {
-  const [latest] = (await getCollection('news'))
+// snapshot カテゴリの収集日を新しい順に。同じ日に何度か収集していたら、その日の最後のものを使う
+async function getSnapshotDays(category: NewsCategory): Promise<{ day: string; entry: NewsDay }[]> {
+  const entries = (await getCollection('news'))
     .filter(({ data }) => data.category === category)
     .sort((a, b) => b.data.collectedAt.valueOf() - a.data.collectedAt.valueOf());
-  if (!latest) return [];
-  return dayArticles(latest).sort((a, b) => (a.rank ?? Infinity) - (b.rank ?? Infinity));
+  const days = new Map<string, NewsDay>();
+  for (const entry of entries) {
+    const day = jstDay(entry.data.collectedAt);
+    if (!days.has(day)) days.set(day, entry);
+  }
+  return [...days].map(([day, entry]) => ({ day, entry }));
 }
 
-export async function getNewsCategoryView(category: NewsCategory): Promise<NewsCategoryView> {
+export async function getSnapshotDayIds(category: NewsCategory): Promise<string[]> {
+  return (await getSnapshotDays(category)).map(({ day }) => day);
+}
+
+// day を省くと最新の収集日。snapshot でないカテゴリは day を受け取らない
+export async function getNewsCategoryView(category: NewsCategory, day?: string): Promise<NewsCategoryView> {
   const { layout } = NEWS_CATEGORIES[category];
   if (layout === 'ranking') {
     return { layout: 'ranking', ranking: await getNewsRanking(category), series: await getRankingSeries(category) };
   }
   if (layout === 'summary') {
-    const articles = (await getNewsArticlesByCategory(category)).map(
-      ({ detail, ...article }): NewsSummaryArticle => ({
-        ...article,
-        // Shiki は通らないので、フェンスコードブロックに色は付かない
-        detailHtml: detail === undefined ? undefined : marked.parse(detail, { async: false }),
-      }),
-    );
-    return { layout: 'summary', articles };
+    let articles = await getNewsArticlesByCategory(category);
+    let page: NewsDayPage | undefined;
+    if ('snapshot' in NEWS_CATEGORIES[category]) {
+      // 日をまたいで混ぜず、その日の分だけを順位どおりに全部
+      const days = await getSnapshotDays(category);
+      const index = day === undefined ? 0 : days.findIndex((d) => d.day === day);
+      const current = days[index];
+      articles = current ? dayArticles(current.entry).sort((a, b) => (a.rank ?? Infinity) - (b.rank ?? Infinity)) : [];
+      page = current && { day: current.day, prev: days[index + 1]?.day, next: index > 0 ? days[index - 1]?.day : undefined };
+    }
+    return {
+      layout: 'summary',
+      articles: articles.map(
+        ({ detail, ...article }): NewsSummaryArticle => ({
+          ...article,
+          // Shiki は通らないので、フェンスコードブロックに色は付かない
+          detailHtml: detail === undefined ? undefined : marked.parse(detail, { async: false }),
+        }),
+      ),
+      day: page,
+    };
   }
   return { layout: 'list', articles: await getNewsArticlesByCategory(category) };
 }

@@ -134,3 +134,8 @@
   content: 'ポストを読み込めなかった';
   font-size: 0.8125rem;
 }
+
+/* snapshot カテゴリの日付の見出し。見た目は週のまとめの .weekly-head を使い、一覧との間だけ空ける */
+.news-day-head {
+  margin-bottom: 1.5rem;
+}
