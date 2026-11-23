@@ -101,6 +101,7 @@ document.addEventListener('pointerdown', (event) => {
   if (pinned && event.pointerType === 'touch' && !pinned.figure.contains(event.target as Node)) unpin();
 });
 
+// astro:page-load で呼ぶ。読み込みが遅れてそれを逃したときのために、読み込み時にも呼ぶ（何度呼んでも同じ）
 export function mountTrendCharts() {
   pinned = undefined;
   for (const root of document.querySelectorAll<HTMLElement>('[data-trend]')) mount(root);

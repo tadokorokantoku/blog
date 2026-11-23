@@ -23,5 +23,10 @@ export default defineConfig({
   },
   vite: {
     plugins: [tailwindcss()],
+    // 赤ペンがブラウザで読む依存。初めて使われた時点で事前バンドルさせると、dev サーバーの途中で作り直しが起き、
+    // 古い版番号のまま 504 になって赤ペンのスクリプトごと止まることがあった。起動時にまとめて用意させる
+    optimizeDeps: {
+      include: ['dompurify', 'marked'],
+    },
   },
 });

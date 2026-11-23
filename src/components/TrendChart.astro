@@ -180,4 +180,5 @@ const views = ranges.map((range) => ({ ...range, ...layout(range.series) }));
   import { mountTrendCharts } from '../scripts/trend-chart';
 
   document.addEventListener('astro:page-load', mountTrendCharts);
+  if (document.readyState !== 'loading') mountTrendCharts();
 </script>

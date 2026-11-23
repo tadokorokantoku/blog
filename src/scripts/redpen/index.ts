@@ -151,7 +151,7 @@ document.addEventListener('astro:before-swap', () => {
   closePanel();
 });
 
-document.addEventListener('astro:page-load', () => {
+function init() {
   const config = document.getElementById('redpen');
   enabled = config !== null;
   if (!config) {
@@ -159,7 +159,15 @@ document.addEventListener('astro:page-load', () => {
     if ('highlights' in CSS) CSS.highlights.clear();
     return;
   }
+  // 同じページで2回走らせない。ClientRouter で移ると body ごと差し替わるので、印は新しいページには付いていない
+  if (config.dataset.ready) return;
+  config.dataset.ready = 'true';
   ai = config.dataset.ai === 'local';
   watchSelection({ ai, pick: create, count: () => pensOnPage().length, openList: openListPanel });
   paint();
-});
+}
+
+// このスクリプトは dompurify や marked も読むぶん遅く、最初のページの astro:page-load が先に終わっていることがある。
+// そのときは待たずにその場で始める（待つだけだと、最初に開いたページでは吹き出しが一度も出ない）
+document.addEventListener('astro:page-load', init);
+if (document.readyState !== 'loading') init();

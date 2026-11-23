@@ -159,7 +159,7 @@ document.addEventListener('pointerdown', (event) => {
 document.addEventListener('scroll', place, { capture: true, passive: true });
 window.addEventListener('resize', place);
 
-// カードはまるごと <a> なので、Chrome ではリンクごと掴んでしまい中の文字をドラッグで選べない。
+// カードはまるごと <a> で、タイトルもリンクなので、Chrome ではリンクごと掴んでしまい中の文字をドラッグで選べない。
 // マウスで押している間だけ href を外してただの文字にし、離したら click より前に戻す
 let unlinked: HTMLAnchorElement | undefined;
 
@@ -173,7 +173,7 @@ document.addEventListener('pointerdown', (event) => {
   if (!options || event.pointerType !== 'mouse' || (event.target as Element).closest?.('.redpen-ui')) return;
   pointerDown = true;
   if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-  const link = (event.target as Element).closest<HTMLAnchorElement>(`${ROOT} a.news-card[href]`);
+  const link = (event.target as Element).closest<HTMLAnchorElement>(`${ROOT} a[href]`);
   if (!link) return;
   link.dataset.redpenHref = link.getAttribute('href') ?? '';
   link.removeAttribute('href');
@@ -186,4 +186,11 @@ document.addEventListener('pointerup', () => {
   clearTimeout(timer);
   timer = window.setTimeout(() => checkSelection(true), 10);
 });
-document.addEventListener('pointercancel', relink);
+// リンクや画像をドラッグで掴んだときなど、pointerup が来ずに終わることがある。押しっぱなし扱いが残ると以後ずっと出なくなる
+function release() {
+  relink();
+  pointerDown = false;
+}
+document.addEventListener('pointercancel', release);
+document.addEventListener('dragstart', release);
+window.addEventListener('blur', release);

@@ -25,11 +25,25 @@ export interface RedPen {
 const KEY = 'redpen:v1';
 let memory: RedPen[] | undefined;
 
+function isPen(value: unknown): value is RedPen {
+  const pen = value as RedPen;
+  return (
+    typeof pen?.id === 'string' &&
+    typeof pen.page === 'string' &&
+    typeof pen.article?.url === 'string' &&
+    typeof pen.quote === 'string' &&
+    typeof pen.prefix === 'string' &&
+    typeof pen.suffix === 'string' &&
+    Array.isArray(pen.thread)
+  );
+}
+
 function readAll(): RedPen[] {
   if (memory) return memory;
   try {
-    const parsed = JSON.parse(localStorage.getItem(KEY) ?? '[]');
-    memory = Array.isArray(parsed) ? parsed : [];
+    const parsed: unknown = JSON.parse(localStorage.getItem(KEY) ?? '[]');
+    // 形の崩れた記録が1つあるだけで全体が止まらないよう、使える形のものだけ残す
+    memory = Array.isArray(parsed) ? parsed.filter(isPen) : [];
   } catch {
     memory = [];
   }
