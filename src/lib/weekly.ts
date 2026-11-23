@@ -92,18 +92,28 @@ export async function getWeeklyDigest(id: WeekId): Promise<WeeklyDigest> {
   };
 }
 
-// 週のまとめ動画のページ。動画はビルド時に public/ にあるかで決める
+// 週のまとめ動画。ビルド時に public/ にあるかで決める
+function weeklyVideo(id: WeekId): WeeklyVideoPage['video'] {
+  const base = `/news/weekly/${id}`;
+  return existsSync(join(process.cwd(), 'public', `${base}.mp4`))
+    ? { src: `${base}.mp4`, poster: `${base}.jpg` }
+    : undefined;
+}
+
+// /news/weekly/ に出す週。動画のある一番新しい週で、動画が1本も無ければ記事のある一番新しい週
+export async function getLatestVideoWeek(): Promise<WeekId | undefined> {
+  const weeks = await getNewsWeeks();
+  return weeks.find((week) => weeklyVideo(week)) ?? weeks[0];
+}
+
 export async function getWeeklyVideoPage(id: WeekId): Promise<WeeklyVideoPage> {
   const weeks = await getNewsWeeks();
   const index = weeks.indexOf(id);
-  const base = `/news/weekly/${id}`;
   return {
     id,
     ...weekRange(id),
     prev: weeks[index + 1],
     next: index > 0 ? weeks[index - 1] : undefined,
-    video: existsSync(join(process.cwd(), 'public', `${base}.mp4`))
-      ? { src: `${base}.mp4`, poster: `${base}.jpg` }
-      : undefined,
+    video: weeklyVideo(id),
   };
 }

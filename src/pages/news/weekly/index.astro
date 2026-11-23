@@ -3,11 +3,11 @@ import '../../../styles/news.css';
 import NewsTabs from '../../../components/NewsTabs.astro';
 import WeeklyVideo from '../../../components/WeeklyVideo.astro';
 import Base from '../../../layouts/Base.astro';
-import { getNewsWeeks, getWeeklyVideoPage } from '../../../lib/weekly';
+import { getLatestVideoWeek, getWeeklyVideoPage } from '../../../lib/weekly';
 
-// 最新の週を出す。中身は /news/weekly/<その週>/ と同じ
-const weeks = await getNewsWeeks();
-const page = weeks[0] && (await getWeeklyVideoPage(weeks[0]));
+// 動画のある一番新しい週を出す。中身は /news/weekly/<その週>/ と同じ
+const week = await getLatestVideoWeek();
+const page = week && (await getWeeklyVideoPage(week));
 ---
 
 <Base wide title="news / 週のまとめ" description="AI が集めたニュースの週のまとめ動画">
