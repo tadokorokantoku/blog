@@ -1,0 +1,62 @@
+{
+  "category": "xtrend",
+  "collectedAt": "2026-11-25T07:10",
+  "items": [
+    {
+      "title": "MCPが2周年、Skills over MCPとTasksでエージェント間の連携を標準化へ",
+      "url": "https://x.com/ClaudeDevs/status/2125289794871963935",
+      "source": "X, @ClaudeDevs",
+      "summary": "MCPは、AIアプリをツールやデータにつなぐプロトコルから、エージェント同士の通信や作業のオーケストレーションを標準化する方向へ進んでいる。MCPサーバーに独自のスキルを同梱できるようになり、Claude Codeが最初から使いこなせるとBoris Cherny氏が紹介している。",
+      "publishedAt": "2026-11-24T18:05:00Z"
+    },
+    {
+      "title": "Claudeのアーティファクトを、Mac・Windowsのデスクトップアプリとしてインストール可能に",
+      "url": "https://x.com/ClaudeDevs/status/2125315491522650299",
+      "source": "X, @ClaudeDevs",
+      "summary": "Claudeで作ったアプリを、MacとWindowsのデスクトップアプリとしてインストールできるようになった。OSのAPIやコネクター、Claudeを使うアプリを、コーディング知識なしで作って共有できると、Felix Rieseberg氏が案内している。",
+      "publishedAt": "2026-11-24T19:47:00Z"
+    },
+    {
+      "title": "Gemini 4 NeonがOpenCode Consoleで利用可能に",
+      "url": "https://x.com/opencode/status/2125307449951604860",
+      "source": "X, @opencode",
+      "summary": "OpenCodeのチームでは、この1週間でGemini 4 Neonがデフォルトモデルになったという。poteto氏もCursorで毎日使っていて、「いいモデルだ」と書いている。",
+      "publishedAt": "2026-11-24T19:15:00Z"
+    },
+    {
+      "title": "T3 Code、セキュリティ面の指摘を受けてソースを非公開に",
+      "url": "https://x.com/theo/status/2125316769858683312",
+      "source": "X, @theo",
+      "summary": "リモートコントロールの既定設定や、中継サーバーを通るメッセージが平文であることが批判された。Theo氏は「今夜T3 Codeのソースを非公開にする」と発表し、その後、外部にデータを送るテレメトリーを全部削除するPRも出した。指摘の内容には、認証ファイルを読んでいるだけで認証情報は読んでいないという反論もある。",
+      "publishedAt": "2026-11-24T19:52:00Z"
+    },
+    {
+      "title": "shadcnの@uisdk、エージェントにも使えるUIを前提に高速・低コスト化",
+      "url": "https://x.com/shadcn/status/2125276175828476011",
+      "source": "X, @shadcn",
+      "summary": "今のUIは人間だけでなくエージェントにも使える必要があり、むしろエージェントを最優先にすべきかもしれない、というshadcn氏の考え。その狙いで作った@uisdkが、さらに速く低コストになったという。",
+      "publishedAt": "2026-11-24T17:11:00Z"
+    },
+    {
+      "title": "Google Cloud、Workspace MCPサーバーとWorkspace CLIを一般提供",
+      "url": "https://x.com/ChanduThota/status/2125275496355348799",
+      "source": "X, @ChanduThota",
+      "summary": "Google Cloud Agent Gatewayとあわせて、Workspace MCPサーバーとWorkspace CLIが一般提供になった。従来のREST APIは人間の操作速度向けに作られていた、という位置づけ。",
+      "publishedAt": "2026-11-24T17:08:00Z"
+    },
+    {
+      "title": "Unsloth、Inkling 2 Miniを無料ノートブックでファインチューニング可能に",
+      "url": "https://x.com/UnslothAI/status/2125243469094605071",
+      "source": "X, @UnslothAI",
+      "summary": "ローカルでの学習はVRAM 22GBで動く。VRAM使用量を50%削減し、学習は1.8〜3.1倍高速になるとされている。",
+      "publishedAt": "2026-11-24T15:01:00Z"
+    },
+    {
+      "title": "登壇で意識していること：練習と、スライドは1枚1トピック",
+      "url": "https://x.com/azukiazusa/status/2125205041372168395",
+      "source": "X, @azukiazusa",
+      "summary": "練習を重ねる、文字は過剰なくらい大きくする、色を使いすぎない、スライドは補助で口頭説明が主、コードが長くなりすぎるなら発表の媒体が違う、といった心がけを挙げている。",
+      "publishedAt": "2026-11-24T12:29:00Z"
+    }
+  ]
+}
