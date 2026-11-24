@@ -5,7 +5,7 @@ export const PROFILE = {
   name: 'Ino Katsuki',
   role: 'Software Engineer',
   location: 'Nara -> Chiba',
-  bio: ['データエンジニアやSaaSの開発をやってきました。今はSWEとして働いていて、AIの出力内容をどうやったら早く理解できるか、が最近の興味です。1児の父。', '趣味：音楽、ゲーム、甘いもの、韓国ドラマ'],
+  bio: ['データエンジニアやSaaSの開発をやってきました。今はSWEとして働いていて、AIに自分のポストを焼き尽くされる前に何かを為したいと思っています。1児の父。', '趣味：音楽、ゲーム、甘いもの、韓国ドラマ'],
   links: [
     { label: 'GitHub', href: 'https://github.com/tadokorokantoku' },
   ],
