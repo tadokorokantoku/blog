@@ -1,6 +1,6 @@
 {
   "category": "xtrend",
-  "collectedAt": "2026-11-24T07:10",
+  "collectedAt": "2026-11-24T18:10",
   "items": [
     {
       "title": "Claude Ship（ベータ）登場、PRのレビューから修正・承認まで",
@@ -57,6 +57,62 @@
       "source": "X, @CrowdStrike",
       "summary": "ゼロトラストの先駆者であるZscalerを買収する最終契約を結んだ。エンドポイントとネットワークの両方を押さえ、AIエージェントが動く場所を守るとしている。",
       "publishedAt": "2026-11-23T05:43:00Z"
+    },
+    {
+      "title": "Vercel、日本への投資を拡大",
+      "url": "https://x.com/rauchg/status/2125057274213507253",
+      "source": "X, @rauchg",
+      "summary": "CEOのGuillermo Rauch氏が「Vercelが日本にさらに力を注ぐ」と発表した。ポストの範囲では具体的な内容は書かれていない。",
+      "publishedAt": "2026-11-24T02:41:00Z"
+    },
+    {
+      "title": "Bootstrap 6 Alpha 2リリース、セキュリティアドバイザリ2件を含む",
+      "url": "https://x.com/getbootstrap/status/2124991937602343326",
+      "source": "X, @getbootstrap",
+      "summary": "コンポーネントの動作改善、従来のFlexboxグリッドでのgap利用、ドキュメント更新が入った。DatepickerとToggleに関するセキュリティアドバイザリ2件も含まれ、更新を呼びかけている。",
+      "publishedAt": "2026-11-23T22:22:00Z"
+    },
+    {
+      "title": "「普通の開発者に必要なのはLeanよりTLA+(Quint)」",
+      "url": "https://x.com/mizchi/status/2125116972392456694",
+      "source": "X, @mizchi",
+      "summary": "Leanを使うのはライブラリやミドルウェアの作者だろう、という見方。形式検証をどこまで取り入れるかをめぐる議論の一つ。",
+      "publishedAt": "2026-11-24T06:39:00Z"
+    },
+    {
+      "title": "pstack v0.15.48、用語化スキル「/reframe」が登場",
+      "url": "https://x.com/cu30rry_/status/2125138097750876305",
+      "source": "X, @cu30rry_",
+      "summary": "作ろうとしているものを専門用語で言い表すためのスキル。ユーザーの説明とファイルから、影響の大きい順に用語を挙げ、近い分野の用語も取り入れて説明を書き直す、とされている。",
+      "publishedAt": "2026-11-24T08:03:00Z"
+    },
+    {
+      "title": "仙台Ruby会議03の発表スライドが公開",
+      "url": "https://x.com/hsbt/status/2125121835964760534",
+      "source": "X, @hsbt",
+      "summary": "hsbt氏が仙台Ruby会議03（#sendairk03）での発表スライドを公開した。",
+      "publishedAt": "2026-11-24T06:58:00Z"
+    },
+    {
+      "title": "OpenCode Go加入者は、ステルスモデル「HungerG」を今週無料で利用可能",
+      "url": "https://x.com/opencode/status/2125062647846694979",
+      "source": "X, @opencode",
+      "summary": "100万トークンのコンテキストとマルチモーダルに対応し、データは学習に使われないとしている。",
+      "publishedAt": "2026-11-24T03:03:00Z"
+    },
+    {
+      "title": "Opus 5.5が突然英語で話し出す問題に「claude-code-japanese-guard」",
+      "url": "https://x.com/gosrum/status/2125091868803498414",
+      "source": "X, @gosrum",
+      "summary": "みのるん氏の「claude-code-japanese-guard」を入れたら、Opus 5.5が気を抜くと英語で話し出す問題がほぼ解決したという報告。同じ悩みの人に導入を勧めている。",
+      "publishedAt": "2026-11-24T04:59:00Z"
+    },
+    {
+      "title": "1.44MBのフロッピー1枚に収まるAIモデル「Tiny 2.1」",
+      "url": "https://x.com/Pirat_Nation/status/2125122746627580001",
+      "source": "X, @Pirat_Nation",
+      "summary": "開発者の1人が、わずか435KBのAI「Tiny 2.1」を1.44MBのフロッピーに収めたとされている。グラフィックカードのない古いパソコンでも動くという。",
+      "publishedAt": "2026-11-24T07:02:00Z"
     }
   ]
 }
