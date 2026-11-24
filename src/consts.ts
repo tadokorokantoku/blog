@@ -1,6 +1,16 @@
 export const SITE_TITLE = 'blog';
 export const SITE_DESCRIPTION = '個人ブログ';
 
+export const PROFILE = {
+  name: 'Ino Katsuki',
+  role: 'Software Engineer',
+  location: 'Nara -> Chiba',
+  bio: ['データエンジニアやフロントエンドエンジニアをやってきました。今はSWEとして働いていて、AIの導入に取り組んでいます。AIの出力内容をいかに理解しやくするか、が最近の興味です。1児の父。', '趣味：音楽、ゲーム、甘いもの、韓国ドラマ'],
+  links: [
+    { label: 'GitHub', href: 'https://github.com/tadokorokantoku' },
+  ],
+} as const;
+
 // 週のまとめ動画などの置き場。R2 の blog-media バケットをこのドメインで公開している（Range に対応）
 export const MEDIA_ORIGIN = 'https://media.inok.dev';
 

@@ -1,14 +1,26 @@
 ---
-import TagFilter from '../components/TagFilter.astro';
-import Timeline from '../components/Timeline.astro';
 import Base from '../layouts/Base.astro';
-import { countTags, getTimeline } from '../lib/timeline';
-
-const entries = await getTimeline();
-const tags = countTags(entries);
+import { PROFILE } from '../consts';
+import '../styles/profile.css';
 ---
 
 <Base>
-  <TagFilter tags={tags} />
-  <Timeline entries={entries} />
+  <article class="profile">
+    <header class="profile-header">
+      <h1 class="profile-name">{PROFILE.name}</h1>
+      <p class="profile-sub">{PROFILE.role}, {PROFILE.location}</p>
+    </header>
+    {PROFILE.bio.map((paragraph) => <p>{paragraph}</p>)}
+    <ul class="profile-links">
+      {
+        PROFILE.links.map((link) => (
+          <li>
+            <a href={link.href} rel="me">
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </article>
 </Base>

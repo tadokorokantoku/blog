@@ -35,13 +35,6 @@ const sticky = Astro.slots.has('masthead');
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <ClientRouter />
-    <script is:inline>
-      // ?tags= 付きで開いたときに、絞り込み前の全件が一瞬見えるのを防ぐ
-      if (location.search.includes('tags=')) {
-        document.documentElement.classList.add('is-filtering');
-        setTimeout(() => document.documentElement.classList.remove('is-filtering'), 1000);
-      }
-    </script>
   </head>
   <body class:list={{ 'is-wide': wide }}>
     <div class:list={['site-masthead', { 'is-sticky': sticky }]}>

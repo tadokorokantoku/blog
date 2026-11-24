@@ -1,4 +1,4 @@
-/* Tailwind は daisyUI（タイムライン）のために入れている。
+/* Tailwind は daisyUI のために入れている。
    preflight（base）は読まない。既存の素の CSS とマークダウン本文の見た目を壊さないため */
 @layer theme, base, components, utilities;
 @import 'tailwindcss/theme.css' layer(theme);
@@ -128,18 +128,15 @@ a {
   font-size: 0.75rem;
 }
 
-.tag-list,
-.tag-index {
+.tag-list {
+  color: var(--muted);
+  font-size: 0.875rem;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem 1rem;
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-.timeline-meta .tag-list {
-  font-size: 0.8125rem;
 }
 
 .post-header h1 {
