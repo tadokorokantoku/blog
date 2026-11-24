@@ -38,7 +38,6 @@ const empty = view.layout === 'ranking' ? view.ranking === null : view.articles.
 
 <Base wide title={day ? `news / ${label} / ${day}` : `news / ${label}`} description={`AI が集めた${label}のニュース`}>
   <Fragment slot="masthead">
-    <h1 class="news-heading">news</h1>
     <NewsTabs active={category} />
   </Fragment>
   {view.layout === 'summary' && view.day && <NewsDayPager category={category} label={label} page={view.day} />}

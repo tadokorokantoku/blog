@@ -1,10 +1,5 @@
 /* レイアウトは menthas 風の1カラムリスト。色は global.css の変数だけを使う */
 
-.news-heading {
-  margin: 0;
-  font-size: 1.5rem;
-}
-
 .news-tabs {
   display: flex;
   flex-wrap: wrap;

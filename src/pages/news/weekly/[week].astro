@@ -15,7 +15,6 @@ const page = await getWeeklyVideoPage(week);
 
 <Base wide title={`news / ${week} の週`} description={`AI が集めたニュースの ${week} の週のまとめ動画`}>
   <Fragment slot="masthead">
-    <h1 class="news-heading">news</h1>
     <NewsTabs active="weekly" />
   </Fragment>
   <WeeklyVideo page={page} />

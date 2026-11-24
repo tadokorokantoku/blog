@@ -12,7 +12,6 @@ const page = week && (await getWeeklyVideoPage(week));
 
 <Base wide title="news / 週のまとめ" description="AI が集めたニュースの週のまとめ動画">
   <Fragment slot="masthead">
-    <h1 class="news-heading">news</h1>
     <NewsTabs active="weekly" />
   </Fragment>
   {page ? <WeeklyVideo page={page} /> : <p class="news-empty">まだ何も集まっていない。</p>}

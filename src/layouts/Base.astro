@@ -38,9 +38,12 @@ const sticky = Astro.slots.has('masthead');
   <body class:list={{ 'is-wide': wide }}>
     <div class:list={['site-masthead', { 'is-sticky': sticky }]}>
       <header class="site-header">
-        <a class="site-title" href="/">{SITE_TITLE}</a>
+        <a class="site-title" href="/">
+          <img class="site-icon" src="/android-chrome-192x192.png" alt="" width="192" height="192" />
+          {SITE_TITLE}
+        </a>
         <nav>
-          <a href="/news/xtrend/">news</a>
+          <a href="/news/xtrend/">my AI news</a>
         </nav>
       </header>
       <slot name="masthead" />
