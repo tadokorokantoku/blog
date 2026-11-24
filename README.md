@@ -9,7 +9,7 @@ Astro で作った個人ブログ。静的ビルドして Cloudflare Workers（S
 | 記事 | `src/content/posts/<slug>/index.md` | `/posts/<slug>/` | 長文。タイトルと説明文が必須 |
 | ひとこと | `src/content/notes/<slug>/index.md` | `/notes/<slug>/` | 短文。タイトルは任意 |
 
-どっちもタグを持つが、一覧ページは持たない。個別の URL と RSS からだけ辿れる。トップ `/` はプロフィールだけを置いている。
+どっちもタグを持つが、一覧ページは持たない。個別の URL からだけ辿れる。トップ `/` はプロフィールだけを置いている。
 
 これとは別に、AI が集めたニュースが `/news` に並ぶ（自分では書かない。[ニュース](#ニュース)）。
 
@@ -17,7 +17,6 @@ Astro で作った個人ブログ。静的ビルドして Cloudflare Workers（S
 - `/posts/<slug>/`, `/notes/<slug>/` … 個別ページ
 - `/news/<category>/` … ニュースのカテゴリ別（`/news` は X トレンドにリダイレクトする）
 - `/news/weekly/` … ニュースの週のまとめ（試作。タブの「週まとめ」から入る）
-- `/rss.xml` … 記事とひとことを1本にまとめたフィード。ひとことは本文全文が入る。ニュースは入らない
 
 ### スタイル
 
@@ -31,7 +30,7 @@ Astro で作った個人ブログ。静的ビルドして Cloudflare Workers（S
 ---
 title: Hello World        # 必須
 date: 2026-09-24          # 必須（公開日）
-description: はじめまして  # 必須（一覧・RSS の抜粋）
+description: はじめまして  # 必須（meta description に使う）
 tags: [astro, diary]      # 任意
 updated: 2026-09-30       # 任意
 draft: true               # 任意。true だと本番ビルドから除外（dev では表示）
@@ -280,4 +279,4 @@ dev サーバーを立てて localhost の `/admin` を開く。「ローカル�
 
 ドメインは Cloudflare Registrar で取っている。`wrangler.jsonc` の `routes` に `custom_domain: true` で書いてあるので、deploy のたびに Workers のカスタムドメインとして登録される。DNS と証明書は Cloudflare 側が勝手にやるのでダッシュボードを触る必要はない。
 
-`.dev` は TLD ごと HSTS preload なので `http://` は存在しない。サイトの URL は `astro.config.mjs` の `site` が持っていて、RSS と各ページの canonical がそこから作られる。
+`.dev` は TLD ごと HSTS preload なので `http://` は存在しない。サイトの URL は `astro.config.mjs` の `site` が持っていて、各ページの canonical がそこから作られる。

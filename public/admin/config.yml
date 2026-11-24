@@ -44,7 +44,7 @@ collections:
           format: YYYY-MM-DD,
           default: '{{now}}',
         }
-      - { name: description, label: 説明文, widget: text, hint: 一覧と RSS に出る抜粋 }
+      - { name: description, label: 説明文, widget: text, hint: ページの説明文（meta description） }
       - { name: tags, label: タグ, widget: list, required: false, default: [] }
       - {
           name: updated,
