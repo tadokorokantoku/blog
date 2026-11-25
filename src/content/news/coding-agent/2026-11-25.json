@@ -1,0 +1,107 @@
+{
+  "category": "coding-agent",
+  "collectedAt": "2026-11-25T23:52",
+  "items": [
+    {
+      "title": "Claude Code 2.1.332 をリリース",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.332",
+      "source": "GitHub Releases",
+      "tag": "claude-code",
+      "summary": "MCP サーバーが配布するスキルをベータで読み込めるようになり、スキルやコマンドのインラインのシェルコマンドを拒否できる `PreSkillShellCommand` フックが加わった。Microsoft Foundry の既定モデルが Sonnet 5.5 に変わるなど、クラウド各社でのモデルの扱いも見直された。フックや MCP サーバーの出力が止まらないときのフリーズなど、93件の不具合も修正された。",
+      "detail": "<p class=\"release-counts\"><span class=\"breaking\">破壊的変更 <strong>7</strong> 件</span><span>新機能 <strong>11</strong> 件</span><span>不具合修正 <strong>93</strong> 件</span></p>\n\n- MCP サーバーのスキルをベータで読み込めるようになった。`/` メニューには `server:skill` の形で表示され、ほかのスキルの名前は変わらない\n- スキルやコマンドが読み込まれる際に、そのインラインのシェルコマンドを拒否できる `PreSkillShellCommand` フックイベントが追加された\n- Microsoft Foundry の既定モデルが Sonnet 5.5 になり、Google Cloud の Agent Platform と Foundry の `sonnet` エイリアスも Sonnet 5.5 を指すようになった\n\n## 破壊的変更\n\n- Microsoft Foundry の既定モデルが Sonnet 5.5 に変わった。`claude-sonnet-5-5` をデプロイするか、デプロイ済みのモデルを `ANTHROPIC_DEFAULT_SONNET_MODEL` に設定する必要がある\n- Foundry では Claude Sonnet 4、Opus 4、Opus 4.1 が提供終了の扱いになった。モデルの切り下げはこれらより上で止まり、これらに固定している場合は警告が出る\n- Google Cloud の Agent Platform で、`sonnet` とバックグラウンドのリクエストが `VERTEX_REGION_CLAUDE_5_5_SONNET` を読むようになった。`4_5` の変数だけを設定している場合は `CLOUD_ML_REGION` か `us-east5` に送られる\n- Bedrock Mantle の `sonnet` エイリアスが Haiku 4.5 に解決される不具合が直り、Sonnet 5 を指すようになった。Sonnet 5 が使えないアカウントではエラーになるため、先に有効にする必要がある\n- デスクトップアプリの Code タブのセッションで、OpenTelemetry の既定の `service.name` が `claude-code-desktop` に変わった。`claude-code` で絞り込んでいる場合はフィルタを直すか、`OTEL_SERVICE_NAME` で以前の名前を設定する\n- セルフホストランナーの `CLAUDE_CODE_OAUTH_TOKEN` の接頭辞が、`oat01-` に加えて `oat02-` になる場合がある。`oat01-` に一致させているプロキシのルールやログのマスク処理を更新し、値全体を隠すよう求めている\n- computer use を有効にした Mac では `computer-use` が予約済みのスキル名になった。同じ名前の自作のスキルやコマンドは読み込まれなくなり、起動時に名前の変更を促す通知が出る\n\n## 新機能\n\n- MCP サーバーのスキル（ベータ）。`/` メニューで `server:skill` として表示される\n- `PreSkillShellCommand` フックイベント。2.1.331 以前では、設定ファイルにこのフックを書くと起動時にダイアログが開く\n- ほかのセッションから届いて保留されたメッセージの確認に「Always deliver」が加わった\n- フラグが立ったメッセージによってセッションが別のモデルで動いている間、`/model` で選び直すまでフッターに1行の表示が残る\n- 応答のログを有効にしている場合、SendUserMessage や Cowork のメッセージツールで送られたテキストを OpenTelemetry の `assistant_response` イベントとして記録する\n- VS Code とデスクトップの Code タブで、セッションの一部を保存できなかったときに `/compact` での保存方法を示す警告を出し、再開したセッションの以前のメッセージが読み込まれなかったときにも通知を出す\n- claude.ai のアカウントでサインインしている場合、Cyber Verification Program のアクセス階層を起動時のヘッダーのモデル名の横に表示する\n- VS Code 拡張では、提案された差分を閉じて編集が適用されなかった場合の通知を増やし、サイドバーの `/rewind` で会話を戻すと自分のペースで回る `/loop` が止まるときに警告を出す。Manage plugins の各行にはインストール済みのバージョンを表示する\n\n## 主な変更と改善\n\n- `--model default` や Default の選択で、そのモデルが使えない場合にエラーで止まらず、古いモデルに切り替わるようになった。auto モードでは auto モードが受け付けるモデルに限る\n- Bedrock Mantle、Agent Platform、Foundry で Sonnet 5 または 5.5 に移ったターミナルと VS Code のセッションは、モードが未設定なら auto モードで始まる。止めるには `disableAutoMode` を `\"disable\"` にする\n- デスクトップアプリの Code タブと VS Code のプランモードで、auto モードの安全確認が判断できないコマンドを拒否せず、承認を求めるようになった\n- タップ式の音声入力は、新しい言葉が60秒無いか10分経つまでマイクを開いたままにする。以前は15秒と2分だった\n- `/permissions` は次回起動時に無視されるルール（ツール名の無い `rm -rf` など）を理由とともに拒否する。computer use は Claude が使うまでコンテキストを消費しにくくなった\n\n## 注目すべき不具合修正\n\n- フックが出力を止めずに書き続けるとき、ローカルの MCP サーバーが標準出力をあふれさせるとき、長いコマンドに複数のワイルドカードを含むルールを照合するときなどに起きていたフリーズが直った\n- 書き込み側の無い名前付きパイプ（ロックされたシークレットマネージャーがマウントした `.env` など）で Read、@ メンション、コンパクションが止まる問題が直り、20秒で失敗するようになった\n- SSE の MCP サーバーがイベントストリームの切断後にツール呼び出しを止めたり拒否し続けたりする問題や、タスク ID が128文字を超える MCP サーバーで「malformed task handle」になる問題が直った\n- `claude auth login` が claude.ai のログイン情報を保存できなかったのに `Login successful.` と表示していた問題が直り、終了コード1で確認すべき点を示すようになった\n- Code Mode で、スクリプトが10分を超えるとサブエージェントが「Agent stalled」で失敗する問題など、複数の不具合が直った\n\n<div class=\"note\"><strong>更新時の注意</strong> Microsoft Foundry、Google Cloud の Agent Platform、Bedrock Mantle で使っている場合は、既定モデルとエイリアスの変更に合わせて <code>ANTHROPIC_DEFAULT_SONNET_MODEL</code> や <code>VERTEX_REGION_CLAUDE_5_5_SONNET</code> の設定、モデルのデプロイ状況を確認する。OpenTelemetry を <code>claude-code</code> で絞り込んでいる場合も見直しが要る。</div>",
+      "publishedAt": "2026-11-25"
+    },
+    {
+      "title": "MCP サーバーがスキルを配布できるように、Tasks と Elicitation は一般提供",
+      "url": "https://claude.com/resources/articles/skills-over-mcp-tasks-and-more",
+      "source": "Claude Blog",
+      "tag": "claude-code",
+      "summary": "Anthropic は、MCP サーバーがツールと一緒にスキルを配布できる Skills over MCP を、Claude と Claude Code でパブリックベータとして公開した。長時間の処理を任せる Tasks と、処理の途中で利用者に入力を求める Elicitation は一般提供になり、ファイルを渡す File Uploads も近く提供される。",
+      "detail": "- Skills over MCP がパブリックベータになり、MCP サーバーがツールと一緒にスキルを配布できる。Claude は必要なときだけスキルを読み込む\n- Tasks と Elicitation が Claude と Claude Code で一般提供になった。Pro、Max、Ultra のプランが対象で、Team と Enterprise には順次展開する\n- File Uploads は、PDF やスプレッドシート、画像をコンテキストウィンドウを通さずに MCP サーバーへ渡す拡張で、近く提供を始める\n\n## Skills over MCP\n\n- ツールの名前と説明だけでは伝わらない個別の使い方を、サーバーがスキルとして提供する。スキルはサーバーと一緒に更新されるため、利用者が別にインストールするものは無い\n- Shopify はストアの設計と更新、HubSpot は顧客のオンボーディング、Atlassian は組織のコンテキストを使った分析にスキルを使っている。Carta はアップロードした文書から株式の発行を下書きするスキルを予定している\n- Claude と Claude Code でパブリックベータとして提供し、Pro、Max、Ultra では既定で有効になる。Team では管理者が有効にすれば使え、Enterprise にも近く提供する\n\n## Tasks と Elicitation\n\n- Tasks では、時間のかかる処理やエージェントのループ全体をサーバー側で動かし、Claude はその間も作業を続けて、終わった結果を受け取る。ZoomInfo は、以前は複数回のプロンプトが必要だったアカウントや連絡先の調査に使っている\n- Elicitation では、サーバーが処理を止めてフォームやリンクで利用者に入力を求め、そのあと続きから再開する。Supabase は有料プロジェクトの作成前や破壊的な SQL の実行前に費用を確認し、Railway はサービスの削除前に確認を取り、GitHub はリポジトリの削除前にその名前を入力させている\n\n## MCP の現状\n\n- これらは MCP の仕様とその拡張の一部で、対応したサーバーは Claude 以外の互換クライアントでも動く\n- MCP の SDK は月間7億回以上ダウンロードされ、Claude 向けの MCP コネクタは1万を超える\n- ツール検索は必要なときだけツールの定義を読み込み、複数サーバーの構成ではツール定義が使うコンテキストを85%以上減らせるとしている。最新の仕様はステートレスになり、Enterprise Managed Auth 拡張では管理者が一度承認すれば利用者は自動で接続される",
+      "image": "https://claude.com/resources/articles/skills-over-mcp-tasks-and-more/opengraph-image/og",
+      "publishedAt": "2026-11-24"
+    },
+    {
+      "title": "複数の Claude モデルでエラー率が上昇（約24分）",
+      "url": "https://status.claude.com/incidents/yl30wkjblcm6",
+      "source": "Claude Status",
+      "tag": "claude-code",
+      "summary": "11月25日 04:52〜05:16（UTC）の約24分間、Claude Fable 5.2、Mythos 5.2、Opus 5.5、Sonnet 5.5、Haiku 5.5 でエラー率が上昇した。障害はすでに解消している。",
+      "detail": "- 影響を受けたモデルは Claude Fable 5.2、Claude Mythos 5.2、Claude Opus 5.5、Claude Sonnet 5.5、Claude Haiku 5.5\n- 影響時間は 11月25日 04:52〜05:16（UTC）の約24分間で、エラー率が上昇した\n- 原因は公表されていない\n\n## 時系列\n\n- 05:32（UTC）: 解消済みとして、影響のあった時間帯と対象モデルを公表した。ステータスページへの投稿はこの1件だけ",
+      "publishedAt": "2026-11-25"
+    },
+    {
+      "title": "Claude Haiku 5.5 でエラー率が上昇（約18分）",
+      "url": "https://status.claude.com/incidents/fbvlx4wx4zx5",
+      "source": "Claude Status",
+      "tag": "claude-code",
+      "summary": "11月24日 17:09〜17:27（UTC）の約18分間、Claude Haiku 5.5 へのリクエストでエラー率が上昇した。claude.ai、Claude API、Claude Code、Claude Cowork が影響を受け、修正の適用後に解消した。",
+      "detail": "- 対象は Claude Haiku 5.5 へのリクエストで、claude.ai、Claude API（api.anthropic.com）、Claude Code、Claude Cowork が影響を受けた\n- 影響時間は 11月24日 17:09〜17:27（UTC）の約18分間\n- 原因は公表されていない\n\n## 時系列（UTC）\n\n- 17:19: Claude Haiku 5.5 へのリクエストでエラーが増えていることを調査していると公表した\n- 17:27: 修正を適用し、回復を監視していると更新した\n- 17:50: 解消を公表した",
+      "publishedAt": "2026-11-24"
+    },
+    {
+      "title": "ChatGPT と Codex Cloud で会話のエラーが増加",
+      "url": "https://status.openai.com/incidents/01M898HVZGXFV2XC4775CG9GF8",
+      "source": "OpenAI Status",
+      "tag": "codex",
+      "summary": "11月25日、ChatGPT、ChatGPT Work、Codex Cloud で会話のエラーが増え、Codex Web などが性能低下の状態になった。OpenAI は緩和策を適用して回復を確認しており、原因の調査を続けている。",
+      "detail": "- 影響を受けたコンポーネントは Conversations、Codex Web、ChatGPT Work で、いずれも性能低下（Degraded performance）の状態になった\n- インシデントは 11月25日 11:48（UTC）に公開された。13:22（UTC）の時点では緩和策の適用後の監視中で、解消はまだ公表されていない\n- 原因は調査中とされている\n\n## 時系列（UTC）\n\n- 11:48: ChatGPT、ChatGPT Work、Codex Cloud で会話のエラーが増えているとしてインシデントを公開した\n- 13:22: 緩和策を適用し、ChatGPT、ChatGPT Work、Codex Cloud のスレッドで回復が見られると更新した。影響を受けたサービスの安定を監視しているとしている",
+      "publishedAt": "2026-11-25"
+    },
+    {
+      "title": "Antigravity CLI 1.5.17 をリリース",
+      "url": "https://antigravity.google/docs/changelog#v1.5.17",
+      "source": "Antigravity Changelog",
+      "tag": "gemini",
+      "summary": "Antigravity CLI（agy）1.5.17 で、全画面（altscreen）表示のプロンプト欄でマウスによるカーソル移動とテキスト選択ができるようになった。長時間のターンで Google OAuth のトークンが切れて 401 で失敗する問題や、エンタープライズ環境で機密ファイルの保護が効かなかった問題など、10件の不具合が修正された。",
+      "detail": "<p class=\"release-counts\"><span class=\"breaking\">破壊的変更 <strong>0</strong> 件</span><span>新機能 <strong>1</strong> 件</span><span>不具合修正 <strong>10</strong> 件</span></p>\n\n- altscreen モードのプロンプト欄で、クリックによるカーソル移動と、ドラッグやダブルクリックでのテキスト選択ができるようになった\n- `run_command` に `NotificationTimeoutSeconds` によるウェイクアップを設定でき、長く動くコマンドがまだ実行中であることを CLI がエージェントに知らせる\n- Gemini Enterprise などでワークスペース外のファイルアクセスを許可したセッションで、`.git` や `.env`、`hooks.json` などの機密ファイルの承認・拒否の保護が回避される不具合が直った\n\n## 新機能\n\n- altscreen モードのプロンプト欄で、マウスによるカーソル移動とテキスト選択ができる。選択範囲は入力や貼り付けでの置き換え、Backspace/Delete での削除、Ctrl+C でのコピー、Ctrl+X での切り取りに使え、マウスボタンを離してもクリップボードは上書きされない。Vim モードでは、インサートモード以外でのマウス選択が文字単位のビジュアルモードになる\n\n## 主な改善\n\n- `run_command` で `NotificationTimeoutSeconds` によるウェイクアップを設定できるようになり、別のポーリング用タイマーでターンを余分に使わずに、長時間動くコマンドの状況がエージェントに届く\n- `/model` の Orchestrator の行で、Planner と Executor に同じモデルと思考の Effort を選ぶと、そのモデルの単一エージェントとして動く。同じモデルファミリーで Effort が異なる場合は、これまでどおり計画と実行の2段階で動く\n- `/mcp` と `/plugin` での MCP サーバーの OAuth サインインで、条件を満たす場合に `offline_access` を要求するようになった。Vercel などのリモート MCP サーバーで、最初のアクセストークンの期限切れで切断されずにリフレッシュトークンを使える\n- `/usage` は、24時間を超えるクォータ更新までの残り時間を日・時間・分で表示する\n\n## 注目すべき不具合修正\n\n- 長いターンの途中で Google OAuth のアクセストークンが1時間の期限を過ぎると、UNAUTHENTICATED（401）で失敗していた。期限前にトークンを更新し、ストリーム開始前の 401 は自動で再試行する\n- 複数に分かれる長いストリーミング応答の継続中に 503（`MODEL_CAPACITY_EXHAUSTED`）が出ると、進捗が捨てられてターンがやり直しになったり失敗したりしていた。自動で再試行し、中断した箇所から再開する\n- Gemini Enterprise とエンタープライズ向けモデルゲートウェイのセッションで、ワークスペース外のファイルアクセスを許可していると、`.git`、`.env`、`config.json`、`hooks.json`、`mcp_config.json` などに対する組み込みの承認・拒否の保護が回避されていた\n- プリペイドの残高が無い Gemini Enterprise のアカウントでターンが再試行され続けていた問題が直り、残高不足を知らせてすぐに止まるようになった",
+      "publishedAt": "2026-11-25"
+    },
+    {
+      "title": "Antigravity CLI 1.5.16 をリリース",
+      "url": "https://antigravity.google/docs/changelog#v1.5.16",
+      "source": "Antigravity Changelog",
+      "tag": "gemini",
+      "summary": "Antigravity CLI（agy）1.5.16 で、複数ステップのターン中にステップのチェックリストが表示されるようになり、会話を ID で再開する `-r` と `--resume` が加わった。`~/.agents/skills` のスキルも自動で検出する。Auto モードでは、条件を満たすワークスペース外のファイルを確認なしで作成・編集できるようになった。",
+      "detail": "<p class=\"release-counts\"><span class=\"breaking\">破壊的変更 <strong>0</strong> 件</span><span>新機能 <strong>3</strong> 件</span><span>不具合修正 <strong>9</strong> 件</span></p>\n\n- 複数ステップのターン中、プロンプト上部のステータスラインの下にステップのチェックリストがリアルタイムで表示される\n- `--conversation` の別名として `-r` と `--resume` が加わり、`agy -r <id>` で会話を ID で指定して再開できる\n- `~/.agents/skills` にあるユーザー全体のスキルを自動で検出し、`/skills` や `/` の補完、エージェントのターンで使えるようになった\n\n## 新機能\n\n- ステップのチェックリスト。エージェントが `update_steps` でステップを追跡しているとき、ステータスラインに `N/M steps` とスキップ数・失敗数を出し、最大7件のステップを展開して表示する。すべてのステップが終わると自動で隠れる\n- `-r` と `--resume` のフラグ\n- `~/.agents/skills` のスキルの自動検出。名前が重なる場合は `~/.gemini` のスキルが優先される\n\n## 挙動の変更\n\n- Auto モード（既定の Agent Mode）で、ファイルが Git、Jujutsu、Mercurial などのリポジトリ内にある場合や、変更が内容の追加だけ（新規ファイルの作成、追記、既存の行を置き換えない挿入）の場合に、ワークスペース外のファイルを確認なしで作成・編集できるようになった。リポジトリ外での既存行の上書き、隠しパス、`.git` や `hooks.json` などのメタデータ、システムフォルダーやスタートアップフォルダーは引き続き承認が必要で、`ask` と `deny` のルールや組織のポリシーも適用される\n- 管理設定と Gemini Enterprise のプラグイン制御の `pluginControls.pluginsDisabled` は、インストール済み、ワークスペース、マーケットプレイスのプラグインとプラグインのコマンドを引き続きブロックする一方、組み込みのプラグインは有効のまま残すようになった。以前は組み込みのプラグインも無効になっていた\n- 作業中の経過時間の表示を、思考時間と実行中の各ツールで分けて計るようにした。1分を超えるターンでもクォータの表示を定期的に更新する\n\n## 注目すべき不具合修正\n\n- macOS に SSH で接続して agy を動かすと、既存のキーチェーンのサインイン情報が使われず再サインインを求められていた\n- default や accept-edits モードで、サブエージェントやワークフローのエージェントがツールの承認や質問を求めると、`agy acp` が60秒止まっていた\n- 失敗またはタイムアウトしたシェルコマンドの状態を示す点が、赤ではなく緑で表示されていた\n\n<div class=\"note\"><strong>更新時の注意</strong> Auto モードでは、リポジトリ内のファイルや追記だけの変更について、ワークスペース外でも確認なしで書き込まれるようになった。<code>pluginControls.pluginsDisabled</code> で組み込みのプラグインも止めていた組織は、更新後に組み込みのプラグインが有効になる点を確認する。</div>",
+      "publishedAt": "2026-11-24"
+    },
+    {
+      "title": "Antigravity が MCP Apps に対応、ツールの結果を対話型の UI で表示",
+      "url": "https://antigravity.google/blog/mcp-apps-in-antigravity",
+      "source": "Antigravity Blog",
+      "tag": "gemini",
+      "summary": "Google Antigravity が MCP Apps に対応し、MCP のツールがテキストに加えて対話型の HTML の画面をワークスペース内に描画できるようになった。チャット内のほか、サイドパネル、左サイドバーの全画面表示、独自形式のファイルビューアーとしても開ける。Better Stack、CodeRabbit、Datadog、Vercel などのプラグインがすでに対応している。",
+      "detail": "- オープンな MCP Apps 拡張（SEP-1865、`io.modelcontextprotocol/ui`）に対応し、標準の MCP Apps はコードを変えずにそのまま動く\n- Antigravity 独自の拡張 `com.google.antigravity/ui` を使うと、サイドパネル、左サイドバーの全画面表示、独自のファイルビューアーとエディターとしても開ける\n- 組み込みの `/mcp-app-development` スキルで、HTML のフロントエンド、MCP サーバー、`mcp_config.json` をそろえたプラグインのひな形を作れる\n\n## 表示できる場所\n\n- チャット内のインライン表示: 既定の表示先。ツールが `_meta.ui.resourceUri` を宣言すると、生の JSON の代わりに、完了したツールのステップの下に画面が描画される\n- サイドパネル: `aux_pane` のエントリポイントを使うと、会話の横に常駐するタブとして開く。エージェントがツールを繰り返し呼んでも同じタブがその場で更新され、非表示のタブは最大5つまでメモリに保持される\n- サイドバーの全画面表示: `global` のエントリポイントを使うと、左サイドバーのプラグインの下に登録され、会話とは独立して全幅で開く。ワークスペース全体のダッシュボードなどに向く\n- ファイルビューアーとエディター: `file` のエントリポイントで特定の拡張子（`.stl` の3Dメッシュや回路図など）を関連付けると、組み込みのビューアーの代わりに使われる。ファイルシステムのパスは渡さず、ビューごとに `antigravity-file://` の URI を渡し、書き戻しはローカルのファイルを編集している場合にだけ許可される\n\n## 対応済みのプラグイン\n\n- Better Stack、CodeRabbit、Datadog、monday.com、Qodo、Vercel が対応している。Vercel のプラグインは、`open_deployments` の応答をチャット内の Preview Deployment のカードに変え、Vercel Sandbox Desktop をデスクトップ幅とモバイル幅で並べて試せる\n- 使い始めるには、Antigravity の「カスタマイズ > マーケットプレイス」から対応プラグインをインストールしてサインインする",
+      "publishedAt": "2026-11-24"
+    },
+    {
+      "title": "VS Code 1.148 をリリース、エージェントの実行中にスリープを防ぐ機能などを追加",
+      "url": "https://code.visualstudio.com/updates/v1_148",
+      "source": "VS Code Release Notes",
+      "tag": "copilot",
+      "summary": "VS Code 1.148 で、エージェントの作業中にマシンのスリープを防ぐ機能（プレビュー）や、Docker の Dev Container をエージェントのセッション用に作る機能（実験的）が加わった。Agent Host のチャットは前の安定版より平均30%速く応答を始める。Copilot のセッションでは、`sudo` や `ssh` のパスワード入力をチャットで受け付ける。",
+      "detail": "<p class=\"release-counts\"><span class=\"breaking\">破壊的変更 <strong>0</strong> 件</span><span>新機能 <strong>15</strong> 件</span><span>不具合修正 <strong>0</strong> 件</span></p>\n\n- `sessions.keepAwakeWhileWorking`（プレビュー）で、対応する Agent Host はエージェントのターンの実行中、ウィンドウを閉じたあとも含めてマシンのアイドルスリープを防ぐ\n- エージェントのセッション用に、設定ファイルを書かずに Ubuntu の Dev Container を作れるようになった（実験的）\n- Agent Host のチャットは、前の安定版より平均30%速く応答を始める\n\n## 新機能\n\n- スリープの防止（プレビュー）: `sessions.keepAwakeWhileWorking` は `whenPluggedIn`（既定、電源接続時のみ）、`always`、`never` から選ぶ\n- Inbox の移動と整理（実験的）: `sessions.list.inboxEnabled` で有効にし、`sessions.list.inboxAutoAdvance` で返信後に次の会話へ進むかを `auto`、`on`、`off`、`newSession` から選ぶ\n- Dev Container の作成（実験的）: `chat.agentHost.devContainer.environments.enabled` で有効にする。このコンピュータのほか、Docker のある SSH ホスト、WSL、Dev Tunnel 上にも作れる。`chat.agentHost.devContainer.handoff.enabled` も有効にすると、エージェントが既存のセッションから Dev Container を作り、その中の新しいセッションで作業を続ける\n- サンドボックスのプロファイル（実験的）: `chat.agent.sandbox.profiles.enabled` で、エージェントのサンドボックス設定に名前を付けて保存し、リモートの Agent Host ごとに割り当てられる\n- リモート接続のトラブルシュート: 接続に失敗したときの通知や More Actions から、原因の説明と再試行などの対処を示すページを開ける\n- リモートのワークツリーの整理: 接続中のリモートの Agent Host にある使われていないワークツリーを削除してディスクを空けられる。Chat ビューやコマンドパレットの「Chat: Open Worktree Cleanup」からも開ける\n- エージェントのシェルコマンドのパスワード入力: `chat.agentHost.copilot.shellAuthentication.enabled` により、Copilot のハーネスのセッションで `sudo -A`、`ssh`、`git` がパスワードを求めると、チャットに質問として表示される。答えはそのプログラムにだけ渡り、モデルには送られない\n- MCP Apps の全画面表示、統合ブラウザーの既定のユーザーエージェント（`workbench.browser.userAgent`）と HTTP Basic 認証への対応\n- エディターでは、新しいタブのボタン（`workbench.editor.newTabButton`）、無題ファイルの操作一覧、Rust で書かれ WebAssembly にコンパイルされた差分アルゴリズム（`diffEditor.diffAlgorithm` を `advanced-wasm` に設定）、浮動するコメント表示を実験的に提供する\n- Agent Host Protocol 1.1.0 を公開した。TCP のポート転送、セッション間でのチャットの移動とチャットごとのハーネスの選択、Skills over MCP（SEP-2640）の表現などに対応する\n\n## 主な改善\n\n- Agent Host のチャットの応答開始が平均30%速くなり、以前のハーネスとの差は約5%以内になった\n- Agents ウィンドウの Remote Environments エディターを作り直し、各環境の状態、最終利用、OS を一覧で表示する\n- Rust 製の VS Code CLI のサイズが約40%小さくなった。Remote SSH や一部の WSL の接続、リモートの Agent Host の起動にも使われる\n- WebAssembly 版の差分アルゴリズムは、初期の計測で中央値で2倍以上速いとしている\n\n<div class=\"note\"><strong>更新時の注意</strong> Local のハーネスは非推奨になり、2027年2月に削除される予定。</div>",
+      "image": "https://code.visualstudio.com/assets/updates/1_148/release-highlights.webp",
+      "publishedAt": "2026-11-25"
+    },
+    {
+      "title": "Copilot の MAI Code 2 モデルで可用性が低下",
+      "url": "https://www.githubstatus.com/incidents/189rrqcfhc75",
+      "source": "GitHub Status",
+      "tag": "copilot",
+      "summary": "11月25日、Copilot 製品と IDE で MAI Code 2 モデルの可用性が低下した。GitHub は上流のモデル提供元の問題によるものとし、復旧までは別のモデルか「Auto」を選ぶよう案内していた。障害は同日中に解消した。",
+      "detail": "- 影響範囲は Copilot 製品と IDE で使う MAI Code 2 モデルで、ステータスページでは Copilot AI Model Providers の障害として扱われた\n- 原因は上流のモデル提供元の問題とされている。詳しい根本原因の分析はあとで公表するとしている\n- 復旧までの間、別のモデルか「Auto」を選んで Copilot を使い続けるよう案内していた\n\n## 時系列（UTC、11月25日）\n\n- 11:58: Copilot AI Model Providers の性能低下の報告を調査していると公表し、同時刻に MAI Code 2 モデルの可用性の低下と上流の問題を説明した\n- 12:03: 解消を公表した",
+      "publishedAt": "2026-11-25"
+    },
+    {
+      "title": "Copilot のコード補完と Next Edit Suggestions に障害（約1時間）",
+      "url": "https://www.githubstatus.com/incidents/m0wx9qml7yjh",
+      "source": "GitHub Status",
+      "tag": "copilot",
+      "summary": "11月25日 00:08（UTC）ごろから、Copilot のコード補完と Next Edit Suggestions に問題が起きた。GitHub は緩和策を適用し、01:15（UTC）に解消を公表した。根本原因の分析はあとで公表するとしている。",
+      "detail": "- 影響範囲は Copilot のコード補完（Code Completions）と Next Edit Suggestions\n- 最初の投稿から解消の公表まで約1時間7分（00:08〜01:15 UTC）\n- 原因は公表されておらず、詳しい根本原因の分析はあとで共有するとしている\n\n## 時系列（UTC、11月25日）\n\n- 00:08: 一部の GitHub のサービスで性能に影響が出ているとして調査を始めた\n- 00:41: コード補完と Next Edit Suggestions の問題を調査していると更新した\n- 01:05: 緩和策を適用し、テレメトリーで改善が見られるとして完全な回復を監視していると更新した\n- 01:15: 解消を公表した",
+      "publishedAt": "2026-11-25"
+    }
+  ]
+}

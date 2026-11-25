@@ -1,0 +1,54 @@
+{
+  "category": "ade",
+  "collectedAt": "2026-11-25T23:52",
+  "items": [
+    {
+      "title": "v1.4.274: 新規ユーザーで App Rail を既定で有効に",
+      "url": "https://github.com/stablyai/orca/releases/tag/v1.4.274",
+      "source": "GitHub Releases",
+      "tag": "orca",
+      "summary": "Orca v1.4.274 は、新しく使い始めるユーザーで App Rail を既定で有効にするマイナーアップデート。App Rail はアプリの移動先をコンパクトなアイコンの列にまとめ、サイドバーの場所を空ける。既存のユーザーは設定から有効にできる。",
+      "detail": "<p class=\"release-counts\"><span class=\"breaking\">破壊的変更 <strong>0</strong> 件</span><span>新機能 <strong>1</strong> 件</span><span>不具合修正 <strong>0</strong> 件</span></p>\n\n- 新しく Orca を使い始めるユーザーでは、App Rail が既定で有効になった\n- App Rail はアプリの移動先をコンパクトなアイコンの列に収め、サイドバーの場所を空ける\n- 既存のユーザーは **Settings > Experimental > App rail** で有効にできる\n\n## 直前の v1.4.273 の内容\n\n- リリースノートでは、v1.4.273 の内容として、ボットのパネルに今後の実行予定と分かりやすい項目の質問が表示されること、モバイルアプリにアカウントとグループの操作が加わったこと、配信されるブラウザーのページのスクロールが滑らかになったことを挙げている",
+      "image": "https://github.com/stablyai/orca/releases/download/v1.4.274/app-rail.png",
+      "publishedAt": "2026-11-25"
+    },
+    {
+      "title": "v0.1.12: 複数リポジトリのプロジェクトとワークフロー（ベータ）に対応",
+      "url": "https://github.com/pingdotgg/t3code/releases/tag/v0.1.12",
+      "source": "GitHub Releases",
+      "tag": "t3code",
+      "summary": "T3 Code v0.1.12 で、1つのプロジェクトとスレッドで複数のリポジトリを扱えるようになり、エージェントやスケジュール、Webhook、人の承認を組み合わせるワークフローがベータで加わった。226人による1092件の変更を含む。",
+      "detail": "<p class=\"release-counts\"><span class=\"breaking\">破壊的変更 <strong>1</strong> 件</span><span>新機能 <strong>59</strong> 件</span><span>不具合修正 <strong>739</strong> 件</span></p>\n\n- 1つのプロジェクトとスレッドで、分離したワークツリーを含めて複数のリポジトリを扱えるようになった\n- ワークフロー（ベータ）が加わり、エージェント、スケジュール、Webhook、人の承認を組み合わせた永続的なワークフローを作って動かせる\n- リンクしたマシンのスレッドを、マシンごとにペアリングせずに読めるようになり、そこから接続して操作できる（ベータ）\n\n## 破壊的変更\n\n- アシスタントのターンの下に出ていた変更ファイルのカードが、Web とモバイルで削除された\n\n## 新機能\n\n- 複数リポジトリのプロジェクト: 1つのプロジェクトが複数のリポジトリをまたぐ\n- ワークフロー（ベータ）: エージェント、スケジュール、Webhook、人の承認を使う永続的なワークフローを、Web とモバイルで作成・実行できる\n- リンクしたスレッド（ベータ）: リンクしたマシンのスレッドをクライアントから読み、読み取り専用のスレッドからその環境に接続できる\n- 接続マップ（ベータ）: 環境のページがマシンのつながりを示すマップになり、すでにリンクしている別の環境を通してマシンをリンクできる\n- MCP のサインイン: スレッドに出る警告から、リモート環境を含めてエージェントの MCP サーバーに直接サインインできる\n- Apple Speech: macOS 26 以降の Mac で、Apple Speech を使ってローカルで音声入力できる\n- 大きなファイルのプレビュー: ファイルプレビューを固まらせずに、大きなファイルの全体を開ける\n- そのほか、Linear の複数チームの課題の一覧と複数アカウントの接続、GitHub の issue のステータスへの追従、GitHub の `includeStack` によるスタックの自動マージ、外部のエージェントが MCP Events でマイルストーンを受け取る機能、`t3 thread start --generate-title` などが加わった\n\n## 注目すべき不具合修正\n\n- Cursor のバックグラウンドのコマンドがターンを越えて動き続け、終了時にエージェントを起こすようになった\n- PR の監視で、失敗のあとにチェックが終わったときやマージ・クローズのときにエージェントへ知らせるようになった\n- 遅いディスクでログを書く間にサービスが固まる問題や、Antigravity での思考トークンの二重計上などが直った",
+      "publishedAt": "2026-11-25"
+    },
+    {
+      "title": "Cognition、SWE-2 の大幅な改良版 SWE-2.1 を公開",
+      "url": "https://cognition.com/blog/swe-2-1",
+      "source": "Cognition Blog",
+      "tag": "devin",
+      "summary": "Cognition は、Kimi K3 を基に純粋な強化学習で訓練したモデル SWE-2.1 を公開した。FrontierCode 2.0 で 41.3、Terminal-Bench 4.1 で 50.0 を記録し、サイバーセキュリティの性能も大きく上がった。Cerebras と組んだ10倍速の SWE-2.1 Ultrafast も同時に提供する。",
+      "detail": "- SWE-2.1 は SWE-2 と同じく Kimi K3 を基に純粋な強化学習で訓練したモデルで、FrontierCode 2.0 は 24.1 から 41.3 に、Terminal-Bench 4.1 は 24.2 から 50.0 に上がった\n- 脆弱性の発見と悪用の性能が大きく伸び、ExploitBench で80%、ExploitGym で意図した手法によるフラグの取得率27.3%を記録した\n- Cerebras との提携で、同じモデルを10倍の速度で動かす SWE-2.1 Ultrafast も公開した\n\n## ベンチマーク\n\n- 記事の比較表では、SWE-2.1 は ProgramBench 44.0、SWE-Atlas QA 71.0、SWE Marathon v1.2 54.9 で、いずれも SWE-2 を上回る\n- 同じ表の Claude Opus 5.5 は Terminal-Bench 4.1 で 65.8、FrontierCode 2.0 で 47.3 で、SWE-2.1 はこれらを下回る\n- セキュリティでは CWE-Bench v2 Public で 65.8、ExploitGym の成功率で 27.3 を記録した。モデルが長く作業するほど解ける課題が増え、その伸びは時間に対して対数線形になるとしている\n\n## 訓練の安全対策と提供の仕方\n\n- サイバーセキュリティの能力を持つモデルを訓練するため、サンドボックスを中心に訓練環境をレッドチームで検証し、モデルがサンドボックスからの脱出を試みる評価を置いて継続的に監視した。訓練中、モデルはサンドボックスの新しい脆弱性を4回見つけ、そのたびに研究者に通知が届いて対応した\n- 危険性の高い一部の行為を検知して防ぐ安全策を入れて提供する。防御の作業向けには安全策を緩めた SWE-2.1 Cyber を Devin Security に展開し、通常のスキャンに使う\n- 訓練では短期と長期の作業にまたがる課題と環境を増やし、ロールアウトの長さを制御する後訓練のアルゴリズムで学習を安定させた\n\n## SWE-2.1 Ultrafast と提供条件\n\n- Ultrafast は毎秒600トークンで生成し、SWE-2.1（毎秒60トークン）の10倍、SWE-2 Flash（毎秒200トークン）の3倍になる\n- Devin Desktop と CLI では12月8日まで無料で使え、Devin Desktop、Cloud、CLI では1月30日まで割引価格で提供する",
+      "image": "https://cognition.com/images/swe-2-1/cover.jpg",
+      "publishedAt": "2026-11-24"
+    },
+    {
+      "title": "release/2026-11-25: スレッド内検索、# でのスレッドのリンク、PR をスレッドの横で開く機能など",
+      "url": "https://threadbear.mikecann.app/changelog",
+      "source": "Threadbear Changelog",
+      "tag": "threadbear",
+      "summary": "Threadbear の 11月25日のリリースで、開いているスレッドを ⌘F で検索できるようになり、メッセージ欄で # と打つと別のスレッドをリンクできるようになった。GitHub の PR のリンクはスレッドの横のタブで開き、チェックや変更ファイルを確認できる。",
+      "detail": "<p class=\"release-counts\"><span class=\"breaking\">破壊的変更 <strong>0</strong> 件</span><span>新機能 <strong>12</strong> 件</span><span>不具合修正 <strong>5</strong> 件</span></p>\n\n- ⌘F（Edit > Find in Thread）で開いているスレッドの文章を検索でき、一致した箇所が黄色で示され、Return で順に移動する\n- メッセージ欄で # を打って別のスレッドを選ぶと、エージェントが読めるチップとして入る\n- GitHub の PR のリンクを押すと、チェック、変更ファイル、Review と Merge のボタンを備えたタブがスレッドの横に開く。`gh` コマンドが必要\n\n## 新機能\n\n- スレッド内の検索（⌘F）\n- # によるスレッドのリンク\n- 返信のコードブロックを言語ごとに色分けし、上部のバーに言語名とコピーのボタンを置く。Mac、iPhone、Android で使える\n- サイドペインで WAV、MP3、M4A などの音声ファイルを再生できる。エージェントはデザインレビューに音声を入れ、音楽や効果音を比べられる\n- Send の横の矢印から、今夜9時、明日の朝9時、トークンがリセットされたときのいずれかを選んで送信を予約できる\n- PR をスレッドの横のタブで開ける\n- ⇧⌘B で、スレッド一覧の下にある Runners、Connectors、Updates、Usage、Setup のパネルを隠したり戻したりできる。⇧⌘A で画像を添付できる\n- 変更履歴のページでは、このリリースの合計を新機能12件、変更7件、修正5件としている",
+      "publishedAt": "2026-11-25"
+    },
+    {
+      "title": "0.10.0: 課題のボード表示、Drive のファイル編集、アプリの高速化",
+      "url": "https://capy.ai/changelog/0.10.0",
+      "source": "Capy Changelog",
+      "tag": "capy",
+      "summary": "Capy 0.10.0 で、課題をステータスごとの列に並べるボード表示が加わり、Drive のファイルをスレッドのサイドペインで編集できるようになった。Mac のデスクトップアプリは待機時のメモリが約80MB減り、Slack からの操作も増えた。",
+      "detail": "<p class=\"release-counts\"><span class=\"breaking\">破壊的変更 <strong>0</strong> 件</span><span>新機能 <strong>19</strong> 件</span><span>不具合修正 <strong>101</strong> 件</span></p>\n\n- Issues のページで Layout から Board を選ぶと、ステータスごとの列にカードが並び、ドラッグでステータスを変えられる\n- Drive のファイルをスレッドのサイドペインで開き、Drive のページと同じエディターで編集・保存できる\n- Mac のデスクトップアプリは待機時のメモリが約80MB減り、GPU プロセスのメモリは約半分になった\n\n## 新機能\n\n- Issues のボード表示。複数のカードをまとめて移動でき、移動を取り消すこともでき、キーボードでも動かせる。使っている絞り込みは Save view でビューとして保存できる。課題のページはレイアウトが変わり、課題を読める人はコメントにその場で返信・編集できる\n- Drive のファイルをサイドペインで編集できる。Markdown のファイルは幅の広いペインで見出しの目次を表示し、各見出しに共有できるリンクを付ける。画像ビューアーは実ピクセルで拡大でき、1:1 の切り替えがある\n- Slack では、Capy が利用者にダイレクトメッセージを送り、その返信がスレッドに届く。スレッドは Slack のメッセージへのリアクション（投票など）を待てる。Capy は自分の投稿を編集・削除でき、スレッドの返信をチャンネルにも送れる。PR のカードの Merge は、チェックの実行中なら自動マージを有効にする\n- Settings → Models で、カタログのモデルを独自の名前で接続に追加できる。Anthropic、OpenAI、Google、xAI のキーと、OpenAI API 互換の接続（OpenRouter など）で使え、その接続だけで動くため Capy のクレジットや別のキーに切り替わらない\n- Gemini 4 Neon が使えるようになり、GPT-6.2 Astra、GPT-6.2 Sol、Claude Fable 5.2 が GitHub Copilot のシートで動く\n- シングルサインオンのあとの2段階目のサインインにパスキーを使え、パスキーに名前を付けられる。公開 API で PR のレビュー状態を読み、指摘ごとのトリアージ状態を設定できる\n\n## 高速化\n\n- クラウドのマシンは起動や復帰のあとスレッドに使えるまでが速くなり、非常に大きなリポジトリの最初のクローンは止まった箇所から再開する\n- 長いスレッドを開く際のリクエストが大きく減り、多数のサブエージェントを使うスレッドや、1つの Claude のサブスクリプションで多くのスレッドを動かす場合に、最大20秒ずつ止まる問題が無くなった\n- 終わった CI を取り込むまでの時間が約22秒から約12秒になった\n\n## 注目すべき不具合修正\n\n- 2つのスレッドが同じファイルに行を足した場合に、競合のコピーを作らず両方の行を残すようになった。スレッドの編集が別のマシンで保存された新しい版を上書きしなくなった\n- ストリーミングで届いた返信が、終わった直後に消える問題が直った\n- ネストした AGENTS.md とルールのファイルが、Claude と GPT-6 のモデルで再び適用されるようになった",
+      "image": "https://downloads.capy.ai/stable/changelog/0.10.0-issues-board.webp",
+      "publishedAt": "2026-11-24"
+    }
+  ]
+}
