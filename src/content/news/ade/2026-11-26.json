@@ -1,0 +1,15 @@
+{
+  "category": "ade",
+  "collectedAt": "2026-11-26T08:30",
+  "items": [
+    {
+      "title": "11月24日のリリースノート: メッセージ欄の書式設定、Cmd+K のタブ、Bot が保存する自動化の承認など",
+      "url": "https://docs.devin.ai/release-notes/overview",
+      "source": "Devin Release Notes",
+      "tag": "devin",
+      "summary": "11月24日の Devin のリリースノートによると、メッセージ欄での書式設定や、コマンドパレットのカテゴリ別タブが加わった。Bot が自ら保存する自動化を承認制にする設定や、PR のレビュー待ちや CI の失敗をまとめる App テンプレートも追加された。",
+      "detail": "<p class=\"release-counts\"><span class=\"breaking\">破壊的変更 <strong>1</strong> 件</span><span>新機能 <strong>13</strong> 件</span><span>不具合修正 <strong>0</strong> 件</span></p>\n\n- メッセージ欄で選択したテキストを太字、斜体、取り消し線、インラインコード、箇条書き、引用、コードブロックにできるようになった。リッチテキストの貼り付けや Markdown の直接入力にも対応する\n- Bot の Automations 設定に Auto-approve automations のスイッチが加わり、エンタープライズの管理者は Trigger policies で、Bot が自動化を保存する前に人の承認を必須にできる\n- コマンドパレット（Cmd/Ctrl+K）に All、Sessions、Bots、Apps、Actions のタブが加わり、Home や Bots など左側のレールにあるすべてのページが一覧に出る\n\n## 破壊的変更\n\n- Incident dashboard テンプレートが、新しい Engineering pulse テンプレートに置き換わった\n\n## 新機能\n\n### セッションとワークスペース\n\n- メッセージ欄での書式設定\n- コマンドパレットのカテゴリ別タブ（Tab/Shift+Tab で切り替え）。Create app で Enter を押すと App セッションが始まる\n\n### Apps と Bots\n\n- Engineering pulse テンプレートは、レビュー待ちの PR、レビューとマージにかかる時間、最近のマージ、失敗している CI をまとめたダッシュボードを作る\n- DoorDash で食事を注文する DevinDash テンプレートが、Create Bot のテンプレート選択とテンプレートライブラリに追加された\n- Bot が保存する自動化の承認（Auto-approve automations と Trigger policies）\n\n### セキュリティ\n\n- 保存した Findings のビューのリンクを開くと、その時点のフィルタでビューが開く。保存アイコンで、適用中のフィルタでビューを上書きできる\n- Findings の Pull request フィルタに Pending が加わり、修正セッションが引き受けたものの PR をまだ開いていない項目を絞り込める\n- コードスキャンのセットアップセッションで、スキャンの実行ごとの Findings がリポジトリ名と開始時刻付きの別タブで開く\n- Split scan を選ぶと、先に脅威モデルを作るセッションが始まり、その後リポジトリごとにスキャンを実行する\n\n### 連携と自動化\n\n- MCP のヘッダーの値で `$` を入力すると、保存済みのシークレットが候補として表示され、参照を挿入できる\n- Automations の一覧のフィルタが URL に保存され、コピーしたリンクで同じ絞り込みの一覧が開く\n- Automations の一覧で、自動化やリマインダーを右クリックのメニューから有効・無効にできる\n- Microsoft Teams で、チャネルのスレッドと1対1のチャットのスレッドに Devin の入力中表示が出る\n\n## その他の変更\n\n- Apps のページを開くと、今週のトラフィック順に並べた公開中の App が表示され、上段に人気の App が並ぶ",
+      "publishedAt": "2026-11-24"
+    }
+  ]
+}

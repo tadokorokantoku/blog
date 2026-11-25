@@ -1,0 +1,55 @@
+{
+  "category": "coding-agent",
+  "collectedAt": "2026-11-26T08:30",
+  "items": [
+    {
+      "title": "Copilot CLI 1.0.116 をリリース",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v1.0.116",
+      "source": "GitHub Releases",
+      "tag": "copilot",
+      "summary": "Copilot が起動するすべてのプロセスに環境変数を渡す `env` 設定や、ACP 対応エディタでのコンテキストサイズの選択が加わった。プラン承認時の fleet の選択肢は廃止され、実験的な拡張機能の設定方式も変わった。長いセッションでのメモリ増加など、多数の不具合も修正された。",
+      "detail": "<p class=\"release-counts\"><span class=\"breaking\">破壊的変更 <strong>2</strong> 件</span><span>新機能 <strong>5</strong> 件</span><span>不具合修正 <strong>42</strong> 件</span></p>\n\n- `env` 設定により、シェルコマンド、ローカルの LSP・MCP サーバー、フック、拡張機能など Copilot が起動するすべてのプロセスに環境変数を渡せるようになった。サンドボックスの有無を問わず使える\n- ACP 対応エディタで、保存済みの既定値を変えずに、対応モデルのコンテキストサイズを選べるようになった\n- プランの承認時の fleet の選択肢が廃止された。fleet モードは引き続き `/fleet` で開始できる\n\n## 破壊的変更\n\n- プランの承認時に fleet の選択肢が表示されなくなった。fleet モードを使う場合は `/fleet` で開始する。`copilot help parallel-work` の説明もこれに合わせて更新された\n- 実験的な拡張機能の設定が Enabled/Disabled の切り替えになった。既存の Load Only の設定は無効（disabled）に移行し、1回だけ通知が表示される\n\n## 新機能\n\n- `env` 設定で、Copilot が起動するプロセスに環境変数を渡せるようになった\n- ACP 対応エディタで、対応モデルのコンテキストサイズを選べるようになった\n- フルスクリーンのタイムラインで「Jump to latest」を押すと、最新の出力に戻って追従を再開する\n- プラグインと単体の MCP サーバーが同じエンドポイントに接続している場合に警告を出し、`/mcp` でどちらかを無効にする方法を示す\n- 拡張機能のマニフェスト向けに、ビルド時に生成される JSON Schema が追加された\n\n## 主な改善\n\n- サンドボックスがコマンドをブロックした場合、Copilot は処理を止め、ポリシーで許可されていればセッション中のサンドボックスの無効化を案内するようになった。以前は実行を手元に戻すよう求めていた\n- Assisted Permissions は、対象プランで定型的な要求をより速く処理し、承認を求める際の理由をより具体的に示す\n- 起動時に対応が必要な MCP サーバーの状態をまとめて表示し、初回のサインインでは `/mcp auth <name>` を待ってからブラウザを開く\n- ACP クライアントのシェル承認のプロンプトに、説明文ではなく承認対象のコマンドそのものを表示する\n\n## 注目すべき不具合修正\n\n- 長いセッションで、テキスト計測のキャッシュがストリーミングされた応答の全文を保持し、JavaScript のヒープを使い切るおそれがあった問題が修正された\n- `-n1` や `-ExpectedSha256` のように数字を含むパラメータ名を持つ PowerShell コマンドが、スクリプト全体の承認を求めずに許可ルールに従うようになった\n- `.mcp.json` と `.github/mcp.json` にコメントや末尾のカンマがあっても、ワークスペースの MCP サーバーを読み込むようになった\n- GPT-5.4 で、最初のリクエストから `--effort none` が反映されるようになった。以前は medium の推論に戻っていた\n- Sessions ブラウザで、クラウドセッションが最初のページより先まで一覧に表示されるようになった\n\n<div class=\"note\"><strong>更新時の注意</strong> 実験的な拡張機能を Load Only で使っていた場合、更新後は無効になる。引き続き使うには Enabled に切り替える。プラン承認から fleet に移る操作は廃止されたため、<code>/fleet</code> で開始する。</div>",
+      "image": "https://opengraph.githubassets.com/1/github/copilot-cli",
+      "publishedAt": "2026-11-25"
+    },
+    {
+      "title": "Copilot code review の課金、未設定の場合は12月30日から組織に",
+      "url": "https://github.blog/changelog/2026-11-25-copilot-code-review-billing-will-default-to-the-organization",
+      "source": "GitHub Changelog",
+      "tag": "copilot",
+      "summary": "Copilot ライセンスを持つメンバーによる Copilot code review の課金先が未設定の場合、2026年12月30日から、レビューはリポジトリを所有する組織に課金される。これまでどおりの設定を維持するには、それまでに Member を選択する必要がある。対象は Copilot Business と Copilot Enterprise。",
+      "detail": "- 課金先の設定が保存されていない場合、有料の Copilot ライセンスを持つメンバーのレビューは、現在はメンバー本人の Copilot の利用枠を使う\n- 2026年12月30日からは、こうしたレビューがリポジトリを所有する組織に課金される\n- Copilot Business および Copilot Enterprise の組織とエンタープライズが対象\n\n## 変更の詳細\n\n- AI Credits の有料利用を有効にしていないアカウント、課金がロックされているアカウント、課金対象の顧客が無いアカウントは、Organization ではなく Member に設定される\n- すでに Member か Organization を選んでいる場合は、その設定が引き続き有効になる\n- Copilot ライセンスを持たないメンバー向けの別の設定は変わらない\n\n## メンバー課金を続けるには\n\n- 変更までの間、未設定の項目には「Default (Member)」と変更の通知が表示される\n- メンバーの Copilot の利用枠を使い続けるには、エンタープライズまたは組織の Copilot ポリシー設定で Member を選択する。この選択は既定値の変更後も有効になる\n- エンタープライズが設定を管理している場合は、エンタープライズのオーナーが選択する\n- 組織への課金には AI Credits の有料利用が必要で、組織の支出が増える場合がある\n\n<div class=\"note\"><strong>更新時の注意</strong> 課金先を未設定のままにしていると、12月30日から Copilot code review の費用が組織に請求される。メンバーの利用枠で続ける場合は、それまでに Copilot のポリシー設定で Member を選択する。</div>",
+      "image": "https://github.blog/wp-content/themes/github-2021-child/dist/img/social-v3-improvements.jpg",
+      "publishedAt": "2026-11-25"
+    },
+    {
+      "title": "GitHub ブログ、アプリケーションのモダナイゼーションで次の一手を選ぶ方法を解説",
+      "url": "https://github.blog/ai-and-ml/github-copilot/how-to-choose-the-next-safe-step-in-application-modernization/",
+      "source": "GitHub Blog",
+      "tag": "copilot",
+      "summary": "GitHub ブログが、レガシーなアプリケーションのモダナイゼーションで、移行先の技術を選ぶ前に動作の証拠を集める手法を紹介した。小規模な Node.js のゲームから大規模な Java の ERP まで4つの公開アプリケーションに適用した結果を示し、その手順を GitHub Copilot のエージェントスキルにする方法も扱っている。",
+      "detail": "- 移行先のフレームワークを決める前に、何がまだ動いているかを確かめ、回帰を防ぐ安全網として使える証拠を集める手法を紹介している\n- この手法は4つの公開アプリケーションで試され、それぞれ異なる対応となったものの、証拠の集め方と次の実験の選び方は繰り返し使えたとしている\n- 手順を GitHub Copilot のエージェントスキルに落とし込みつつ、アーキテクチャの判断はシステムの責任者に残す方法も扱う\n\n## 証拠の棚卸しと変更の選び方\n\n- マニフェストやロックファイル、検証済みのビルド・テスト・実行コマンド、コンテナや CI でのランタイムの固定、外部との契約、サポート終了の依存関係を一覧にする。不確かな点は documented、inferred、unverified の3つで記録する\n- 変更はコンポーネントごとに決め、Keep、Upgrade、Swap、Wrap、Rewrite の順に、変更の少ないものから検討する。「コードが古い」ことだけでは、より大きな変更の理由にならないとしている\n- 期限を切った実現可能性の確認を行い、旧版が動くなら挙動を記録してからアップグレードし、動かないなら最小限の機能を新しい技術に移すところから始める\n- 回帰に対する保護の強さを L0 から L4 の5段階で表す\n\n## PiggyMetrics の例\n\n- Java 8 と Spring Boot 2.0.3 などを使う PiggyMetrics では、確認の結果、9件のテストエラーは組み込み MongoDB のダウンロードが HTTP 403 を返すことが原因だった\n- テスト用の依存関係を Testcontainers に置き換えて既存の構成で成功する基準を作り、そのうえで Java 21 と Spring Boot 3.3 に移行し、Zuul や Hystrix などを既存のインターフェースの裏で置き換える計画とした",
+      "image": "https://github.blog/wp-content/uploads/2026/11/38b3dc4817bfb01261d608e093dda2cdf3392f0886a14b95208bc6f1cd49e58d-1920x1080-1.png",
+      "publishedAt": "2026-11-25"
+    },
+    {
+      "title": "Codex の GitHub レビューとプルリクエストのマージでエラーが増加",
+      "url": "https://status.openai.com/incidents/01M89RGC3STKK2MT53TXHFMY4H",
+      "source": "OpenAI Status",
+      "tag": "codex",
+      "summary": "11月25日、Codex による GitHub のレビューとプルリクエストのマージでエラーが増え、Codex Web が性能低下の状態になった。GitHub 側のプルリクエストと Webhook の障害が緩和されたことを受け、OpenAI は回復を監視している。",
+      "detail": "- 影響を受けたコンポーネントは Codex Web で、性能低下（Degraded performance）の状態になった\n- 11月25日 16:58（UTC）の時点で状態は Monitoring で、解消はまだ公表されていない\n- OpenAI は、GitHub がプルリクエストと Webhook に影響する障害の緩和を報告したとしている。Codex 側の原因の記載は無い\n\n## 時系列（UTC）\n\n- 16:58: GitHub がプルリクエストと Webhook に影響する障害の緩和を報告したとして、Codex によるプルリクエストの自動レビューとマージ操作の回復と安定を監視していると状況を更新した",
+      "publishedAt": "2026-11-25"
+    },
+    {
+      "title": "Anthropic、Messages API を Python から Rust に移行した方法を公開",
+      "url": "https://www.anthropic.com/research/migrating-api-to-rust",
+      "source": "Anthropic Engineering",
+      "tag": "claude-code",
+      "summary": "Anthropic が、Messages API を Python から Rust に移行した方法をエンジニアリングブログで公開した。本番の API 自体を検証役にして実トラフィックで差分を見つけ、エージェントに修正させた。移行後の API は、リクエストあたりの CPU 使用量が約70%減り、最初のトークンまでの時間の中央値が約20%短くなった。",
+      "detail": "- Messages API は顧客のほか、Claude Code や Cowork など Anthropic 自身のアプリが Claude を呼ぶ主な経路で、2024年初めから2026年秋までにトラフィックが約1,800倍に増えた\n- Claude はコアのリクエスト経路の最初の版を約1週間で書いたが、本番の API と同等であることの検証が課題になった\n- 本番トラフィックで新旧を比べるシャドーイングと、エージェントが差分を直すループを組み、サービスを止めず機能開発も止めずに移行した。CPU 使用量は約70%減、最初のトークンまでの時間の中央値は約20%短縮した\n\n## 移行の背景\n\n- 2023年に Python で作った Messages API は、検証、プロンプトへの変換、トークン化、安全分類器による確認などの各段階で Python のオーバーヘッドがかかるようになった\n- まず出力の解析部分だけを Rust で書き直したところ CPU 使用量は約8〜10%減ったが、各トークンが Python と Rust の間を3回行き来するようになり、複雑さに見合わなかった\n- 2026年5月の時点で、Anthropic でマージされるコードの80%以上を Claude が書いており、全面的な移行の手間が大きく下がっていた\n\n## 検証の仕組み\n\n- 既存の約700件の結合テストは Python の実装と結び付いており、移植したテストを監査すると100件以上の弱められたアサーションが見つかった\n- 4月の時点で Rust 版はテストの約98%に通っていたが、本番トラフィックで入力が一致したのは約4分の1だった\n- 課金や利用制限が二重にならないようモデルは1回だけ実行し、その出力を Rust 側に再生して比べた\n- 利用者のリクエストや応答の本文は読まず、差分が出た処理の段階、プロンプト内の位置、最初に異なるバイト位置、長さといった差分の「形」だけを記録した。同じバグは同じフィンガープリントを残すため、それで分類した\n\n## 3つのループ\n\n- 10〜30分ごとにスクリプトが差分の記録をまとめ、新しい種類の記録が出たときだけ調整役の Claude エージェントに通知した。調整役は種類ごとに担当のエージェントを割り当て、共有の Slack チャンネルにスレッドを作った\n- 内側のループでは、各エージェントがクラウドのサンドボックスで両方のコードベースを使い、1秒未満で終わる入力の比較や、偽のモデルを使う出力の比較で仮説を試した\n- 外側のループでは、PR レビューを経た修正をデプロイし、シャドーイングしたトラフィックでフィンガープリントが消えたかを確かめた\n- メモリのループでは、レビューでの指摘をメモや `CLAUDE.md` のルール、テスト、lint、マージ時のチェックに残し、後続のエージェントが同じ誤りを繰り返さないようにした\n\n## 記事が挙げる教訓\n\n- コードを書くことがボトルネックでなくなると、主な制約は結果を検証する速さになる\n- テストや形式検証で足りない場合、本番のシステム自体を検証役にできる\n- 検証の信号は、どこで何が違ったかを Claude が把握できるように設計する",
+      "image": "https://assets.claude.com/faac348155bf01d5c59ab38cbd05294eb2fa8197.jpg",
+      "publishedAt": "2026-11-25"
+    }
+  ]
+}
