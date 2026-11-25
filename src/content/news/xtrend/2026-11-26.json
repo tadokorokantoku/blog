@@ -1,0 +1,62 @@
+{
+  "category": "xtrend",
+  "collectedAt": "2026-11-26T07:10",
+  "items": [
+    {
+      "title": "Cloudflare Workersの無料プランでメール送信が使えるように",
+      "url": "https://x.com/CloudflareDev/status/2125564566755291247",
+      "source": "X, @CloudflareDev",
+      "summary": "Workersの無料プランで、メール送信（Email Sending）が利用できるようになった。詳細は公式changelogにある。",
+      "publishedAt": "2026-11-25T12:17:00Z"
+    },
+    {
+      "title": "Gemini 4 Neonは、古いモデル向けのガードレールやスキルを外した方が速い",
+      "url": "https://x.com/_philschmid/status/2125579472594223340",
+      "source": "X, @_philschmid",
+      "summary": "数週間Gemini 4 Neonで評価と開発を続けたところ、古いモデル向けに書いたガードレール、スキル、ルールの多くが動作を遅くしていたという。Philipp Schmid氏が変更した5つのことを紹介するスレッド。",
+      "publishedAt": "2026-11-25T13:16:00Z"
+    },
+    {
+      "title": "Zed v1.30、title_bar.showを\"never\"にしてタイトルバーを非表示に",
+      "url": "https://x.com/zeddotdev/status/2125648215886250301",
+      "source": "X, @zeddotdev",
+      "summary": "Zed v1.30で、`title_bar.show`に`\"never\"`を設定するとタイトルバーを隠せるようになった。コントリビューターのwuemeli氏とxipeng-jin氏への謝辞付き。",
+      "publishedAt": "2026-11-25T17:50:00Z"
+    },
+    {
+      "title": "1Password、一部バックエンドシステムのセキュリティインシデントについて続報",
+      "url": "https://x.com/1Password/status/2125642686443258030",
+      "source": "X, @1Password",
+      "summary": "1Passwordが、最近起きたセキュリティインシデントの最新情報を公開した。顧客の保管庫の内容や、それを守る鍵には影響がなかったという趣旨の説明だが、ポストの範囲では全文は確認できていない。",
+      "publishedAt": "2026-11-25T17:28:00Z"
+    },
+    {
+      "title": "Trq212氏がAnthropicからOpenAIに移籍",
+      "url": "https://x.com/trq212/status/2125675533761671405",
+      "source": "X, @trq212",
+      "summary": "OpenAIに加わったと報告した。Anthropicでの日々を誇りに思い、元同僚を応援し続けるとしている。いいねは約13,000。",
+      "publishedAt": "2026-11-25T19:38:00Z"
+    },
+    {
+      "title": "Plato's Key、独立に学習したLLM同士が表現を共有できる手法",
+      "url": "https://x.com/viviencheng__/status/2125631050319831474",
+      "source": "X, @viviencheng__",
+      "summary": "1回の回転操作だけで、独立に学習したLLM同士が互いの表現を自分のものとして使えるようになる、とされている。勾配は不要。HazyResearchとの共同研究。",
+      "publishedAt": "2026-11-25T16:41:00Z"
+    },
+    {
+      "title": "Nature：AnthropicとOpenAIの言語モデルが、タンパク質の設計と構造予測をできると報告",
+      "url": "https://x.com/Nature/status/2125551270144491845",
+      "source": "X, @Nature",
+      "summary": "これまで専門のAIツールにしか見られなかった、タンパク質の設計や、配列・構造の予測を、汎用の言語モデルができるようになったとする報告。",
+      "publishedAt": "2026-11-25T11:24:00Z"
+    },
+    {
+      "title": "NVIDIA、LLM方式の画像生成AI「Nemotron-Labs-Image」を無償公開",
+      "url": "https://x.com/pc_watch/status/2125582802460852701",
+      "source": "X, @pc_watch",
+      "summary": "PC Watchによる速報。NVIDIAがLLM方式の画像生成AI「Nemotron-Labs-Image」を無償で公開した。",
+      "publishedAt": "2026-11-25T13:30:00Z"
+    }
+  ]
+}
