@@ -253,19 +253,6 @@
   display: none;
 }
 
-.news-today {
-  padding: 0 0.5rem;
-  border-radius: 999px;
-  background: var(--accent);
-  color: var(--bg);
-  font-size: 0.75rem;
-  font-weight: 700;
-}
-
-.news-today[hidden] {
-  display: none;
-}
-
 /* スクロールで元の場所が隠れたら、本文の左の余白に縦に並べて浮かせる */
 .news-tag-filter.is-floating {
   position: fixed;

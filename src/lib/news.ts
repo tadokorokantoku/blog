@@ -26,6 +26,8 @@ export interface NewsArticle {
   // 個別ポストの URL のときだけ入る。トレンドの話題ページは埋め込めない
   xPost?: string;
   date: Date;
+  // NEW バッジの判定に使う日本時間の日
+  day: string;
 }
 
 // summary レイアウトの1記事。生 Markdown を持たせないので、変換はこのファイルの中だけで起きる
@@ -55,6 +57,8 @@ export interface RankedNewsItem {
 
 export interface NewsRanking {
   collectedAt: Date;
+  // 収集日（ファイル名の日付）
+  day: string;
   items: RankedNewsItem[];
 }
 
@@ -86,7 +90,13 @@ export async function getNewsArticles(): Promise<NewsArticle[]> {
   return days.flatMap(dayArticles).sort((a, b) => b.date.valueOf() - a.date.valueOf());
 }
 
-function dayArticles({ data }: NewsDay): NewsArticle[] {
+// ファイル名（<YYYY-MM-DD>.json）の日付。タイムゾーンを持たないので、日本時間の日として扱う
+function entryDay(entry: NewsDay) {
+  return entry.id.split('/').at(-1) ?? entry.id;
+}
+
+function dayArticles(entry: NewsDay): NewsArticle[] {
+  const { data } = entry;
   return data.items.map(
     (item): NewsArticle => ({
       category: data.category,
@@ -106,6 +116,8 @@ function dayArticles({ data }: NewsDay): NewsArticle[] {
       xPost: xPostUrl(item.url),
       // 収集元が公開日を取れないことがあるので、そのときは収集時刻で並べる
       date: item.publishedAt ?? data.collectedAt,
+      // collectedAt は UTC のビルドで日付がずれるので、公開日が無ければファイル名の日付にする
+      day: item.publishedAt ? jstDay(item.publishedAt) : entryDay(entry),
     }),
   );
 }
@@ -121,7 +133,7 @@ export async function getNewsArticlesByCategory(category: NewsCategory): Promise
 async function getSnapshotDays(category: NewsCategory): Promise<{ day: string; entry: NewsDay }[]> {
   return (await getCollection('news'))
     .filter(({ data }) => data.category === category)
-    .map((entry) => ({ day: entry.id.split('/').at(-1) ?? entry.id, entry }))
+    .map((entry) => ({ day: entryDay(entry), entry }))
     .sort((a, b) => b.day.localeCompare(a.day));
 }
 
@@ -178,6 +190,7 @@ async function getNewsRanking(category: NewsCategory): Promise<NewsRanking | nul
 
   return {
     collectedAt: latest.data.collectedAt,
+    day: entryDay(latest),
     items: items.map(
       (item): RankedNewsItem => ({
         rank: item.rank,
@@ -219,7 +232,7 @@ export function newsTag(tag: NewsTag) {
   return { id: tag, ...NEWS_TAGS[tag] };
 }
 
-// 日本時間の YYYY-MM-DD。Today の判定はこの形で比べる
+// 日本時間の YYYY-MM-DD。NEW の判定はこの形で比べる
 const JST_DAY = new Intl.DateTimeFormat('sv-SE', { timeZone: 'Asia/Tokyo' });
 
 export function jstDay(date: Date) {

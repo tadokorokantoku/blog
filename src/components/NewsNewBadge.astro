@@ -1,0 +1,39 @@
+---
+interface Props {
+  // 日本時間の YYYY-MM-DD
+  day: string;
+}
+
+const { day } = Astro.props;
+---
+
+<span class="news-new" data-day={day} hidden>NEW</span>
+
+<style>
+  .news-new {
+    padding: 0 0.5rem;
+    border-radius: 999px;
+    background: var(--accent);
+    color: var(--bg);
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+
+  .news-new[hidden] {
+    display: none;
+  }
+</style>
+
+<script>
+  // ビルドした日ではなく見ている日で判定したいので、NEW はブラウザで付ける。今日と昨日（日本時間）が対象
+  const JST_DAY = new Intl.DateTimeFormat('sv-SE', { timeZone: 'Asia/Tokyo' });
+  const DAY_MS = 24 * 60 * 60 * 1000;
+
+  document.addEventListener('astro:page-load', () => {
+    const now = Date.now();
+    const fresh = new Set([JST_DAY.format(now), JST_DAY.format(now - DAY_MS)]);
+    for (const badge of document.querySelectorAll<HTMLElement>('.news-new[data-day]')) {
+      badge.hidden = !fresh.has(badge.dataset.day ?? '');
+    }
+  });
+</script>

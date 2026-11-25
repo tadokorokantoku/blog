@@ -1,14 +1,15 @@
 ---
 import '../styles/news-dialog.css';
 import { formatDate } from '../lib/posts';
-import { jstDay, newsTag, type NewsSummaryArticle } from '../lib/news';
+import NewsNewBadge from './NewsNewBadge.astro';
+import { newsTag, type NewsSummaryArticle } from '../lib/news';
 
 interface Props {
   article: NewsSummaryArticle;
 }
 
 const { article } = Astro.props;
-const { title, url, source, tag, summary, image, categoryLabel, detailHtml, date } = article;
+const { title, url, source, tag, summary, image, categoryLabel, detailHtml, date, day } = article;
 const { rank, originalTitle, points, comments, commentsUrl } = article;
 const tagInfo = tag && newsTag(tag);
 // HN の投稿はメタ行を「ポイント・コメント数・ドメイン」にする。source にはドメインが入っている
@@ -19,7 +20,6 @@ const external = url !== commentsUrl;
 
 <li
   class="news-item"
-  data-day={jstDay(date)}
   data-tag={tagInfo?.id}
   style={tagInfo && `--tag-color: ${tagInfo.color}`}
   data-redpen-url={url}
@@ -42,7 +42,7 @@ const external = url !== commentsUrl;
       </h2>
       {originalTitle && <p class="news-original" lang="en">{originalTitle}</p>}
       <p class="news-from">
-        <span class="news-today" hidden>Today</span>
+        <NewsNewBadge day={day} />
         {
           hn ? (
             <>
@@ -111,16 +111,6 @@ const external = url !== commentsUrl;
 </li>
 
 <script>
-  // ビルドした日ではなく見ている日で判定したいので、Today はブラウザで付ける
-  const today = new Intl.DateTimeFormat('sv-SE', { timeZone: 'Asia/Tokyo' });
-
-  document.addEventListener('astro:page-load', () => {
-    const day = today.format(new Date());
-    for (const item of document.querySelectorAll<HTMLElement>(`.news-item[data-day="${day}"]`)) {
-      item.querySelector<HTMLElement>('.news-today')?.removeAttribute('hidden');
-    }
-  });
-
   document.addEventListener('click', (event) => {
     const card = (event.target as Element)?.closest('.news-card[aria-haspopup]');
     if (!card) return;

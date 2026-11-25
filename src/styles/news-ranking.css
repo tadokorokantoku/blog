@@ -7,6 +7,11 @@
   text-align: left;
 }
 
+/* .news-from と違って flex の gap が無いので、NEW の後ろだけ空ける */
+.news-ranking-caption .news-new {
+  margin-right: 0.5rem;
+}
+
 .news-ranking-caption {
   margin-bottom: 0.5rem;
   color: var(--muted);

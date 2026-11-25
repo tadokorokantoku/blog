@@ -1,5 +1,6 @@
 ---
 import '../styles/news-ranking.css';
+import NewsNewBadge from './NewsNewBadge.astro';
 import { formatDate } from '../lib/posts';
 import type { NewsRanking, RankDelta } from '../lib/news';
 
@@ -32,6 +33,7 @@ const rows = ranking.items.map((item) => ({
 
 <table class="news-ranking">
   <caption class="news-ranking-caption">
+    <NewsNewBadge day={ranking.day} />
     {formatDate(ranking.collectedAt)}時点の上位{rows.length}件。変動は前回の収集日との比較。
   </caption>
   <thead>
