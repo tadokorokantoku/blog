@@ -1,6 +1,6 @@
 {
   "category": "xtrend",
-  "collectedAt": "2026-11-25T07:10",
+  "collectedAt": "2026-11-25T18:10",
   "items": [
     {
       "title": "MCPが2周年、Skills over MCPとTasksでエージェント間の連携を標準化へ",
@@ -57,6 +57,48 @@
       "source": "X, @azukiazusa",
       "summary": "練習を重ねる、文字は過剰なくらい大きくする、色を使いすぎない、スライドは補助で口頭説明が主、コードが長くなりすぎるなら発表の媒体が違う、といった心がけを挙げている。",
       "publishedAt": "2026-11-24T12:29:00Z"
+    },
+    {
+      "title": "Honoが月間4億ダウンロードに",
+      "url": "https://x.com/yusukebe/status/2125381045965197504",
+      "source": "X, @yusukebe",
+      "summary": "yusukebe氏が、Honoのダウンロード数が月間4億という数字になったと報告した。",
+      "publishedAt": "2026-11-25T00:08:00Z"
+    },
+    {
+      "title": "Claude Shipで、PRのフォローアップ作業を引き継ぐリリース実践ガイド",
+      "url": "https://x.com/ClaudeDevs/status/2125365668463993091",
+      "source": "X, @ClaudeDevs",
+      "summary": "Claude Codeでリリース作業を進めるガイド。PRのフォローアップをClaude Shipに任せて、フロー状態を保つ使い方を紹介している。",
+      "publishedAt": "2026-11-24T23:07:00Z"
+    },
+    {
+      "title": "チームが使いたくなる「ソフトウェアファクトリー」の作り方",
+      "url": "https://x.com/BHolmesDev/status/2125351601431089418",
+      "source": "X, @BHolmesDev",
+      "summary": "ファクトリーが踏む手順をコードとして書く方法、人間の判断を挟むゲートの置き場所、検証とリスク評価のやり方を解説するスレッド。",
+      "publishedAt": "2026-11-24T22:11:00Z"
+    },
+    {
+      "title": "pstackでGemini 4 Neonを使うなら、Coordinatorに据えてOpus 5.5と比べる",
+      "url": "https://x.com/cu30rry_/status/2125503756746006851",
+      "source": "X, @cu30rry_",
+      "summary": "Gemini 4 Neonは設計や大胆なアイデア出しに向いているとして、pstackのメインCoordinatorにし、/arenaなどの複数モデルのパネルの1つにも入れてOpus 5.5の案と比べる使い方を提案している。",
+      "publishedAt": "2026-11-25T08:16:00Z"
+    },
+    {
+      "title": "shadcn、AI SDKのWebMCP対応を@uisdkで試す",
+      "url": "https://x.com/shadcn/status/2125396779591925850",
+      "source": "X, @shadcn",
+      "summary": "「マグカップを2つ追加して」と指示すると、モデルがページのWebMCPツールを呼び、コンポーネントが更新される。スクリーンショットもクリックも要らず、速いとのこと。",
+      "publishedAt": "2026-11-25T01:10:00Z"
+    },
+    {
+      "title": "OpenAIが行列乗算の指数は2.25と証明したとされるプレプリントを公開",
+      "url": "https://x.com/rrwilliams/status/2125393802554757618",
+      "source": "X, @rrwilliams",
+      "summary": "Ryan Williams氏が、OpenAIのリポジトリにあるプレプリントとして紹介した。行列乗算の指数が（ちょうど）2.25だというもので、査読や検証の結果はこのポストの範囲では分からない。別のポストでは、フーリエ変換の計算量についてのプレプリントも話題になっている。",
+      "publishedAt": "2026-11-25T00:59:00Z"
     }
   ]
 }
