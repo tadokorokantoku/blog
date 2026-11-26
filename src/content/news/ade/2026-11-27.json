@@ -1,0 +1,35 @@
+{
+  "category": "ade",
+  "collectedAt": "2026-11-27T08:30",
+  "items": [
+    {
+      "title": "v1.4.278: Antigravity のチャットを agy に一本化、6つのアプリの接続、サーバーのダウンロードを手元に保存",
+      "url": "https://github.com/stablyai/orca/releases/tag/v1.4.278",
+      "source": "GitHub Releases",
+      "tag": "orca",
+      "summary": "Antigravity のチャットがすべて agy で動くようになり、Gemini CLI への対応は削除された。ClickUp や Airtable など6つのアプリをワンクリックで接続できるようになり、サーバー上のワークスペースのページからダウンロードしたファイルを、手元のコンピュータに保存できる。Bot のミュートや WSL での Bot の設定も加わった。",
+      "detail": "<p class=\"release-counts\"><span class=\"breaking\">破壊的変更 <strong>1</strong> 件</span><span>新機能 <strong>27</strong> 件</span><span>不具合修正 <strong>234</strong> 件</span></p>\n\n- Antigravity のすべてのチャットが agy で動くようになり、Orca の中から agy にサインインできる。Gemini CLI への対応は削除された\n- ClickUp、Airtable、Todoist、Zapier、Granola、Intercom がアプリのカタログに加わり、Composio のアカウント無しでワンクリックで接続できる\n- サーバーのワークスペースで動くページからダウンロードしたファイルを、ストリーミングで手元のコンピュータに直接保存できる\n\n## 破壊的変更\n\n- Gemini CLI への対応が削除された。Google が Antigravity への移行を案内しているためで、Antigravity のチャットは agy で動く\n\n## 新機能\n\n### Bot とコネクタ\n\n- Bot ごとに通知をミュートできる。サイドバーか Bot の設定から操作する\n- New bot の Computer の選択欄から WSL のディストリビューションを追加できる（実験的）。New bot は常に Claude を使うのではなく、既定のエージェントで始まる\n- 起動に失敗した間に届いたメッセージを、次のコネクタのターンでエージェントに渡す\n- 共有されたエージェントを断る操作と、共有一覧への目的の表示、共有先の招待一覧へのマスコットとサービスの引き継ぎに対応した\n- 一定時間後に1回だけ通知する短いタイマーを Bot が設定できる。1日操作されていない完了済みの Bot のチャットは **Show N older** の下にまとまる\n\n### ネイティブチャット\n\n- サブエージェントがチャットの上に開くシートで表示される\n- Codex のチャットで次のプロンプトの候補が表示される\n\n### MCP サーバー（既定はオフ、`ORCA_MCP_SERVERS` で有効化）\n\n- ホストごとの MCP サーバーの一覧を持ち、各エージェント自身の設定ファイルにある MCP サーバーを読み込んで移動・コピーできる\n- ネイティブチャットとエージェントのターミナルにホストの MCP サーバーを渡す。`/mcp` に Orca のグループが出て、ターミナルでは `orca mcp exec` と再起動の案内が使える\n- 共有のコマンドサーバーをホストで1回だけ起動し、すべてのエージェントのセッションで使う\n- Grok、Cursor、Droid の MCP ファイルに Orca の MCP サーバーを書き込んで維持する。Claude の Agent Teams のリーダーとメンバーにもホストの MCP サーバーを渡す\n- ホストごとの MCP サーバーの設定ページ、リポジトリ設定の MCP サーバー、プラグインによる MCP サーバーの追加、スマートフォンからの管理に対応した\n- WSL のターミナルが、中継・共有・シークレットの環境変数付きの MCP サーバーを使える\n\n### ブラウザとアプリのレール\n\n- サーバーのページからのダウンロードに **Save to this computer** が加わった\n- アプリのレールで、Help と Settings が1つのアカウントボタンのメニューにまとまり、**…** メニューでレールに出すページを選べる\n- プロジェクトのドロップダウン、フィルター、ジャンプパレットでリポジトリのマークを表示する\n\n## 主な改善\n\n- Claude と Codex の長い返信が、止まったり飛んだりせず少しずつ表示され、ストリーミング中も入力の反応が落ちない\n- Slack で答えの無いままターンが終わった場合ははっきりそう伝え、ツールがすでに実行されていれば警告する\n- グループの Home とバッジに、ペアリングしたコンピュータのメンバー Bot の作業項目が含まれる\n- 非表示のワークスペースはターミナルを解放し、アイドル状態の Orca は30秒ごとにすべてのワークツリーを確認し直さなくなった。利用上限に達したチャットと自動化の実行は、再起動後に正しく再開する\n\n<div class=\"note\"><strong>更新時の注意</strong> Gemini CLI への対応は削除された。Antigravity のチャットは agy で動くため、Orca の中で agy にサインインする。MCP サーバーの新機能は既定でオフで、<code>ORCA_MCP_SERVERS</code> で有効にする。</div>",
+      "image": "https://opengraph.githubassets.com/1/stablyai/orca",
+      "publishedAt": "2026-11-26"
+    },
+    {
+      "title": "v0.1.13: ワークフローの対象の紐付けと同時実行の上限、デバイスの停止、ファイルパスのコピー",
+      "url": "https://github.com/pingdotgg/t3code/releases/tag/v0.1.13",
+      "source": "GitHub Releases",
+      "tag": "t3code",
+      "summary": "T3 Code v0.1.13 は52人による401件の変更を含む。ワークフローの実行を issue や pull request に紐付けられるようになり、名前付きのプールで同時実行数を制限できる。Device パネルからのシミュレータとエミュレータの停止や、Files パネルからのパスのコピーも加わった。",
+      "detail": "<p class=\"release-counts\"><span class=\"breaking\">破壊的変更 <strong>0</strong> 件</span><span>新機能 <strong>9</strong> 件</span><span>不具合修正 <strong>374</strong> 件</span></p>\n\n- ワークフローの実行を issue や pull request に紐付け、その項目や実行の一覧から探せるようになった\n- 名前付きのプールでワークフローの同時実行数を制限し、超えた分はキューに入れられる\n- Device パネルから、シミュレータとエミュレータを個別に、またはまとめて停止できる\n\n## 新機能\n\n- ワークフローの実行が対象（subject）を宣言でき、それをもとに検索できる\n- 名前付きのプールでワークフローの同時実行数を制限でき、超えた分はキューに入れられる\n- Device パネルで、デバイスを個別に、またはすべてまとめて停止できる\n- Files パネルから、ファイルやフォルダの絶対パスをコピーできる\n- Claude の設定で Auto がオフにされている場合、Auto を使えない状態として表示する\n- Android のインスペクタで、サイドチャット、サブエージェント、プレビューを開ける\n- launch-video スキルにモバイル版のリリース動画が加わった\n- Web クライアントとモバイルの性能を測るベンチマーク（`client-metrics` と `mobile:metrics`）が加わった\n\n## 注目すべき不具合修正\n\n- Files ビューアで GBK と GB18030 のファイルを開き、Diff パネルで変更を読めるようになった\n- プロンプトの退避（stash）が一杯のとき、既存のプロンプトを残し、新しいプロンプトを入力欄に残すようになった\n- ワークツリーの準備を取り消しても、同じチェックアウトを共有するサイドチャットの編集が失われなくなった",
+      "image": "https://opengraph.githubassets.com/1/pingdotgg/t3code",
+      "publishedAt": "2026-11-27"
+    },
+    {
+      "title": "11月25日のリリースノート: Devin Apps での要素ピッカー、PR レビューの Fixes タブ、ブループリントの clone.filter など",
+      "url": "https://docs.devin.ai/release-notes/overview",
+      "source": "Devin Release Notes",
+      "tag": "devin",
+      "summary": "Devin の11月25日のリリースノートでは、Browser タブで開いた Devin Apps で要素ピッカーが使えるようになり、PR レビューのページにコードスキャンの Fixes タブが加わった。環境のブループリントは clone.filter でリポジトリを部分的にクローンできる。Jira の Rovo エージェント経由のセッションはプレイブックと添付ファイルを受け取る。",
+      "detail": "<p class=\"release-counts\"><span class=\"breaking\">破壊的変更 <strong>0</strong> 件</span><span>新機能 <strong>5</strong> 件</span><span>不具合修正 <strong>1</strong> 件</span></p>\n\n- 環境のブループリントに `clone.filter` が加わり、`blob:none` や `tree:none` を指定して最初のクローンを速くできる\n- Jira で @Devin をメンションするか担当者にして始めたセッション（Rovo エージェント）が、設定済みの Jira のプレイブックを適用し、作業項目の添付ファイルを受け取る\n- Devin Review の PR のページに、その PR が修正するコードスキャンの指摘を一覧にする「Fixes」タブが加わった\n\n## 新機能\n\n- セッションの Browser タブで開いた Devin App で、要素ピッカーが使えるようになった。以前はボタンが無効になっていた\n- Devin Review の PR のページに「Fixes」タブが加わった\n- セッションの共有を「Creator only」に制限している場合でも、エンタープライズの管理者が自分をセッションに追加し、読み取り専用で開ける\n- 環境のブループリントに `clone.filter` が加わった\n- Jira の Rovo エージェントから始めたセッションが、`!triage` のようなラベルマクロや、プロジェクトごと・サイト既定の Jira プレイブックを適用し、作業項目の添付ファイルを受け取る\n\n## 不具合修正\n\n- MCP の OAuth のクライアントクレデンシャルによるトークン要求が失敗しても、保存時や Connect を押したときに成功と表示していた。現在は失敗したことを伝え、トークンのエンドポイント、HTTP ステータス、エラーコード、「token not issued」の状態、IP の許可リストのドキュメントへのリンクを表示する",
+      "publishedAt": "2026-11-25"
+    }
+  ]
+}

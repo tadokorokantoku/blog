@@ -1,0 +1,34 @@
+{
+  "category": "coding-agent",
+  "collectedAt": "2026-11-27T08:30",
+  "items": [
+    {
+      "title": "OpenCode v2.4.2 をリリース",
+      "url": "https://github.com/anomalyco/opencode/releases/tag/v2.4.2",
+      "source": "GitHub Releases",
+      "tag": "opencode",
+      "summary": "GPT-6.2 向けのシステムプロンプトが加わり、応答を Esc で止めたときに直前のメッセージを入力欄に戻せるようになった。Web 取得の「常に許可」が対象サイトだけに限られるなど、既存の挙動が変わる点が4つある。デスクトップ版では差分だけのアップデートや Inbox の整理機能が入った。",
+      "detail": "<p class=\"release-counts\"><span class=\"breaking\">破壊的変更 <strong>4</strong> 件</span><span>新機能 <strong>22</strong> 件</span><span>不具合修正 <strong>20</strong> 件</span></p>\n\n- GPT-6.2 の Sol と Astra、`gpt-latest` のエイリアスで、GPT-6.2 向けに書かれたシステムプロンプトを使うようになった\n- 入力欄が空のとき、モデルが何も書かずツールも呼ばないうちに Esc で応答を止めると、送ったメッセージが画像ごと入力欄に戻り、編集して送り直せる\n- Web 取得の「Always allow」が、すべての URL ではなくそのサイトだけを許可するようになった\n\n## 破壊的変更\n\n- Web 取得で「Always allow」を選ぶと、そのサイトだけが許可される。以前はすべての URL が許可されていた。以前の版で保存された承認はそのまま残る\n- 自動化（Automations）は実行に失敗しても止まらず、失敗を記録して次の予定どおりに実行する。作成元のセッションやディレクトリが無くなった場合や設定が無効になった場合は引き続き一時停止する。タイムアウトしたシェルコマンドはバックグラウンドに移らず、停止して呼び出しが失敗する\n- アーカイブ済みのセッションにメッセージ、コマンド、スキル、シェルコマンドを送ると、アーカイブが解除される。API 経由で送った場合も同じ\n- Plan モードのルールがシステムプロンプトに入った。更新時にすでに Plan モードにあるセッションには、ルールがもう一度送られる\n\n## 新機能\n\n### Core\n\n- `generate_image` と `generate_video` がトップレベルのツールではなく Code Mode の中で動くようになり、毎回のリクエストに定義の約700トークンが加わらなくなった\n- セッションを移動すると、そのサブエージェントも一緒に移動する\n- `report` スキルがドキュメントの確認や重複 issue の検索を行い、関連するログの行を含めるようになった\n- 独自の価格を持つサービス階層では、長いコンテキストの料金を含めてその価格でコストを見積もる\n\n### TUI\n\n- OpenRouter のような大きなカタログでも、モデルの選択画面の反応が落ちない\n- 目標（goal）のダイアログが、長い目標ではスクロールする\n- OpenTUI を 0.9.9 に更新した\n\n### Desktop\n\n- macOS と Windows では、アップデートでインストーラ全体ではなく変更された部分だけをダウンロードする\n- 質問の入力欄で Enter を押すと次の質問に進み、最後の質問で送信する。**Settings → Preferences** の **Submit question answers with** を Cmd/Ctrl+Enter にすると以前の挙動に戻せる\n- Files と Review のパネルで、ファイルツリーのヘッダーを右クリックして **Sidebar position → Right** を選ぶと右側に移せる\n- `/rename` をタイトル無しで実行すると新しいタイトルを生成し、`/rename <title>` で指定したタイトルを付ける\n- セッションの検索がアーカイブ済みのセッションも対象に含め、薄く表示する\n- Inbox のサイドバーでセッションのピン留め、折りたたみ可能な欄でのアーカイブ済みセッションの表示、作業中のセッションの表示位置の選択ができる。対応待ちのアーカイブ済みセッションは Needs attention に表示される\n- Cmd+Shift+S（Windows と Linux は Ctrl+Shift+S）で、開いているアーカイブ済みのセッションのアーカイブを解除する\n- 質問への自由回答を複数行で書ける\n- サブエージェントのセッションで、親セッションのサイドパネルのタブが表示される\n- 開いているタブのセッションが、再起動後や自動化で起動されたときもブラウザへのアクセスを維持する\n\n### SDK と拡張\n\n- `@opencode/sdk/workerd` で、Durable Object の `alarm()` を `opencode.alarm()` に渡すと、使われていないリモートのワークスペースが休止する\n- Promise ベースのプラグイン API の呼び出しが `signal` に従い、中断すると呼び出しが reject される\n- プラグインが、そのエージェントを選んでいる間だけ有効な `instructions` を与えられる。途中でエージェントや指示を変えても、システムプロンプトを書き換えず更新を送るため、プロンプトキャッシュが無効にならない\n\n## 注目すべき不具合修正\n\n- 接続後のモデル選択で OpenCode Go が先頭に表示されるようになった\n- AWS MCP Server のように、設定した URL にクエリ文字列を含む MCP サーバーへのサインインが直った\n- Plan モードが圧縮のたびにリマインダーを足し直し、セッションがループし続けることがある問題が直った\n- 全体の拒否のあとに狭い範囲の拒否を書くと、ツールがモデルに見えたままになる問題が直った\n- 別のディレクトリのセッションを開いた TUI で、`/models` に無料のモデルだけが出る問題が直った\n\n<div class=\"note\"><strong>更新時の注意</strong> 自動化は失敗しても止まらなくなり、タイムアウトしたシェルコマンドはバックグラウンドに移らず失敗する。アーカイブ済みのセッションに送信するとアーカイブが解除される。デスクトップ版で質問の入力欄の Enter を以前の挙動に戻すには、Settings → Preferences の Submit question answers with を Cmd/Ctrl+Enter にする。</div>",
+      "image": "https://opengraph.githubassets.com/1/anomalyco/opencode",
+      "publishedAt": "2026-11-26"
+    },
+    {
+      "title": "Antigravity CLI 1.5.18 をリリース",
+      "url": "https://antigravity.google/docs/changelog#v1.5.18",
+      "source": "Antigravity Changelog",
+      "tag": "gemini",
+      "summary": "Antigravity CLI（agy）1.5.18 は不具合修正のみのリリースで、7件を修正した。書き込み途中の画像が会話に添付される問題や、file:/// URI で読むファイルに権限ルールが適用されない問題が解消された。リモートコントロールのブラウザビューにおける表示の不具合も修正されている。",
+      "detail": "<p class=\"release-counts\"><span class=\"breaking\">破壊的変更 <strong>0</strong> 件</span><span>新機能 <strong>0</strong> 件</span><span>不具合修正 <strong>7</strong> 件</span></p>\n\n- ファイルを表示する際に、不完全な画像や壊れた画像が会話に添付されなくなった。エラーとして拒否されるため、後続のモデルへのリクエストが失敗して再試行されることが無くなった\n- エージェントが `file:///` URI で読み書きするファイルにも、ファイルの権限ルールと承認のプロンプトが適用されるようになった。権限の確認の前にパスを実体ファイルへ解決する\n- Windows で、ワークスペースが Antigravity の設定ディレクトリと別のドライブにある場合にプラグインが読み込まれない問題が直った\n\n## 注目すべき不具合修正\n\n- リモートコントロールのブラウザビューで、コードブロックや Markdown・コードファイルの表示からコピーしたときに空行が消える問題が直った\n- 同じくブラウザビューで、サブエージェントの返信の中の LaTeX の数式が生の TeX のまま表示される問題が直った\n- `cp $src_dir/$name .` や `http://$host:$port/api` のようなシェル変数が数式として表示される問題が直り、リンクも正しいアドレスを維持するようになった\n- 設定のモデルのクォータ欄で、読み込みに失敗すると読み込み中の表示が終わらない問題が直った。空の状態か最後に取得したクォータを表示し、Refresh も機能する",
+      "publishedAt": "2026-11-26"
+    },
+    {
+      "title": "Codex の GitHub レビューとプルリクエストのマージの障害が解消（約21時間40分）",
+      "url": "https://status.openai.com/incidents/01M89RGC3STKK2MT53TXHFMY4H",
+      "source": "OpenAI Status",
+      "tag": "codex",
+      "summary": "Codex による GitHub のプルリクエストの自動レビューとマージでエラーが増えていた障害について、OpenAI は11月26日 14:07（UTC）に解消を発表した。GitHub 側の障害に関連するもので、Codex Web の性能が低下していた。",
+      "detail": "- 影響範囲は Codex Web で、一部の利用者に GitHub のプルリクエストの自動レビューが届かず、Codex からのプルリクエストのマージでエラーが出ることがあった\n- 11月25日 16:27（UTC）に原因を特定したと報告し、11月26日 14:07（UTC）に解消した。報告から解消までは約21時間40分\n- OpenAI は失敗が GitHub のサービス障害に関連すると説明している。GitHub 側の障害の詳しい原因の記載は無い\n\n## 時系列（UTC）\n\n- 11月25日 16:27: Identified。一部の利用者で GitHub のプルリクエストの自動レビューが届かない、または Codex からのマージでエラーが出る場合があり、GitHub のサービス障害に関連するエラーだと特定した\n- 11月25日 16:58: Monitoring。GitHub がプルリクエストと Webhook に影響する障害の緩和を報告したとして、自動レビューとマージの回復と安定を監視していると更新した\n- 11月26日 14:07: Resolved。GitHub の障害が解消し、Codex によるプルリクエストの自動レビューとマージは通常どおり動いていると発表した",
+      "publishedAt": "2026-11-26"
+    }
+  ]
+}
