@@ -1,0 +1,48 @@
+{
+  "category": "xtrend",
+  "collectedAt": "2026-11-27T07:10",
+  "items": [
+    {
+      "title": "Claude、11月10日リセット分の利用枠を12月10日まで使える",
+      "url": "https://x.com/addyosmani/status/2126034792424919200",
+      "source": "X, @addyosmani",
+      "summary": "Pro、Max、Ultra、Teamの利用者は、11月10日にリセットされた分を、12月10日まで「設定 > 使用状況」で利用できる。サンクスギビングに合わせた、Claudeのリセットとクレジットのお知らせ。",
+      "publishedAt": "2026-11-26T19:26:00Z"
+    },
+    {
+      "title": "Datadog Labsの「ephyra」、LLM時代のプロパティベーステストライブラリ",
+      "url": "https://x.com/azu_re/status/2125921628572049625",
+      "source": "X, @azu_re",
+      "summary": "azu_re氏が「datadog-labs/ephyra: A property-based testing library for the LLM era」として紹介した。中身の詳細はポストの範囲では分からない。",
+      "publishedAt": "2026-11-26T11:56:00Z"
+    },
+    {
+      "title": "Generative UIでのJev活用例の発表（ROSCAFE）",
+      "url": "https://x.com/azukiazusa/status/2125928203479073197",
+      "source": "X, @azukiazusa",
+      "summary": "azukiazusa氏が、Generative UIにおけるJevの活用例を発表し、スライドを公開した。",
+      "publishedAt": "2026-11-26T12:22:00Z"
+    },
+    {
+      "title": "全アプリをReactからeffect uiに移行、Opus 5.5が一発で完了",
+      "url": "https://x.com/dillon_mulroy/status/2125993366089273373",
+      "source": "X, @dillon_mulroy",
+      "summary": "dillon_mulroy氏が、個人用とフリーランスのクライアント向けのアプリをすべてReactからeffect uiに移行したと報告した。Opus 5.5が難なく一発でやってくれたという。",
+      "publishedAt": "2026-11-26T16:41:00Z"
+    },
+    {
+      "title": "Cloudflareの設定で、AIエージェントがサイトを直接検索でき、内容をmarkdownで受け取れる",
+      "url": "https://x.com/d4m1n/status/2125959630484562165",
+      "source": "X, @d4m1n",
+      "summary": "AIエージェントがページを1枚ずつスクレイピングする代わりに、サイトを直接検索できる設定を紹介している。実際のコンテンツはmarkdown形式で返り、無料プランでも使えるようだとされている。設定名はポストの範囲では書かれていない。",
+      "publishedAt": "2026-11-26T14:27:00Z"
+    },
+    {
+      "title": "eslintやprettier、tsc、jestなど、周辺ツールをBunに置き換えていく流れ",
+      "url": "https://x.com/pontusab/status/2125939582516789450",
+      "source": "X, @pontusab",
+      "summary": "pontusab氏が、eslint、prettier、tsc、jest/vitest、esbuild、pnpm、tsx/ts-node、nodemon、ioredis、pgなど、これまで別のツールだったものを、Bunで置き換えていく一覧を投稿した。",
+      "publishedAt": "2026-11-26T13:07:00Z"
+    }
+  ]
+}
