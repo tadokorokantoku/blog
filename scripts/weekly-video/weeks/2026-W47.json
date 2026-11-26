@@ -1,0 +1,170 @@
+{
+  "readings": {
+    "inok.dev": "イノック ドット デブ",
+    "Nasdaq": "ナスダック",
+    "独占": "どくせん"
+  },
+  "teaser": [
+    "Claude Code 怒涛の5回連続リリース",
+    "Anthropic が Nasdaq に新規上場（ANT）",
+    "GitHub トレンド 首位独占（BugHunter）"
+  ],
+  "scenes": [
+    {
+      "id": "scene_01_intro",
+      "type": "intro",
+      "badge": "WEEKLY AI DIGEST",
+      "title": "週刊 AI ニュースまとめ",
+      "subtitle": "{week} ({period})",
+      "narration": "{year}年第{weekNo}週のAIニュースダイジェストです。",
+      "subtitles": [
+        "{year}年 第{weekNo}週 AIニュースまとめ"
+      ]
+    },
+    {
+      "id": "scene_02_numbers",
+      "type": "stats",
+      "badge": "DATA OVERVIEW",
+      "title": "今週の数字まとめ",
+      "caption": "{periodLong}の収集データ概要",
+      "stats": [
+        {
+          "category": "coding-agent",
+          "label": "Coding Agent",
+          "unit": "件",
+          "desc": "エージェント新機能・運用"
+        },
+        {
+          "category": "ade",
+          "label": "ADE (開発環境)",
+          "unit": "件",
+          "desc": "開発連携ツール"
+        },
+        {
+          "category": "githubtrend",
+          "label": "GitHub トレンド",
+          "unit": "リポ",
+          "desc": "ランク入りリポジトリ数"
+        },
+        {
+          "category": "xtrend",
+          "label": "X トレンド",
+          "unit": "件",
+          "desc": "注目の技術トピック"
+        }
+      ],
+      "narration": "今週はCoding Agentが{coding-agent}件、GitHubトレンドには{githubtrend}件のリポジトリが浮上しました。",
+      "subtitles": [
+        "Coding Agent {coding-agent}件、GitHubトレンド {githubtrend}リポジトリを観測"
+      ],
+      "note": "ℹ️ GitHubトレンドは週内にランク入りした個別{githubtrend}リポジトリ数"
+    },
+    {
+      "id": "scene_03_topic_claude",
+      "type": "topic_deepdive",
+      "category": "Coding Agent",
+      "badge": "TOPIC 1",
+      "title": "Claude Code 怒涛の5回連続リリース",
+      "cards": [
+        {
+          "step": "何が起きたか",
+          "heading": "1週間に5回の連続リリース",
+          "detail": "MCP設定の標準入力対応や危険なrmの事前確認が追加。"
+        },
+        {
+          "step": "なぜ大事か",
+          "heading": "実務導入に不可欠な安全性の獲得",
+          "detail": "自律エージェントが組織で安全に使える実務ツールへ足場を固めた。"
+        },
+        {
+          "step": "次に何を見ておくか",
+          "heading": "企業内ポリシーと権限管理の標準化",
+          "detail": "チーム開発での権限分離とセキュリティ標準化に注目。"
+        }
+      ],
+      "narration": "Claude Codeが1週間で5回リリース。MCP標準入力対応や危険なコマンドの事前確認が入りました。自律エージェントが、組織で安全に使える実務ツールへ足場を固めたのが重要な点です。今後は権限管理の標準化に注目です。",
+      "subtitles": [
+        "【何が起きたか】Claude Codeが1週間で5回連続リリース",
+        "MCP標準入力対応や危険なrmの事前確認を追加",
+        "【なぜ大事か】組織で安全に使える実務ツールへ足場を固めた",
+        "【次に注目】企業ごとの権限分離とセキュリティ標準化"
+      ]
+    },
+    {
+      "id": "scene_04_topic_anthropic",
+      "type": "topic_deepdive",
+      "category": "Market & Business",
+      "badge": "TOPIC 2",
+      "title": "Anthropic が Nasdaq に新規上場",
+      "cards": [
+        {
+          "step": "何が起きたか",
+          "heading": "初日終値97ドルと好調なスタート",
+          "detail": "11月19日上場。公開価格83ドルを上回り終値97.17ドルを記録。"
+        },
+        {
+          "step": "なぜ大事か",
+          "heading": "公開市場からの巨額調達を実証",
+          "detail": "巨額投資が続くAI業界で、市場から莫大な資本を集める道筋を示した。"
+        },
+        {
+          "step": "次に何を見ておくか",
+          "heading": "調達資金の投入速度と四半期収益性",
+          "detail": "次世代モデル開発への投資ペースと法人収益の伸びが焦点。"
+        }
+      ],
+      "narration": "AnthropicがNasdaqへ上場。公開価格83ドルを上回り初日終値97ドルを記録しました。フロンティアAI企業が、公開市場から巨額の資本を調達する道筋を示した点が極めて重要です。調達資金のモデル開発への投入速度に注目です。",
+      "subtitles": [
+        "【何が起きたか】AnthropicがNasdaq上場、初日終値97ドル",
+        "公開価格83ドルを大きく上回る好調な滑り出し",
+        "【なぜ大事か】AIモデル企業が公開市場から巨額資本を調達する道筋を実証",
+        "【次に注目】調達資金のモデル開発投入速度と四半期収益性"
+      ]
+    },
+    {
+      "id": "scene_05_topic_github",
+      "type": "topic_chart",
+      "category": "GitHub Trending",
+      "badge": "TOPIC 3",
+      "title": "Claude-BugHunter が5日連続1位",
+      "repo": "elementalsouls/Claude-BugHunter",
+      "cards": [
+        {
+          "step": "何が起きたか",
+          "heading": "スキル集がトレンド首位を独占",
+          "detail": "バグ調査向けスキル集が5日連続1位。上位をスキル集が独占。"
+        },
+        {
+          "step": "なぜ大事か",
+          "heading": "エージェント拡張エコシステムの本格化",
+          "detail": "モデル本体だけでなく、特定業務のスキルを共有する潮流が加速。"
+        },
+        {
+          "step": "次に何を見ておくか",
+          "heading": "スキルの配布形式と検証標準化",
+          "detail": "安全なパッケージング規格と自動検証の仕組みが焦点。"
+        }
+      ],
+      "narration": "GitHubトレンドではBugHunterが5日連続1位となり、スキル集が上位を独占。モデル本体だけでなく、エージェントを専門スキルで拡張するエコシステムが本格化した証拠です。スキルの配布と検証の標準化に注目です。",
+      "subtitles": [
+        "【何が起きたか】Claude-BugHunterが5日連続でトレンド1位",
+        "ランキング上位をエージェント向けスキル集が独占",
+        "【なぜ大事か】専門スキルでエージェントを拡張するエコシステムが本格化",
+        "【次に注目】スキルの配布形式と安全検証の標準化"
+      ]
+    },
+    {
+      "id": "scene_06_outro",
+      "type": "outro",
+      "badge": "WEEKLY DIGEST",
+      "title": "今週のまとめ",
+      "subtitle": "各記事の詳細・リンクはブログで公開中",
+      "site": "inok.dev/news/weekly/{week}/",
+      "narration": "以上、今週の注目トピックでした。詳細はブログ inok.dev をご覧ください。",
+      "subtitles": [
+        "以上、今週の注目トピックでした",
+        "詳細はブログ inok.dev/news/weekly/ をチェック！"
+      ]
+    }
+  ]
+}

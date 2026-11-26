@@ -9,5 +9,7 @@
   "assets": {
     "directory": "./dist",
     "not_found_handling": "404-page"
-  }
+  },
+  // ブランチのビルド（npx wrangler preview）が要求する。中身は空で、本番と同じ設定で Preview を作る
+  "previews": {}
 }

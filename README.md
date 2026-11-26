@@ -170,14 +170,16 @@ AI が定期的に集めたニュースを `/news` に出す。収集するの�
 
 ```sh
 WEEK=2026-W48
-VIDEO=path/to/weekly-$WEEK.mp4   # 横長 16:9 の mp4（H.264 + AAC）
 
-# 1. ポスター画像。最初のスライドが出ている2秒目あたりの1コマ
-ffmpeg -y -ss 2 -i "$VIDEO" -frames:v 1 -q:v 3 "/tmp/$WEEK.jpg"
+# 1. 動画とポスター（2秒目の1コマ）を作る。scripts/weekly-video/out/$WEEK.mp4 と .jpg に出る。
+#    台本の書き方は scripts/weekly-video/README.md
+pnpm weekly-video "$WEEK"
+VIDEO=scripts/weekly-video/out/$WEEK.mp4
+POSTER=scripts/weekly-video/out/$WEEK.jpg
 
 # 2. R2 にアップロード。Content-Type を必ず付ける
 pnpm exec wrangler r2 object put "blog-media/weekly/$WEEK.mp4" --file "$VIDEO" --content-type video/mp4 --cache-control "public, max-age=86400" --remote
-pnpm exec wrangler r2 object put "blog-media/weekly/$WEEK.jpg" --file "/tmp/$WEEK.jpg" --content-type image/jpeg --cache-control "public, max-age=86400" --remote
+pnpm exec wrangler r2 object put "blog-media/weekly/$WEEK.jpg" --file "$POSTER" --content-type image/jpeg --cache-control "public, max-age=86400" --remote
 
 # 3. 一覧に足す（重複は入れない・並びは自由）
 node -e 'const f="src/content/weekly-videos.json",fs=require("fs"),w=process.argv[1],a=JSON.parse(fs.readFileSync(f));if(!a.includes(w))a.push(w);fs.writeFileSync(f,JSON.stringify(a.sort())+"\n")' "$WEEK"

@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "editor": "node scripts/editor.mjs",
+    "weekly-video": "node scripts/weekly-video/weekly-video.mjs",
     "build": "astro build",
     "preview": "wrangler dev",
     "deploy": "astro build && wrangler deploy",
