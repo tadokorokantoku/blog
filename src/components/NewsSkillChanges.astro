@@ -1,0 +1,33 @@
+---
+// skills の記事で、その日に増えた・消えた skill。どちらも無ければ何も出さない
+interface Props {
+  added?: string[];
+  removed?: string[];
+}
+
+const { added = [], removed = [] } = Astro.props;
+---
+
+{
+  (added.length > 0 || removed.length > 0) && (
+    <div class="skill-changes">
+      <span class="skill-changes-label">破壊的変更</span>
+      {added.length > 0 && (
+        <p class="skill-changes-row">
+          <span class="skill-changes-kind">追加</span>
+          {added.map((name) => (
+            <code class="skill-added">+ {name}</code>
+          ))}
+        </p>
+      )}
+      {removed.length > 0 && (
+        <p class="skill-changes-row">
+          <span class="skill-changes-kind">削除</span>
+          {removed.map((name) => (
+            <code class="skill-removed">− {name}</code>
+          ))}
+        </p>
+      )}
+    </div>
+  )
+}

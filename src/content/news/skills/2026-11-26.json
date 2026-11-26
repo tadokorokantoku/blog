@@ -1,0 +1,25 @@
+{
+  "category": "skills",
+  "collectedAt": "2026-11-26T08:30",
+  "items": [
+    {
+      "title": "chief-of-staff を「委任」と「記録」の2本に絞り直し、domain-modeling の用語集で用語どうしの関係を書くようにした",
+      "url": "https://github.com/mattpocock/skills/compare/abeeaf9...6f7f783",
+      "source": "GitHub Commits",
+      "tag": "mattpocock-skills",
+      "summary": "in-progress の chief-of-staff が、仕事をサブエージェントに渡すことと、学んだことを日付つきの wiki に残すことの2つに役目を絞った。domain-modeling は、用語の定義の中で別の用語を太字にして関係を書くルールが入った。skill の追加・削除は無い。",
+      "detail": "<p class=\"release-counts\"><span class=\"breaking\">破壊的変更 <strong>0</strong> 件</span><span>新機能 <strong>2</strong> 件</span><span>不具合修正 <strong>0</strong> 件</span></p>\n\n- chief-of-staff の役目を「委任」と「記録」の2つに絞った\n- domain-modeling の用語集で、定義の中の別の用語を太字にして関係を書くようにした\n\n## 新機能\n\n### chief-of-staff（in-progress）\n\n- description が「仕事を新しいサブエージェントに渡し、学んだことを日付つきの wiki に残して次のセッションに引き継ぐ」に変わった\n- 作業はサブエージェントに渡し、ユーザーへの質問や確認はメインのセッションに残す。報告はまず結果と判断が要ることから伝える\n- サブエージェントへの指示は、wiki・コミット・issue などを指す「context pointers」で書く\n- 「Strategic View」の節は「After friction」に置き換わった。回避策や再試行があったときだけ、環境の改善をユーザーに提案する（勝手には直さない）\n- 定期実行の提案は、繰り返しが明らかな作業のときだけにした\n\n### domain-modeling\n\n- GLOSSARY-FORMAT.md に「定義の中で別の用語に触れるときは `**Order**` のように太字にし、文で2つの関係を書く」ルールが加わった。stefaneg さんのフォークから取り込んだもの\n\n## コミット\n\n- [4edd64a](https://github.com/mattpocock/skills/commit/4edd64a) chief-of-staff: refocus on delegate and remember（11/24）\n- [419dac7](https://github.com/mattpocock/skills/commit/419dac7) chief-of-staff: relay target, friction-only offers, keep conversation（11/24）\n- [742afa6](https://github.com/mattpocock/skills/commit/742afa6) chief-of-staff: delegate the work, offer convention fixes（11/24）\n- [2b7ab8c](https://github.com/mattpocock/skills/commit/2b7ab8c) domain-modeling: express term relationships inside definitions（11/25）",
+      "publishedAt": "2026-11-25"
+    },
+    {
+      "title": "新しい skill /reframe が加わった。作りたいものの専門用語を教え、説明をその言葉で書き直す",
+      "url": "https://github.com/cursor/plugins/compare/0b46ec3...9e278fe",
+      "source": "GitHub Commits",
+      "tag": "pstack",
+      "summary": "pstack に /reframe が追加された。作ろうとしているものについて、専門家が使う用語を8〜12個と、同じ形の問題を解いた隣の分野を挙げ、説明をその言葉で書き直す。翌日の更新で、説明があいまいなときは考えられる問題を2〜3個並べてから絞るようになった。",
+      "skillsAdded": ["reframe"],
+      "detail": "<p class=\"release-counts\"><span class=\"breaking\">破壊的変更 <strong>1</strong> 件</span><span>新機能 <strong>1</strong> 件</span><span>不具合修正 <strong>0</strong> 件</span></p>\n\n- 新しい skill `/reframe` が増えた（pstack 0.15.47）\n- 説明が2つ以上の問題に読めるとき、/reframe が候補を並べてから絞るようになった（pstack 0.15.48）\n\n## 破壊的変更\n\n- skill `reframe` が追加された（`pstack/skills/reframe/SKILL.md`）。`disable-model-invocation: true` なので、自動では呼ばれず `/reframe` で使う\n\n## 新機能\n\n### /reframe\n\n- 作ろうとしているものについて、専門用語を8〜12個、作るものへの影響が大きい順に挙げる。それぞれに一文の意味、説明のどの部分を指すか、その言葉を使っている実在のプロジェクトや論文へのリンク、エージェントに何を頼めるようになるかを付ける\n- 同じ形の問題を別の名前で解いてきた隣の分野を2〜3個挙げ、何が持ち込めて、どこで例えが崩れるかを書く\n- 説明に無いが気にするべきことを挙げ、最後に説明を新しい言葉で書き直す\n- リンクは全部開いて、その意味で使われているかを確かめる。確かめられないものは消す\n- 説明が2つ以上の問題に読めるときは、まず候補を2〜3個、それぞれを名指す用語と見分け方つきで並べ、いちばんありそうなものを選んだ理由を言ってから用語を教える（11/24 の更新）\n\n## コミット\n\n- [2dd5c0c](https://github.com/cursor/plugins/commit/2dd5c0c) feat(pstack): add /reframe to learn the expert words for what you're building（11/23）\n- [9e278fe](https://github.com/cursor/plugins/commit/9e278fe) feat(pstack): have /reframe list the problems a vague description could be（11/24）",
+      "publishedAt": "2026-11-24"
+    }
+  ]
+}

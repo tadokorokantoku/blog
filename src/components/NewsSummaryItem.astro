@@ -2,6 +2,7 @@
 import '../styles/news-dialog.css';
 import { formatDate } from '../lib/posts';
 import NewsNewBadge from './NewsNewBadge.astro';
+import NewsSkillChanges from './NewsSkillChanges.astro';
 import { newsTag, type NewsSummaryArticle } from '../lib/news';
 
 interface Props {
@@ -10,7 +11,7 @@ interface Props {
 
 const { article } = Astro.props;
 const { title, url, source, tag, summary, image, categoryLabel, detailHtml, date, day } = article;
-const { rank, originalTitle, points, comments, commentsUrl } = article;
+const { rank, originalTitle, points, comments, commentsUrl, skillsAdded, skillsRemoved } = article;
 const tagInfo = tag && newsTag(tag);
 // HN の投稿はメタ行を「ポイント・コメント数・ドメイン」にする。source にはドメインが入っている
 const hn = points !== undefined;
@@ -57,6 +58,7 @@ const external = url !== commentsUrl;
         <time datetime={date.toISOString()}>{formatDate(date)}</time>
       </p>
       {summary && <p class="news-summary">{summary}</p>}
+      <NewsSkillChanges added={skillsAdded} removed={skillsRemoved} />
     </div>
   </a>
   {
@@ -103,6 +105,7 @@ const external = url !== commentsUrl;
               </form>
             </div>
           </header>
+          <NewsSkillChanges added={skillsAdded} removed={skillsRemoved} />
           <div class="prose news-detail" set:html={detailHtml} />
         </div>
       </dialog>

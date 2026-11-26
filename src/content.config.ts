@@ -68,6 +68,10 @@ const news = defineCollection({
             .nonnegative()
             .nullish()
             .transform((v) => v ?? undefined),
+          // skills だけが使う。その日のコミットで増えた・消えた skill の名前（ディレクトリ名）。
+          // どちらかがあると、カードとモーダルに破壊的変更として出る
+          skillsAdded: z.array(z.string()).optional(),
+          skillsRemoved: z.array(z.string()).optional(),
           // ここから下は hackernews だけが使う。title は日本語訳、originalTitle が HN に出ている英語の見出し
           originalTitle: z.string().optional(),
           points: z

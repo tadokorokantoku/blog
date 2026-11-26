@@ -120,6 +120,7 @@ collections:
               { label: GitHub トレンド, value: githubtrend },
               { label: CodingAgent, value: coding-agent },
               { label: ADE, value: ade },
+              { label: Skills, value: skills },
               { label: Hacker News, value: hackernews },
             ],
         }
@@ -160,6 +161,8 @@ collections:
                   { label: Devin, value: devin },
                   { label: Threadbear, value: threadbear },
                   { label: Capy, value: capy },
+                  { label: mattpocock/skills, value: mattpocock-skills },
+                  { label: pstack, value: pstack },
                 ],
               hint: 'カテゴリの中の分類。カードの色と一覧の絞り込みに使う',
             }
@@ -231,4 +234,18 @@ collections:
               widget: string,
               required: false,
               hint: 'Hacker News だけ。https://news.ycombinator.com/item?id=<id>',
+            }
+          - {
+              name: skillsAdded,
+              label: 追加された skill,
+              widget: list,
+              required: false,
+              hint: 'Skills だけ。増えた skill のディレクトリ名。書くと破壊的変更として出る',
+            }
+          - {
+              name: skillsRemoved,
+              label: 削除された skill,
+              widget: list,
+              required: false,
+              hint: 'Skills だけ。消えた skill のディレクトリ名。書くと破壊的変更として出る',
             }

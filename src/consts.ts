@@ -26,6 +26,7 @@ export const NEWS_CATEGORIES = {
   githubtrend: { label: 'GitHub トレンド', layout: 'ranking' },
   'coding-agent': { label: 'CodingAgent', layout: 'summary' },
   ade: { label: 'ADE', layout: 'summary' },
+  skills: { label: 'Skills', layout: 'summary' },
   hackernews: { label: 'Hacker News', layout: 'summary', snapshot: true },
 } as const satisfies Record<string, { label: string; layout: NewsLayout; snapshot?: true }>;
 
@@ -48,6 +49,8 @@ export const NEWS_TAGS = {
   devin: { label: 'Devin', color: '#14b8a6' },
   threadbear: { label: 'Threadbear', color: '#a86b3c' },
   capy: { label: 'Capy', color: '#ef4444' },
+  'mattpocock-skills': { label: 'mattpocock/skills', color: '#65a30d' },
+  pstack: { label: 'pstack', color: '#c026d3' },
 } as const satisfies Record<string, { label: string; color: string }>;
 
 export type NewsTag = keyof typeof NEWS_TAGS;

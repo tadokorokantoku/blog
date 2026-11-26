@@ -18,6 +18,9 @@ export interface NewsArticle {
   detail?: string;
   image?: string;
   rank?: number;
+  // skills だけ。増えた・消えた skill の名前
+  skillsAdded?: string[];
+  skillsRemoved?: string[];
   // hackernews だけ。英語の見出し・ポイント・コメント数・HN のコメントページ
   originalTitle?: string;
   points?: number;
@@ -109,6 +112,8 @@ function dayArticles(entry: NewsDay): NewsArticle[] {
       detail: item.detail,
       image: item.image,
       rank: item.rank,
+      skillsAdded: item.skillsAdded,
+      skillsRemoved: item.skillsRemoved,
       originalTitle: item.originalTitle,
       points: item.points,
       comments: item.comments,
