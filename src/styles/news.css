@@ -1,6 +1,7 @@
 /* レイアウトは menthas 風の1カラムリスト。色は global.css の変数だけを使う */
 
 .news-tabs {
+  font-family: 'Zen Kurenaido', system-ui, sans-serif;
   display: flex;
   flex-wrap: wrap;
   gap: 0.25rem 1.25rem;
