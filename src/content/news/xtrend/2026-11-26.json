@@ -1,6 +1,6 @@
 {
   "category": "xtrend",
-  "collectedAt": "2026-11-26T07:10",
+  "collectedAt": "2026-11-26T18:10",
   "items": [
     {
       "title": "Cloudflare Workersの無料プランでメール送信が使えるように",
@@ -57,6 +57,41 @@
       "source": "X, @pc_watch",
       "summary": "PC Watchによる速報。NVIDIAがLLM方式の画像生成AI「Nemotron-Labs-Image」を無償で公開した。",
       "publishedAt": "2026-11-25T13:30:00Z"
+    },
+    {
+      "title": "Karpathy氏、Claudeにアメリカの実データでCiv風ゲームマップを作らせる",
+      "url": "https://x.com/karpathy/status/2125779541952246039",
+      "source": "X, @karpathy",
+      "summary": "Opus 5.5が大量の公開データをダウンロードして解析し、7時間・約45,000行のコードを書いて動くところまで到達したという。いいねは約12,000。",
+      "publishedAt": "2026-11-26T02:31:00Z"
+    },
+    {
+      "title": "herdr、再起動後にエージェントのセッションを自動再開",
+      "url": "https://x.com/herdrdev/status/2125720826984935731",
+      "source": "X, @herdrdev",
+      "summary": "herdrで最も要望の多かった機能。エージェントごとにフックを設定する専用版を先に出す手もあったが、そうしなかったと説明している。",
+      "publishedAt": "2026-11-25T22:38:00Z"
+    },
+    {
+      "title": "1Passwordのインシデントを受けて、開発者端末1台からCI/CDでデプロイできる構成への驚き",
+      "url": "https://x.com/catnose99/status/2125745019831419183",
+      "source": "X, @catnose99",
+      "summary": "catnose99氏は、開発者の端末を1台乗っ取ればCI/CDを走らせてデプロイできる構成だったと受け止め、特別な承認のステップがあると思っていたと書いている。アプリやブラウザ拡張のコードが改ざんされていれば、開いた瞬間にパスワードが盗まれるリスクがあり、ヒヤリハットだったとしている。",
+      "publishedAt": "2026-11-25T15:14:00Z"
+    },
+    {
+      "title": "Claude Duetが個人アカウントでも利用可能に",
+      "url": "https://x.com/oikon48/status/2125787376182235287",
+      "source": "X, @oikon48",
+      "summary": "oikon48氏が、Claude Duetを個人アカウントでも使えるようになったと報告した。",
+      "publishedAt": "2026-11-26T03:03:00Z"
+    },
+    {
+      "title": "async/awaitで扱えないPromise APIは、並列制御の.all/.allSettled/.race/.any",
+      "url": "https://x.com/mizchi/status/2125872346464727197",
+      "source": "X, @mizchi",
+      "summary": "async/awaitの糖衣構文では、`Promise.all`、`allSettled`、`race`、`any`の並列制御は書けず、素のPromiseを使うしかないという整理。",
+      "publishedAt": "2026-11-26T08:40:00Z"
     }
   ]
 }
