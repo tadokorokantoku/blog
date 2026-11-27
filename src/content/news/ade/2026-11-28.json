@@ -1,0 +1,44 @@
+{
+  "category": "ade",
+  "collectedAt": "2026-11-28T08:30",
+  "items": [
+    {
+      "title": "v1.4.280: agy の対応範囲をチャットと CLI に限定、Bot のルームとスレッドの名前変更、質問への回答を入力欄で",
+      "url": "https://github.com/stablyai/orca/releases/tag/v1.4.280",
+      "source": "GitHub Releases",
+      "tag": "orca",
+      "summary": "Antigravity（agy）の対応がチャットと CLI に限られ、使用量メーターでのクォータ確認や、Bot のアバターとコミットメッセージの生成に agy を使う機能が削除された。Bot のグループルームとスレッドはタブから名前を変えられ、エージェントからの質問はメッセージ欄の上に出るようになった。",
+      "detail": "<p class=\"release-counts\"><span class=\"breaking\">破壊的変更 <strong>2</strong> 件</span><span>新機能 <strong>24</strong> 件</span><span>不具合修正 <strong>117</strong> 件</span></p>\n\n- Antigravity は `agy` の CLI か Orca のチャットでだけ使う形になり、単独の使用量メーターでのクォータ確認、Bot のアバター生成、コミットメッセージなどソース管理の文章の生成に `agy` を使う機能が削除された\n- Bot のグループルームとスレッドの名前をタブから変更でき、利用上限で止まった Bot には琥珀色のゲージが固定表示される\n- Chat UI で、エージェントからの質問がメッセージ欄の上の帯に表示され、入力する場所で答えられる\n\n## 破壊的変更\n\n- 単独の Antigravity の使用量メーターが廃止された。Antigravity が案内する対応済みの連携の範囲に合わせるためで、`agy` によるクォータの確認はできなくなった\n- Bot のアバターと、コミットメッセージなどソース管理の文章を生成する選択肢から Antigravity が外れた\n\n## 新機能\n\n### Bot とコネクタ\n\n- グループルームとスレッドのタブから名前を変更できる\n- 利用上限で止まった Bot は、琥珀色のゲージが固定表示されて分かりやすくなった\n- Slack でバックグラウンドの作業を依頼した場合、Bot は依頼されたスレッドや DM で続報を送る\n- ペアリングしたサーバーの Bot が、そのサーバーにペアリングされたコンピュータと、それらが許可する Bot を参照できる\n- アイテムのコメントのスラッシュメニューに、リンクしたプロジェクトの skill が並ぶ\n- Composio で 403 が返ったとき、足りないキーの権限を示し、キーの変更を案内する\n- ヘルパーが終わる前に止まった場合に Bot へ知らせる\n\n### チャット\n\n- Chat UI で、エージェントからの質問がメッセージ欄の上の帯に表示される\n- macOS と Linux で、手元の Codex のチャットが Orca の再起動後も動き続ける\n- Antigravity のチャットで、最初のメッセージの前に `/` を打つと使えるコマンドと skill が表示される\n- Antigravity の利用上限に達すると、リセットされる時刻を表示し、リセット後にチャットを再開できる\n\n### ブラウザ\n\n- 注釈のパレットが画面の下に開き、要素を選ぶ Grab モードが最初から選ばれている\n- ブラウザのペインで Kagi の閲覧セッションに対応した\n- Mermaid の図のリンクを、システムのブラウザではなく Orca のブラウザで開く\n- チームの機能の管理が Browser Use にも適用される\n\n### WSL とリモート\n\n- WSL の Codex のタブで変えたモデルとプラグインの設定が、Linux のディストリビューションに保存される\n- プロジェクトを WSL のホストに移す前に、移動するワークスペース、ターミナルのペイン、チャットの数を表示する\n- WSL のターミナルで、コピーしたファイルを貼り付けられない場合に理由を表示する\n- リモートのターミナルが、再接続の通知をそれぞれのターミナルの中に保つ\n\n### そのほか\n\n- ターミナルで URL を Cmd+クリックすると、URL の中のパスではなく URL を開く\n- Windows のドライブのルートにクローンできる\n- 再起動で Orca の MCP サーバーを失ったエージェントのターミナルに、再起動を提案する\n- ポップアウトしたウィンドウを、タブを閉じるショートカット（Cmd/Ctrl+W）で閉じられる\n\n## 主な改善\n\n- コネクタの設定、プラグインのダイアログ、一部の連携については、開いたときに読み込むようにして起動を軽くした\n- エージェントの実行を検出したときは、そのタブのアクティビティだけを計算し直す\n- Electron 45 に更新した\n- 韓国語、スペイン語、日本語、ポルトガル語などの翻訳を拡充した\n\n<div class=\"note\"><strong>更新時の注意</strong> Antigravity（agy）を使っている場合は v1.4.280 への更新が案内されている。使用量メーターでのクォータ確認、Bot のアバター生成、ソース管理の文章の生成には agy を使えなくなった。</div>",
+      "image": "https://opengraph.githubassets.com/1/stablyai/orca",
+      "publishedAt": "2026-11-27"
+    },
+    {
+      "title": "v1.4.279: Git の差分レビューのパネルを整理、注釈のパレットを動かせるように",
+      "url": "https://github.com/stablyai/orca/releases/tag/v1.4.279",
+      "source": "GitHub Releases",
+      "tag": "orca",
+      "summary": "Git の差分レビューのサイドパネルが整理され、Create PR がブランチ名の横に、ファイル一覧の操作が対象のファイルの横に移った。Graph は Changes のメニューから開く形になり、ブラウザの注釈のパレットは話題にしたい場所の横へ動かせる。",
+      "detail": "<p class=\"release-counts\"><span class=\"breaking\">破壊的変更 <strong>1</strong> 件</span><span>新機能 <strong>4</strong> 件</span><span>不具合修正 <strong>2</strong> 件</span></p>\n\n- Git の差分レビューのサイドパネルが整理され、Create PR はブランチ名の横に、ファイル一覧の操作は対象のファイルの横に置かれた\n- Graph は Changes のオーバーフローメニューから開く形になり、別に置かれていたレビューページのボタンは削除された\n- ブラウザの注釈のパレットを、話題にしたいページの部分の横に動かして、要素の選択やスクリーンショットへの書き込みができる\n\n## 破壊的変更\n\n- Graph を開くための、別のレビューページのボタンが削除された。Graph は Changes のオーバーフローメニューから開く\n\n## 新機能\n\n- Git の差分レビューのサイドパネルを整理した\n- Graph とそのコミットの差分を、リポジトリを含むフォルダのワークスペースの中で開ける\n- Create PR をブランチ名の横に、ファイル一覧の操作を対象のファイルの横に置いた\n- ブラウザの注釈のパレットを動かせるようになった",
+      "image": "https://opengraph.githubassets.com/1/stablyai/orca",
+      "publishedAt": "2026-11-27"
+    },
+    {
+      "title": "release/2026-11-27: デザインレビューのボード、プールとプロバイダで選ぶモデル選択、コードレビューのチェックリストなど",
+      "url": "https://threadbear.mikecann.app/changelog",
+      "source": "Threadbear Changelog",
+      "tag": "threadbear",
+      "summary": "Threadbear の11月27日のリリースで、エージェントが示す選択肢を、ドラッグやズームのできるボードで見られるようになった。モデルの選択画面はプール、プロバイダ、モデルの3列に変わり、別のラボによるコードレビューの結果は指摘ごとのチェックリストで返る。",
+      "detail": "<p class=\"release-counts\"><span class=\"breaking\">破壊的変更 <strong>0</strong> 件</span><span>新機能 <strong>12</strong> 件</span><span>不具合修正 <strong>11</strong> 件</span></p>\n\n- エージェントが選択肢を示すと、ドラッグやズームのできるボードに並ぶ。エージェントは画像の一部を丸や下線で示し、Next でその順に案内する。利用者も一部を丸で囲んで話題にできる\n- モデルの選択画面が、上にプール、横にプロバイダ、右にそのモデルが並ぶ形になった。どのプールにも属さないログインは No pool のタブにまとまる\n- 別のラボのコードレビューの結果が、ファイルと行が付いた指摘ごとの項目で返り、エージェントが答えると各行が Fixed、Disputed、Left in place のどれかと理由を示す\n\n## 新機能\n\n- デザインレビューのボード\n- Running や Starred などサイドバーの節の見出しをドラッグして順番を変えられる。順番は再起動後も残る\n- エージェントの次の手が異なる方向に分かれる場合、完了カードで1つを選べる。エージェント自身が選ぶものには Recommended の印が付く\n- スケジュールの編集画面で Star each new thread にチェックを入れると、そのスケジュールが始めたスレッドがすべて Starred に入る\n- 空きの無いログインや、期限の近いリセットがあるログインでは、Usage に Use a reset が表示され、ハニーポットに点が付く。クリックするまでリセットは消費されない\n\n## 変更\n\n- モデルの選択画面をプールとプロバイダで分けた\n- コードレビューの結果をチェックリストで返すようにした\n- 変更履歴のページでは、このリリースの合計を新機能5件、変更7件、修正11件としている",
+      "publishedAt": "2026-11-27"
+    },
+    {
+      "title": "11月26日のリリースノート: 削除したファイルの中身の表示、Slack のチャンネルへの自動化の通知、Devin Oncall の応答言語など",
+      "url": "https://docs.devin.ai/release-notes/overview",
+      "source": "Devin Release Notes",
+      "tag": "devin",
+      "summary": "Devin の11月26日のリリースノートでは、Changes のペインで Devin が削除したファイルの中身を見られるようになり、自動化の実行状況の通知を Slack のチャンネルに送れるようになった。Devin Oncall には応答の言語を選ぶ設定が加わり、Slack Enterprise Grid でも Bot に DM やメンションを送れる。",
+      "detail": "<p class=\"release-counts\"><span class=\"breaking\">破壊的変更 <strong>0</strong> 件</span><span>新機能 <strong>8</strong> 件</span><span>不具合修正 <strong>3</strong> 件</span></p>\n\n- Changes のペインに、Devin が削除したファイルの中身が表示される\n- 自動化の実行状況の通知を Slack のチャンネルに送れる。設定は v3 API の `notifications.slack` で行う\n- Devin Oncall の応答者とインシデントの設定に Response language のドロップダウンが加わり、選んだ言語でインシデントに答える\n\n## 新機能\n\n### セッションと Bot\n\n- Changes のペインで、Devin が削除したファイルの中身を確認できる\n- 別のタブから Bots に戻ると、開いていたセッションやワークスペースのタブを含め、Devin のチャットがタブを離れたときの状態のまま開く\n- Slack Enterprise Grid のワークスペースで、「Who can message」が「Anyone in your Slack workspace」の Bot に DM とメンションを送れる\n\n### エンタープライズと設定\n\n- セッションの共有を Creator only に制限している場合でも、エンタープライズの管理者は自分を書き込み権限付きでセッションに追加できる。前日の変更では読み取り専用だった\n- セッションの共有ダイアログが、セッションの所有者を示し、実際にアクセス権を与えるロールグループだけを表示する。アカウントのポリシーで共有が禁じられている場合は共有のボタンを隠す\n- Devin Oncall の応答者とインシデントの設定に、応答の言語を選ぶ設定が加わった\n\n### 自動化と Slack\n\n- 自動化の実行状況の通知を Slack のチャンネルに送れる（v3 API の `notifications.slack`）\n- Slack の「not a member」の返信に Slack の設定へのリンクが付き、接続が古くなった利用者が認可し直せる",
+      "publishedAt": "2026-11-26"
+    }
+  ]
+}

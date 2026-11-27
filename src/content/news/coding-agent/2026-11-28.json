@@ -1,0 +1,25 @@
+{
+  "category": "coding-agent",
+  "collectedAt": "2026-11-28T08:30",
+  "items": [
+    {
+      "title": "Claude Fable 5.2 へのリクエストでエラーが増加、約20分で解消",
+      "url": "https://status.claude.com/incidents/0x1yvzkfmmxj",
+      "source": "Claude Status",
+      "tag": "claude-code",
+      "summary": "11月27日 10:20〜10:40（UTC）に、Claude Fable 5.2 へのリクエストでエラーが増える障害が起きた。影響は claude.ai、Claude API、Claude Code、Claude Cowork に及び、修正の適用後に解消した。",
+      "detail": "- 影響範囲は claude.ai、Claude API（api.anthropic.com）、Claude Code、Claude Cowork で、Claude Fable 5.2 へのリクエストでエラーが増えた\n- 影響があったのは11月27日 10:20〜10:40（UTC）の約20分間\n- Anthropic は原因を特定して修正を適用したと報告しているが、原因の内容は公表していない\n\n## 時系列（UTC）\n\n- 10:34: Identified。Claude Fable 5.2 へのリクエストでエラーが増えている事象を調査していると報告した。同じ時刻の更新で、原因を特定して修正に取りかかったと伝えた\n- 10:40: Monitoring。修正を適用し、回復を監視していると更新した\n- 10:49: Resolved。解消を発表し、影響時間を 02:20〜02:40（PT）、10:20〜10:40（UTC）とした",
+      "publishedAt": "2026-11-27"
+    },
+    {
+      "title": "Copilot CLI v1.0.117 をリリース",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v1.0.117",
+      "source": "GitHub Releases",
+      "tag": "copilot",
+      "summary": "サンドボックスで動くコマンドに独自の CA 証明書を信頼させる設定と、カスタムエージェントが使うツールを明示的に選べる仕組みが加わった。MCP サーバーのツールをまとめて承認しても、組み込みの操作まで承認されることは無くなった。Assisted Permissions や autopilot の挙動の見直しなど、修正は30件を超える。",
+      "detail": "<p class=\"release-counts\"><span class=\"breaking\">破壊的変更 <strong>1</strong> 件</span><span>新機能 <strong>6</strong> 件</span><span>不具合修正 <strong>36</strong> 件</span></p>\n\n- `sandbox.userPolicy.network.extraCaCertificates` をユーザー設定か管理設定に書くと、TLS を中継するプロキシの環境でも、サンドボックス内のコマンドが独自の CA 証明書を信頼できる\n- カスタムエージェントが使うツールを明示的に選んで公開できるようになった\n- MCP サーバーのツールをセッション単位や場所単位で承認しても、サーバー名が組み込みの権限の種類と同じ場合でも、シェルコマンドやメモリへの保存などの組み込みの要求まで承認されることが無くなった\n\n## 破壊的変更\n\n- MCP サーバーのツールの承認は、そのサーバーのツールだけに及ぶようになった。サーバー名が組み込みの権限の種類と一致していても、Copilot の組み込みの要求（シェルコマンド、メモリへの保存など）は別に承認が要る。セッションを再開した後も、サーバーのツールへの承認は有効なまま残る\n\n## 新機能\n\n- `sandbox.userPolicy.network.extraCaCertificates` で、サンドボックス内のコマンドに独自の CA 証明書を信頼させられる\n- カスタムエージェントが、使うツールを明示的に選んで有効にできる\n- `/model` の選択画面にサービスのお知らせが出て、提供終了が近いモデルに印が付く\n- CLI を再起動してセッションを再開した後も、バックグラウンドのエージェントが会話を続けられる\n- `/sandbox policy` が、壊れたシンボリックリンクを指す許可を見つけ、サンドボックス内のコマンドが起動できなくなるおそれがあると警告する\n- Assisted Permissions を使う autopilot で、自動で拒否された操作を、後のメッセージで指示すれば1回だけ再試行できる。再試行も権限の審査を通る\n\n## 権限と autopilot の見直し\n\n- autopilot で始めた場合、拡張機能を「承認する人がいない」としてすべて拒否するのではなく、起動のたびに確認するようになった\n- Plan モードの Assisted Permissions は、Git のブランチの作成やパッケージのインストールを、プランの承認前に自動で許可せず、確認を求める\n- Assisted Permissions が、直前に実行して失敗したシェルコマンドの再試行を、重複という理由だけで拒否しなくなった\n- 同じセッションで自身が起動したプロセスをプロセス ID で止める場合、Assisted Permissions は不要な確認を省ける\n- サブディレクトリから `--trust-folder` を使い、`--add-dir` で同じリポジトリのフォルダを指定しても、リポジトリのルートのフックが実行されなくなった\n\n## 注目すべき不具合修正\n\n- Copilot CLI のサンドボックスが書き込み可能な、リンクされたワークツリーで、コミット、ブランチの作成、stash が再び動くようになった\n- macOS と Linux で、書き込み可能な Git のワークツリーにある既存のリポジトリ設定ファイルは、サンドボックス内のコマンドやエージェントによる編集に対して読み取り専用のまま保たれる\n- `config.json` を読めない、または解析できない場合、ファイルを変更せずにプラグイン無しで起動する\n- `/mcp` と `--disable-mcp-server` で、MCP サーバー名の大文字と小文字を区別せずに照合する。完全一致が優先される\n- 選択中のモデルが使えない共有セッションも再開でき、`/model` で別のモデルを選べる\n- Windows の PowerShell のフックがネイティブのプログラムの終了コードを保つため、終了コード 2 はフックの失敗ではなく警告や拒否として扱われる\n- `COPILOT_MCP_TOOL_CACHE=false` のとき、再読み込みの後も MCP のツールのキャッシュを無効のまま保つ",
+      "image": "https://opengraph.githubassets.com/1/github/copilot-cli",
+      "publishedAt": "2026-11-27"
+    }
+  ]
+}

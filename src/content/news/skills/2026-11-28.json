@@ -1,0 +1,15 @@
+{
+  "category": "skills",
+  "collectedAt": "2026-11-28T08:30",
+  "items": [
+    {
+      "title": "to-tickets が、チケットの Parent の節に親の issue のタイトルを書くようになった",
+      "url": "https://github.com/mattpocock/skills/compare/6f7f783...bbadaa6",
+      "source": "GitHub Commits",
+      "tag": "mattpocock-skills",
+      "summary": "engineering の to-tickets が、作るチケットの Parent の節に、親の issue の参照だけでなくタイトルも書くようになった。チケットを開かなくても、どの issue に属するかが分かる。skill の追加・削除は無い。",
+      "detail": "<p class=\"release-counts\"><span class=\"breaking\">破壊的変更 <strong>0</strong> 件</span><span>新機能 <strong>1</strong> 件</span><span>不具合修正 <strong>0</strong> 件</span></p>\n\n- to-tickets のチケットの Parent の節が、親の issue のタイトルに続けて参照を書く形になった\n- changeset では `Spec title #1` のような書き方を例に挙げ、クリックしなくてもチケットが何に属するかが分かるようにしたと説明している（issue #1494）\n\n## 新機能\n\n### to-tickets（engineering）\n\n- `SKILL.md` のチケットのテンプレートの「## Parent」の説明が、「トラッカー上の親の issue への参照（元が既存の issue の場合。そうでなければこの節は省く）」から「親の issue のタイトルと、それに続くトラッカー上の参照」に変わった\n- 最初のコミットでは例と省略の条件を残していたが、レビューの提案を反映したコミットで説明が1文にまとまった\n\n## コミット\n\n- [9223538](https://github.com/mattpocock/skills/commit/9223538ac5d57e33b35e5a5198168c59b12f7fa4) to-tickets: name the parent issue's title in a ticket's Parent section（11/28）\n- [70c7fbb](https://github.com/mattpocock/skills/commit/70c7fbbbe3a8cdf2cc193aa29f0a1b3a0f852c2d) Apply suggestion from @mattpocock（11/28）",
+      "publishedAt": "2026-11-28"
+    }
+  ]
+}
