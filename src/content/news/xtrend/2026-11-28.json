@@ -1,0 +1,69 @@
+{
+  "category": "xtrend",
+  "collectedAt": "2026-11-28T07:10",
+  "items": [
+    {
+      "title": "unkernel.dev、ブラウザのタブでLinuxカーネルとディストリビューションを丸ごと動かす",
+      "url": "https://x.com/rauchg/status/2126416223592473046",
+      "source": "X, @rauchg",
+      "summary": "Guillermo Rauch氏が紹介した。ブラウザのタブの中でLinuxを丸ごと動かし、コーディングエージェントも、Chromeの中のChromeも動かせて、しかも速いとのこと。",
+      "publishedAt": "2026-11-27T20:41:00Z"
+    },
+    {
+      "title": "ZedとJetBrains、ACP v2のプレビューを公開",
+      "url": "https://x.com/zeddotdev/status/2126335304193970203",
+      "source": "X, @zeddotdev",
+      "summary": "クライアントがサブエージェントの動作を追跡できる。ターンをキャンセルせずに、対応するバックグラウンドコマンドを止められ、重複を作らずにプロンプトを再試行できる。",
+      "publishedAt": "2026-11-27T15:20:00Z"
+    },
+    {
+      "title": "kitlangton氏のeffect.instituteがオープンソースに",
+      "url": "https://x.com/kitlangton/status/2126403774956933139",
+      "source": "X, @kitlangton",
+      "summary": "フォークして自分のレッスンを作ったり、未完成のレッスンを仕上げたりしてほしいと呼びかけている。",
+      "publishedAt": "2026-11-27T19:52:00Z"
+    },
+    {
+      "title": "MoonBit 1.0 rcのブログが公開",
+      "url": "https://x.com/mizchi/status/2126347921633485306",
+      "source": "X, @mizchi",
+      "summary": "mizchi氏が、ブログでパフォーマンスへの貢献に名指しで触れられたと紹介した。今プログラミング言語を作るなら、早い段階でプロファイラを設計すべきだという意見も添えている。",
+      "publishedAt": "2026-11-27T16:10:00Z"
+    },
+    {
+      "title": "開発ツールがどんどんvite+に置き換わっている、という観察",
+      "url": "https://x.com/pontusab/status/2126319519157084564",
+      "source": "X, @pontusab",
+      "summary": "nvm、npx、tsx、eslint、prettier、tsc、vitest、tsup、turboなど、別々のツールがvite+に集約されていくパターンが見えてきたという投稿。",
+      "publishedAt": "2026-11-27T14:17:00Z"
+    },
+    {
+      "title": "Claude Sonnet Next、一部のClaude Codeユーザー向けに非公開でテスト中とされる",
+      "url": "https://x.com/synthwavedd/status/2126375716518252889",
+      "source": "X, @synthwavedd",
+      "summary": "前のモデルから大きく進化していると、投稿者が書いている。公式の発表ではなく、このポストの範囲では確認できていない。",
+      "publishedAt": "2026-11-27T18:00:00Z"
+    },
+    {
+      "title": "Gemini 4 Neon向けの、コーディングエージェントを研究者にするディープリサーチスキル",
+      "url": "https://x.com/_philschmid/status/2126312943520243885",
+      "source": "X, @_philschmid",
+      "summary": "Philipp Schmid氏が作った実験的なスキル。調査の範囲は、単純なものはそのまま、広いものは3〜5の観点で調べ、サブエージェントで検索やブラウジングを並列に進める。",
+      "publishedAt": "2026-11-27T13:51:00Z"
+    },
+    {
+      "title": "Unsloth、ローカルLLMでUnreal Engine・Unity・Blenderを自律操作",
+      "url": "https://x.com/UnslothAI/status/2126322382239649959",
+      "source": "X, @UnslothAI",
+      "summary": "Inkling 2 Mini GGUFとUnslothで、人の手を介さずにこれらのアプリを操作し、新しいアセットを作れたという。",
+      "publishedAt": "2026-11-27T14:28:00Z"
+    },
+    {
+      "title": "RustとGPU描画で書かれた、Windows向けのネイティブDiscordクライアント「gravecord」",
+      "url": "https://x.com/smokisevdalisi/status/2126241510270415113",
+      "source": "X, @smokisevdalisi",
+      "summary": "完全にオープンソースで、テレメトリはなく、場合によっては軽量なことさえあるという紹介。",
+      "publishedAt": "2026-11-27T09:07:00Z"
+    }
+  ]
+}
