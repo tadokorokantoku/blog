@@ -1,6 +1,6 @@
 {
   "category": "xtrend",
-  "collectedAt": "2026-11-27T07:10",
+  "collectedAt": "2026-11-27T18:10",
   "items": [
     {
       "title": "Claude、11月10日リセット分の利用枠を12月10日まで使える",
@@ -43,6 +43,41 @@
       "source": "X, @pontusab",
       "summary": "pontusab氏が、eslint、prettier、tsc、jest/vitest、esbuild、pnpm、tsx/ts-node、nodemon、ioredis、pgなど、これまで別のツールだったものを、Bunで置き換えていく一覧を投稿した。",
       "publishedAt": "2026-11-26T13:07:00Z"
+    },
+    {
+      "title": "Hex、会議の内容を追って過去の文字起こしを検索できるように",
+      "url": "https://x.com/kitlangton/status/2126102192264523896",
+      "source": "X, @kitlangton",
+      "summary": "kitlangton氏のHexが会議に対応した。会議の内容を追い、過去の文字起こしを検索できる。これまでどおり100%無料でローカル動作とのこと。紹介動画付き。",
+      "publishedAt": "2026-11-26T23:53:00Z"
+    },
+    {
+      "title": "hsbt氏がレバテック LABに寄稿、OSS開発の経験から語るテックリード向けの意思決定",
+      "url": "https://x.com/hsbt/status/2126142024483258583",
+      "source": "X, @hsbt",
+      "summary": "OSS開発を長年続けてきた経験から、テックリード層に伝えられる意思決定の話を寄稿したという。",
+      "publishedAt": "2026-11-27T02:32:00Z"
+    },
+    {
+      "title": "チームのlint設定は、biomeかoxlintかで選ぶ",
+      "url": "https://x.com/R0u9h/status/2126202600173477945",
+      "source": "X, @R0u9h",
+      "summary": "チーム内で規約を議論したくないなら、デフォルトがある程度定まっているbiome。eslintのエコシステムが必要、または細かいチーム規約があるならoxlint、という使い分けの提案。",
+      "publishedAt": "2026-11-26T21:32:00Z"
+    },
+    {
+      "title": "24KBの「LLM専用OS」が登場、llama.cppより最大54%高速とされている",
+      "url": "https://x.com/ID_JAPAN_AO/status/2126088867354956117",
+      "source": "X, @ID_JAPAN_AO",
+      "summary": "全てアセンブリで書かれ、Linuxを使わない24KBのOSとして、TechnoEdgeの記事を紹介するポスト。速度の数字は紹介記事の主張で、ここでは検証していない。",
+      "publishedAt": "2026-11-26T23:01:00Z"
+    },
+    {
+      "title": "Claudeで24kステップ学習したモデルより、Gemini Neonの4kステップのほうが良かったとする報告",
+      "url": "https://x.com/RealAstropulse/status/2126119408997466389",
+      "source": "X, @RealAstropulse",
+      "summary": "「ClaudeがML研究を妨害する」という投稿を見て、自分の研究で試した結果、本当だったという報告。左が24kステップのClaude製モデル、右が4kステップのGemini Neon製モデルの比較で、詳しい内容はスレッドにあるとされている。",
+      "publishedAt": "2026-11-27T01:02:00Z"
     }
   ]
 }
