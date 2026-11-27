@@ -1,0 +1,40 @@
+{
+  "week": "2026-W48",
+  "highlights": [
+    "Anthropic は PR のレビューから修正、承認の判断までを Claude が担う Claude Ship をベータで公開し、Claude Code に `/ship` コマンドが加わった。",
+    "MCP の2周年に合わせて、MCP サーバーがスキルを配布できる Skills over MCP がパブリックベータになり、Tasks と Elicitation は一般提供になった。Claude Code も 2.1.332 で MCP 配布のスキルを読み込めるようになった。",
+    "Orca は v1.4.271 から v1.4.278 まで続けて出し、ボットグループが複数のコンピュータにまたがるようになったほか、v1.4.278 で Antigravity のチャットを agy に一本化した。",
+    "T3 Code は v0.1.12 で複数リポジトリのプロジェクトとワークフロー（ベータ）に対応した一方、セキュリティ面の指摘を受けてソースを非公開にした。",
+    "GitHub トレンドは elementalsouls/Claude-BugHunter が今週も毎日1位で、上位5件の顔ぶれは1週間変わらなかった。"
+  ],
+  "topics": [
+    {
+      "title": "Claude Ship と Claude Code 2.1.331・2.1.332",
+      "body": "Claude Ship は、一般提供中の Code Review に、PR を通る状態に保つ PR Steward と、チームのポリシーで承認を決める Claude Approvals を組み合わせたもの。Team と Enterprise 向けのベータとして出た。\n\n- 2.1.331: Amazon Bedrock、Google Cloud の Agent Platform、Microsoft Foundry、Claude Platform on AWS で Code Mode が使える。`claude doctor` に API への接続確認が加わった\n- 2.1.332: MCP サーバーが配布するスキルをベータで読み込める。スキルやコマンドのインラインのシェルコマンドを拒否できる `PreSkillShellCommand` フックが加わった",
+      "links": [
+        "https://claude.com/resources/articles/introducing-claude-ship",
+        "https://github.com/anthropics/claude-code/releases/tag/v2.1.331",
+        "https://github.com/anthropics/claude-code/releases/tag/v2.1.332"
+      ]
+    },
+    {
+      "title": "MCP がスキルとエージェント間の連携へ広がる",
+      "body": "Skills over MCP で、MCP サーバーがツールと一緒にスキルを同梱できるようになった。長時間の処理を任せる Tasks と、処理の途中で利用者に入力を求める Elicitation は一般提供で、ファイルを渡す File Uploads も近く出る。同じ週に Antigravity は MCP Apps に対応し、MCP のツールが対話型の HTML の画面をワークスペース内に描けるようになった。",
+      "links": [
+        "https://claude.com/resources/articles/skills-over-mcp-tasks-and-more",
+        "https://x.com/ClaudeDevs/status/2125289794871963935",
+        "https://antigravity.google/blog/mcp-apps-in-antigravity"
+      ]
+    },
+    {
+      "title": "ADE はワークフローと複数マシンへ",
+      "body": "T3 Code v0.1.12 は、エージェントやスケジュール、Webhook、人の承認を組み合わせるワークフローをベータで入れ、v0.1.13 でワークフローの実行を issue や PR に紐付けられるようになった。Orca は v1.4.271 でペアリングした複数のコンピュータのボットを1つのグループに入れられるようになり、v1.4.272 で利用上限やクラッシュで止まったボットが自動で再開できるようになった。",
+      "links": [
+        "https://github.com/pingdotgg/t3code/releases/tag/v0.1.12",
+        "https://github.com/pingdotgg/t3code/releases/tag/v0.1.13",
+        "https://github.com/stablyai/orca/releases/tag/v1.4.271",
+        "https://github.com/stablyai/orca/releases/tag/v1.4.272"
+      ]
+    }
+  ]
+}
