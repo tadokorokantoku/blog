@@ -1,6 +1,6 @@
 {
   "category": "xtrend",
-  "collectedAt": "2026-11-28T07:10",
+  "collectedAt": "2026-11-28T18:10",
   "items": [
     {
       "title": "unkernel.dev、ブラウザのタブでLinuxカーネルとディストリビューションを丸ごと動かす",
@@ -64,6 +64,34 @@
       "source": "X, @smokisevdalisi",
       "summary": "完全にオープンソースで、テレメトリはなく、場合によっては軽量なことさえあるという紹介。",
       "publishedAt": "2026-11-27T09:07:00Z"
+    },
+    {
+      "title": "AIによる脆弱性レポートが急増、Honoも対応が追いつかない（YAPC Japan）",
+      "url": "https://x.com/yusukebe/status/2126542795590844420",
+      "source": "X, @yusukebe",
+      "summary": "yusukebe氏によると、HonoにもAIで作られた脆弱性レポートがとても増えた。初期は丁寧に対応していたが間に合わず、Hardening fixだけで済むこともある。GHSAはActionsが回らず使いにくく、プライベートなので誰にも見られず報われない、という声。",
+      "publishedAt": "2026-11-28T05:04:00Z"
+    },
+    {
+      "title": "Claude CodeのHooks注意点：Bashをバックグラウンド実行するとPostToolUseは起動直後に発火",
+      "url": "https://x.com/kinopee_ai/status/2126589830461370702",
+      "source": "X, @kinopee_ai",
+      "summary": "手元で試した限りでは、完了時ではなく起動直後に発火するため、実行後にファイルを検査するフック（lintや変更検知）は素通りになるという。",
+      "publishedAt": "2026-11-28T08:11:00Z"
+    },
+    {
+      "title": "AIが作るPRのCIコストを抑えるため、pre-commitを設定するようになった",
+      "url": "https://x.com/zaru/status/2126441608115880112",
+      "source": "X, @zaru",
+      "summary": "以前はコミット前の余計なコマンドを嫌ってpre-commitは設定せず、あれば消していた。今は、AIが作ったPRで無駄にCIコストをかけたくないので設定しているという心境の変化。",
+      "publishedAt": "2026-11-27T22:22:00Z"
+    },
+    {
+      "title": "「オンプレGPUインフラここが辛いよ」登壇資料（YAPC Japan）",
+      "url": "https://x.com/R0u9h/status/2126584377375392099",
+      "source": "X, @R0u9h",
+      "summary": "YAPC Japanで16:50からTrack Cで話す、オンプレGPUインフラの運用の大変さについての登壇資料が公開された。",
+      "publishedAt": "2026-11-28T07:50:00Z"
     }
   ]
 }
