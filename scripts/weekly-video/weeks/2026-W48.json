@@ -1,0 +1,178 @@
+{
+  "readings": {
+    "inok.dev": "イノック ドット デブ",
+    "Claude Ship": "クロード シップ",
+    "Steward": "スチュワード",
+    "Approvals": "アプルーバルズ",
+    "Skills over MCP": "スキルズ オーバー エムシーピー",
+    "Elicitation": "エリシテーション",
+    "Tasks": "タスクス",
+    "T3 Code": "ティースリー コード",
+    "Orca": "オルカ",
+    "Webhook": "ウェブフック",
+    "担う": "になう",
+    "Hacker News": "ハッカーニュース"
+  },
+  "teaser": [
+    "Claude Ship で PR のレビューから承認まで",
+    "MCP サーバーがスキルを配布できるように",
+    "ADE はワークフローと複数マシンへ"
+  ],
+  "scenes": [
+    {
+      "id": "scene_01_intro",
+      "type": "intro",
+      "badge": "WEEKLY AI DIGEST",
+      "title": "週刊 AI ニュースまとめ",
+      "subtitle": "{week} ({period})",
+      "narration": "{year}年第{weekNo}週のAIニュースダイジェストです。",
+      "subtitles": [
+        "{year}年 第{weekNo}週 AIニュースまとめ"
+      ]
+    },
+    {
+      "id": "scene_02_numbers",
+      "type": "stats",
+      "badge": "DATA OVERVIEW",
+      "title": "今週の数字まとめ",
+      "caption": "{periodLong}の収集データ概要",
+      "stats": [
+        {
+          "category": "coding-agent",
+          "label": "Coding Agent",
+          "unit": "件",
+          "desc": "エージェント新機能・運用"
+        },
+        {
+          "category": "ade",
+          "label": "ADE (開発環境)",
+          "unit": "件",
+          "desc": "開発連携ツール"
+        },
+        {
+          "category": "xtrend",
+          "label": "X トレンド",
+          "unit": "件",
+          "desc": "注目の技術トピック"
+        },
+        {
+          "category": "hackernews",
+          "label": "Hacker News",
+          "unit": "件",
+          "desc": "毎日のトップ記事"
+        }
+      ],
+      "narration": "今週はCoding Agent{coding-agent}件、ADE{ade}件、Xトレンド{xtrend}件でした。",
+      "subtitles": [
+        "Coding Agent {coding-agent}件、ADE {ade}件、Xトレンド {xtrend}件"
+      ],
+      "note": "ℹ️ 件数は公開日がこの週に入る記事の数"
+    },
+    {
+      "id": "scene_03_topic_ship",
+      "type": "topic_deepdive",
+      "category": "Coding Agent",
+      "badge": "TOPIC 1",
+      "title": "Claude Ship がベータで登場",
+      "cards": [
+        {
+          "step": "何が起きたか",
+          "heading": "PRのレビューから承認までをClaudeが担う",
+          "detail": "Code Review に PR Steward と Claude Approvals を組み合わせ、/ship コマンドも追加。"
+        },
+        {
+          "step": "なぜ大事か",
+          "heading": "コードを書いた後の工程まで自動化",
+          "detail": "PRを通る状態に保ち、チームのポリシーで承認を決めるところまで任せられる。"
+        },
+        {
+          "step": "次に何を見ておくか",
+          "heading": "承認ポリシーの決め方と一般提供",
+          "detail": "Team と Enterprise 向けベータ。どこまで人の承認を残すかが焦点。"
+        }
+      ],
+      "narration": "AnthropicがClaude Shipをベータで公開しました。PRのレビューから修正、承認の判断までをClaudeが担います。コードを書いた後の工程まで、チームのポリシーに沿って任せられるのが大事な点です。今後は、どこまで人の承認を残すかに注目です。",
+      "subtitles": [
+        "【何が起きたか】AnthropicがClaude Shipをベータで公開",
+        "PRのレビュー・修正・承認の判断までをClaudeが担う",
+        "【なぜ大事か】書いた後の工程までチームのポリシーで任せられる",
+        "【次に注目】どこまで人の承認を残すか"
+      ]
+    },
+    {
+      "id": "scene_04_topic_mcp",
+      "type": "topic_deepdive",
+      "category": "Coding Agent",
+      "badge": "TOPIC 2",
+      "title": "MCP サーバーがスキルを配布",
+      "cards": [
+        {
+          "step": "何が起きたか",
+          "heading": "Skills over MCP がパブリックベータ",
+          "detail": "MCPの2周年。Tasks と Elicitation は一般提供、Claude Code 2.1.332 も対応。"
+        },
+        {
+          "step": "なぜ大事か",
+          "heading": "ツールと使い方を一緒に届けられる",
+          "detail": "サーバーを入れるだけで、ツールに合ったスキルまでエージェントに渡る。"
+        },
+        {
+          "step": "次に何を見ておくか",
+          "heading": "配布スキルの安全性",
+          "detail": "インラインのシェルを止める PreSkillShellCommand フックなど、守りの仕組みが焦点。"
+        }
+      ],
+      "narration": "MCPの2周年に合わせて、Skills over MCPがパブリックベータになりました。TasksとElicitationは一般提供になり、Claude Codeもすぐに対応しています。MCPサーバーを入れるだけで、ツールと使い方のスキルがまとめて届くのが大事な点です。配布されるスキルをどう安全に扱うかに注目です。",
+      "subtitles": [
+        "【何が起きたか】Skills over MCP がパブリックベータに",
+        "Tasks と Elicitation は一般提供、Claude Code も対応",
+        "【なぜ大事か】ツールと使い方のスキルがまとめて届く",
+        "【次に注目】配布されるスキルを安全に扱う仕組み"
+      ]
+    },
+    {
+      "id": "scene_05_topic_ade",
+      "type": "topic_deepdive",
+      "category": "ADE",
+      "badge": "TOPIC 3",
+      "title": "ADE はワークフローと複数マシンへ",
+      "cards": [
+        {
+          "step": "何が起きたか",
+          "heading": "T3 Code がワークフロー、Orca が複数マシン",
+          "detail": "T3 Code v0.1.12 でワークフロー（ベータ）。Orca v1.4.271 でボットグループが複数のコンピュータに。"
+        },
+        {
+          "step": "なぜ大事か",
+          "heading": "1つの会話から、仕組みで回す開発へ",
+          "detail": "スケジュールや Webhook、人の承認を組み合わせ、複数のマシンでエージェントを動かせる。"
+        },
+        {
+          "step": "次に何を見ておくか",
+          "heading": "止まったときの再開と同時実行の管理",
+          "detail": "Orca の自動再開や T3 Code の同時実行の上限など、運用面の作り込みに注目。"
+        }
+      ],
+      "narration": "ADEでは、T3 Codeがワークフローをベータで入れました。Orcaは、ボットのグループが複数のコンピュータにまたがるようになりました。1つの会話で頼むだけでなく、仕組みとしてエージェントを回す方向に進んでいるのが大事な点です。止まったときの再開や、同時実行の管理に注目です。",
+      "subtitles": [
+        "【何が起きたか】T3 Codeがワークフローをベータで導入",
+        "Orcaはボットグループが複数のコンピュータにまたがるように",
+        "【なぜ大事か】エージェントを仕組みとして回す方向へ",
+        "【次に注目】止まったときの再開と同時実行の管理"
+      ]
+    },
+    {
+      "id": "scene_06_outro",
+      "type": "outro",
+      "badge": "WEEKLY DIGEST",
+      "title": "今週のまとめ",
+      "subtitle": "各記事の詳細・リンクはブログで公開中",
+      "site": "inok.dev/news/weekly/{week}/",
+      "narration": "以上、今週の注目トピックでした。詳細はブログ inok.dev をご覧ください。",
+      "subtitles": [
+        "以上、今週の注目トピックでした",
+        "詳細はブログ inok.dev/news/weekly/ をチェック！"
+      ]
+    }
+  ]
+}
